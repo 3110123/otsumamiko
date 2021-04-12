@@ -4,8 +4,10 @@ class UserSessionsController < ApplicationController
   def create
     @user = login(params[:email], params[:password])
     if @user
+      flash[:notice] = 'ログインしました。'
       redirect_back_or_to root_path
     else
+      flash[:alert] = 'ログインに失敗しました。エラーメッセージを確認してください。'
       render :new
     end
   end

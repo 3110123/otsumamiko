@@ -1,0 +1,9 @@
+<div id="error_messages">
+<% if model.errors.any? %>
+    <div class="has-text-danger">
+      <% model.errors.full_messages_for(attribute).each do |msg| %>
+        <%= msg %>
+      <% end %>
+    </div>
+<% end %>
+</div>

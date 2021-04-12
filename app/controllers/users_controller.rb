@@ -6,8 +6,10 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
     if @user.save
-      redirect_to login_path
+      flash[:notice] = 'ようこそ！'
+      redirect_to root_path
     else
+      flash[:alert] = '新規登録に失敗しました。エラーメッセージを確認してください。'
       render :new
     end
   end

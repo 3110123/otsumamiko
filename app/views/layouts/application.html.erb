@@ -7,11 +7,23 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet" />
+    <script src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
   </head>
 
   <body>
     <%= render 'shared/header' %>
     <%= yield %>
     <%= render 'shared/footer' %>
+    <% if flash.any? %>
+      <script type="text/javascript">
+        <% flash.each do |key, value| %>
+          <% key = "success" if key == "notice" %>
+          <% key = "error" if key == "alert" %>
+          toastr['<%= key %>']('<%= value %>');
+        <% end %>
+      </script>
+    <% end %>
   </body>
 </html>
