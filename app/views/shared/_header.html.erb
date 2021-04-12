@@ -1,0 +1,39 @@
+<div class="hero-head">
+  <header class="navbar">
+    <div class="container">
+      <div class="navbar-brand">
+        <span class="navbar-burger burger" data-target="navbarMenuHeroC">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </div>
+    <div id="navbarMenuHeroC" class="navbar-menu">
+      <div class="navbar-end">
+        <a class="navbar-item is-active">
+          トップページ
+        </a>
+        <a class="navbar-item is-active">
+          マイページ
+        </a>
+        <a class="navbar-item">
+          おつまみ一覧
+        </a>
+        <a class="navbar-item">
+          ログアウト
+        </a>
+      </div>
+    </div>
+  </header>
+</div>
+
+<script>
+    $(document).ready(function() {
+    // navbar burgerアイコンでクリックイベントを確認する
+    $(".navbar-burger").click(function() {
+        // 「navbar-burger」と「navbar-menu」の両方で「is-active」クラスを切り替える
+        $(".navbar-burger").toggleClass("is-active");
+        $(".navbar-menu").toggleClass("is-active");
+    });
+    });
+</script>
