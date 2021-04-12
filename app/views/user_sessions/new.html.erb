@@ -1,0 +1,29 @@
+<div style="background-color: #FDBB3C;">
+  <div class="container">
+    <div class="container has-text-centered">
+      <br><br><br><br><br><br>
+        <h1 class="title is-1 is-spaced has-text-black">ログイン</h1>
+      <br><br><br>
+    </div>
+    <%= form_with model: @user, url: login_path, local: true do |f| %>
+      <div class="field">
+        <%= f.label :メールアドレス %><br />
+        <%= f.text_field :email, class: "input", type: "text", placeholder: "メールアドレス" %>
+      </div><br />
+      <div class="field">
+        <%= f.label :パスワード %><br />
+        <%= f.password_field :password, class: "input", type: "text", placeholder: "パスワード" %>
+      </div><br />
+      <br />
+      <div class="container has-text-centered">
+        <%= f.submit '送信', class: "button is-danger" %>
+      </div>
+    <% end %>
+    <br /><br /><br />
+      <div class='has-text-centered'>
+        <%= link_to '新規登録ページ', new_user_path %>/
+        <%= link_to 'パスワードを忘れた方' %>
+      </div>
+    <br /><br />
+  </div>
+</div>

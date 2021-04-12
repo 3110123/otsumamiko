@@ -1,2 +1,36 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<div style="background-color: #FDBB3C;">
+  <div class="container">
+    <div class="has-text-centered">
+      <br><br><br><br><br><br>
+        <h1 class="title is-1 is-spaced has-text-black">新規登録</h1>
+      <br><br><br>
+    </div>
+    <%= form_with model: @user, local: true do |f| %>
+      <div class="field">
+        <%= f.label :おなまえ %><br />
+        <%= f.text_field :name, class: "input", type: "text", placeholder: "おなまえ" %>
+      </div><br />
+      <div class="field">
+        <%= f.label :メールアドレス %><br />
+        <%= f.text_field :email, class: "input", type: "text", placeholder: "メールアドレス" %>
+      </div><br />
+      <div class="field">
+        <%= f.label :パスワード %><br />
+        <%= f.text_field :password, class: "input", type: "text", placeholder: "パスワード" %>
+      </div><br />
+      <div class="field">
+        <%= f.label :パスワード確認 %><br />
+        <%= f.text_field :password_confirmation, class: "input", type: "text", placeholder: "パスワード確認" %>
+      </div><br />
+      <div class="container has-text-centered">
+        <%= f.submit '送信', class: "button is-danger" %>
+      </div>
+    <% end %>
+    <br /><br /><br />
+      <div class='has-text-centered'>
+        <%= link_to 'ログインページ' %>/
+        <%= link_to 'パスワードを忘れた方' %>
+      </div>
+      <br /><br />
+  </div>
+</div>
