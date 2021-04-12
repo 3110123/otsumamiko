@@ -2,7 +2,8 @@
 
 ペアリングを試してみたいけどいい感じの組み合わせが分からない人が コンビニにある食べ物で手軽に試せるアプリ
 
-## 登場人物 ###エンドユーザー
+## 登場人物
+### エンドユーザー
 
 ペアリングを試してみたいけどいい感じの組み合わせがよく分からない人
 
@@ -30,4 +31,9 @@
 https://www.figma.com/file/SiyeGrJAiYOMjFmyo9jmsH/SaitoIzumiPF?node-id=0%3A1
 
 ## ER図
-https://app.diagrams.net/#H3110123%2Fotsumamiko%2FREADME%2FotsumamikoER.drawio
+https://drive.google.com/file/d/1I38NpRh9pHQ3-AwPsZoOtp-92K0mYD4I/view?usp=sharing
+
+
+## おつまみ情報の取得
+おつまみとお酒の組み合わせDBは全てadminが用意。
+ログインユーザーはレビュー(おつまみの評価、コメント)、気になるおつまみに追加ができる
