@@ -4,12 +4,12 @@
     <title>OtsumamikoPF</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
-    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.2/css/bulma.min.css">
+    <%= stylesheet_pack_tag 'application' %>
   </head>
 
   <body>
     <%= yield %>
+    <%= javascript_pack_tag 'application' %>
   </body>
 </html>
