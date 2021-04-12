@@ -30,4 +30,4 @@
 https://www.figma.com/file/SiyeGrJAiYOMjFmyo9jmsH/SaitoIzumiPF?node-id=0%3A1
 
 ## ER図
-https://app.diagrams.net/#H3110123%2Fotsumamiko%2FREADME%2FotsumamikoER.drawio
+https://drive.google.com/file/d/1I38NpRh9pHQ3-AwPsZoOtp-92K0mYD4I/view?usp=sharing
