@@ -1,43 +1,58 @@
-<section class="hero is-fullheight has-background-light style="background-image:">
-  <div style="background-color: #FDBB3C;">
-	  <div class="hero-body">
-		  <div class="container has-text-centered">
-      <br><br><br><br><br><br>
-        <h2 class="subtitle">
-          コンビニにある食べ物でペアリング
-        </h2>
-        <h1 class="title is-1 is-spaced has-text-black">おつまみ子</h1>
-        <br><br><br>
-        <div class='button is-danger'>
-          <%= link_to 'まずはお酒から選ぶ', choice_path %>
+<div class="bg-warning">
+  <div class="container">
+  <div class="row">
+    <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+    <div class="d-flex align-items-center justify-content-center"> 
+    <div class='text-center'>
+        <h2>コンビニにある食べ物でペアリング</h2>
+        <h1 class="font-weight-bold">おつまみ子</h1>
+        <div class="actions">
+          <div class='btn btn-danger'>
+            <%= link_to 'まずはお酒から選ぶ', choice_path %>
+          </div>
         </div>
+        <p><font size="5">いつものお酒におつまみ子<br><br>新しい体験をあなたに</font></p>
         <br><br><br>
-        <p><font size="6">いつものお酒におつまみ子<br><br>新しい体験をあなたに</font></p>
-        <br><br><br>
-        <div class="columns is-desktop">
-          <div class="column is-0-mobile is-4-tablet is-4-desktop">
-            <div class="box">
-              おつまみに迷ったら<font size="4">簡単</font>に絞り込み
-            </div>
-          </div>
-          <br>
-          <div class="column is-0-mobile is-4-tablet is-4-desktop">
-            <div class="box">
-              あなたに<font size="4">ぴったり</font>のおつまみを紹介
-            </div>
-          </div>
-          <br>
-          <div class="column is-0-mobile is-4-tablet is-4-desktop">
-            <div class="box">
-              みんなの気になっているおつまみを<font size="4">チェック</font>
+        <div class="row">
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">おつまみに迷ったら<font size="6">簡単</font>に絞り込み</h5>
+              <p class="card-text"></p>
             </div>
           </div>
         </div>
-        <br>
-        <div class='button is-danger'>
-          <%= link_to 'まずはお酒から選ぶ', choice_path %>
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">あなたに<font size="6">ぴったり</font>のおつまみを紹介</h5>
+              <p class="card-text"></p>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">みんなの気になっているおつまみを<font size="6">チェック</font></h5>
+              <p class="card-text"></p>
+            </div>
+          </div>
         </div>
       </div>
+        <br>
+        <div class="actions">
+          <div class='btn btn-danger'>
+            <%= link_to 'まずはお酒から選ぶ', choice_path %>
+          </div>
+        </div>
+      </div>
+      </div>
+    </div>
     </div>
 	</div>
-</section>
+  </div>
+</div>
+
+
+
+
