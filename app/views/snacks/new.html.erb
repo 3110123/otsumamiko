@@ -1,29 +1,154 @@
-<div class="choose_box">
-    <div id="q_01" class="fit">
-        <p>【質問①】</p>
-        <ul>
-          <li><%= link_to 'Yes', "#q_02", class: "button", "data-turbolinks": false %></li>
-          <li><%= link_to 'No', "#q_03", class: "button", "data-turbolinks": false %></li>
-        </ul>
+<div class="bg-warning">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+        <div class="card my-5">
+            <div class="card-body">
+              <div class='text-center'>
+              <h1 class="font-weight-bold m-5">どっちがお好きですか？</h1>
+              </div>
+              <div class="choose_box">
+                <div id="q_01" class="fit">
+                <ul>
+                  <lo>
+                    食事系<br>
+                    <%= link_to "#q_02", class: "button", "data-turbolinks": false do %>
+                      <%= image_tag 'healthy.jpg', size: '150x150' %>
+                    <% end %>
+                  </lo>
+                  or
+                  <lo>
+                    おやつ系<br>
+                    <%= link_to "#q_03", class: "button", "data-turbolinks": false do %>
+                      <%= image_tag 'healthy.jpg', size: '150x150' %>
+                    <% end %>
+                  </lo>
+                </ul>
+              </div>
+              <div id="q_02" style="display: none;">
+                <ul>
+                  <lo>
+                    <%= link_to "#q_04", class: "button", "data-turbolinks": false do %>
+                      <%= image_tag 'healthy.jpg', size: '150x150' %>
+                        しょっぱい系
+                    <% end %>
+                  </lo>
+                  <lo>
+                    <%= link_to "#q_05", class: "button", "data-turbolinks": false do %>
+                      <%= image_tag 'healthy.jpg', size: '150x150' %>
+                        あまい系
+                    <% end %>
+                  </lo>
+                </ul>
+              </div>
+              <div id="q_03" style="display: none;">
+                <ul>
+                  <lo>
+                    <%= link_to "#q_06", class: "button", "data-turbolinks": false do %>
+                      <%= image_tag 'healthy.jpg', size: '150x150' %>
+                        しょっぱい系
+                    <% end %>
+                  </lo>
+                  <lo>
+                    <%= link_to "#q_07", class: "button", "data-turbolinks": false do %>
+                      <%= image_tag 'healthy.jpg', size: '150x150' %>
+                        あまい系
+                    <% end %>
+                  </lo>
+                </ul>
+              </div>
+              <div id="q_04" style="display: none;">
+                <ul>
+                  <lo>
+                    <%= link_to "#q_08", class: "button", "data-turbolinks": false do %>
+                      <%= image_tag 'healthy.jpg', size: '150x150' %>
+                        ヘルシー系
+                    <% end %>
+                  </lo>
+                  <lo>
+                    <%= link_to "#q_09", class: "button", "data-turbolinks": false do %>
+                      <%= image_tag 'healthy.jpg', size: '150x150' %>
+                        がっつり系
+                    <% end %>
+                  </lo>
+                </ul>
+              </div>
+              <div id="q_05" style="display: none;">
+                <ul>
+                  <lo>
+                    <%= link_to "#q_10", class: "button", "data-turbolinks": false do %>
+                      <%= image_tag 'healthy.jpg', size: '150x150' %>
+                        ヘルシー系
+                    <% end %>
+                  </lo>
+                  <lo>
+                    <%= link_to "#q_11", class: "button", "data-turbolinks": false do %>
+                      <%= image_tag 'healthy.jpg', size: '150x150' %>
+                        がっつり系
+                    <% end %>
+                  </lo>
+                </ul>
+              </div>
+              <div id="q_06" style="display: none;">
+                <ul>
+                  <lo>
+                    <%= link_to "#q_12", class: "button", "data-turbolinks": false do %>
+                      <%= image_tag 'healthy.jpg', size: '150x150' %>
+                        ヘルシー系
+                    <% end %>
+                  </lo>
+                  <lo>
+                    <%= link_to "#q_13", class: "button", "data-turbolinks": false do %>
+                      <%= image_tag 'healthy.jpg', size: '150x150' %>
+                        がっつり系
+                    <% end %>
+                  </lo>
+                </ul>
+              </div>
+              <div id="q_07" style="display: none;">
+                <ul>
+                  <lo>
+                    <%= link_to "#q_14", class: "button", "data-turbolinks": false do %>
+                      <%= image_tag 'healthy.jpg', size: '150x150' %>
+                        ヘルシー系
+                    <% end %>
+                  </lo>
+                  <lo>
+                    <%= link_to "#q_15", class: "button", "data-turbolinks": false do %>
+                      <%= image_tag 'healthy.jpg', size: '150x150' %>
+                        がっつり系
+                    <% end %>
+                  </lo>
+                </ul>
+              </div>
+              <div id="q_08" style="display: none;">
+                <p>食事-しょっぱい-ヘルシー</p>
+              </div> 
+              <div id="q_09" style="display: none;">
+                <p>食事-しょっぱい-がっつり</p>
+              </div>
+              <div id="q_10" style="display: none;">
+                <p>食事-あまい-ヘルシー</p>
+              </div> 
+              <div id="q_11" style="display: none;">
+                <p>食事-あまい-がっつり</p>
+              </div>
+              <div id="q_12" style="display: none;">
+                <p>おやつ-しょっぱい-ヘルシー</p>
+              </div> 
+              <div id="q_13" style="display: none;">
+                <p>おやつ-しょっぱい-がっつり</p>
+              </div>
+              <div id="q_14" style="display: none;">
+                <p>おやつ-あまい-ヘルシー</p>
+              </div> 
+              <div id="q_15" style="display: none;">
+                <p>おやつ-あまい-がっつり</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <div id="q_02" style="display: none;">
-        <p>【質問②-1】</p>
-        <ul>
-          <li><%= link_to 'いえす', "#q_04", class: "button", "data-turbolinks": false %></li>
-          <li><%= link_to 'のー', "#q_05", class: "button", "data-turbolinks": false %></li>
-        </ul>
-    </div>
-    <div id="q_03" style="display: none;">
-        <p>【質問②-2】</p>
-        <ul>
-          <li><%= link_to 'iiiiiieeeeee', "#q_04", class: "button", "data-turbolinks": false %></li>
-          <li><%= link_to 'nonononononon', "#q_05", class: "button", "data-turbolinks": false %></li>
-        </ul>
-    </div>
-    <div id="q_04" style="display: none;">
-        <p>【答えA】</p>
-    </div> 
-    <div id="q_05" style="display: none;">
-        <p>【答えB】</p>
-    </div>
+  </div>
 </div>

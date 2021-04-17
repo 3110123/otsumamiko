@@ -7,4 +7,10 @@ class SnacksController < ApplicationController
 
   def show
   end
+
+  private
+  
+  def snack_params
+    params.require(snack).permit(:name, :alcohol, :image)
+  end
 end
