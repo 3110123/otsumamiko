@@ -2,10 +2,19 @@ class SnacksController < ApplicationController
   def new
   end
 
-  def index
+  def show
   end
 
-  def show
+  def beer_index
+    @snack = Snack.all
+  end
+
+  def wine_index
+    @snack = Snack.all
+  end
+
+  def sake_index
+    @snack = Snack.all
   end
 
   private
