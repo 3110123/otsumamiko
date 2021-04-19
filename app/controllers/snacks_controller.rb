@@ -6,15 +6,18 @@ class SnacksController < ApplicationController
   end
 
   def beer_index
-    @snack = Snack.all
+    @q = Snack.beer.ransack(params[:q])
+    @snack = @q.result(distinct: true)
   end
 
   def wine_index
-    @snack = Snack.all
+    @q = Snack.wine.ransack(params[:q])
+    @snack = @q.result(distinct: true)
   end
 
   def sake_index
-    @snack = Snack.all
+    @q = Snack.sake.ransack(params[:q])
+    @snack = @q.result(distinct: true)
   end
 
   private
