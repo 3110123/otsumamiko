@@ -8,6 +8,13 @@ Rails.application.routes.draw do
   get 'beers', to: 'snacks#beer_index'
   get 'wines', to: 'snacks#wine_index'
   get 'sakes', to: 'snacks#sake_index'
+  get 'result', to: 'snacks#result'
   resources :users, only: %i[new create]
-  resources :snacks
+  resources :snacks do
+    collection do
+      get 'wine', to: 'snacks#wine'
+      get 'beer', to: 'snacks#beer'
+      get 'sake', to: 'snacks#sake'
+    end
+  end
 end

@@ -1,0 +1,26 @@
+<% if @query.find_by("alcohol").alcohol == "beer" %>
+  <div class="bg-warning">
+<% elsif @query.find_by("alcohol").alcohol == "wine" %>
+  <div class="bg-danger">
+<% elsif @query.find_by("alcohol").alcohol == "sake" %>
+  <div class="bg-info">
+<% end %>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+        <div class="card my-5">
+          <div class="card-body">
+            <div class='text-center'>
+              <p>あなたにぴったりの</p>
+              <h1 class="font-weight-bold m-5">おつまみ</h1>
+              <p>今日のおつまみは<br>これを試してみましょう！</p>
+            </div>
+              <div class="row">
+                <%= @query.pluck("name") %>
+              </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

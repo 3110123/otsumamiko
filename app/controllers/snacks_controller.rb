@@ -20,6 +20,20 @@ class SnacksController < ApplicationController
     @snack = @q.result(distinct: true)
   end
 
+  def beer; end
+
+  def sake; end
+
+  def wine; end
+
+  def result
+    tags = params[:user_select_tag]
+    select_alcohol = params[:user_select_alcohol]
+    matchAllTags = TagRelationship.where(tag_id: tags).group(:snack_id).select(:snack_id).having('count(snack_id) = ?', tags.length)
+    snackIds = matchAllTags.map(&:snack_id)
+    @query = Snack.where(id: snackIds, alcohol: select_alcohol)
+  end
+
   private
   
   def snack_params

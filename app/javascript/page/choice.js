@@ -1,4 +1,4 @@
-$(document).on("turbolinks:load", function() {
+$(document).on('turbolinks:load', function() {
   //buttonクラスをクリック後の関数処理
   $(".button").on("click", function() {
     //質問画面にあたらる親要素divをdisplay:none;にする
