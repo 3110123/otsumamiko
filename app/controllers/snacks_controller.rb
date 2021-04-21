@@ -29,7 +29,7 @@ class SnacksController < ApplicationController
   def result
     tags = params[:user_select_tag]
     select_alcohol = params[:user_select_alcohol]
-    matchAllTags = TagRelationship.where(tag_id: tags).group(:snack_id).select(:snack_id).having('count(snack_id) = ?', tags.length)
+    matchAllTags = TagRelationship.where(tag_id: tags).group(:snack_id).select(:snack_id).having('count(snack_id) = 3')
     snackIds = matchAllTags.map(&:snack_id)
     @query = Snack.where(id: snackIds, alcohol: select_alcohol).sample
   end

@@ -1,5 +1,6 @@
 class User < ApplicationRecord
   has_many :bookmarks, dependent: :destroy
+  has_many :reviews, dependent: :destroy
   authenticates_with_sorcery!
 
   validates :password, length: { minimum: 3 }, if: -> { new_record? || changes[:crypted_password] }
