@@ -3,20 +3,11 @@ class SnacksController < ApplicationController
   end
 
   def show
+    @snack = Snack.find(params[:id])
   end
 
-  def beer_index
-    @q = Snack.beer.ransack(params[:q])
-    @snack = @q.result(distinct: true)
-  end
-
-  def wine_index
-    @q = Snack.wine.ransack(params[:q])
-    @snack = @q.result(distinct: true)
-  end
-
-  def sake_index
-    @q = Snack.sake.ransack(params[:q])
+  def index
+    @q = Snack.ransack(params[:q])
     @snack = @q.result(distinct: true)
   end
 
@@ -32,11 +23,14 @@ class SnacksController < ApplicationController
     matchAllTags = TagRelationship.where(tag_id: tags).group(:snack_id).select(:snack_id).having('count(snack_id) = 3')
     snackIds = matchAllTags.map(&:snack_id)
     @query = Snack.where(id: snackIds, alcohol: select_alcohol).sample
+    @snack = Snack.find(@query.id)
+    @reviews = @snack.reviews
+    @review = Review.new
   end
 
   private
   
   def snack_params
-    params.require(snack).permit(:name, :alcohol, :image)
+    params.require(:snack).permit(:name, :alcohol, :image)
   end
 end

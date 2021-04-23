@@ -15,6 +15,9 @@
               <h1 class="font-weight-bold m-5">おつまみ</h1>
               <p>今日のおつまみは<br>これを試してみましょう！</p>
               <%= @query.name %>
+              <p>コメント</p>
+              <%= link_to 'コメント記入', new_review_path(@query.id) %>
+              <%= render @reviews, review: @review %>
             </div>
           </div>
         </div>
