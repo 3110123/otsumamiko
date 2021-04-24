@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   get 'result', to: 'snacks#result'
   resources :users, only: %i[new create]
   resources :snacks do
+    resources :reviews, shallow: true
     collection do
       get 'wine', to: 'snacks#wine'
       get 'beer', to: 'snacks#beer'
       get 'sake', to: 'snacks#sake'
-      resources :reviews, shallow: true
     end
   end
 end

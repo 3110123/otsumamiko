@@ -9,6 +9,7 @@ class SnacksController < ApplicationController
   def index
     @q = Snack.ransack(params[:q])
     @snack = @q.result(distinct: true)
+    @reviews = Review.all
   end
 
   def beer; end

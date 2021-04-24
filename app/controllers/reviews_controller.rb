@@ -12,13 +12,7 @@ class ReviewsController < ApplicationController
 
   def create
     @review = current_user.reviews.build(review_params)
-    if @review.save
-      flash[:notice] = "コメントを投稿しました"
-      redirect_to beers_path
-    else
-      flash[:alert] = "コメント投稿に失敗しました"
-      render :new
-    end
+    @review.save
   end
 
   def edit

@@ -11,6 +11,7 @@ require("jquery")
 require("toastr")
 require('page/choice')
 require('page/snack')
+require('page/review')
 
 
 
