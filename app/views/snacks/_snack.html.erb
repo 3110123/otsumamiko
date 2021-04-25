@@ -1,6 +1,7 @@
 <div class="col-sm-6 p-3">
   <div class="card">
     <div data-toggle="modal" data-target="#exampleModal">
+    <%= link_to snack_path(snack.id), remote: true do %>
       <%= image_tag '', size: '300x200', class: 'card-img-top' %>
         <div class="card-body">
           <div class='text-center'>
@@ -8,14 +9,14 @@
             <%= snack.name %>
           </div>
         </div>
+    <% end %>
     </div>
   </div>
 </div>
 
 
 <!-- モーダルウインドウで詳細表示 -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-centered" role="document">
-    <%= render 'snacks/snack_show', snack: snack, review: @review %>
-  </div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLong" aria-hidden="true">
+<div class="modal-dialog modal-dialog-centered" role="document"></div>
 </div>

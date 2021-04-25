@@ -4,6 +4,13 @@ class SnacksController < ApplicationController
 
   def show
     @snack = Snack.find(params[:id])
+    @review = Review.new
+    @reviews = @snack.reviews
+
+    respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def index
