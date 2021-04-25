@@ -5,7 +5,7 @@ class SnacksController < ApplicationController
   def show
     @snack = Snack.find(params[:id])
     @review = Review.new
-    @reviews = @snack.reviews
+    @reviews = @snack.reviews.includes(:user).order(created_at: :desc)
 
     respond_to do |format|
       format.html
