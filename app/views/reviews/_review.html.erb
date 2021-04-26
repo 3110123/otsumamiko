@@ -1,7 +1,9 @@
-<div class="card">
-  <div class="card-body">
-    <%= current_user.name %>
-    <%= review.comment %><br>
-    <%= review.created_at %>
-  </div>
-</div>
+<tr id="review-<%= review.id %>">
+  <td class="card">
+    <div class="card-body">
+      <%= current_user.name %>
+      <%= review.comment %><br>
+      <%= review.created_at %>
+    </div>
+  </td>
+</tr>
