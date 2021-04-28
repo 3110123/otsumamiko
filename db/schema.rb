@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_04_17_050532) do
+ActiveRecord::Schema.define(version: 2021_04_21_052918) do
 
   create_table "bookmarks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
@@ -19,6 +19,22 @@ ActiveRecord::Schema.define(version: 2021_04_17_050532) do
     t.datetime "updated_at", precision: 6, null: false
     t.index ["snack_id"], name: "index_bookmarks_on_snack_id"
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
+  end
+
+  create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "snack_id", null: false
+    t.text "comment", null: false
+    t.integer "rate", null: false
+    t.integer "sweetness"
+    t.integer "salty"
+    t.integer "acidity"
+    t.integer "taste"
+    t.integer "scent"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["snack_id"], name: "index_reviews_on_snack_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "snacks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
@@ -56,6 +72,8 @@ ActiveRecord::Schema.define(version: 2021_04_17_050532) do
 
   add_foreign_key "bookmarks", "snacks"
   add_foreign_key "bookmarks", "users"
+  add_foreign_key "reviews", "snacks"
+  add_foreign_key "reviews", "users"
   add_foreign_key "tag_relationships", "snacks"
   add_foreign_key "tag_relationships", "tags"
 end

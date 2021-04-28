@@ -1,0 +1,31 @@
+<tr id="review-<%= review.id %>">
+  <td class="card">
+    <div class="card-body">
+      <%= review.user.name %><br>
+      <div id="js-comment-<%= review.id %>">
+        <%= review.comment %>
+      </div>
+      <br>
+        <div id="js-textarea-comment-box-<%= review.id %>" style="display: none;">
+          <textarea id="js-textarea-comment-<%= review.id %>" class="form-control mb-1"><%= review.comment %></textarea>
+          <button class="btn btn-light js-button-edit-review-cancel" data-review-id="<%= review.id %>">キャンセル</button>
+          <button class="btn btn-success js-button-review-update" data-review-id="<%= review.id %>">更新</button>
+        </div>
+      <ul class='crud-menu-btn list-inline float-right'>
+        <li class='list-inline-item'><%= review.created_at %></li>
+        <% if current_user == review.user %>
+          <li class='list-inline-item'>
+            <%= button_to edit_review_path(review), class: "btn btn-primary rounded-circle p-0 js-edit-comment-button", data: { review_id: review.id }, style: "width:2rem;height:2rem;" do %>
+              <i class="fas fa-pen-nib ms-1"></i>
+            <% end %>
+          </li>
+          <li class='list-inline-item', id='button-delete-<%= review.id %>'>
+            <%= button_to review_path(review), class: "btn btn-primary rounded-circle p-0", style: "width:2rem;height:2rem;", method: :delete, data: { confirm: '本当に削除してもよろしいですか？'}, remote: true do %>
+              <i class="fas fa-trash-alt ms-1"></i>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </td>
+</tr>

@@ -1,0 +1,7 @@
+$("#error_messages").remove();
+<% if @review.errors.present? %>
+  $("#js-new-comment").prepend("<%= j(render 'shared/error_messages', model: @review, attribute: :comment) %>");
+<% else %>
+  $("#js-table-comment").prepend("<%= j(render 'reviews/review', review: @review) %>");
+  $("#js-new-comment-body").val('');
+<% end %>

@@ -10,7 +10,7 @@ require("channels")
 require("jquery")
 require("toastr")
 require('page/choice')
-require('page/snack')
+require('page/edit')
 
 
 
@@ -22,4 +22,6 @@ require('page/snack')
 // const imagePath = (name) => images(name, true)
 import 'bootstrap'
 import '../src/application.scss'
+import '@fortawesome/fontawesome-free/js/all'
+
 

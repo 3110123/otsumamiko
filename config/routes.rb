@@ -5,12 +5,10 @@ Rails.application.routes.draw do
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
   get 'choice', to: 'alcohol_choices#index'
-  get 'beers', to: 'snacks#beer_index'
-  get 'wines', to: 'snacks#wine_index'
-  get 'sakes', to: 'snacks#sake_index'
   get 'result', to: 'snacks#result'
   resources :users, only: %i[new create]
   resources :snacks do
+    resources :reviews, shallow: true
     collection do
       get 'wine', to: 'snacks#wine'
       get 'beer', to: 'snacks#beer'
