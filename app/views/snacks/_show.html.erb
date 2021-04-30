@@ -4,7 +4,11 @@
       <%= image_tag '', size: '300x200', class: 'card-img-top' %>
         <div class='text-center'>
           <%= @snack.alcohol %><br>x<br>
-          <%= @snack.name %>
+          <%= @snack.name %><br>
+
+          <canvas id="myRaderChart"></canvas>
+          <%= javascript_pack_tag 'ratechart' %>
+
           <p>コメント</p>
           <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">コメント入力</a>
           <div class="collapse" id="collapseExample">
@@ -92,3 +96,5 @@
     </div>
   </div>
 </div>
+
+

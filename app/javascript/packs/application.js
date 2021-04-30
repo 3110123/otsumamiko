@@ -9,8 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("jquery")
 require("toastr")
-require('page/choice')
-require('page/edit')
+require("chart.js")
 
 
 

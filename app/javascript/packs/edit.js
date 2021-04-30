@@ -1,4 +1,4 @@
-$(function() {
+$(document).on('turbolinks:load', function() {
    //eでイベントオブジェクトを受け取る
    $(document).on("click", '.js-edit-comment-button', function(e){
       //イベント本来の挙動をキャンセル
@@ -62,7 +62,11 @@ $(function() {
                    review: {
                        comment: comment
                    }
-               }
+               },
+               //なしだとCSRFのエラーが出たため、追加。tokenを発行せずにpostすることを防ぐ。
+               headers: {
+                'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
+              },
                // done ajax通信が成功した時(HTTPステータスコードで成功か失敗を判断)非同期通信のまま返り値を得ることができる。
            }).done(function (result) {
                resolve(result)
