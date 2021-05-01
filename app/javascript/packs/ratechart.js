@@ -5,16 +5,17 @@ var myRadarChart = new Chart(ctx, {
             labels: ["甘味", "塩味", "酸味", "旨味", "香り"],
             datasets: [{
                 label: 'おつまみchart',
-                data: [5, 3, 4, 2, 1],
                 backgroundColor: 'RGBA(95,194,227, 0.5)',
                 borderColor: 'RGBA(95,194,227, 1)',
                 borderWidth: 1,
-                pointBackgroundColor: 'RGB(95,194,227)'
+                pointBackgroundColor: 'RGB(95,194,227)',
+                data: [
+                    
+                ]
             }]
         },
         options: {
             legend: {
-                //凡例削除
                 display: false
             },
             scale:{
@@ -27,5 +28,5 @@ var myRadarChart = new Chart(ctx, {
                     }
                 }
             }
-        }
+        },
     });
