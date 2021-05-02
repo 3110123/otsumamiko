@@ -23,4 +23,5 @@ import 'bootstrap';
 import 'src/css/application.scss';
 import '@fortawesome/fontawesome-free/js/all';
 
-
+import toastr from 'toastr'
+window.toastr = toastr

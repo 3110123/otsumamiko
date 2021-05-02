@@ -1,4 +1,4 @@
-const sweet = gon.sweetness.id
+console.log(gon.sweetness)
 var ctx = document.getElementById("myRaderChart");
 var myRadarChart = new Chart(ctx, {
         type: 'radar', 

@@ -291,7 +291,7 @@ DEPENDENCIES
   brakeman
   byebug
   faker
-  gon
+  gon (= 6.4.0)
   jbuilder (~> 2.7)
   listen (~> 3.2)
   mysql2 (>= 0.4.4)
