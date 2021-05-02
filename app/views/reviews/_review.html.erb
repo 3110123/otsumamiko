@@ -15,9 +15,9 @@
         <li class='list-inline-item'><%= review.created_at %></li>
         <% if current_user == review.user %>
           <li class='list-inline-item'>
-            <%= button_to edit_review_path(review), class: "btn btn-primary rounded-circle p-0 js-edit-comment-button", data: { review_id: review.id }, style: "width:2rem;height:2rem;", remote: true do %>
-              <i class="fas fa-pen-nib ms-1"></i>
-            <% end %>
+          <%= button_to edit_review_path(review), class: "btn btn-primary rounded-circle p-0 js-edit-comment-button", data: { review_id: review.id }, style: "width:2rem;height:2rem;", remote: true do %>
+            <i class="fas fa-pen-nib ms-1"></i>
+          <% end %>
           </li>
           <li class='list-inline-item', id='button-delete-<%= review.id %>'>
             <%= button_to review_path(review), class: "btn btn-primary rounded-circle p-0", style: "width:2rem;height:2rem;", method: :delete, data: { confirm: '本当に削除してもよろしいですか？'}, remote: true do %>
@@ -30,4 +30,4 @@
   </td>
 </tr>
 
-<%= javascript_pack_tag 'edit' %>
+<%= javascript_pack_tag 'pages/edit' %>

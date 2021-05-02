@@ -4,9 +4,14 @@ class SnacksController < ApplicationController
 
   def show
     @snack = Snack.find(params[:id])
-    @reviews = @snack.reviews.includes(:user).order(created_at: :desc)
     @review = Review.new
-
+    @reviews = @snack.reviews.includes(:user).order(created_at: :desc)
+    gon.sweetness = @snack
+    gon.salty = @snack.reviews.average(:salty)
+    gon.acidity = @snack.reviews.average(:acidity)
+    gon.taste = @snack.reviews.average(:taste)
+    gon.scent = @snack.reviews.average(:scent)
+    
     respond_to do |format|
       format.html
       format.js

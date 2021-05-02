@@ -1,3 +1,4 @@
+const sweet = gon.sweetness.id
 var ctx = document.getElementById("myRaderChart");
 var myRadarChart = new Chart(ctx, {
         type: 'radar', 
@@ -5,13 +6,11 @@ var myRadarChart = new Chart(ctx, {
             labels: ["甘味", "塩味", "酸味", "旨味", "香り"],
             datasets: [{
                 label: 'おつまみchart',
+                data: [1, 3, 4, 1, 3],
                 backgroundColor: 'RGBA(95,194,227, 0.5)',
                 borderColor: 'RGBA(95,194,227, 1)',
                 borderWidth: 1,
-                pointBackgroundColor: 'RGB(95,194,227)',
-                data: [
-                    
-                ]
+                pointBackgroundColor: 'RGB(95,194,227)'
             }]
         },
         options: {
