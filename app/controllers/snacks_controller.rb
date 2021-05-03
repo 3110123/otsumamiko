@@ -6,6 +6,7 @@ class SnacksController < ApplicationController
     @snack = Snack.find(params[:id])
     @review = Review.new
     @reviews = @snack.reviews.includes(:user).order(created_at: :desc)
+    @snack_rate = @snack.reviews.average(:rate).round(2)
     gon.sweetness = @snack
     gon.salty = @snack.reviews.average(:salty)
     gon.acidity = @snack.reviews.average(:acidity)
@@ -21,7 +22,6 @@ class SnacksController < ApplicationController
   def index
     @q = Snack.ransack(params[:q])
     @snack = @q.result(distinct: true)
-    @reviews = Review.all
   end
 
   def beer; end

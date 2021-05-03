@@ -5,6 +5,8 @@
         <div class='text-center'>
           <%= @snack.alcohol %><br>x<br>
           <%= @snack.name %><br>
+          <%= @snack_rate %>
+          <%= render 'snack_rate', snack_rate: @snack_rate %>
 
           <canvas id="myRaderChart"></canvas>
           <%= javascript_pack_tag 'pages/ratechart' %>
@@ -14,6 +16,8 @@
           <div class="collapse" id="collapseExample">
             <p>評価</p>
             <%= form_with model: @review, url: [@snack, @review] do |f| %>
+
+
             <div class="field">
               <p style="display:inline;">総合</p>
               <p style="display:inline;">悪い</p>
