@@ -3,7 +3,7 @@
     <div class="card-body">
       <%= review.user.name %><br>
       <div id="js-comment-<%= review.id %>">
-        <%= review.comment %>
+        <%= simple_format(review.comment) %>
       </div>
       <br>
         <div id="js-textarea-comment-box-<%= review.id %>" style="display: none;">
@@ -12,7 +12,7 @@
           <button class="btn btn-success js-button-review-update" data-review-id="<%= review.id %>">更新</button>
         </div>
       <ul class='crud-menu-btn list-inline float-right'>
-        <li class='list-inline-item'><%= review.created_at %></li>
+        <li class='list-inline-item'><%= review.created_at.strftime('%Y/%m/%d') %></li>
         <% if current_user == review.user %>
           <li class='list-inline-item'>
           <%= button_to edit_review_path(review), class: "btn btn-primary rounded-circle p-0 js-edit-comment-button", data: { review_id: review.id }, style: "width:2rem;height:2rem;", remote: true do %>

@@ -1,5 +1,7 @@
-console.log(gon.sweetness)
-var ctx = document.getElementById("myRaderChart");
+var sweet = gon.sweetness;
+console.log(sweet);
+console.log("bbbbbbbbbb");
+var ctx = document.getElementById("myRaderChart").getContext('2d');
 var myRadarChart = new Chart(ctx, {
         type: 'radar', 
         data: { 
