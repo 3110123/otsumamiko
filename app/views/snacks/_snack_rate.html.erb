@@ -1,58 +1,58 @@
-<% if 4.8 <= snack_rate && snack_rate <= 5 %> 
+<% if 4.8 <= snack_rate.to_f && snack_rate.to_f <= 5 %> 
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-on.png") %>
-<% elsif 4.3 <= snack_rate && snack_rate < 4.8 %> 
+<% elsif 4.3 <= snack_rate.to_f && snack_rate.to_f < 4.8 %> 
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-half.png") %>
-<% elsif 3.8 <= snack_rate && snack_rate < 4.3 %> 
+<% elsif 3.8 <= snack_rate.to_f && snack_rate.to_f < 4.3 %> 
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-off.png") %>
-<% elsif 3.3 <= snack_rate && snack_rate < 3.8 %> 
+<% elsif 3.3 <= snack_rate.to_f && snack_rate.to_f < 3.8 %> 
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-half.png") %>
   <%= image_pack_tag("media/images/star-off.png") %>
-<% elsif 2.8 <= snack_rate && snack_rate < 3.3 %> 
+<% elsif 2.8 <= snack_rate.to_f && snack_rate.to_f < 3.3 %> 
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-off.png") %>
   <%= image_pack_tag("media/images/star-off.png") %>
-<% elsif 2.3 <= snack_rate && snack_rate < 2.8 %> 
+<% elsif 2.3 <= snack_rate.to_f && snack_rate.to_f < 2.8 %> 
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-half.png") %>
   <%= image_pack_tag("media/images/star-off.png") %>
   <%= image_pack_tag("media/images/star-off.png") %>
-<% elsif 1.8 <= snack_rate && snack_rate < 2.3 %> 
+<% elsif 1.8 <= snack_rate.to_f && snack_rate.to_f < 2.3 %> 
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-off.png") %>
   <%= image_pack_tag("media/images/star-off.png") %>
   <%= image_pack_tag("media/images/star-off.png") %>
-<% elsif 1.3 <= snack_rate && snack_rate < 1.8 %> 
+<% elsif 1.3 <= snack_rate.to_f && snack_rate.to_f < 1.8 %> 
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-half.png") %>
   <%= image_pack_tag("media/images/star-off.png") %>
   <%= image_pack_tag("media/images/star-off.png") %>
   <%= image_pack_tag("media/images/star-off.png") %>
-<% elsif snack_rate < 1.3 %> 
+<% elsif 0 < snack_rate.to_f && snack_rate.to_f < 1.3 %> 
   <%= image_pack_tag("media/images/star-on.png") %>
   <%= image_pack_tag("media/images/star-off.png") %>
   <%= image_pack_tag("media/images/star-off.png") %>
   <%= image_pack_tag("media/images/star-off.png") %>
   <%= image_pack_tag("media/images/star-off.png") %>
-<% elsif snack_rate.blank? %> 
+<% elsif snack_rate == 0 %> 
   <%= image_pack_tag("media/images/star-off.png") %>
   <%= image_pack_tag("media/images/star-off.png") %>
   <%= image_pack_tag("media/images/star-off.png") %>

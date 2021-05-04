@@ -6,7 +6,12 @@ class SnacksController < ApplicationController
     @snack = Snack.find(params[:id])
     @review = Review.new
     @reviews = @snack.reviews.includes(:user).order(created_at: :desc)
-    @snack_rate = @snack.reviews.average(:rate).round(2)
+    if @snack.reviews.blank?
+      @snack_rate = 0.0
+    else
+      @snack_rate = @snack.reviews.average(:rate).round(2)
+    end
+
     gon.sweetness = @snack
     gon.salty = @snack.reviews.average(:salty)
     gon.acidity = @snack.reviews.average(:acidity)

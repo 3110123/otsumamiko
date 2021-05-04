@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2021_04_21_052918) do
     t.bigint "user_id", null: false
     t.bigint "snack_id", null: false
     t.text "comment", null: false
-    t.integer "rate", null: false
+    t.integer "rate"
     t.integer "sweetness"
     t.integer "salty"
     t.integer "acidity"

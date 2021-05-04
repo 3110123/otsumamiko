@@ -4,7 +4,7 @@ class CreateReviews < ActiveRecord::Migration[6.0]
       t.references :user, null: false, foreign_key: true
       t.references :snack, null: false, foreign_key: true
       t.text :comment, null: false
-      t.integer :rate, null: false
+      t.integer :rate
       t.integer :sweetness
       t.integer :salty
       t.integer :acidity
