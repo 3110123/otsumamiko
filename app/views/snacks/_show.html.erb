@@ -2,13 +2,15 @@
   <div class="modal-content">
     <div class="modal-body">
       <%= image_tag '', size: '300x200', class: 'card-img-top' %>
+      <div class="container">
         <div class='text-center'>
           <%= @snack.alcohol %><br>x<br>
           <%= @snack.name %><br>
-          <%= @snack_rate %>
-          <%= render 'snack_rate', snack_rate: @snack_rate %>
-
-          <canvas id="myRaderChart"></canvas>
+            <%= @snack_rate %>
+            <%= render 'snacks/snack_rate', snack_rate: @snack_rate %>
+          <div id="chart" data-snack-id="<%= @snack.id %>" data-sweetness-value="<%= @snack.reviews.average(:sweetness) %>" data-salty-value="<%= @snack.reviews.average(:salty) %>" data-acidity-value="<%= @snack.reviews.average(:acidity) %>" data-taste-value="<%= @snack.reviews.average(:taste) %>" data-scent-value="<%= @snack.reviews.average(:scent) %>">
+            <canvas id="myRaderChart-<%= @snack.id %>"></canvas>
+          </div>
           <%= javascript_pack_tag 'pages/ratechart' %>
 
           <p>コメント</p>
@@ -85,6 +87,7 @@
             </div>
             <div class="actions text-center">
               <%= f.submit '投稿する', class: "btn btn-danger my-5" %>
+              <div id="data" type="hidden" data-rate-value="<%= @snack.reviews.sum(:rate) %>"></div>
             </div>
             <% end %>
           </div>
@@ -97,6 +100,7 @@
             </div>
           </div>
         </div>
+      </div>
     </div>
   </div>
 </div>

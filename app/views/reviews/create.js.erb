@@ -5,3 +5,13 @@ $("#error_messages").remove();
   $("#js-table-comment").prepend("<%= j(render 'reviews/review', review: @review) %>");
   $("#js-new-comment-body").val('');
 <% end %>
+
+//review rateのラジオボタンの値を取得
+//sonstを使って定義するとリロードしないでreview投稿するとエラーになるので、varで定義
+
+//var rate1 = $('#data').data('rate-value');
+//var rate2 = $('input:radio[name="review[rate]"]:checked').val();
+//total = rate1 + rate2;
+//console.log(total);
+//console.log("<%= @review %>");
+

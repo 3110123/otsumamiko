@@ -7,12 +7,12 @@
           <div class='text-center'>
             <%= snack.alcohol %><br>x<br>
             <%= snack.name %><br>
-            <% if snack.reviews.blank? %>
-              <%= snack_rate = 0.0 %>
-            <% else %>
-              <%= snack_rate = snack.reviews.average(:rate).round(2) %>
-            <% end %>
-            <%= render 'snack_rate', snack_rate: snack_rate %>
+              <% if snack.reviews.blank? %>
+                <%= snack_rate = 0.0 %>
+              <% else %>
+                <%= snack_rate = snack.reviews.average(:rate).round(2) %>
+              <% end %>
+              <%= render 'snacks/snack_rate', snack_rate: snack_rate %>
           </div>
         </div>
     <% end %>
