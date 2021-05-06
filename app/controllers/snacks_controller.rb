@@ -1,4 +1,5 @@
 class SnacksController < ApplicationController
+  include Pagy::Backend
   def new; end
 
   def show
@@ -14,7 +15,7 @@ class SnacksController < ApplicationController
 
   def index
     @q = Snack.ransack(params[:q])
-    @snack = @q.result(distinct: true)
+    @pagy, @snack = pagy(@q.result(distinct: true))
   end
 
   def beer; end
