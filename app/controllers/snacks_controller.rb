@@ -15,7 +15,7 @@ class SnacksController < ApplicationController
 
   def index
     @q = Snack.ransack(params[:q])
-    @pagy, @snack = pagy(@q.result(distinct: true))
+    @pagy, @snack = pagy_countless(@q.result(distinct: true), link_extra: 'data-remote="true"')
   end
 
   def beer; end

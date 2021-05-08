@@ -8,15 +8,12 @@
               <h1 class="font-weight-bold m-5">おつまみ一覧</h1>
             </div>
               <%= render 'snacks/search_form_for', url: snacks_path %>
-              <%== pagy_nav(@pagy) %>
-            <% if @pagy.vars[:count] > 0 %>
-              <div class="row">
-                <%= render @snack %>
+                <div id="records_table" class="row">
+                  <%= render @snack %>
+                </div>
+              <div id="div_next_link">
+                <%= render 'snacks/next_link' %>
               </div>
-            <% else %>
-              <p>検索結果は 0 件です。</p>
-            <% end %>
-            <%== pagy_nav(@pagy) %>
           </div>
         </div>
       </div>
@@ -24,3 +21,5 @@
   </div>
 </div>
 
+
+<%= javascript_pack_tag 'pages/page_scroll' %>
