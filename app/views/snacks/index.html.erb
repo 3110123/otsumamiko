@@ -8,11 +8,13 @@
               <h1 class="font-weight-bold m-5">おつまみ一覧</h1>
             </div>
               <%= render 'snacks/search_form_for', url: snacks_path %>
+              <div id="pageScroll" data-page="">
                 <div id="records_table" class="row">
                   <%= render @snack %>
                 </div>
               <div id="div_next_link">
                 <%= render 'snacks/next_link' %>
+              </div>
               </div>
           </div>
         </div>
