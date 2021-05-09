@@ -13,6 +13,15 @@ Snack.seed(
   { id: 12, name: 'ビールハンバーガー', alcohol: :beer }
 )
 
+Tag.seed(
+  { id: 1, name: 'おやつ系' },
+  { id: 2, name: '食事系' },
+  { id: 3, name: 'しょっぱい系' },
+  { id: 4, name: 'あまい系' },
+  { id: 5, name: 'がっつり系' },
+  { id: 6, name: 'ヘルシー系' }
+)
+
 TagRelationship.seed(
   { id: 1, snack_id: 1, tag_id: 2 },
   { id: 2, snack_id: 1, tag_id: 3 },

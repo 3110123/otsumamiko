@@ -1,12 +1,18 @@
 <div class="col-sm-6 p-3">
   <div class="card">
     <div data-toggle="modal" data-target="#exampleModal">
-    <%= link_to snack_path(snack.id), remote: true do %>
+    <%= link_to snack_path(snack), remote: true do %>
       <%= image_tag '', size: '300x200', class: 'card-img-top' %>
         <div class="card-body">
           <div class='text-center'>
             <%= snack.alcohol %><br>x<br>
-            <%= snack.name %>
+            <%= snack.name %><br>
+              <% if snack.reviews.blank? %>
+                <%= snack_rate = 0.0 %>
+              <% else %>
+                <%= snack_rate = snack.reviews.average(:rate).round(2) %>
+              <% end %>
+              <%= render 'snacks/snack_rate', snack_rate: snack_rate %>
           </div>
         </div>
     <% end %>

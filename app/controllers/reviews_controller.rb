@@ -1,22 +1,10 @@
 class ReviewsController < ApplicationController
   def new
-    @review = Review.new
-  end
-
-  def index
-    @review = Review.all
-  end
-
-  def show
   end
 
   def create
     @review = current_user.reviews.build(review_params)
     @review.save
-  end
-
-  def edit
-    @review = Review.find(params[:id])
   end
 
   def update

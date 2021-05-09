@@ -1,0 +1,4 @@
+$('#records_table').append("<%= j(render @snack, snack: @snack)%>");
+$('#div_next_link').html("<%= j(render 'next_link') %>");
+$("#pageScroll").attr('data-page', "<%=@nextPage%>");
+

@@ -9,8 +9,7 @@ require("@rails/activestorage").start()
 require("channels")
 require("jquery")
 require("toastr")
-require('page/choice')
-require('page/edit')
+require("chart.js")
 
 
 
@@ -18,10 +17,12 @@ require('page/edit')
 // them with the image_pack_tag helper in views (e.g <%= image_pack_tag 'rails.png' %>)
 // or the `imagePath` JavaScript helper below.
 //
-// const images = require.context('../images', true)
-// const imagePath = (name) => images(name, true)
-import 'bootstrap'
-import '../src/application.scss'
-import '@fortawesome/fontawesome-free/js/all'
+const images = require.context('../images', true)
+const imagePath = (name) => images(name, true)
 
+import 'bootstrap';
+import 'src/css/application.scss';
+import '@fortawesome/fontawesome-free/js/all';
 
+import toastr from 'toastr'
+window.toastr = toastr

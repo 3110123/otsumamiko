@@ -4,14 +4,14 @@
       <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
           <div class='text-center'>
             <h1 class="font-weight-bold m-5">今日飲みたいお酒は？</h1>
-          <%= link_to beer_snacks_path do %>
-            <%= image_tag '', size: '150x150', class: 'rounded-circle m-5' %>
+          <%= link_to beer_snacks_path, class: 'rounded-circle m-5' do %>
+            <i class="fas fa-beer fa-9x"></i>
           <% end %>
-          <%= link_to wine_snacks_path do %>
-            <%= image_tag '', size: '150x150', class: 'rounded-circle m-5' %>
+          <%= link_to wine_snacks_path, class: 'rounded-circle m-5' do %>
+            <i class="fas fa-wine-glass-alt fa-9x"></i>
           <% end %>
-          <%= link_to sake_snacks_path do %>
-            <%= image_tag '', size: '150x150', class: 'rounded-circle m-5' %>
+          <%= link_to sake_snacks_path, class: 'rounded-circle m-5' do %>
+            <i class="fas fa-glass-whiskey fa-9x"></i>
           <% end %>
         </div>
       </div>

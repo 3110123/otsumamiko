@@ -1,22 +1,26 @@
 class SnacksController < ApplicationController
-  def new
-  end
+  include Pagy::Backend
+  def new; end
 
   def show
     @snack = Snack.find(params[:id])
-    @reviews = @snack.reviews.includes(:user).order(created_at: :desc)
     @review = Review.new
-
-    respond_to do |format|
-      format.html
-      format.js
+    @reviews = @snack.reviews.includes(:user).order(created_at: :desc)
+    if @snack.reviews.blank?
+      @snack_rate = 0.0
+    else
+      @snack_rate = @snack.reviews.average(:rate).round(2)
     end
   end
 
   def index
     @q = Snack.ransack(params[:q])
-    @snack = @q.result(distinct: true)
-    @reviews = Review.all
+    @pagy, @snack = pagy_countless(@q.result(distinct: true), link_extra: 'data-remote="true"')
+    if @pagy.page == @pagy.pages
+      @nextPage = "last"
+    else
+      @nextPage = @pagy.page
+    end
   end
 
   def beer; end
