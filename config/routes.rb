@@ -6,13 +6,14 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
   get 'choice', to: 'alcohol_choices#index'
   get 'result', to: 'snacks#result'
-  resources :users, only: %i[new create]
+  resources :users, only: %i[new create show]
   resources :snacks do
     resources :reviews, shallow: true
     collection do
       get 'wine', to: 'snacks#wine'
       get 'beer', to: 'snacks#beer'
       get 'sake', to: 'snacks#sake'
+      get :bookmarks
     end
   end
 end

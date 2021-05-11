@@ -15,6 +15,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
+    @q = current_user.reviews_snacks.ransack(params[:q])
+    @user_reviews = @q.result(distinct: true)
+    @q = current_user.bookmarks_snacks.ransack(params[:q])
+    @user_bookmarks = @q.result(distinct: true)
   end
 
   private
