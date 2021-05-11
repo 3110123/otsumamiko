@@ -10,7 +10,7 @@
               <%= link_to 'トップページ', root_path, class: "navbar-item is-active" %>
             </li>
             <li class="nav-item">
-              <%= link_to 'マイページ', '#', class: "navbar-item is-active" %>
+              <%= link_to 'マイページ', user_path(current_user.id), class: "navbar-item is-active" %>
             </li>
             <li class="nav-item">
               <%= link_to 'おつまみ一覧', snacks_path, class: "navbar-item is-active" %>

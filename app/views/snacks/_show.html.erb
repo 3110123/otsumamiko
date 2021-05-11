@@ -97,6 +97,11 @@
               <table id="js-table-comment" class="table">
                 <%= render @reviews, review: @review %>
               </table>
+              <div class="share-button fixed-bottom">
+                <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", class: "btn btn-primary rounded-pill" do %>
+                  <i class="fab fa-twitter"></i> 今日のおつまみをシェア
+                <% end %>
+              </div>
             </div>
           </div>
         </div>
