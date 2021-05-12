@@ -8,6 +8,9 @@
           <%= @snack.name %><br>
             <%= @snack_rate %>
             <%= render 'snacks/snack_rate', snack_rate: @snack_rate %>
+
+            <p>気になっている人<%= @snack.bookmarks.count %>人</p>
+
           <div id="chart" data-snack-id="<%= @snack.id %>" data-sweetness-value="<%= @snack.reviews.average(:sweetness) %>" data-salty-value="<%= @snack.reviews.average(:salty) %>" data-acidity-value="<%= @snack.reviews.average(:acidity) %>" data-taste-value="<%= @snack.reviews.average(:taste) %>" data-scent-value="<%= @snack.reviews.average(:scent) %>">
             <canvas id="myRaderChart-<%= @snack.id %>"></canvas>
           </div>
