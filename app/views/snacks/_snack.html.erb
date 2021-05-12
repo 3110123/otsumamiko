@@ -12,11 +12,11 @@
               <% else %>
                 <%= snack_rate = snack.reviews.average(:rate).round(2) %>
               <% end %>
-              <%= render 'snacks/snack_rate', snack_rate: snack_rate %>
+                <%= render 'snacks/snack_rate', snack_rate: snack_rate %>
               <br>
-              <%= link_to bookmarks_snacks_path do %>
-                <i class="far fa-thumbs-up"></i>
-              <% end %>
+              <div class="bookmark-<%= snack.id %>">
+                <%= render 'bookmarks/bookmark_area', snack: snack %>
+              </div>
           </div>
         </div>
     <% end %>

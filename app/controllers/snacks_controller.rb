@@ -40,9 +40,6 @@ class SnacksController < ApplicationController
     @review = Review.new
   end
 
-  def bookmarks
-  end
-
   private
   
   def snack_params
