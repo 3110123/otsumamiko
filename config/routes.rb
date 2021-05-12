@@ -14,7 +14,6 @@ Rails.application.routes.draw do
       get 'wine', to: 'snacks#wine'
       get 'beer', to: 'snacks#beer'
       get 'sake', to: 'snacks#sake'
-      get :bookmarks
     end
   end
 end

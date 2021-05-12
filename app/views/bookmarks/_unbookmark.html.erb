@@ -1,8 +1,4 @@
 <%= link_to snack_bookmarks_path(snack_id: snack.id), id: "bookmark-#{snack.id}", method: :delete, remote: true do %>
   <i class="fas fa-thumbs-up"></i>
-  <% if snack.bookmarks.present? %>
-    <%= snack.bookmarks.count %>
-  <% else %>
-    <%= "0" %>
-  <% end %>
+  <%= snack.bookmarks.count %>
 <% end %>
