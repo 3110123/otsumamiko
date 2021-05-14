@@ -12,27 +12,23 @@ card.ondragstart = function(){
   }
 
   var right = window.offsetX2 - window.offsetX1;
+  // 右ドラッグbookmark
   if ( right > 50){
     $.ajax({
       type: 'POST',
       url: '/snacks/' + snackId + '/bookmarks',
-      dataType: 'json',
       headers: {
         'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
       }
-    }).done(function (results){
-      console.log("create成功");
     })
   }else if( right < -150){
+    // 左ドラッグbookmark解除
     $.ajax({
       type: 'DELETE',
       url: '/snacks/' + snackId + '/bookmarks',
-      dataType: 'json',
       headers: {
         'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
       }
-    }).done(function (results){
-      console.log("destroy成功");
     })
   }else{
     console.log("できてなーいよ");
