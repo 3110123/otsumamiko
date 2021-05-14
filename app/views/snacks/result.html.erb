@@ -111,16 +111,16 @@
               </table>
             </div>
           </div>
-            <div class="share-button fixed-bottom">
-              <div class="d-flex justify-content-center">
-                <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", class: "btn btn-primary rounded-pill" do %>
-                  <i class="fab fa-twitter"></i> 今日のおつまみを宣言
-                <% end %>
-                <%= link_to snacks_path, class: "btn btn-danger rounded-pill" do %>
-                  他のおつまみを見る
-                <% end %>
-              </div>
+          <div class="share-button fixed-bottom">
+            <div class="d-flex justify-content-center">
+              <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", class: "btn btn-primary rounded-pill" do %>
+                <i class="fab fa-twitter"></i> 今日のおつまみを宣言
+              <% end %>
+              <%= link_to snacks_path, class: "btn btn-danger rounded-pill" do %>
+                他のおつまみを見る
+              <% end %>
             </div>
+          </div>
         </div>
        </div>
       </div>
