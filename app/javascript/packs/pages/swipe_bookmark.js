@@ -59,21 +59,21 @@ card.ontouchstart = function(e) {
 
 card.ontouchend = function(e) {
   offsetX2 = e.offsetX
-  switchToAction(offsetX2);
+  touchswitchToAction(offsetX2);
 };
 
-function switchToAction(offsetX2) {
+function touchswitchToAction(offsetX2) {
   var snackId = card.dataset.snack
   if ( offsetX2 > window.offsetX1 + 20 ){
-    switchToBookmark(snackId)
+    touchswitchToBookmark(snackId)
   }else if ( offsetX2 < window.offsetX1 - 20 ){
-    switchToUnbookmark(snackId)
+    touchswitchToUnbookmark(snackId)
   }else{
     return
   }
 }
 
-function switchToBookmark(snackId) {
+function touchswitchToBookmark(snackId) {
   // 右ドラッグbookmark
     $.ajax({
       type: 'POST',
@@ -86,7 +86,7 @@ function switchToBookmark(snackId) {
     });
   }
 
-function switchToUnbookmark(snackId) {
+function touchswitchToUnbookmark(snackId) {
     // 左ドラッグbookmark解除
     $.ajax({
       type: 'DELETE',
