@@ -1,89 +1,100 @@
-var card = document.getElementById('exampleModal');
+var card = document.getElementById('showModal');
 
-document.getElementById('exampleModal').onmousedown = function(e){
-  window.offsetX1 = e.offsetX;
+card.onmousedown = function(e) {
+  window.offsetX1 = e.offsetX
 }
 
-document.getElementById('exampleModal').onmouseup = function(e){
-  window.offsetX2 = e.offsetX;
+card.ondragend = function(e) {
+  offsetX2 = e.offsetX
+  switchToAction(offsetX2);
+};
+
+function switchToAction(offsetX2) {
+  var snackId = card.dataset.snack
+  if ( offsetX2 > window.offsetX1 + 20 ){
+    switchToBookmark(snackId)
+  }else if ( offsetX2 < window.offsetX1 - 20 ){
+    switchToUnbookmark(snackId)
+  }else{
+    return
+  }
 }
 
-// マウスタッチ
-card.ondragstart = function(){
-  console.log("マウスだよ");
-  var modal = document.getElementById('showModal');
-  var snackId = modal.dataset.snack
 
-  var right = window.offsetX2 - window.offsetX1;
-  var url = '/snacks/' + snackId + '/bookmarks';
+// マウス
+function switchToBookmark(snackId) {
   // 右ドラッグbookmark
-  if ( right > 50){
     $.ajax({
       type: 'POST',
-      url: url,
+      url: '/snacks/' + snackId + '/bookmarks',
       headers: {
         'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
       }
     }).done(function() {
       toastr.success('気になっているおつまみに登録しました！');
     });
-  }else if( right < -130){
+  }
+
+function switchToUnbookmark(snackId) {
     // 左ドラッグbookmark解除
     $.ajax({
       type: 'DELETE',
-      url: url,
+      url: '/snacks/' + snackId + '/bookmarks',
       headers: {
         'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
       }
     }).done(function() {
       toastr.error('気になっているおつまみを解除しました。');
     });
-  }else{
-    console.log("できてなーいよっがんばれ！");
-    return
-  }
 }
+
+
+
 
 
 // 指タッチ
-card.touchmove = function(){
-  console.log("ゆびだよ");
-  var modal = document.getElementById('showModal');
-  var snackId = modal.dataset.snack
+card.ontouchstart = function(e) {
+  window.offsetX1 = e.offsetX
+}
 
-  touchstart = function(e){
-    window.offsetX1 = e.offsetX;
-  }
-  touchend = function(e){
-    window.offsetX2 = e.offsetX;
-  }
+card.ontouchend = function(e) {
+  offsetX2 = e.offsetX
+  switchToAction(offsetX2);
+};
 
-  var right = window.offsetX2 - window.offsetX1;
-  var url = '/snacks/' + snackId + '/bookmarks';
+function switchToAction(offsetX2) {
+  var snackId = card.dataset.snack
+  if ( offsetX2 > window.offsetX1 + 20 ){
+    switchToBookmark(snackId)
+  }else if ( offsetX2 < window.offsetX1 - 20 ){
+    switchToUnbookmark(snackId)
+  }else{
+    return
+  }
+}
+
+function switchToBookmark(snackId) {
   // 右ドラッグbookmark
-  if ( right > 50){
     $.ajax({
       type: 'POST',
-      url: url,
+      url: '/snacks/' + snackId + '/bookmarks',
       headers: {
         'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
       }
     }).done(function() {
       toastr.success('気になっているおつまみに登録しました！');
     });
-  }else if( right < -150){
+  }
+
+function switchToUnbookmark(snackId) {
     // 左ドラッグbookmark解除
     $.ajax({
       type: 'DELETE',
-      url: url,
+      url: '/snacks/' + snackId + '/bookmarks',
       headers: {
         'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
       }
     }).done(function() {
       toastr.error('気になっているおつまみを解除しました。');
     });
-  }else{
-    console.log("できてなーいよっがんばれ！");
-    return
-  }
 }
