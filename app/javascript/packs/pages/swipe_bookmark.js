@@ -1,4 +1,6 @@
 var card = document.getElementById('showModal');
+// bookmarkの移動距離を定義
+var bookmarkRange = 20
 
 card.onmousedown = function(e) {
   window.offsetX1 = e.offsetX
@@ -11,15 +13,14 @@ card.ondragend = function(e) {
 
 function switchToAction(offsetX2) {
   var snackId = card.dataset.snack
-  if ( offsetX2 > window.offsetX1 + 20 ){
+  if ( offsetX2 > window.offsetX1 + bookmarkRange ){
     switchToBookmark(snackId)
-  }else if ( offsetX2 < window.offsetX1 - 20 ){
+  }else if ( offsetX2 < window.offsetX1 - bookmarkRange ){
     switchToUnbookmark(snackId)
   }else{
     return
   }
 }
-
 
 // マウス
 function switchToBookmark(snackId) {
@@ -47,6 +48,13 @@ function switchToUnbookmark(snackId) {
       toastr.error('気になっているおつまみを解除しました。');
     });
 }
+
+
+
+
+
+
+
 
 
 
