@@ -1,5 +1,6 @@
+var clickEventType = (( window.ontouchstart!==null ) ? 'click':'touchend');
+console.log(clickEventType);
 var card = document.getElementById('showModal');
-// bookmarkの移動距離を定義
 var bookmarkRange = 20
 
 card.onmousedown = function(e) {
@@ -32,6 +33,7 @@ function switchToBookmark(snackId) {
         'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
       }
     }).done(function() {
+      document.elementFromPoint(100, 100).click();
       toastr.success('気になっているおつまみに登録しました！');
     });
   }
@@ -45,11 +47,10 @@ function switchToUnbookmark(snackId) {
         'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
       }
     }).done(function() {
+      document.elementFromPoint(100, 100).click();
       toastr.error('気になっているおつまみを解除しました。');
     });
 }
-
-
 
 
 

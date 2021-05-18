@@ -5,106 +5,119 @@
       <%= image_tag '', size: '300x200', class: 'card-img-top' %>
       <div class="container">
         <div class='text-center'>
-          <%= @snack.alcohol %><br>x<br>
-          <%= @snack.name %><br>
+            <%= @snack.alcohol %><br>x<br>
+            <%= @snack.name %><br>
             <%= @snack_rate %>
             <%= render 'snacks/snack_rate', snack_rate: @snack_rate %>
 
             <p>気になっている人<%= @snack.bookmarks.count %>人</p>
 
-          <div id="chart" data-snack-id="<%= @snack.id %>" data-sweetness-value="<%= @snack.reviews.average(:sweetness) %>" data-salty-value="<%= @snack.reviews.average(:salty) %>" data-acidity-value="<%= @snack.reviews.average(:acidity) %>" data-taste-value="<%= @snack.reviews.average(:taste) %>" data-scent-value="<%= @snack.reviews.average(:scent) %>">
+            <div class="principle five">
+              <div class="shape share-button">
+              <p>気になるおつまみに登録!</p>
+                <i class="far fa-hand-point-up fa-5x"></i>
+              </div>
+            </div>
+
+
+            <div id="chart" data-snack-id="<%= @snack.id %>" data-sweetness-value="<%= @snack.reviews.average(:sweetness) %>" data-salty-value="<%= @snack.reviews.average(:salty) %>" data-acidity-value="<%= @snack.reviews.average(:acidity) %>" data-taste-value="<%= @snack.reviews.average(:taste) %>" data-scent-value="<%= @snack.reviews.average(:scent) %>">
             <canvas id="myRaderChart-<%= @snack.id %>"></canvas>
-          </div>
-          <%= javascript_pack_tag 'pages/ratechart' %>
-
-          <p>コメント</p>
-          <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">コメント入力</a>
-          <div class="collapse" id="collapseExample">
-            <p>評価</p>
-            <%= form_with model: @review, url: [@snack, @review] do |f| %>
-
-
-            <div class="field">
-              <p style="display:inline;">総合</p>
-              <p style="display:inline;">悪い</p>
-              <%= f.radio_button :rate, "1" %>
-              <%= f.radio_button :rate, "2" %>
-              <%= f.radio_button :rate, "3", checked: true %>
-              <%= f.radio_button :rate, "4" %>
-              <%= f.radio_button :rate, "5" %>
-              <p style="display:inline;">良い</p>
             </div>
-            <div class="field">
-              <p style="display:inline;">甘味</p>
-              <p style="display:inline;">悪い</p>
+            <%= javascript_pack_tag 'pages/ratechart' %>
+
+            <p>コメント</p>
+            <a class="btn btn-primary" data-toggle="collapse" href="#collapseExample" role="button" aria-expanded="false" aria-controls="collapseExample">コメント入力</a>
+            <div class="collapse" id="collapseExample">
+              <p>評価</p>
+              <%= form_with model: @review, url: [@snack, @review] do |f| %>
+
+
+              <div class="field">
+                <p style="display:inline;">総合</p>
+                <p style="display:inline;">悪い</p>
+                <%= f.radio_button :rate, "1" %>
+                <%= f.radio_button :rate, "2" %>
+                <%= f.radio_button :rate, "3", checked: true %>
+                <%= f.radio_button :rate, "4" %>
+                <%= f.radio_button :rate, "5" %>
+                <p style="display:inline;">良い</p>
+              </div>
+              <div class="field">
+                <p style="display:inline;">甘味</p>
+                <p style="display:inline;">悪い</p>
+                <%= f.radio_button :sweetness, "1" %>     
               <%= f.radio_button :sweetness, "1" %>     
-              <%= f.radio_button :sweetness, "2" %>
-              <%= f.radio_button :sweetness, "3", checked: true %>
-              <%= f.radio_button :sweetness, "4" %>
-              <%= f.radio_button :sweetness, "5" %>
-              <p style="display:inline;">良い</p>
+                <%= f.radio_button :sweetness, "1" %>     
+              <%= f.radio_button :sweetness, "1" %>     
+                <%= f.radio_button :sweetness, "1" %>     
+                <%= f.radio_button :sweetness, "2" %>
+                <%= f.radio_button :sweetness, "3", checked: true %>
+                <%= f.radio_button :sweetness, "4" %>
+                <%= f.radio_button :sweetness, "5" %>
+                <p style="display:inline;">良い</p>
+              </div>
+              <div class="field">
+                <p style="display:inline;">塩味</p>
+                <p style="display:inline;">悪い</p>
+                <%= f.radio_button :salty, "1" %>
+                <%= f.radio_button :salty, "2" %>
+                <%= f.radio_button :salty, "3", checked: true %>
+                <%= f.radio_button :salty, "4" %>
+                <%= f.radio_button :salty, "5" %>
+                <p style="display:inline;">良い</p>
+              </div>
+              <div class="field">
+                <p style="display:inline;">酸味</p>
+                <p style="display:inline;">悪い</p>
+                <%= f.radio_button :acidity, "1" %>
+                <%= f.radio_button :acidity, "2" %>
+                <%= f.radio_button :acidity, "3", checked: true %>
+                <%= f.radio_button :acidity, "4" %>
+                <%= f.radio_button :acidity, "5" %>
+                <p style="display:inline;">良い</p>
+              </div>
+              <div class="field">
+                <p style="display:inline;">旨味</p>
+                <p style="display:inline;">悪い</p>
+                <%= f.radio_button :taste, "1" %>
+                <%= f.radio_button :taste, "2" %>
+                <%= f.radio_button :taste, "3", checked: true %>
+                <%= f.radio_button :taste, "4" %>
+                <%= f.radio_button :taste, "5" %>
+                <p style="display:inline;">良い</p>
+              </div>
+              <div class="field">
+                <p style="display:inline;">香り</p>
+                <p style="display:inline;">悪い</p>
+                <%= f.radio_button :scent, "1" %>
+                <%= f.radio_button :scent, "2" %>
+                <%= f.radio_button :scent, "3", checked: true %>
+                <%= f.radio_button :scent, "4" %>
+                <%= f.radio_button :scent, "5" %>
+                <p style="display:inline;">良い</p>
+              </div>
+              <div class="form-group">
+                <%= f.label :感想 %><br />
+                <%= f.text_area :comment, class: "form-control", type: "text", placeholder: "コメント", id: 'js-new-comment-body' %>
+                <div id="js-new-comment"></div>
+              </div>
+              <div class="actions text-center">
+                <%= f.submit '投稿する', class: "btn btn-danger my-5" %>
+                <div id="data" type="hidden" data-rate-value="<%= @snack.reviews.sum(:rate) %>"></div>
+              </div>
+              <% end %>
             </div>
-            <div class="field">
-              <p style="display:inline;">塩味</p>
-              <p style="display:inline;">悪い</p>
-              <%= f.radio_button :salty, "1" %>
-              <%= f.radio_button :salty, "2" %>
-              <%= f.radio_button :salty, "3", checked: true %>
-              <%= f.radio_button :salty, "4" %>
-              <%= f.radio_button :salty, "5" %>
-              <p style="display:inline;">良い</p>
-            </div>
-            <div class="field">
-              <p style="display:inline;">酸味</p>
-              <p style="display:inline;">悪い</p>
-              <%= f.radio_button :acidity, "1" %>
-              <%= f.radio_button :acidity, "2" %>
-              <%= f.radio_button :acidity, "3", checked: true %>
-              <%= f.radio_button :acidity, "4" %>
-              <%= f.radio_button :acidity, "5" %>
-              <p style="display:inline;">良い</p>
-            </div>
-            <div class="field">
-              <p style="display:inline;">旨味</p>
-              <p style="display:inline;">悪い</p>
-              <%= f.radio_button :taste, "1" %>
-              <%= f.radio_button :taste, "2" %>
-              <%= f.radio_button :taste, "3", checked: true %>
-              <%= f.radio_button :taste, "4" %>
-              <%= f.radio_button :taste, "5" %>
-              <p style="display:inline;">良い</p>
-            </div>
-            <div class="field">
-              <p style="display:inline;">香り</p>
-              <p style="display:inline;">悪い</p>
-              <%= f.radio_button :scent, "1" %>
-              <%= f.radio_button :scent, "2" %>
-              <%= f.radio_button :scent, "3", checked: true %>
-              <%= f.radio_button :scent, "4" %>
-              <%= f.radio_button :scent, "5" %>
-              <p style="display:inline;">良い</p>
-            </div>
-            <div class="form-group">
-              <%= f.label :感想 %><br />
-              <%= f.text_area :comment, class: "form-control", type: "text", placeholder: "コメント", id: 'js-new-comment-body' %>
-              <div id="js-new-comment"></div>
-            </div>
-            <div class="actions text-center">
-              <%= f.submit '投稿する', class: "btn btn-danger my-5" %>
-              <div id="data" type="hidden" data-rate-value="<%= @snack.reviews.sum(:rate) %>"></div>
-            </div>
-            <% end %>
-          </div>
-          <br>
-          <div class="row">
-            <div class="col-lg-8 offset-lg-2">  
-              <table id="js-table-comment" class="table">
-                <%= render @reviews, review: @review %>
-              </table>
-              <div class="share-button fixed-bottom">
-                <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", class: "btn btn-primary rounded-pill" do %>
-                  <i class="fab fa-twitter"></i> 今日のおつまみを宣言
-                <% end %>
+            <br>
+            <div class="row">
+              <div class="col-lg-8 offset-lg-2">
+                <table id="js-table-comment" class="table">
+                  <%= render @reviews, review: @review %>
+                </table>
+                <div class="share-button fixed-bottom">
+                  <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", class: "btn btn-primary rounded-pill" do %>
+                    <i class="fab fa-twitter"></i> 今日のおつまみを宣言
+                  <% end %>
+                </div>
               </div>
             </div>
           </div>
@@ -115,3 +128,4 @@
 </div>
 
 
+<%= javascript_pack_tag 'pages/swipe_bookmark' %>
