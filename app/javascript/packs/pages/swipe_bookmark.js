@@ -1,7 +1,14 @@
 var clickEventType = (( window.ontouchstart!==null ) ? 'click':'touchend');
 console.log(clickEventType);
 var card = document.getElementById('showModal');
+var demo = document.getElementById('swipeDemo');
 var bookmarkRange = 20
+
+
+window.setTimeout(function(){
+  demo.style.display = "none";
+}, 5000);
+
 
 card.onmousedown = function(e) {
   window.offsetX1 = e.offsetX
