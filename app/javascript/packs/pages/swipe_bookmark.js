@@ -10,81 +10,33 @@ window.setTimeout(function(){
 }, 5000);
 
 
-card.onmousedown = function(e) {
-  window.offsetX1 = e.offsetX
-}
-
-card.ondragend = function(e) {
-  offsetX2 = e.offsetX
-  switchToAction(offsetX2);
-};
-
-function switchToAction(offsetX2) {
-  var snackId = card.dataset.snack
-  if ( offsetX2 > window.offsetX1 + bookmarkRange ){
-    switchToBookmark(snackId)
-  }else if ( offsetX2 < window.offsetX1 - bookmarkRange ){
-    switchToUnbookmark(snackId)
-  }else{
-    return
-  }
-}
-
-// マウス
-function switchToBookmark(snackId) {
-  // 右ドラッグbookmark
-    $.ajax({
-      type: 'POST',
-      url: '/snacks/' + snackId + '/bookmarks',
-      headers: {
-        'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
-      }
-    }).done(function() {
-      document.elementFromPoint(100, 100).click();
-      toastr.success('気になっているおつまみに登録しました！');
-    });
-  }
-
-function switchToUnbookmark(snackId) {
-    // 左ドラッグbookmark解除
-    $.ajax({
-      type: 'DELETE',
-      url: '/snacks/' + snackId + '/bookmarks',
-      headers: {
-        'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
-      }
-    }).done(function() {
-      document.elementFromPoint(100, 100).click();
-      toastr.error('気になっているおつまみを解除しました。');
-    });
-}
-
-
-
-
-
-
-
-
-
-
-// 指タッチ
 card.ontouchstart = function(e) {
-  window.offsetX1 = e.offsetX
+	// タッチの情報を含むオブジェクト
+	var touchObject = e.changedTouches[0];
+	// 位置座標を取得する
+	window.touchX1 = touchObject.pageX ;
+  console.log("start:" + window.touchX1);
 }
 
 card.ontouchend = function(e) {
-  offsetX2 = e.offsetX
-  touchswitchToAction(offsetX2);
-};
+	// タッチの情報を含むオブジェクト
+	var touchObject = e.changedTouches[0] ;
+	// 位置座標を取得する
+	touchX2 = touchObject.pageX ;
+  console.log("end:" + touchX2);
+  touchswitchToAction(touchX2);
+}
 
-function touchswitchToAction(offsetX2) {
+function touchswitchToAction(touchX2) {
   var snackId = card.dataset.snack
-  if ( offsetX2 > window.offsetX1 + 20 ){
+  if ( touchX2 > window.touchX1 + 20 ){
+    console.log("bookmark");
     touchswitchToBookmark(snackId)
-  }else if ( offsetX2 < window.offsetX1 - 20 ){
+  }else if ( touchX2 < window.touchX1 - 20 ){
+    console.log("unbookmark");
     touchswitchToUnbookmark(snackId)
   }else{
+    console.log("残念");
     return
   }
 }
