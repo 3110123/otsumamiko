@@ -5,43 +5,40 @@
       <%= image_tag '', size: '300x200', class: 'card-img-top' %>
       <div class="container">
         <div class='text-center'>
-            <%= @snack.alcohol %><br>x<br>
-            <%= @snack.name %><br>
-            <%= @snack_rate %>
-            <%= render 'snacks/snack_rate', snack_rate: @snack_rate %>
+          <%= @snack.alcohol %><br>x<br>
+          <%= @snack.name %><br>
+          <%= @snack_rate %>
+          <%= render 'snacks/snack_rate', snack_rate: @snack_rate %>
 
-            <p>気になっている人<%= @snack.bookmarks.count %>人</p>
-            <div id="swipeDemo">
-              <div class="principle five">
-                <div class="shape">
-                  <p>右にスワイプして気になるおつまみに登録!</p>
-                  <i class="far fa-hand-point-up fa-5x"></i>
-                </div>
+          <p>気になっている人<%= @snack.bookmarks.count %>人</p>
+          <div id="swipeDemo">
+            <div class="principle five">
+              <div class="shape">
+                <p>右にスワイプして気になるおつまみに登録!</p>
+                <i class="far fa-hand-point-up fa-5x"></i>
               </div>
-              <div id="fullOverlay"></div>
             </div>
+            <div id="fullOverlay"></div>
+          </div>
 
-            <div id="chart" data-snack-id="<%= @snack.id %>" data-sweetness-value="<%= @snack.reviews.average(:sweetness) %>" data-salty-value="<%= @snack.reviews.average(:salty) %>" data-acidity-value="<%= @snack.reviews.average(:acidity) %>" data-taste-value="<%= @snack.reviews.average(:taste) %>" data-scent-value="<%= @snack.reviews.average(:scent) %>">
+          <div id="chart" data-snack-id="<%= @snack.id %>" data-sweetness-value="<%= @snack.reviews.average(:sweetness) %>" data-salty-value="<%= @snack.reviews.average(:salty) %>" data-acidity-value="<%= @snack.reviews.average(:acidity) %>" data-taste-value="<%= @snack.reviews.average(:taste) %>" data-scent-value="<%= @snack.reviews.average(:scent) %>">
             <canvas id="myRaderChart-<%= @snack.id %>"></canvas>
-            </div>
-            <%= javascript_pack_tag 'pages/ratechart' %>
+          </div>
+          <%= javascript_pack_tag 'pages/ratechart' %>
 
-            <p>コメント</p>
-            <% if logged_in? %>
-              <%= render 'snacks/review_area' %>
-            <% end %>
-            
-            <br>
-            <div class="row">
-              <div class="col-lg-8 offset-lg-2">
-                <table id="js-table-comment" class="table">
-                  <%= render @reviews, review: @review %>
-                </table>
-                <div class="share-button fixed-bottom">
-                  <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", class: "btn btn-primary rounded-pill" do %>
-                    <i class="fab fa-twitter"></i> 今日のおつまみを宣言
-                  <% end %>
-                </div>
+          <p>コメント</p>
+          <% if logged_in? %>
+            <%= render 'snacks/review_area' %>
+          <% end %>
+          <div class="row">
+            <div class="col-lg-8 offset-lg-2">
+              <table id="js-table-comment" class="table">
+                <%= render @reviews, review: @review %>
+              </table>
+              <div class="share-button fixed-bottom">
+                <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", class: "btn btn-primary rounded-pill" do %>
+                  <i class="fab fa-twitter"></i> 今日のおつまみを宣言
+                <% end %>
               </div>
             </div>
           </div>
