@@ -1,5 +1,4 @@
 class SnacksController < ApplicationController
-  skip_before_action :require_login
   include Pagy::Backend
   def new; end
 
