@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'sorcery'
 gem 'ransack'
+gem 'rails-i18n'
 gem 'pagy'
 
 group :development, :test do
@@ -53,6 +54,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'letter_opener_web'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'web-console', '>= 3.3.0'
   gem 'listen', '~> 3.2'

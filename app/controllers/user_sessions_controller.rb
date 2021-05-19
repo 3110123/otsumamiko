@@ -7,7 +7,7 @@ class UserSessionsController < ApplicationController
       flash[:notice] = 'ログインしました。'
       redirect_back_or_to root_path
     else
-      flash[:alert] = 'ログインできません。メールアドレスとパスワードを確認してください。'
+      flash[:danger] = 'ログインできません。メールアドレスとパスワードを確認してください。'
       render :new
     end
   end

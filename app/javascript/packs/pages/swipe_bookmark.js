@@ -2,11 +2,15 @@ var card = document.getElementById('showModal');
 var demo = document.getElementById('swipeDemo');
 var mouseBookmarkRange = 20
 var touchBookmarkRange = 300
+var userPresence = card.dataset.user
 
-window.setTimeout(function(){
+if (userPresence === '') {
   demo.style.display = "none";
-}, 5000);
-
+}else{
+  setTimeout(function(){
+    demo.style.display = "none";
+  }, 5000);
+}
 
 // PCmouseイベント
 card.onmousedown = function(e) {
@@ -16,46 +20,6 @@ card.onmousedown = function(e) {
 card.ondragend = function(e) {
   offsetX2 = e.offsetX
   switchToAction(offsetX2);
-};
-
-function switchToAction(offsetX2) {
-  var snackId = card.dataset.snack
-  if ( offsetX2 > window.offsetX1 + mouseBookmarkRange ){
-    switchToBookmark(snackId)
-  }else if ( offsetX2 < window.offsetX1 - mouseBookmarkRange ){
-    switchToUnbookmark(snackId)
-  }else{
-    return
-  }
-}
-
-// マウス
-function switchToBookmark(snackId) {
-  // 右ドラッグbookmark
-    $.ajax({
-      type: 'POST',
-      url: '/snacks/' + snackId + '/bookmarks',
-      headers: {
-        'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
-      }
-    }).done(function() {
-      document.elementFromPoint(100, 100).click();
-      toastr.success('気になっているおつまみに登録しました！');
-    });
-  }
-
-function switchToUnbookmark(snackId) {
-    // 左ドラッグbookmark解除
-    $.ajax({
-      type: 'DELETE',
-      url: '/snacks/' + snackId + '/bookmarks',
-      headers: {
-        'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
-      }
-    }).done(function() {
-      document.elementFromPoint(100, 100).click();
-      toastr.error('気になっているおつまみを解除しました。');
-    });
 }
 
 // スマホtouchイベント
@@ -74,6 +38,54 @@ card.ontouchend = function(e) {
   touchswitchToAction(touchX2);
 }
 
+function switchToAction(offsetX2) {
+  var snackId = card.dataset.snack
+  if ( offsetX2 > window.offsetX1 + mouseBookmarkRange ){
+    switchToBookmark(snackId)
+  }else if ( offsetX2 < window.offsetX1 - mouseBookmarkRange ){
+    switchToUnbookmark(snackId)
+  }else{
+    return
+  }
+}
+
+// マウス
+function switchToBookmark(snackId) {
+  if (userPresence === '') {
+    toastr.error('お気に入りのおつまみに登録するにはログインが必要です。');
+    return false;
+  }
+  // 右ドラッグbookmark
+    $.ajax({
+      type: 'POST',
+      url: '/snacks/' + snackId + '/bookmarks',
+      headers: {
+        'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
+      }
+    }).done(function() {
+      document.elementFromPoint(100, 100).click();
+      toastr.success('気になっているおつまみに登録しました！');
+    });
+  }
+
+function switchToUnbookmark(snackId) {
+  if (userPresence === '') {
+    toastr.error('お気に入りのおつまみに登録するにはログインが必要です。');
+    return false;
+  }
+    // 左ドラッグbookmark解除
+    $.ajax({
+      type: 'DELETE',
+      url: '/snacks/' + snackId + '/bookmarks',
+      headers: {
+        'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
+      }
+    }).done(function() {
+      document.elementFromPoint(100, 100).click();
+      toastr.error('気になっているおつまみを解除しました。');
+    });
+}
+
 function touchswitchToAction(touchX2) {
   var snackId = card.dataset.snack
   if ( touchX2 > window.touchX1 + touchBookmarkRange ){
@@ -86,6 +98,10 @@ function touchswitchToAction(touchX2) {
 }
 
 function touchswitchToBookmark(snackId) {
+  if (userPresence === '') {
+    toastr.error('お気に入りのおつまみに登録するにはログインが必要です。');
+    return false;
+  }
   // 右ドラッグbookmark
     $.ajax({
       type: 'POST',
@@ -100,6 +116,10 @@ function touchswitchToBookmark(snackId) {
   }
 
 function touchswitchToUnbookmark(snackId) {
+  if (userPresence === '') {
+    toastr.error('お気に入りのおつまみに登録するにはログインが必要です。');
+    return false;
+  }
     // 左ドラッグbookmark解除
     $.ajax({
       type: 'DELETE',
