@@ -17,4 +17,6 @@ Rails.application.routes.draw do
       get 'sake', to: 'snacks#sake'
     end
   end
+  # mailer
+  mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
