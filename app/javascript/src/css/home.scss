@@ -1,3 +1,12 @@
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  a {
+    color: black;
+  }
+}
+
 .container h2 {
   margin-top: 200px;
   font-size: 25px;
@@ -6,5 +15,10 @@
 .container h1 {
   font-size: 50px;
   margin-bottom: 100px;
+}
+
+
+.container {
+  background-color: red;
 }
 
