@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   get 'choice', to: 'alcohol_choices#index'
   get 'result', to: 'snacks#result'
   resources :users, only: %i[new create show]
-  resources :password_resets, only: %i[create edit update]
+  resources :password_resets, only: %i[new create edit update]
   resources :snacks do
     resources :reviews, shallow: true
     resource :bookmarks, only: %i[create destroy]

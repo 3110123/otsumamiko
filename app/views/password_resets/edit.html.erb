@@ -1,2 +1,36 @@
-<h1>PasswordResets#edit</h1>
-<p>Find me in app/views/password_resets/edit.html.erb</p>
+<div class="bg-warning">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+          <div class='text-center'>
+            <h1 class="font-weight-bold m-5">パスワードリセット</h1>
+          </div>
+
+          <%= form_with model: @user, url: password_reset_path(@token), local: true do |f| %>
+            <div class="form-group">
+              <%= f.label :メールアドレス %><br />
+              <%= f.text_field :email, class: "form-control", type: "text", placeholder: "メールアドレス" %>
+              <%= render 'shared/error_messages', model: f.object, attribute: :email %>
+            </div><br>
+            <div class="form-group">
+              <%= f.label :パスワード %><br />
+              <%= f.password_field :password, class: "form-control", type: "text", placeholder: "パスワード" %>
+              <%= render 'shared/error_messages', model: f.object, attribute: :password %>
+            </div><br>
+            <div class="form-group">
+              <%= f.label :パスワード確認 %><br />
+              <%= f.password_field :password_confirmation, class: "form-control", type: "text", placeholder: "パスワード" %>
+              <%= render 'shared/error_messages', model: f.object, attribute: :password %>
+            </div><br>
+            <div class="actions text-center">
+              <%= f.submit '送信', class: "btn btn-danger my-5" %>
+            </div>
+          <% end %>
+          <div class="text-center my-5">
+          <%= link_to '新規登録ページ', new_user_path %>/
+          <%= link_to 'パスワードを忘れた方' %>
+          </div>
+      </div>
+    </div>
+  </div>
+</div>
