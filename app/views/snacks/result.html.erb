@@ -17,6 +17,9 @@
               <%= @query.name %>
               <%= @snack_rate %>
             <%= render 'snacks/snack_rate', snack_rate: @snack_rate %>
+
+            <p>気になっている人<%= @snack.bookmarks.count %>人</p>
+
           <div id="chart" data-snack-id="<%= @snack.id %>" data-sweetness-value="<%= @snack.reviews.average(:sweetness) %>" data-salty-value="<%= @snack.reviews.average(:salty) %>" data-acidity-value="<%= @snack.reviews.average(:acidity) %>" data-taste-value="<%= @snack.reviews.average(:taste) %>" data-scent-value="<%= @snack.reviews.average(:scent) %>">
             <canvas id="myRaderChart-<%= @snack.id %>"></canvas>
           </div>
@@ -106,6 +109,16 @@
               <table id="js-table-comment" class="table">
                 <%= render @reviews, review: @review %>
               </table>
+            </div>
+          </div>
+          <div class="share-button fixed-bottom">
+            <div class="d-flex justify-content-center">
+              <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", class: "btn btn-primary rounded-pill" do %>
+                <i class="fab fa-twitter"></i> 今日のおつまみを宣言
+              <% end %>
+              <%= link_to snacks_path, class: "btn btn-danger rounded-pill" do %>
+                他のおつまみを見る
+              <% end %>
             </div>
           </div>
         </div>

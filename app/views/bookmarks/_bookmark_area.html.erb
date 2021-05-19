@@ -1,0 +1,10 @@
+<% if logged_in? %>
+  <% if current_user.bookmarks_snacks.include?(snack) %>
+    <%= render 'bookmarks/unbookmark', snack: snack %>
+  <% else %>
+    <%= render 'bookmarks/bookmark', snack: snack %>
+  <% end %>
+<% else %>
+  <i class="far fa-thumbs-up"></i>
+  <%= snack.bookmarks.count %>
+<% end %>

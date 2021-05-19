@@ -10,4 +10,13 @@ class User < ApplicationRecord
   validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
   validates :name, presence: true
   validates :email, uniqueness: true, presence: true
+
+  def bookmark(snack)
+    bookmarks_snacks << snack
+  end
+
+  def unbookmark(snack)
+    bookmarks_snacks.destroy(snack)
+  end
+
 end

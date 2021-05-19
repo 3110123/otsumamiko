@@ -1,4 +1,4 @@
-<div class="col-sm-6 p-3">
+<div class="col-md-6 col-xs-12">
   <div class="card">
     <div data-toggle="modal" data-target="#exampleModal">
     <%= link_to snack_path(snack), remote: true do %>
@@ -12,7 +12,11 @@
               <% else %>
                 <%= snack_rate = snack.reviews.average(:rate).round(2) %>
               <% end %>
-              <%= render 'snacks/snack_rate', snack_rate: snack_rate %>
+                <%= render 'snacks/snack_rate', snack_rate: snack_rate %>
+              <br>
+              <div class="bookmark-<%= snack.id %>">
+                <%= render 'bookmarks/bookmark_area', snack: snack %>
+              </div>
           </div>
         </div>
     <% end %>
@@ -22,6 +26,5 @@
 
 
 <!-- モーダルウインドウで詳細表示 -->
-<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLong" aria-hidden="true">
-<div class="modal-dialog modal-dialog-centered" role="document"></div>
-</div>
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLong" aria-hidden="true" draggable="true">
+<div class="modal-dialog modal-dialog-centered" role="document"></div></div>

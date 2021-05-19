@@ -9,11 +9,11 @@ Rails.application.routes.draw do
   resources :users, only: %i[new create show]
   resources :snacks do
     resources :reviews, shallow: true
+    resource :bookmarks, only: %i[create destroy]
     collection do
       get 'wine', to: 'snacks#wine'
       get 'beer', to: 'snacks#beer'
       get 'sake', to: 'snacks#sake'
-      get :bookmarks
     end
   end
 end
