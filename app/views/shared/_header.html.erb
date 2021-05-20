@@ -1,22 +1,22 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light mt-3 mb-3">
-    <%= link_to "おつまみ子", root_path, class: "mx-5 h2" %>
+  <nav class="navbar navbar-expand-lg navbar-light mt-3 mb-3 fixed-top bg-light">
+    <%= link_to "おつまみこ", root_path, class: "nav-link mx-5 h2 navbar-brand" %>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav3" aria-controls="navbarNav3" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav3">
-          <ul class="navbar-nav float-right h4">
-            <li class="nav-item mx-4 py-2">
-              <%= link_to 'トップページ', root_path, class: "navbar-item is-active" %>
+          <ul class="navbar-nav float-right h5">
+            <li class="nav-item mx-3 py-3">
+              <%= link_to 'トップページ', root_path, class: "nav-link" %>
             </li>
-            <li class="nav-item mx-4 py-2">
-              <%= link_to 'マイページ', user_path(current_user.id), class: "navbar-item is-active" %>
+            <li class="nav-item mx-3 py-3">
+              <%= link_to 'マイページ', user_path(current_user.id), class: "nav-link" %>
             </li>
-            <li class="nav-item mx-4 py-2">
-              <%= link_to 'おつまみ一覧', snacks_path, class: "navbar-item is-active" %>
+            <li class="nav-item mx-3 py-3">
+              <%= link_to 'おつまみ一覧', snacks_path, class: "nav-link" %>
             </li>
-            <li class="nav-item mx-4 py-2">
-              <%= link_to 'ログアウト', logout_path, method: :delete, class: "navbar-item is-active" %>
+            <li class="nav-item mx-3 py-3">
+              <%= link_to 'ログアウト', logout_path, method: :delete, class: "nav-link" %>
             </li>
           </ul>
         </div>

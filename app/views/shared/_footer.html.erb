@@ -1,9 +1,11 @@
-<footer class="text-muted py-5 bg-dark">
+<footer class="text-muted py-5 bg-dark w-100" id="footer">
   <div class="container">
-    <div class="float-end mb-1 text-center">
-      おつまみ子 /
-      <%= link_to '利用規約' %> /
-      <%= link_to 'お問い合わせ' %>
+    <div class="text-center">
+      <%= link_to 'おつまみこ', root_path, class: "mx-5 footer-logo" %>
+      <%= link_to '利用規約', "#", class: "mx-5" %>
+      <%= link_to 'お問い合わせ', "#", class: "mx-5" %>
     </div>
   </div>
 </footer>
+
+<%= javascript_pack_tag 'pages/footer' %>
