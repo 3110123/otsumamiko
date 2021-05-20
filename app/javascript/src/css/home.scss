@@ -11,9 +11,6 @@ header {
 // 全体
 html, body {
   height: 100%;
-}
-
-.main {
   background-color: #FFB62A;
 }
 
@@ -64,4 +61,18 @@ html, body {
 .catchcopy {
   margin-top: 150px;
   margin-bottom: 150px;
+}
+
+
+// mypage
+.review {
+  margin-top: 200px;
+  margin-bottom: 300px;
+}
+
+.mypage-area {
+  background-color: #ffe4b5;
+  border: dashed;
+  border-color: #908484;
+  border-width: 5px;
 }
