@@ -8,11 +8,11 @@
     <div class="row">
       <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
           <%= form_with model: @user, url: login_path, local: true do |f| %>
-            <div class="form-group h3 col-md-12">
+            <div class="form-group h4 py-3">
               <%= f.label :メールアドレス %><br />
               <%= f.text_field :email, class: "form-control h3", type: "text", placeholder: "メールアドレス" %>
             </div><br>
-            <div class="form-group h3 col-md-12">
+            <div class="form-group h4 py-3">
               <%= f.label :パスワード %><br />
               <%= f.password_field :password, class: "form-control h3", type: "password", placeholder: "パスワード" %>
             </div>
