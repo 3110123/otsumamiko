@@ -1,3 +1,4 @@
+// header
 header {
   position: fixed;
   opacity: 0.9;
@@ -7,45 +8,7 @@ header {
   }
 }
 
-.navbar-brand {
-  font-size: 40px;
-  font-family: "Nico Moji";
-}
-
-.footer-logo {
-  font-size: 25px;
-  font-family: "Nico Moji";
-}
-
-.headerimage {
-  position: relative;
-  background-size: cover;
-  max-width: 100%;
-  height: auto;
-}
-.card-img-overlay {
-  margin-top: 150px;
-  text-align: center;
-.container {
-  padding: 0;
-  top: calc(50% - 0.5rem);
-  text-align: center;
-  h2 {
-    font-size: 25px;
-  }
-  h1 {
-    font-size: 130px;
-    margin-bottom: 100px;
-    font-family: "Nico Moji";
-  }
-}
-}
-
-.catchcopy {
-  margin-top: 150px;
-  margin-bottom: 150px;
-}
-
+// 全体
 html, body {
   height: 100%;
 }
@@ -57,4 +20,48 @@ html, body {
 *{
   margin: 0;
   padding: 0;
+}
+
+.navbar-brand {
+  font-size: 40px;
+  font-family: "Nico Moji";
+}
+
+
+// footer
+.footer-logo {
+  font-size: 25px;
+  font-family: "Nico Moji";
+}
+
+
+// トップページ
+.headerimage {
+  position: relative;
+  background-size: cover;
+  max-width: 100%;
+  height: auto;
+}
+
+.card-img-overlay {
+  margin-top: 150px;
+  text-align: center;
+  .container {
+    padding: 0;
+    top: calc(50% - 0.5rem);
+    text-align: center;
+    h2 {
+      font-size: 25px;
+    }
+    h1 {
+      font-size: 130px;
+      margin-bottom: 100px;
+      font-family: "Nico Moji";
+    }
+  }
+}
+
+.catchcopy {
+  margin-top: 150px;
+  margin-bottom: 150px;
 }
