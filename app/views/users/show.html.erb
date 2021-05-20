@@ -1,10 +1,11 @@
-<div class="bg-warning">
+<div class="back bg-warning">
   <div class="container text-center">
+  <div class="wrapper">
     <div class="row">
       <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
         <div class='text-center'>
-          <h1 class="font-weight-bold m-5">マイページ</h1>
-          <p>気になるリスト</p>
+          <h1 class="font-weight-bold m-4">マイページ</h1>
+          <p class="h2 my-5">気になるリスト</p>
             <% if @user.bookmarks.present? %>
               <div class="row flex-row flex-nowrap overflow-auto">
                 <%= render @user_bookmarks %>
@@ -12,7 +13,7 @@
             <% else %>
               <p>まだ気になっているおつまみがありません。一覧から探しましょう！</p>
             <% end %>
-          <p>レビューしたおつまみ</p>
+          <p class="h2 my-5">レビューしたおつまみ</p>
             <% if @user.reviews.present? %>
               <div class="row flex-row flex-nowrap overflow-auto">
                 <%= render @user_reviews %>
@@ -23,5 +24,6 @@
         </div>
       </div>
     </div>
+  </div>
   </div>
 </div>
