@@ -15,9 +15,7 @@
     <% else %>
       <%= render 'shared/not_logged_in_header' %>
     <% end %>
-    <div class="main">
-      <%= yield %>
-    </div>
+    <%= yield %>
     <%= render 'shared/footer' %>
     <% if flash.any? %>
       <script type="text/javascript">
