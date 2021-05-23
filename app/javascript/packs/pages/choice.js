@@ -6,15 +6,21 @@ var qestion_01 = document.getElementById('qestion_01');
 var qestion_02 = document.getElementById('qestion_02');
 var qestion_03 = document.getElementById('qestion_03');
 var qestion_04 = document.getElementById('qestion_04');
-var array = window.array1 + window.array2 + window.array3;
-console.log("array:" + array);
+var result = document.getElementById('result');
+var beer = document.getElementById('choose_box_beer');
+var sake = document.getElementById('choose_box_sake');
+var wine = document.getElementById('choose_box_wine');
+var beer = "beer";
+var sake = "sake";
+var wine = "wine";
+var tagId = [];
 
 // おかず
 q_01.onclick = function(){
   qestion_01.style.display = "none";
   qestion_02.style.display = "block";
-  window.array1 = [4];
-  console.log(window.array1);
+  tagId.push(4);
+  console.log(tagId);
   switchToQuestion1();
 }
 
@@ -22,8 +28,8 @@ q_01.onclick = function(){
 q_02.onclick = function(){
   qestion_01.style.display = "none";
   qestion_03.style.display = "block";
-  window.array1 = [5,3];
-  console.log(window.array1);
+  tagId.push(3, 5);
+  console.log(tagId);
   switchToQuestion2();
 }
 
@@ -33,16 +39,16 @@ function switchToQuestion1() {
   q_03.onclick = function(){
     qestion_02.style.display = "none";
     qestion_04.style.display = "block";
-    window.array2 = [13];
-    console.log(window.array2);
+    tagId.push(13);
+    console.log(tagId);
     switchToQuestion3()
   }
   // 魚
   q_04.onclick = function(){
     qestion_02.style.display = "none";
     qestion_04.style.display = "block";
-    window.array2 = [14];
-    console.log(window.array2);
+    tagId.push(14);
+    console.log(tagId);
     switchToQuestion3()
   }
 }
@@ -53,33 +59,61 @@ function switchToQuestion2() {
   q_05.onclick = function(){
     qestion_03.style.display = "none";
     qestion_04.style.display = "block";
-    window.array2 = [9];
-    console.log(window.array2);
+    tagId.push(9);
+    console.log(tagId);
     switchToQuestion3()
   }
   // 低価格
   q_06.onclick = function(){
     qestion_03.style.display = "none";
     qestion_04.style.display = "block";
-    window.array2 = [10];
-    console.log(window.array2);
+    tagId.push(10);
+    console.log(tagId);
     switchToQuestion3()
   }
 }
 
 // 質問3
 function switchToQuestion3() {
-  // おしゃ
+  // おしゃれ
   q_07.onclick = function(){
     qestion_04.style.display = "none";
-    window.array3 = [11];
-    console.log(window.array3);
+    tagId.push(11);
+    console.log(tagId);
+
+    $.ajax({
+      type: 'get',
+      url: '/result',
+      data: {
+        tag: tagId,
+        alcohol: beer
+      },
+      headers: {
+        'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
+      }
+    }).done(function() {
+console.log("aaaaaaaaaaaaaaa")
+    });
   }
-  // おじさん
+  // 定番
   q_08.onclick = function(){
     qestion_04.style.display = "none";
-    window.array3 = [12];
-    console.log(window.array3);
+    tagId.push(12);
+    console.log(tagId);
+
+    $.ajax({
+      type: 'get',
+      url: '/result',
+      data: {
+        tag: tagId,
+        alcohol: beer
+      },
+      headers: {
+        'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
+      }
+    }).done(function() {
+      console.log("aaaaaaaaaaaaaaa")
+    });
   }
 }
 

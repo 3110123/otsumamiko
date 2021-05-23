@@ -30,11 +30,12 @@ class SnacksController < ApplicationController
   def wine; end
 
   def result
-    tags = params[:user_select_tag]
-    select_alcohol = params[:user_select_alcohol]
-    matchAllTags = TagRelationship.where(tag_id: tags).group(:snack_id).select(:snack_id).having('count(snack_id) = 3')
+    tags = params[:tag]
+    tag = tags.length
+    alcohol = params[:alcohol]
+    matchAllTags = TagRelationship.where(tag_id: tags).group(:snack_id).select(:snack_id).having('count(snack_id) = ?', tag)
     snackIds = matchAllTags.map(&:snack_id)
-    @query = Snack.where(id: snackIds, alcohol: select_alcohol).sample
+    @query = Snack.where(id: snackIds, alcohol: alcohol).sample
     @snack = Snack.find(@query.id)
     @reviews = @snack.reviews
     @review = Review.new

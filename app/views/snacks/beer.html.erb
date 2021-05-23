@@ -5,7 +5,7 @@
         <div class='text-center'>
           <h1 class="font-weight-bold mt-5">どっちがお好きですか？</h1>
         </div>
-        <div class="choose_box">
+        <div class="choose_box_beer">
           <div id="qestion_01" class="fit">
             <div class="row">
               <div class="col-xl-6 col-md-12 my-5">
@@ -71,15 +71,15 @@
               <div class="col-xl-6 col-md-12 my-5">
                 <div class='text-center'>
                   <h2>おしゃれ</h2>
-                    <%= link_to result_path(data_user_alcohol="beer"), class: "button", id: "q_07", "data-turbolinks": false do %>
+                    <%= link_to "#", class: "button", id: "q_07", "data-turbolinks": false do %>
                       <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>    
                     <% end %>
                 </div>
               </div>
               <div class="col-xl-6 col-md-12 my-5">
                 <div class='text-center'>
-                  <h2>おじさん</h2>
-                    <%= link_to result_path(data_user_alcohol="beer"), class: "button", id: "q_08", "data-turbolinks": false do %>
+                  <h2>定番</h2>
+                    <%= link_to "#", class: "button", id: "q_08", "data-turbolinks": false do %>
                       <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
                     <% end %>
                 </div>
