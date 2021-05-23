@@ -10,10 +10,16 @@ var result = document.getElementById('result');
 var beer = document.getElementById('choose_box_beer');
 var sake = document.getElementById('choose_box_sake');
 var wine = document.getElementById('choose_box_wine');
-var beer = "beer";
-var sake = "sake";
-var wine = "wine";
+
 var tagId = [];
+
+if (beer === null) {
+  var alcohol = "beer";
+}else if(sake === null) {
+  var alcohol = "sake";
+}else {
+  var alcohol = "wine";
+}
 
 // おかず
 q_01.onclick = function(){
@@ -28,7 +34,7 @@ q_01.onclick = function(){
 q_02.onclick = function(){
   qestion_01.style.display = "none";
   qestion_03.style.display = "block";
-  tagId.push(3, 5);
+  tagId.push(5);
   console.log(tagId);
   switchToQuestion2();
 }
@@ -86,15 +92,13 @@ function switchToQuestion3() {
       url: '/result',
       data: {
         tag: tagId,
-        alcohol: beer
-      },
-      headers: {
-        'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
+        alcohol: alcohol
       }
     }).done(function() {
-console.log("aaaaaaaaaaaaaaa")
+      window.location.href = '/result?tag%5B%5D=' + tagId[0] + '&tag%5B%5D=' + tagId[1] + '&tag%5B%5D=' + tagId[2] + '&alcohol=' + alcohol;
     });
   }
+
   // 定番
   q_08.onclick = function(){
     qestion_04.style.display = "none";
@@ -106,13 +110,10 @@ console.log("aaaaaaaaaaaaaaa")
       url: '/result',
       data: {
         tag: tagId,
-        alcohol: beer
-      },
-      headers: {
-        'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
+        alcohol: alcohol
       }
     }).done(function() {
-      console.log("aaaaaaaaaaaaaaa")
+      window.location.href = '/result?tag%5B%5D=' + tagId[0] + '&tag%5B%5D=' + tagId[1] + '&tag%5B%5D=' + tagId[2] + '&alcohol=' + alcohol;
     });
   }
 }
