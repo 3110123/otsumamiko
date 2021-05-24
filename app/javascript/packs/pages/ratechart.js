@@ -34,10 +34,16 @@ var myRadarChart = new Chart(ctx, {
                 display: false
             },
             scale:{
+                pointLabels: {
+                    fontSize: 25,
+                    fontColor: "#aaaaaa"
+                },
                 ticks:{
                     suggestedMin: 0,
                     suggestedMax: 5,
                     stepSize: 1,
+                    fontSize: 25,
+                    fontColor: "#aaaaaa",      
                     callback: function(value){
                         return  value
                     }
