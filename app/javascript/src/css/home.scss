@@ -52,7 +52,7 @@ html, body {
       font-size: 1.5rem;
     }
     h1 {
-      font-size: 8rem;
+      font-size: 7rem;
       margin-bottom: 100px;
       font-family: "Nico Moji";
     }
@@ -86,4 +86,20 @@ html, body {
 
 .password-forget {
   margin-bottom: 200px;
+}
+
+// おつまみ絞り込み
+.food-choice {
+  padding-top: 200px;
+  margin-bottom: 200px;
+  h1 {
+    font-size: 3rem;
+    margin-bottom: 100px;
+  }
+}
+
+.otsumamiko-yopparai {
+  position: fixed;
+  right: 0px;
+  bottom: 50px;
 }
