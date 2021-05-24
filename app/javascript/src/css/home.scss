@@ -91,9 +91,15 @@ html, body {
 // おつまみ絞り込み
 .food-choice {
   padding-top: 200px;
+  margin-bottom: 200px;
   h1 {
     font-size: 3rem;
     margin-bottom: 100px;
   }
 }
 
+.otsumamiko-yopparai {
+  position: fixed;
+  right: 0px;
+  bottom: 50px;
+}

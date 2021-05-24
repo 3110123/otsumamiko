@@ -1,88 +1,86 @@
-<div class="bg-warning">
-  <div class="container food-choice w-75">
-    <div class="card my-5 shadow-lg p-3 mb-5 bg-white rounded food-choice-card">
-      <div class="card-body">
-        <div class='text-center'>
-          <h1 class="font-weight-bold mt-5">どっちがお好きですか？</h1>
+<div class="container food-choice w-75">
+  <div class="card my-5 shadow-lg p-3 mb-5 bg-white rounded food-choice-card">
+    <div class="card-body">
+      <div class='text-center'>
+        <h1 class="font-weight-bold mt-5">どっちがお好きですか？</h1>
+      </div>
+      <div class="choose_box" id="beer">
+        <div id="qestion_01" class="fit">
+          <div class="row">
+            <div class="col-xl-6 col-md-12 my-3">
+              <div class='text-center'>
+                <h2>ご飯のおかず系</h2>
+                <%= link_to "#", class: "button", id: "q_01", "data-turbolinks": false do %>
+                  <%= image_pack_tag("media/images/pizza.jpg", size: "450x450") %>
+                <% end %>
+              </div>
+            </div>
+            <div class="col-xl-6 col-md-12 my-3">
+              <div class='text-center'>
+                <h2>つまむ系</h2>
+                <%= link_to "#", class: "button", id: "q_02", "data-turbolinks": false do %>
+                  <%= image_pack_tag("media/images/snack.jpg", size: "450x450") %>
+                <% end %>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="choose_box" id="beer">
-          <div id="qestion_01" class="fit">
-            <div class="row">
-              <div class="col-xl-6 col-md-12 my-5">
-                <div class='text-center'>
-                  <h2>ご飯のおかず系</h2>
-                  <%= link_to "#", class: "button", id: "q_01", "data-turbolinks": false do %>
-                    <%= image_pack_tag("media/images/pizza.jpg", size: "450x450") %>
+        <div id="qestion_02" style="display: none;">
+          <div class="row">
+            <div class="col-xl-6 col-md-12 my-3">
+              <div class='text-center'>
+                <h2>肉系</h2>
+                  <%= link_to "#", class: "button", id: "q_03", "data-turbolinks": false do %>
+                    <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
                   <% end %>
-                </div>
               </div>
-              <div class="col-xl-6 col-md-12 my-5">
-                <div class='text-center'>
-                  <h2>つまむ系</h2>
-                  <%= link_to "#", class: "button", id: "q_02", "data-turbolinks": false do %>
-                    <%= image_pack_tag("media/images/snack.jpg", size: "450x450") %>
+            </div>
+            <div class="col-xl-6 col-md-12 my-3">
+              <div class='text-center'>
+                <h2>魚系</h2>
+                  <%= link_to "#", class: "button", id: "q_04", "data-turbolinks": false do %>
+                    <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
                   <% end %>
-                </div>
               </div>
             </div>
           </div>
-          <div id="qestion_02" style="display: none;">
-            <div class="row">
-              <div class="col-xl-6 col-md-12 my-5">
-                <div class='text-center'>
-                  <h2>肉系</h2>
-                    <%= link_to "#", class: "button", id: "q_03", "data-turbolinks": false do %>
-                      <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
-                    <% end %>
-                </div>
+        </div>
+        <div id="qestion_03" style="display: none;">
+          <div class="row">
+            <div class="col-xl-6 col-md-12 my-3">
+              <div class='text-center'>
+                <h2>ヘルシー系</h2>
+                  <%= link_to "#", class: "button", id: "q_05", "data-turbolinks": false do %>
+                    <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
+                  <% end %>
               </div>
-              <div class="col-xl-6 col-md-12 my-5">
-                <div class='text-center'>
-                  <h2>魚系</h2>
-                    <%= link_to "#", class: "button", id: "q_04", "data-turbolinks": false do %>
-                      <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
-                    <% end %>
-                </div>
+            </div>
+            <div class="col-xl-6 col-md-12 my-3">
+              <div class='text-center'>
+                <h2>低価格</h2>
+                  <%= link_to "#", class: "button", id: "q_06", "data-turbolinks": false do %>
+                    <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
+                  <% end %>
               </div>
             </div>
           </div>
-          <div id="qestion_03" style="display: none;">
-            <div class="row">
-              <div class="col-xl-6 col-md-12 my-5">
-                <div class='text-center'>
-                  <h2>ヘルシー系</h2>
-                    <%= link_to "#", class: "button", id: "q_05", "data-turbolinks": false do %>
-                      <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
-                    <% end %>
-                </div>
-              </div>
-              <div class="col-xl-6 col-md-12 my-5">
-                <div class='text-center'>
-                  <h2>低価格</h2>
-                    <%= link_to "#", class: "button", id: "q_06", "data-turbolinks": false do %>
-                      <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
-                    <% end %>
-                </div>
+        </div>
+        <div id="qestion_04" style="display: none;">
+          <div class="row">
+            <div class="col-xl-6 col-md-12 my-3">
+              <div class='text-center'>
+                <h2>おしゃれ</h2>
+                  <%= link_to "#", class: "button", id: "q_07", "data-turbolinks": false do %>
+                    <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>    
+                  <% end %>
               </div>
             </div>
-          </div>
-          <div id="qestion_04" style="display: none;">
-            <div class="row">
-              <div class="col-xl-6 col-md-12 my-5">
-                <div class='text-center'>
-                  <h2>おしゃれ</h2>
-                    <%= link_to "#", class: "button", id: "q_07", "data-turbolinks": false do %>
-                      <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>    
-                    <% end %>
-                </div>
-              </div>
-              <div class="col-xl-6 col-md-12 my-5">
-                <div class='text-center'>
-                  <h2>定番</h2>
-                    <%= link_to "#", class: "button", id: "q_08", "data-turbolinks": false do %>
-                      <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
-                    <% end %>
-                </div>
+            <div class="col-xl-6 col-md-12 my-3">
+              <div class='text-center'>
+                <h2>定番</h2>
+                  <%= link_to "#", class: "button", id: "q_08", "data-turbolinks": false do %>
+                    <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
+                  <% end %>
               </div>
             </div>
           </div>
@@ -90,6 +88,10 @@
       </div>
     </div>
   </div>
+</div>
+
+<div class="otsumamiko-yopparai">
+  <%= image_pack_tag "media/images/karimamiko.png", size: "430x350" %>
 </div>
 
 <%= javascript_pack_tag 'pages/choice' %>
