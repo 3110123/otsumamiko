@@ -7,19 +7,9 @@ var qestion_02 = document.getElementById('qestion_02');
 var qestion_03 = document.getElementById('qestion_03');
 var qestion_04 = document.getElementById('qestion_04');
 var result = document.getElementById('result');
-var beer = document.getElementById('choose_box_beer');
-var sake = document.getElementById('choose_box_sake');
-var wine = document.getElementById('choose_box_wine');
+var alcohol = document.querySelector('.choose_box').getAttribute('id');
 
 var tagId = [];
-
-if (beer === null) {
-  var alcohol = "beer";
-}else if(sake === null) {
-  var alcohol = "sake";
-}else {
-  var alcohol = "wine";
-}
 
 // おかず
 q_01.onclick = function(){

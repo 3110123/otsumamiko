@@ -1,125 +1,88 @@
 <div class="bg-info">
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-        <div class="card my-5">
-            <div class="card-body">
-              <div class='text-center'
-              <h1 class="font-weight-bold m-5">どっちがお好きですか？</h1>
+  <div class="container food-choice w-75">
+    <div class="card my-5 shadow-lg p-3 mb-5 bg-white rounded food-choice-card">
+      <div class="card-body">
+        <div class='text-center'>
+          <h1 class="font-weight-bold mt-5">どっちがお好きですか？</h1>
+        </div>
+        <div class="choose_box" id="sake">
+          <div id="qestion_01" class="fit">
+            <div class="row">
+              <div class="col-xl-6 col-md-12 my-5">
+                <div class='text-center'>
+                  <h2>ご飯のおかず系</h2>
+                  <%= link_to "#", class: "button", id: "q_01", "data-turbolinks": false do %>
+                    <%= image_pack_tag("media/images/pizza.jpg", size: "450x450") %>
+                  <% end %>
+                </div>
               </div>
-              <div class="choose_box">
-                <div id="q_01" class="fit">
-                <ul>
-                  <lo>
-                    食事系<br>
-                    <%= link_to "#q_02", value: "食事系",  class: "button", "data-turbolinks": false do %>
-                    <%= image_pack_tag("media/images/pizza.jpg", size: "300x500") %>
-                    <% end %>
-                  </lo>
-                  or
-                  <lo>
-                    おやつ系<br>
-                    <%= link_to "#q_03", class: "button", "data-turbolinks": false do %>
-                    <%= image_pack_tag("media/images/snack.jpg", size: "300x500") %>
-                    <% end %>
-                  </lo>
-                </ul>
+              <div class="col-xl-6 col-md-12 my-5">
+                <div class='text-center'>
+                  <h2>つまむ系</h2>
+                  <%= link_to "#", class: "button", id: "q_02", "data-turbolinks": false do %>
+                    <%= image_pack_tag("media/images/snack.jpg", size: "450x450") %>
+                  <% end %>
+                </div>
               </div>
-              <div id="q_02" style="display: none;">
-                <ul>
-                  <lo>
-                    <%= link_to "#q_04", value: "しょっぱい系", class: "button", "data-turbolinks": false do %>
-                    <%= image_pack_tag("media/images/healthy.jpg", size: "300x500") %>
-                        しょっぱい系
+            </div>
+          </div>
+          <div id="qestion_02" style="display: none;">
+            <div class="row">
+              <div class="col-xl-6 col-md-12 my-5">
+                <div class='text-center'>
+                  <h2>肉系</h2>
+                    <%= link_to "#", class: "button", id: "q_03", "data-turbolinks": false do %>
+                      <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
                     <% end %>
-                  </lo>
-                  <lo>
-                    <%= link_to "#q_05", class: "button", "data-turbolinks": false do %>
-                    <%= image_pack_tag("media/images/healthy.jpg", size: "300x500") %>
-                        あまい系
-                    <% end %>
-                  </lo>
-                </ul>
+                </div>
               </div>
-              <div id="q_03" style="display: none;">
-                <ul>
-                  <lo>
-                    <%= link_to "#q_06", class: "button", "data-turbolinks": false do %>
-                    <%= image_pack_tag("media/images/healthy.jpg", size: "300x500") %>
-                        しょっぱい系
+              <div class="col-xl-6 col-md-12 my-5">
+                <div class='text-center'>
+                  <h2>魚系</h2>
+                    <%= link_to "#", class: "button", id: "q_04", "data-turbolinks": false do %>
+                      <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
                     <% end %>
-                  </lo>
-                  <lo>
-                    <%= link_to "#q_07", class: "button", "data-turbolinks": false do %>
-                    <%= image_pack_tag("media/images/healthy.jpg", size: "300x500") %>
-                        あまい系
-                    <% end %>
-                  </lo>
-                </ul>
+                </div>
               </div>
-              <div id="q_04" style="display: none;">
-                <ul>
-                  <lo>
-                    <%= link_to result_path(user_select_tag: "2, 3, 6".split(",").map(&:to_i), user_select_alcohol: "sake"), class: "button", "data-turbolinks": false do %>
-                      <%= image_pack_tag("media/images/healthy.jpg", size: "300x500") %>
-                        ヘルシー系
+            </div>
+          </div>
+          <div id="qestion_03" style="display: none;">
+            <div class="row">
+              <div class="col-xl-6 col-md-12 my-5">
+                <div class='text-center'>
+                  <h2>ヘルシー系</h2>
+                    <%= link_to "#", class: "button", id: "q_05", "data-turbolinks": false do %>
+                      <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
                     <% end %>
-                  </lo>
-                  <lo>
-                    <%= link_to result_path(user_select_tag: "2, 3, 5".split(",").map(&:to_i), user_select_alcohol: "sake"), class: "button", "data-turbolinks": false do %>
-                      <%= image_pack_tag("media/images/healthy.jpg", size: "300x500") %>
-                        がっつり系
-                    <% end %>
-                  </lo>
-                </ul>
+                </div>
               </div>
-              <div id="q_05" style="display: none;">
-                <ul>
-                  <lo>
-                    <%= link_to result_path(user_select_tag: "2, 4, 6".split(",").map(&:to_i), user_select_alcohol: "sake"), class: "button", "data-turbolinks": false do %>
-                      <%= image_pack_tag("media/images/healthy.jpg", size: "300x500") %>
-                        ヘルシー系
+              <div class="col-xl-6 col-md-12 my-5">
+                <div class='text-center'>
+                  <h2>低価格</h2>
+                    <%= link_to "#", class: "button", id: "q_06", "data-turbolinks": false do %>
+                      <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
                     <% end %>
-                  </lo>
-                  <lo>
-                    <%= link_to result_path(user_select_tag: "2, 4, 5".split(",").map(&:to_i), user_select_alcohol: "sake"), class: "button", "data-turbolinks": false do %>
-                      <%= image_pack_tag("media/images/healthy.jpg", size: "300x500") %>
-                        がっつり系
-                    <% end %>
-                  </lo>
-                </ul>
+                </div>
               </div>
-              <div id="q_06" style="display: none;">
-                <ul>
-                  <lo>
-                    <%= link_to result_path(user_select_tag: "1, 3, 6".split(",").map(&:to_i), user_select_alcohol: "sake"), class: "button", "data-turbolinks": false do %>
-                      <%= image_pack_tag("media/images/healthy.jpg", size: "300x500") %>
-                        ヘルシー系
+            </div>
+          </div>
+          <div id="qestion_04" style="display: none;">
+            <div class="row">
+              <div class="col-xl-6 col-md-12 my-5">
+                <div class='text-center'>
+                  <h2>おしゃれ</h2>
+                    <%= link_to "#", class: "button", id: "q_07", "data-turbolinks": false do %>
+                      <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>    
                     <% end %>
-                  </lo>
-                  <lo>
-                    <%= link_to result_path(user_select_tag: "1, 3, 5".split(",").map(&:to_i), user_select_alcohol: "sake"), class: "button", "data-turbolinks": false do %>
-                      <%= image_pack_tag("media/images/healthy.jpg", size: "300x500") %>
-                        がっつり系
-                    <% end %>
-                  </lo>
-                </ul>
+                </div>
               </div>
-              <div id="q_07" style="display: none;">
-                <ul>
-                  <lo>
-                    <%= link_to result_path(user_select_tag: "1, 4, 6".split(",").map(&:to_i), user_select_alcohol: "sake"), class: "button", "data-turbolinks": false do %>
-                      <%= image_pack_tag("media/images/healthy.jpg", size: "300x500") %>
-                        ヘルシー系
+              <div class="col-xl-6 col-md-12 my-5">
+                <div class='text-center'>
+                  <h2>定番</h2>
+                    <%= link_to "#", class: "button", id: "q_08", "data-turbolinks": false do %>
+                      <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
                     <% end %>
-                  </lo>
-                  <lo>
-                    <%= link_to result_path(user_select_tag: "1, 4, 5".split(",").map(&:to_i), user_select_alcohol: "sake"), class: "button", "data-turbolinks": false do %>
-                      <%= image_pack_tag("media/images/healthy.jpg", size: "300x500") %>
-                        がっつり系
-                    <% end %>
-                  </lo>
-                </ul>
+                </div>
               </div>
             </div>
           </div>
@@ -128,4 +91,5 @@
     </div>
   </div>
 </div>
+
 <%= javascript_pack_tag 'pages/choice' %>
