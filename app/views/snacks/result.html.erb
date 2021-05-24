@@ -1,24 +1,17 @@
-<% if @query.alcohol == "beer" %>
-  <div class="bg-warning">
-<% elsif @query.alcohol == "wine" %>
-  <div class="bg-danger">
-<% elsif @query.alcohol == "sake" %>
-  <div class="bg-info">
-<% end %>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-        <div class="card my-5">
-          <div class="card-body">
-            <div class='text-center'>
-              <p>あなたにぴったりの</p>
-              <h1 class="font-weight-bold m-5">おつまみ</h1>
-              <p>今日のおつまみは<br>これを試してみましょう！</p>
-              <%= @query.name %>
-              <%= @snack_rate %>
-            <%= render 'snacks/snack_rate', snack_rate: @snack_rate %>
-
-            <p>気になっている人<%= @snack.bookmarks.count %>人</p>
+<div class="container food-choice w-75">
+  <div class="card my-5 shadow-lg p-3 mb-5 bg-white rounded food-choice-card">
+    <div class="card-body">
+      <div class='text-center'>
+        <h2 class="font-weight-bold mt-5">あなたにぴったりの</h2>
+        <h1 class="font-weight-bold">おつまみ</h1>
+        <h2 class="font-weight-bold">今日のおつまみは<br>これを試してみましょう！</h2>
+      </div>
+      <div class='text-center'>
+      <h1 class="font-weight-bold"><%= @query.name %></h1>
+        <div class="justify-content-center">
+          <h2><%= @snack_rate %></h2>
+          <%= render 'snacks/snack_rate', snack_rate: @snack_rate %>
+        </div>
 
           <div id="chart" data-snack-id="<%= @snack.id %>" data-sweetness-value="<%= @snack.reviews.average(:sweetness) %>" data-salty-value="<%= @snack.reviews.average(:salty) %>" data-acidity-value="<%= @snack.reviews.average(:acidity) %>" data-taste-value="<%= @snack.reviews.average(:taste) %>" data-scent-value="<%= @snack.reviews.average(:scent) %>">
             <canvas id="myRaderChart-<%= @snack.id %>"></canvas>

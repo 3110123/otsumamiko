@@ -5,4 +5,6 @@ class Snack < ApplicationRecord
   has_many :reviews, dependent: :destroy
   validates :name, uniqueness: true, presence: true
   enum alcohol: { beer: 0, wine: 1, sake: 2 }
+
+  has_one_attached :image
 end

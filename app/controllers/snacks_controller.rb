@@ -37,8 +37,13 @@ class SnacksController < ApplicationController
     snackIds = matchAllTags.map(&:snack_id)
     @query = Snack.where(id: snackIds, alcohol: alcohol).sample
     @snack = Snack.find(@query.id)
-    @reviews = @snack.reviews
     @review = Review.new
+    @reviews = @snack.reviews.includes(:user).order(created_at: :desc)
+    if @snack.reviews.blank?
+      @snack_rate = 0.0
+    else
+      @snack_rate = @snack.reviews.average(:rate).round(2)
+    end
   end
 
   private
