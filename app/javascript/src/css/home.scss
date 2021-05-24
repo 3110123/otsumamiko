@@ -136,17 +136,33 @@ html, body {
 .radio-field input[type="radio"] {
   opacity: 0;
   &:checked + label {
-    background-color: #b3b3b3;
+    background-color: #faaf24;
+    color: black;
+    padding: 16px 31px;
   }
 }
 
 .radio-field label {
   background-color: #f4f4f4;
-  padding: 5px 10px;
-  border-radius: 3px;
+  padding: 7px 22px;
+  border-radius: 50%;
   box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125);
+  font-size: 2rem;
+  color: #aaaaaa;
+  p {
+    color: #aaaaaa;
+  }
 }
 
 .radio-field label:hover {
-  background-color: #e7e7e7;
+  background-color: #ffe1b4;
+}
+
+.radio-field {
+  h3 {
+  color: #aaaaaa;
+  }
+  p {
+    color: #aaaaaa;
+  }
 }

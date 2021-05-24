@@ -1,95 +1,95 @@
 <div class="collapse" id="collapseExample">
-  <h2 class="my-5">評価</h2>
+  <h2 class="my-5 pt-3">評価</h2>
     <%= form_with model: @review, url: [@snack, @review] do |f| %>
-      <div class="radio-field">
-        <h3 style="display:inline;" class="pr-5">総合</h3>
-        <h3 style="display:inline;">悪い</h3>
+      <div class="radio-field my-5 py-3">
+        <h3 style="display:inline;" class="pr-3">総合</h3>
+        <p style="display:inline;">悪い</p>
         <%= f.radio_button :rate, "1" %>
-        <%= f.label "1", for: "review_rate_1"  %>
+        <%= f.label "1", for: "review_rate_1" %>
         <%= f.radio_button :rate, "2" %>
-        <%= f.label "2", for: "review_rate_2"  %>
+        <%= f.label "2", for: "review_rate_2" %>
         <%= f.radio_button :rate, "3", checked: true %>
         <%= f.label "3", for: "review_rate_3" %>
         <%= f.radio_button :rate, "4" %>
-        <%= f.label "4", for: "review_rate_4"  %>
+        <%= f.label "4", for: "review_rate_4" %>
         <%= f.radio_button :rate, "5" %>
-        <%= f.label "5", for: "review_rate_5"  %>
-        <h3 style="display:inline;">良い</h3>
+        <%= f.label "5", for: "review_rate_5" %>
+        <p style="display:inline;" class="pl-3">良い</p>
       </div>
-      <div class="radio-field">
-        <h3 style="display:inline;" class="pr-5">甘味</h3>
-        <h3 style="display:inline;">悪い</h3>
+      <div class="radio-field mb-5">
+        <h3 style="display:inline;" class="pr-3">甘味</h3>
+        <p style="display:inline;">悪い</p>
         <%= f.radio_button :sweetness, "1" %>
-        <%= f.label "1", for: "review_sweetness_1"  %>
+        <%= f.label "1", for: "review_sweetness_1" %>
         <%= f.radio_button :sweetness, "2" %>
-        <%= f.label "2", for: "review_sweetness_2"  %>
+        <%= f.label "2", for: "review_sweetness_2" %>
         <%= f.radio_button :sweetness, "3", checked: true %>
-        <%= f.label "3", for: "review_sweetness_3"  %>
+        <%= f.label "3", for: "review_sweetness_3" %>
         <%= f.radio_button :sweetness, "4" %>
-        <%= f.label "4", for: "review_sweetness_4"  %>
+        <%= f.label "4", for: "review_sweetness_4" %>
         <%= f.radio_button :sweetness, "5" %>
-        <%= f.label "5", for: "review_sweetness_5"  %>
-        <h3 style="display:inline;">良い</h3>
+        <%= f.label "5", for: "review_sweetness_5" %>
+        <p style="display:inline;" class="pl-3">良い</p>
       </div>
-      <div class="radio-field">
-        <h3 style="display:inline;" class="pr-5">塩味</h3>
-        <h3 style="display:inline;">悪い</h3>
+      <div class="radio-field mb-5">
+        <h3 style="display:inline;" class="pr-3">塩味</h3>
+        <p style="display:inline;">悪い</p>
         <%= f.radio_button :salty, "1" %>
-        <%= f.label "1", for: "review_salty_1"  %>
+        <%= f.label "1", for: "review_salty_1" %>
         <%= f.radio_button :salty, "2" %>
-        <%= f.label "2", for: "review_salty_2"  %>
+        <%= f.label "2", for: "review_salty_2" %>
         <%= f.radio_button :salty, "3", checked: true %>
-        <%= f.label "3", for: "review_salty_3"  %>
+        <%= f.label "3", for: "review_salty_3" %>
         <%= f.radio_button :salty, "4" %>
-        <%= f.label "4", for: "review_salty_4"  %>
+        <%= f.label "4", for: "review_salty_4" %>
         <%= f.radio_button :salty, "5" %>
-        <%= f.label "5", for: "review_salty_5"  %>
-        <h3 style="display:inline;">良い</h3>
+        <%= f.label "5", for: "review_salty_5" %>
+        <p style="display:inline;" class="pl-3">良い</p>
       </div>
-      <div class="radio-field">
-        <h3 style="display:inline;" class="pr-5">酸味</h3>
-        <h3 style="display:inline;">悪い</h3>
+      <div class="radio-field mb-5">
+        <h3 style="display:inline;" class="pr-3">酸味</h3>
+        <p style="display:inline;">悪い</p>
         <%= f.radio_button :acidity, "1" %>
-        <%= f.label "1", for: "review_acidity_1"  %>
+        <%= f.label "1", for: "review_acidity_1" %>
         <%= f.radio_button :acidity, "2" %>
-        <%= f.label "2", for: "review_acidity_2"  %>
+        <%= f.label "2", for: "review_acidity_2" %>
         <%= f.radio_button :acidity, "3", checked: true %>
-        <%= f.label "3", for: "review_acidity_3"  %>
+        <%= f.label "3", for: "review_acidity_3" %>
         <%= f.radio_button :acidity, "4" %>
-        <%= f.label "4", for: "review_acidity_4"  %>
+        <%= f.label "4", for: "review_acidity_4" %>
         <%= f.radio_button :acidity, "5" %>
-        <%= f.label "5", for: "review_acidity_5"  %>
-        <h3 style="display:inline;">良い</h3>
+        <%= f.label "5", for: "review_acidity_5" %>
+        <p style="display:inline;" class="pl-3">良い</p>
       </div>
-      <div class="radio-field">
-        <h3 style="display:inline;" class="pr-5">旨味</h3>
-        <h3 style="display:inline;">悪い</h3>
+      <div class="radio-field mb-5">
+        <h3 style="display:inline;" class="pr-3">旨味</h3>
+        <p style="display:inline;">悪い</p>
         <%= f.radio_button :taste, "1" %>
-        <%= f.label "1", for: "review_taste_1"  %>
+        <%= f.label "1", for: "review_taste_1" %>
         <%= f.radio_button :taste, "2" %>
-        <%= f.label "2", for: "review_taste_2"  %>
+        <%= f.label "2", for: "review_taste_2" %>
         <%= f.radio_button :taste, "3", checked: true %>
-        <%= f.label "3", for: "review_taste_3"  %>
+        <%= f.label "3", for: "review_taste_3" %>
         <%= f.radio_button :taste, "4" %>
         <%= f.label "4", for: "review_taste_4" %>
         <%= f.radio_button :taste, "5" %>
-        <%= f.label "5", for: "review_taste_5"  %>
-        <h3 style="display:inline;">良い</h3>
+        <%= f.label "5", for: "review_taste_5" %>
+        <p style="display:inline;" class="pl-3">良い</p>
       </div>
-      <div class="radio-field">
-        <h3 style="display:inline;" class="pr-5">香り</h3>
-        <h3 style="display:inline;">悪い</h3>
+      <div class="radio-field mb-5">
+        <h3 style="display:inline;" class="pr-3">香り</h3>
+        <p style="display:inline;">悪い</p>
         <%= f.radio_button :scent, "1" %>
-        <%= f.label "1", for: "review_scent_1"  %>
+        <%= f.label "1", for: "review_scent_1" %>
         <%= f.radio_button :scent, "2" %>
-        <%= f.label "2", for: "review_scent_2"  %>
+        <%= f.label "2", for: "review_scent_2" %>
         <%= f.radio_button :scent, "3", checked: true %>
-        <%= f.label "3", for: "review_scent_3"  %>
+        <%= f.label "3", for: "review_scent_3" %>
         <%= f.radio_button :scent, "4" %>
-        <%= f.label "4", for: "review_scent_4"  %>
+        <%= f.label "4", for: "review_scent_4" %>
         <%= f.radio_button :scent, "5" %>
-        <%= f.label "5", for: "review_scent_5"  %>
-        <h3 style="display:inline;">良い</h3>
+        <%= f.label "5", for: "review_scent_5" %>
+        <p style="display:inline;" class="pl-3">良い</p>
       </div>
       <h2 class="my-5">感想</h2>
       <div class="form-group">
