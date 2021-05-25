@@ -166,3 +166,59 @@ html, body {
     color: #aaaaaa;
   }
 }
+
+.textarea {
+  width: 100%;
+  min-height: 500px;
+  max-height: 1500px;
+  padding: 8px;
+  line-height: 50px;
+  font-size: 1rem;
+}
+
+.js-edit-comment-button {
+  background-color: #f08c7c;
+  color: white;
+  &:hover {
+    background-color: #e84c6c;
+    color: white;
+  }
+}
+
+.js-delete-comment-button {
+  background-color: #f08c7c;
+  color: white;
+  &:hover {
+    background-color: #e84c6c;
+    color: white;
+  }
+}
+
+.js-button-review-update {
+  background-color: #f08c7c;
+  color: white;
+  &:hover {
+    background-color: #e84c6c;
+    color: white;
+  }
+}
+
+.js-button-edit-review-cancel {
+  border-color: #aaaaaa;
+  color: #aaaaaa;
+  &:hover {
+    background-color: #848484;
+    color: white;
+  }
+}
+
+.comment-area {
+  font-size: 1.5rem;
+  &::placeholder {
+    font-size: 1.5rem;
+  }  
+}
+
+.review-time {
+  color: #aaaaaa;
+}
