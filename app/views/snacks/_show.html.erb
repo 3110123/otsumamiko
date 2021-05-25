@@ -1,44 +1,63 @@
-<div class="modal-dialog" id="showModal" data-snack="<%= @snack.id %>" data-user="<%= current_user %>" draggable="true">
+<div class="modal-dialog modal-lg" id="showModal" data-snack="<%= @snack.id %>" data-user="<%= logged_in? %>" draggable="true">
 <%= javascript_pack_tag 'pages/swipe_bookmark' %>
   <div class="modal-content">
     <div class="modal-body">
-      <%= image_tag '', size: '300x200', class: 'card-img-top' %>
-      <div class="container">
-        <div class='text-center'>
-          <%= @snack.alcohol %><br>x<br>
-          <%= @snack.name %><br>
-          <%= @snack_rate %>
-          <%= render 'snacks/snack_rate', snack_rate: @snack_rate %>
-
-          <p>気になっている人<%= @snack.bookmarks.count %>人</p>
-          <div id="swipeDemo">
-            <div class="principle five">
-              <div class="shape">
-                <p>右にスワイプして気になるおつまみに登録!</p>
-                <i class="far fa-hand-point-up fa-5x"></i>
-              </div>
-            </div>
-            <div id="fullOverlay"></div>
+      <div class="row">
+        <div class="col-xl-6 col-md-12 mt-5">
+          <div class="snack-image text-center">
+            <%= image_pack_tag "media/images/healthy.jpg", size: "400x400" %>
           </div>
-
+        </div>
+        <div class="col-xl-6 col-md-12 mt-5 pt-5">
+          <div class="container">
+            <div class='text-center'>
+              <h2 class="font-weight-bold m-0"><%= @snack.alcohol %>
+              <br><div class="py-2">✖️</div>
+              <%= @snack.name %></h2><br>
+                <div class="rate-number inline-block-rate">
+                  <%= @snack_rate %>
+                </div>
+                <div class="rate-number inline-block-rate">
+                  <%= render 'snacks/snack_rate', snack_rate: @snack_rate %>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div id="swipeDemo">
+          <div class="principle five">
+            <div class="shape">
+              <p>右にスワイプして気になるおつまみに登録!</p>
+              <i class="far fa-hand-point-up fa-5x"></i>
+            </div>
+          </div>
+          <div id="fullOverlay"></div>
+        </div>
+        <div class="col-12 mt-5 mb-5">
           <div id="chart" data-snack-id="<%= @snack.id %>" data-sweetness-value="<%= @snack.reviews.average(:sweetness) %>" data-salty-value="<%= @snack.reviews.average(:salty) %>" data-acidity-value="<%= @snack.reviews.average(:acidity) %>" data-taste-value="<%= @snack.reviews.average(:taste) %>" data-scent-value="<%= @snack.reviews.average(:scent) %>">
             <canvas id="myRaderChart-<%= @snack.id %>"></canvas>
           </div>
           <%= javascript_pack_tag 'pages/ratechart' %>
 
-          <p>コメント</p>
-          <% if logged_in? %>
-            <%= render 'snacks/review_area' %>
-          <% end %>
-          <div class="row">
-            <div class="col-lg-8 offset-lg-2">
-              <table id="js-table-comment" class="table">
+          <div class='text-center'>
+            <div class="row justify-content-center">
+              <div class="col-12">
+            <% if logged_in? %>
+              <a data-toggle="collapse" href="#collapseExample" aria-controls="collapseExample" class="text-decoration-none"><h3 class="comment-table text-white rounded-pill shadow-lg p-3 my-5">コメント</h3></a>
+              <%= render 'snacks/review_area' %>
+            <% else %>
+              <h3 class="comment-table text-white rounded-pill shadow-lg p-3 my-5 text-decoration-none">コメント</h3>
+            <% end %>
+            </div>
+            </div>
+              <table id="js-table-comment" class="table text-left">
                 <%= render @reviews, review: @review %>
               </table>
-              <div class="share-button fixed-bottom">
-                <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", class: "btn btn-primary rounded-pill" do %>
-                  <i class="fab fa-twitter"></i> 今日のおつまみを宣言
-                <% end %>
+          </div>
+          <div class="share-button fixed-bottom">
+            <div class="d-flex justify-content-center">
+              <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", class: "twitter btn btn-primary rounded-pill d-inline-flex" do %>
+                <i class="fab fa-twitter fa-2x d-inline-flex mt-1 ml-2 twitter"></i><div class="h4 m-2"> おつまみを宣言</div>
+              <% end %>
               </div>
             </div>
           </div>

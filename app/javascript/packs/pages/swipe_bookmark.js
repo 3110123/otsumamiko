@@ -4,7 +4,7 @@ var mouseBookmarkRange = 20
 var touchBookmarkRange = 300
 var userPresence = card.dataset.user
 
-if (userPresence === '') {
+if (userPresence === 'false') {
   demo.style.display = "none";
 }else{
   setTimeout(function(){
