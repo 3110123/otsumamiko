@@ -10,17 +10,17 @@
         <%= form_with model: @user, url: password_reset_path(@token), local: true do |f| %>
           <div class="form-group h4 py-3">
             <%= f.label :メールアドレス %><br />
-            <%= f.text_field :email, class: "form-control", type: "text", placeholder: "メールアドレス" %>
+            <%= f.text_field :email, class: "form-control comment-area serch_field shadow-lg rounded-pill pl-5", type: "text", placeholder: "メールアドレス" %>
             <%= render 'shared/error_messages', model: f.object, attribute: :email %>
           </div><br>
           <div class="form-group h4 py-3">
             <%= f.label :パスワード %><br />
-            <%= f.password_field :password, class: "form-control", type: "password", placeholder: "パスワード" %>
+            <%= f.password_field :password, class: "form-control comment-area serch_field shadow-lg rounded-pill pl-5", type: "password", placeholder: "パスワード" %>
             <%= render 'shared/error_messages', model: f.object, attribute: :password %>
           </div><br>
           <div class="form-group h4 py-3">
             <%= f.label :パスワード確認 %><br />
-            <%= f.password_field :password_confirmation, class: "form-control", type: "password", placeholder: "パスワード" %>
+            <%= f.password_field :password_confirmation, class: "form-control comment-area serch_field shadow-lg rounded-pill pl-5", type: "password", placeholder: "パスワード" %>
             <%= render 'shared/error_messages', model: f.object, attribute: :password %>
           </div><br>
           <div class="actions text-center">

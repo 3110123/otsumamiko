@@ -1,5 +1,5 @@
 <div class="col-md-12 col-xl-6">
-  <div class="card m-4 shadow-lg p-3 mb-5 bg-white rounded">
+  <div class="card m-4 shadow-lg p-3 mb-5 bg-white rounded" style="height: 48rem;">
     <div data-toggle="modal" data-target="#exampleModal">
     <%= link_to snack_path(snack), class: "text-decoration-none text-dark", remote: true do %>
     <%= image_tag '', size: '250x450', class: 'card-img-top' %>
@@ -7,7 +7,7 @@
         <div class='text-center'>
           <h2 class="font-weight-bold m-0"><%= snack.alcohol %>
           <br><div class="py-2">✖️</div>
-          <%= snack.name %></h2><br>
+          <div class="snack-name"><%= snack.name %></div></h2><br>
           <ul class="review-rate">
             <li class="list-inline-item h2 mr-1 mb-0 align-middle">
               <% if snack.reviews.blank? %>

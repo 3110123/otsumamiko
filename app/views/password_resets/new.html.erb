@@ -10,15 +10,15 @@
         <%= form_with model: @user, url: password_resets_path, local: true, method: :post do |f| %>
           <div class="form-group h4 py-3">
             <%= f.label :メールアドレス %><br />
-            <%= f.text_field :email, class: "form-control", type: "text", placeholder: "メールアドレス" %>
+            <%= f.text_field :email, class: "form-control comment-area serch_field shadow-lg rounded-pill pl-5", type: "text", placeholder: "メールアドレス" %>
           </div><br>
           <div class="actions text-center">
             <%= f.submit 'メールを送信する', class: "btn h3 text-light btn-danger btn-block rounded-pill py-4 px-5 shadow-lg p-3 submit-btn" %>
           </div>
         <% end %>
         <div class="text-center password-forget">
-          <%= link_to '新規登録', new_user_path, class: "mr-4 text-reset" %>
-          <%= link_to 'ログイン', login_path, class: "text-reset" %>
+          <%= link_to '新規登録', new_user_path, class: "mr-4 text-reset h3" %>
+          <%= link_to 'ログイン', login_path, class: "text-reset h3" %>
         </div>
       </div>
     </div>
