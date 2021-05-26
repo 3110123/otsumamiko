@@ -255,3 +255,9 @@ html, body {
 .close {
   font-size: 5rem;
 }
+
+.share-button {
+  position: sticky;
+  opacity: 0.7;
+  z-index: 1;
+}

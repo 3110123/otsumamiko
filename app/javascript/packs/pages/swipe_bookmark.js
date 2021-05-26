@@ -1,25 +1,16 @@
 var card = document.getElementById('showModal');
-var demo = document.getElementById('swipeDemo');
 var modalClose = document.getElementById('modalClose');
-var mouseBookmarkRange = 20
+var mouseBookmarkRange = 100
 var touchBookmarkRange = 300
 var userPresence = card.dataset.user
 
-if (userPresence === 'false') {
-  demo.style.display = "none";
-}else{
-  setTimeout(function(){
-    demo.style.display = "none";
-  }, 5000);
-}
-
 // PCmouseイベント
 card.onmousedown = function(e) {
-  window.offsetX1 = e.offsetX
+  window.offsetX1 = e.pageX
 }
 
 card.ondragend = function(e) {
-  offsetX2 = e.offsetX
+  offsetX2 = e.pageX
   switchToAction(offsetX2);
 }
 
@@ -28,14 +19,14 @@ card.ontouchstart = function(e) {
 	// タッチの情報を含むオブジェクト
 	var touchObject = e.changedTouches[0];
 	// 位置座標を取得する
-	window.touchX1 = touchObject.pageX ;
+	window.touchX1 = touchObject.pageX;
 }
 
 card.ontouchend = function(e) {
 	// タッチの情報を含むオブジェクト
-	var touchObject = e.changedTouches[0] ;
+	var touchObject = e.changedTouches[0];
 	// 位置座標を取得する
-	touchX2 = touchObject.pageX ;
+	touchX2 = touchObject.pageX;
   touchswitchToAction(touchX2);
 }
 
@@ -52,7 +43,7 @@ function switchToAction(offsetX2) {
 
 // マウス
 function switchToBookmark(snackId) {
-  if (userPresence === '') {
+  if (userPresence === 'false') {
     toastr.error('お気に入りのおつまみに登録するにはログインが必要です。');
     return false;
   }
@@ -66,11 +57,13 @@ function switchToBookmark(snackId) {
     }).done(function() {
       modalClose.click();
       toastr.success('気になっているおつまみに登録しました！');
+    }).fail(function() {
+      toastr.error('すでに気になっているおつまみに登録されています！');
     });
   }
 
 function switchToUnbookmark(snackId) {
-  if (userPresence === '') {
+  if (userPresence === 'false') {
     toastr.error('お気に入りのおつまみに登録するにはログインが必要です。');
     return false;
   }
@@ -84,6 +77,8 @@ function switchToUnbookmark(snackId) {
     }).done(function() {
       modalClose.click();
       toastr.error('気になっているおつまみを解除しました。');
+    }).fail(function() {
+      toastr.error('すでに気になっているおつまみから解除されています！');
     });
 }
 
@@ -99,7 +94,7 @@ function touchswitchToAction(touchX2) {
 }
 
 function touchswitchToBookmark(snackId) {
-  if (userPresence === '') {
+  if (userPresence === 'false') {
     toastr.error('お気に入りのおつまみに登録するにはログインが必要です。');
     return false;
   }
@@ -113,11 +108,13 @@ function touchswitchToBookmark(snackId) {
     }).done(function() {
       modalClose.click();
       toastr.success('気になっているおつまみに登録しました！');
+    }).fail(function() {
+      toastr.error('すでに気になっているおつまみに登録されています！');
     });
   }
 
 function touchswitchToUnbookmark(snackId) {
-  if (userPresence === '') {
+  if (userPresence === 'false') {
     toastr.error('お気に入りのおつまみに登録するにはログインが必要です。');
     return false;
   }
@@ -131,5 +128,7 @@ function touchswitchToUnbookmark(snackId) {
     }).done(function() {
       modalClose.click();
       toastr.error('気になっているおつまみを解除しました。');
+    }).fail(function() {
+      toastr.error('すでに気になっているおつまみから解除されています！');
     });
 }

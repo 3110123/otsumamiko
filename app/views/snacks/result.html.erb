@@ -57,10 +57,10 @@
           <div class="share-button fixed-bottom">
             <div class="d-flex justify-content-center">
               <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", class: "twitter btn btn-primary rounded-pill d-inline-flex" do %>
-                <i class="fab fa-twitter fa-2x d-inline-flex mt-1 ml-2"></i><div class="h4 m-2"> おつまみを宣言</div>
+                <i class="fab fa-twitter fa-3x d-inline-flex mt-1 ml-2"></i><div class="h3 m-2"> おつまみを宣言</div>
               <% end %>
               <%= link_to snacks_path, class: "btn btn-danger rounded-pill twitter" do %>
-                <div class="h4 m-2">他のおつまみ</div>
+                <div class="h3 m-2">他のおつまみ</div>
               <% end %>
             </div>
           </div>
