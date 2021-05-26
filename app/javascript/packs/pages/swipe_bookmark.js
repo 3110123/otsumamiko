@@ -44,7 +44,7 @@ function switchToAction(offsetX2) {
 // マウス
 function switchToBookmark(snackId) {
   if (userPresence === 'false') {
-    toastr.error('お気に入りのおつまみに登録するにはログインが必要です。');
+    toastr.error('ログインが必要です。');
     return false;
   }
   // 右ドラッグbookmark
@@ -56,15 +56,15 @@ function switchToBookmark(snackId) {
       }
     }).done(function() {
       modalClose.click();
-      toastr.success('気になっているおつまみに登録しました！');
+      toastr.success('登録しました！');
     }).fail(function() {
-      toastr.error('すでに気になっているおつまみに登録されています！');
+      toastr.error('すでに登録されています！');
     });
   }
 
 function switchToUnbookmark(snackId) {
   if (userPresence === 'false') {
-    toastr.error('お気に入りのおつまみに登録するにはログインが必要です。');
+    toastr.error('ログインが必要です。');
     return false;
   }
     // 左ドラッグbookmark解除
@@ -76,9 +76,9 @@ function switchToUnbookmark(snackId) {
       }
     }).done(function() {
       modalClose.click();
-      toastr.error('気になっているおつまみを解除しました。');
+      toastr.error('解除しました。');
     }).fail(function() {
-      toastr.error('すでに気になっているおつまみから解除されています！');
+      toastr.error('すでに解除されています！');
     });
 }
 
@@ -95,7 +95,7 @@ function touchswitchToAction(touchX2) {
 
 function touchswitchToBookmark(snackId) {
   if (userPresence === 'false') {
-    toastr.error('お気に入りのおつまみに登録するにはログインが必要です。');
+    toastr.error('ログインが必要です。');
     return false;
   }
   // 右ドラッグbookmark
@@ -107,15 +107,15 @@ function touchswitchToBookmark(snackId) {
       }
     }).done(function() {
       modalClose.click();
-      toastr.success('気になっているおつまみに登録しました！');
+      toastr.success('登録しました！');
     }).fail(function() {
-      toastr.error('すでに気になっているおつまみに登録されています！');
+      toastr.error('すでに登録されています！');
     });
   }
 
 function touchswitchToUnbookmark(snackId) {
   if (userPresence === 'false') {
-    toastr.error('お気に入りのおつまみに登録するにはログインが必要です。');
+    toastr.error('ログインが必要です。');
     return false;
   }
     // 左ドラッグbookmark解除
@@ -127,8 +127,8 @@ function touchswitchToUnbookmark(snackId) {
       }
     }).done(function() {
       modalClose.click();
-      toastr.error('気になっているおつまみを解除しました。');
+      toastr.error('解除しました。');
     }).fail(function() {
-      toastr.error('すでに気になっているおつまみから解除されています！');
+      toastr.error('すでに解除されています！');
     });
 }

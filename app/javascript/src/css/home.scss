@@ -25,6 +25,15 @@ html, body {
   font-family: "Nico Moji";
 }
 
+.toast-message {
+  font-size: 1.8rem;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#toast-container {
+  margin-top: 100px;
+}
 
 // footer
 .footer-logo {
