@@ -7,7 +7,7 @@ class Admin::UserSessionsController < Admin::BaseController
     @user = login(params[:email], params[:password])
     if @user
       flash[:success] = "ログインしました"
-      redirect_to root_path
+      redirect_to admin_root_path
     else
       flash[:error] = "ログインできませんでした"
       render :new

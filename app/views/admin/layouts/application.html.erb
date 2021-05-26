@@ -9,9 +9,11 @@
 </head>
 <body class="hold-transition sidebar-mini">
   <div class="wrapper">
-  <%= render 'admin/shared/navbar' %>
-  <%= render 'admin/shared/sidebar' %>
-  <%= yield %>
+    <%= render 'admin/shared/navbar' %>
+    <%= render 'admin/shared/sidebar' %>
+    <div class="content-wrapper">
+      <%= yield %>
+    </div>
   </div>
 </body>
 </html>
