@@ -17,6 +17,14 @@ Rails.application.routes.draw do
       get 'sake', to: 'snacks#sake'
     end
   end
+
+  namespace :admin do
+    root 'static_pages#home'
+    get 'login', to: 'user_sessions#new'
+    post 'login', to: 'user_sessions#create'
+    post 'logout', to: 'user_sessions#destroy'
+  end
+
   # mailer
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end
