@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+  <%= stylesheet_pack_tag 'admin', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_pack_tag 'admin', 'data-turbolinks-track': 'reload' %>
+</head>
+<body class="hold-transition sidebar-mini">
+  <div class="wrapper">
+  <%= render 'admin/shared/navbar' %>
+  <%= render 'admin/shared/sidebar' %>
+  <%= yield %>
+  </div>
+</body>
+</html>
