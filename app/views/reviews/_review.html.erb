@@ -6,13 +6,13 @@
         <ul class='crud-menu-btn list-inline float-right'>
         <% if current_user == review.user %>
           <li class='list-inline-item mr-3'>
-            <%= button_to edit_review_path(review), class: "btn p-0 js-edit-comment-button shadow-sm rounded", data: { review_id: review.id }, style: "width:2rem;height:2rem;", remote: true do %>
-            <i class="fas fa-pen-nib ms-1"></i>
+            <%= button_to edit_review_path(review), class: "btn p-0 js-edit-comment-button shadow-sm rounded", data: { review_id: review.id }, style: "width:3rem;height:3rem;", remote: true do %>
+            <i class="fas fa-pen-nib ms-1 fa-2x"></i>
           <% end %>
           </li>
           <li class='list-inline-item', id='button-delete-<%= review.id %>'>
-            <%= button_to review_path(review), class: "btn p-0 js-delete-comment-button shadow-sm rounded", style: "width:2rem;height:2rem;", method: :delete, data: { confirm: '本当に削除してもよろしいですか？'}, remote: true do %>
-              <i class="fas fa-trash-alt ms-1"></i>
+            <%= button_to review_path(review), class: "btn p-0 js-delete-comment-button shadow-sm rounded", style: "width:3rem;height:3rem;", method: :delete, data: { confirm: '本当に削除してもよろしいですか？'}, remote: true do %>
+              <i class="fas fa-trash-alt ms-1 fa-2x"></i>
             <% end %>
           </li>
         <% end %>
@@ -26,8 +26,8 @@
       <br>
         <div id="js-textarea-comment-box-<%= review.id %>" style="display: none;">
           <textarea id="js-textarea-comment-<%= review.id %>" class="textarea form-control mb-5"><%= review.comment %></textarea>
-          <button class="btn js-button-edit-review-cancel mt-2 mr-3" data-review-id="<%= review.id %>"><h5 class="px-2 mb-0">キャンセル</h5></button>
-          <button class="btn js-button-review-update mt-2" data-review-id="<%= review.id %>"><h5 class="px-2 mb-0">更新</h5></button>
+          <button class="btn js-button-edit-review-cancel mt-2 mr-3" data-review-id="<%= review.id %>"><h2 class="px-2 mb-0">キャンセル</h2></button>
+          <button class="btn js-button-review-update mt-2" data-review-id="<%= review.id %>"><h2 class="px-2 mb-0">更新</h2></button>
         </div>
         <div class='text-right review-time'>
           <%= review.created_at.strftime('%Y/%m/%d') %>

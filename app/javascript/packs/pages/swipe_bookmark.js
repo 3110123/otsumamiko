@@ -1,7 +1,7 @@
 var card = document.getElementById('showModal');
 var modalClose = document.getElementById('modalClose');
 var mouseBookmarkRange = 100
-var touchBookmarkRange = 300
+var touchBookmarkRange = 500
 var userPresence = card.dataset.user
 
 // PCmouseイベント
