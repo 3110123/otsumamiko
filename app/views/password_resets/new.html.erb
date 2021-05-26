@@ -1,7 +1,7 @@
 <%= image_pack_tag "media/images/header_awa.png", class: "headerimage" %>
   <div class="card-img-overlay">
     <div class="container">
-      <h1 class="font-weight-bold">パスワードを<br>忘れた方</h1>
+      <h1 class="font-weight-bold"><%= t '.title' %></h1>
     </div>
   </div>
   <div class="container">
@@ -9,16 +9,16 @@
       <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
         <%= form_with model: @user, url: password_resets_path, local: true, method: :post do |f| %>
           <div class="form-group h4 py-3">
-            <%= f.label :メールアドレス %><br />
-            <%= f.text_field :email, class: "form-control", type: "text", placeholder: "メールアドレス" %>
+            <%= f.label :email, User.human_attribute_name(:email) %><br>
+            <%= f.text_field :email, class: "form-control comment-area serch_field shadow-lg rounded-pill pl-5", type: "text", placeholder: "メールアドレス" %>
           </div><br>
           <div class="actions text-center">
-            <%= f.submit 'メールを送信する', class: "btn h3 text-light btn-danger btn-block rounded-pill py-4 px-5 shadow-lg p-3 submit-btn" %>
+            <%= f.submit 'メールを送信する', class: "btn h3 text-light btn-danger btn-block rounded-pill px-5 shadow-lg p-3 submit-btn" %>
           </div>
         <% end %>
         <div class="text-center password-forget">
-          <%= link_to '新規登録', new_user_path, class: "mr-4 text-reset" %>
-          <%= link_to 'ログイン', login_path, class: "text-reset" %>
+          <%= link_to (t 'defaults.register'), new_user_path, class: "mr-4 text-reset h3" %>
+          <%= link_to (t 'defaults.login'), login_path, class: "text-reset h3" %>
         </div>
       </div>
     </div>

@@ -1,24 +1,30 @@
-<div class="col-md-6 col-xs-12">
-  <div class="card">
+<div class="col-md-12 col-xl-6">
+  <div class="card m-4 shadow-lg p-3 mb-5 bg-white rounded" style="height: 48rem;">
     <div data-toggle="modal" data-target="#exampleModal">
-    <%= link_to snack_path(snack), remote: true do %>
-      <%= image_tag '', size: '300x200', class: 'card-img-top' %>
-        <div class="card-body">
-          <div class='text-center'>
-            <%= snack.alcohol %><br>x<br>
-            <%= snack.name %><br>
+    <%= link_to snack_path(snack), class: "text-decoration-none text-dark", remote: true do %>
+    <%= image_tag '', size: '250x450', class: 'card-img-top' %>
+      <div class="card-body">
+        <div class='text-center'>
+          <h2 class="font-weight-bold m-0"><%= snack.alcohol_i18n %>
+          <br><div class="py-2">✖️</div>
+          <div class="snack-name"><%= snack.name %></div></h2><br>
+          <ul class="review-rate">
+            <li class="list-inline-item h2 mr-1 mb-0 align-middle">
               <% if snack.reviews.blank? %>
                 <%= snack_rate = 0.0 %>
               <% else %>
                 <%= snack_rate = snack.reviews.average(:rate).round(2) %>
               <% end %>
-                <%= render 'snacks/snack_rate', snack_rate: snack_rate %>
-              <br>
-              <div class="bookmark-<%= snack.id %>">
-                <%= render 'bookmarks/bookmark_area', snack: snack %>
-              </div>
-          </div>
+            </li>
+            <li class="list-inline-item align-middle">
+              <%= render 'snacks/snack_rate', snack_rate: snack_rate %>
+            </li>
+          </ul>
         </div>
+        <div class="bookmark-<%= snack.id %>">
+          <%= render 'bookmarks/bookmark_area', snack: snack %>
+        </div>
+      </div>
     <% end %>
     </div>
   </div>

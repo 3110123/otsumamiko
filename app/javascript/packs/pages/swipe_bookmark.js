@@ -1,24 +1,19 @@
 var card = document.getElementById('showModal');
-var demo = document.getElementById('swipeDemo');
-var mouseBookmarkRange = 20
-var touchBookmarkRange = 300
+var modalClose = document.getElementById('modalClose');
+var mouseBookmarkRange = 100
+var touchBookmarkRange = 500
+var fadeout = 0;
+bookmarkFadeout = fadeout + 20;
+unbookmarkFadeout = fadeout + -20;
 var userPresence = card.dataset.user
-
-if (userPresence === '') {
-  demo.style.display = "none";
-}else{
-  setTimeout(function(){
-    demo.style.display = "none";
-  }, 5000);
-}
 
 // PCmouseイベント
 card.onmousedown = function(e) {
-  window.offsetX1 = e.offsetX
+  window.offsetX1 = e.pageX
 }
 
 card.ondragend = function(e) {
-  offsetX2 = e.offsetX
+  offsetX2 = e.pageX
   switchToAction(offsetX2);
 }
 
@@ -27,14 +22,14 @@ card.ontouchstart = function(e) {
 	// タッチの情報を含むオブジェクト
 	var touchObject = e.changedTouches[0];
 	// 位置座標を取得する
-	window.touchX1 = touchObject.pageX ;
+	window.touchX1 = touchObject.pageX;
 }
 
 card.ontouchend = function(e) {
 	// タッチの情報を含むオブジェクト
-	var touchObject = e.changedTouches[0] ;
+	var touchObject = e.changedTouches[0];
 	// 位置座標を取得する
-	touchX2 = touchObject.pageX ;
+	touchX2 = touchObject.pageX;
   touchswitchToAction(touchX2);
 }
 
@@ -51,8 +46,8 @@ function switchToAction(offsetX2) {
 
 // マウス
 function switchToBookmark(snackId) {
-  if (userPresence === '') {
-    toastr.error('お気に入りのおつまみに登録するにはログインが必要です。');
+  if (userPresence === 'false') {
+    toastr.error('ログインが必要です。');
     return false;
   }
   // 右ドラッグbookmark
@@ -63,14 +58,17 @@ function switchToBookmark(snackId) {
         'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
       }
     }).done(function() {
-      document.elementFromPoint(100, 100).click();
-      toastr.success('気になっているおつまみに登録しました！');
+      card.style.transform = "rotate(" + bookmarkFadeout + "deg)";
+      modalClose.click();
+      toastr.success('登録しました！');
+    }).fail(function() {
+      toastr.error('すでに登録されています！');
     });
   }
 
 function switchToUnbookmark(snackId) {
-  if (userPresence === '') {
-    toastr.error('お気に入りのおつまみに登録するにはログインが必要です。');
+  if (userPresence === 'false') {
+    toastr.error('ログインが必要です。');
     return false;
   }
     // 左ドラッグbookmark解除
@@ -81,8 +79,11 @@ function switchToUnbookmark(snackId) {
         'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
       }
     }).done(function() {
-      document.elementFromPoint(100, 100).click();
-      toastr.error('気になっているおつまみを解除しました。');
+      card.style.transform = "rotate(" + unbookmarkFadeout + "deg)";
+      modalClose.click();
+      toastr.error('解除しました。');
+    }).fail(function() {
+      toastr.error('すでに解除されています！');
     });
 }
 
@@ -98,8 +99,8 @@ function touchswitchToAction(touchX2) {
 }
 
 function touchswitchToBookmark(snackId) {
-  if (userPresence === '') {
-    toastr.error('お気に入りのおつまみに登録するにはログインが必要です。');
+  if (userPresence === 'false') {
+    toastr.error('ログインが必要です。');
     return false;
   }
   // 右ドラッグbookmark
@@ -110,14 +111,17 @@ function touchswitchToBookmark(snackId) {
         'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
       }
     }).done(function() {
-      document.elementFromPoint(100, 100).click();
-      toastr.success('気になっているおつまみに登録しました！');
+      card.style.transform = "rotate(" + bookmarkFadeout + "deg)";
+      modalClose.click();
+      toastr.success('登録しました！');
+    }).fail(function() {
+      toastr.error('すでに登録されています！');
     });
   }
 
 function touchswitchToUnbookmark(snackId) {
-  if (userPresence === '') {
-    toastr.error('お気に入りのおつまみに登録するにはログインが必要です。');
+  if (userPresence === 'false') {
+    toastr.error('ログインが必要です。');
     return false;
   }
     // 左ドラッグbookmark解除
@@ -128,7 +132,10 @@ function touchswitchToUnbookmark(snackId) {
         'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
       }
     }).done(function() {
-      document.elementFromPoint(100, 100).click();
-      toastr.error('気になっているおつまみを解除しました。');
+      card.style.transform = "rotate(" + unbookmarkFadeout + "deg)";
+      modalClose.click();
+      toastr.error('解除しました。');
+    }).fail(function() {
+      toastr.error('すでに解除されています！');
     });
 }

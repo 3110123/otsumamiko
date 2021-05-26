@@ -21,10 +21,19 @@ html, body {
 }
 
 .navbar-brand {
-  font-size: 2rem;
+  font-size: 3rem;
   font-family: "Nico Moji";
 }
 
+.toast-message {
+  font-size: 1.8rem;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#toast-container {
+  margin-top: 100px;
+}
 
 // footer
 .footer-logo {
@@ -74,14 +83,15 @@ html, body {
 .mypage-area {
   background-color: #ffe4b5;
   border: dashed;
-  border-color: #908484;
-  border-width: 5px;
+  border-color: #c7c7c7;
+  border-width: 2px;
 }
 
 // login
 .submit-btn {
   margin-top: 100px;
   margin-bottom: 100px;
+  font-size: 2rem;
 }
 
 .password-forget {
@@ -102,4 +112,162 @@ html, body {
   position: fixed;
   right: 0px;
   bottom: 50px;
+}
+
+// おつまみ絞り込み結果
+.recomend-comment {
+  margin-bottom: 100px;
+}
+
+.inline-block-rate {
+  font-size: 2.5rem;
+}
+
+.result-image {
+  margin: 0 auto;
+}
+
+.result-chart {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+
+.comment-table {
+  background-color: #d36f6f;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.twitter {
+  margin-right: 50px;
+  margin-bottom: 50px;
+}
+
+.radio-field input[type="radio"] {
+  opacity: 0;
+  &:checked + label {
+    background-color: #faaf24;
+    color: black;
+    padding: 16px 31px;
+  }
+}
+
+.radio-field label {
+  background-color: #f4f4f4;
+  padding: 7px 22px;
+  border-radius: 50%;
+  box-shadow: 0 3px 5px rgba(0, 0, 0, 0.125);
+  font-size: 2rem;
+  color: #aaaaaa;
+  p {
+    color: #aaaaaa;
+  }
+}
+
+.radio-field label:hover {
+  background-color: #ffe1b4;
+}
+
+.radio-field {
+  h3 {
+  color: #aaaaaa;
+  }
+  p {
+    color: #aaaaaa;
+  }
+}
+
+.textarea {
+  width: 100%;
+  min-height: 500px;
+  max-height: 1500px;
+  padding: 8px;
+  line-height: 50px;
+  font-size: 1rem;
+}
+
+.js-edit-comment-button {
+  background-color: #f08c7c;
+  color: white;
+  &:hover {
+    background-color: #e84c6c;
+    color: white;
+  }
+}
+
+.js-delete-comment-button {
+  background-color: #f08c7c;
+  color: white;
+  &:hover {
+    background-color: #e84c6c;
+    color: white;
+  }
+}
+
+.js-button-review-update {
+  background-color: #f08c7c;
+  color: white;
+  &:hover {
+    background-color: #e84c6c;
+    color: white;
+  }
+}
+
+.js-button-edit-review-cancel {
+  border-color: #aaaaaa;
+  color: #aaaaaa;
+  &:hover {
+    background-color: #848484;
+    color: white;
+  }
+}
+
+.comment-area {
+  font-size: 1.5rem;
+  &::placeholder {
+    font-size: 1.5rem;
+  }  
+}
+
+.review-time {
+  color: #aaaaaa;
+}
+
+//おつまみ一覧
+.bookmark-position {
+  position: absolute;
+  right: 70px;
+  bottom: 350px;
+}
+
+.card-img-top {
+  position: relative;
+}
+
+.bookmark-counter {
+  font-size: 8rem;
+}
+
+.bookmark-icon {
+  color: #848484;
+}
+
+.serch_field {
+  height: 75px;
+}
+
+//おつまみ詳細
+.modal-dialog {
+  max-width: inherit;
+  width: 80%;
+}
+
+.close {
+  font-size: 5rem;
+}
+
+.share-button {
+  position: sticky;
+  opacity: 0.7;
+  z-index: 1;
 }

@@ -1,0 +1,7 @@
+ja:
+  enums:
+    snack:
+      alcohol:
+        beer: 'ビール'
+        wine: 'ワイン'
+        sake: '日本酒'

@@ -1,53 +1,70 @@
-<% if @query.alcohol == "beer" %>
-  <div class="bg-warning">
-<% elsif @query.alcohol == "wine" %>
-  <div class="bg-danger">
-<% elsif @query.alcohol == "sake" %>
-  <div class="bg-info">
-<% end %>
-  <div class="container">
-    <div class="row">
-      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-        <div class="card my-5">
-          <div class="card-body">
+<div class="container food-choice w-75">
+  <div class="card my-5 shadow-lg p-3 mb-5 bg-white rounded food-choice-card">
+    <div class="card-body">
+      <div class='text-center'>
+        <h2 class="font-weight-bold mt-5">あなたにぴったりの</h2>
+        <h1 class="font-weight-bold">おつまみ</h1>
+        <h2 class="font-weight-bold recomend-comment">今日のおつまみは<br>これを試してみましょう！</h2>
+      </div>
+      <div class="row">
+        <div class="col-6">
+          <div class="result-image">
+            <%= image_pack_tag "media/images/healthy.jpg", size: "300x300" %>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="container align-self-center">
             <div class='text-center'>
-              <p>あなたにぴったりの</p>
-              <h1 class="font-weight-bold m-5">おつまみ</h1>
-              <p>今日のおつまみは<br>これを試してみましょう！</p>
-              <%= @query.name %>
-              <%= @snack_rate %>
-            <%= render 'snacks/snack_rate', snack_rate: @snack_rate %>
-
-            <p>気になっている人<%= @snack.bookmarks.count %>人</p>
-
-          <div id="chart" data-snack-id="<%= @snack.id %>" data-sweetness-value="<%= @snack.reviews.average(:sweetness) %>" data-salty-value="<%= @snack.reviews.average(:salty) %>" data-acidity-value="<%= @snack.reviews.average(:acidity) %>" data-taste-value="<%= @snack.reviews.average(:taste) %>" data-scent-value="<%= @snack.reviews.average(:scent) %>">
+              <h2 class="font-weight-bold m-0"><%= @snack.alcohol %>
+              <br><div class="py-2">✖️</div>
+              <%= @query.name %></h2><br>
+                <div class="rate-number inline-block-rate">
+                  <%= @snack_rate %>
+                </div>
+                <div class="rate-number inline-block-rate">
+                  <%= render 'snacks/snack_rate', snack_rate: @snack_rate %>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-12">
+          <div class='result-chart'>
+            <div id="chart" data-snack-id="<%= @snack.id %>" data-sweetness-value="<%= @snack.reviews.average(:sweetness) %>" data-salty-value="<%= @snack.reviews.average(:salty) %>" data-acidity-value="<%= @snack.reviews.average(:acidity) %>" data-taste-value="<%= @snack.reviews.average(:taste) %>" data-scent-value="<%= @snack.reviews.average(:scent) %>">
             <canvas id="myRaderChart-<%= @snack.id %>"></canvas>
+            </div>
           </div>
           <%= javascript_pack_tag 'pages/ratechart' %>
 
-          <p>コメント</p>
-          <% if logged_in? %>
-            <%= render 'snacks/review_area' %>
-          <% end %>
-          <div class="row">
-            <div class="col-lg-8 offset-lg-2">  
-              <table id="js-table-comment" class="table">
-                <%= render @reviews, review: @review %>
-              </table>
+          <div class='text-center'>
+            <div class="row justify-content-center">
+              <div class="col-xl-8 col-md-12">
+                <% if logged_in? %>
+                  <a data-toggle="collapse" href="#collapseExample" aria-controls="collapseExample" class="text-decoration-none"><h3 class="comment-table text-white rounded-pill shadow-lg p-3 my-5">コメント</h3></a>
+                  <%= render 'snacks/review_area' %>
+                <% else %>
+                  <h3 class="comment-table text-white rounded-pill shadow-lg p-3 my-5 text-decoration-none">コメント</h3>
+                <% end %>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-12">  
+                <table id="js-table-comment" class="table text-left">
+                  <%= render @reviews, review: @review %>
+                </table>
+              </div>
             </div>
           </div>
           <div class="share-button fixed-bottom">
             <div class="d-flex justify-content-center">
-              <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", class: "btn btn-primary rounded-pill" do %>
-                <i class="fab fa-twitter"></i> 今日のおつまみを宣言
+              <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", class: "twitter btn btn-primary rounded-pill d-inline-flex" do %>
+                <i class="fab fa-twitter fa-3x d-inline-flex mt-1 ml-2"></i><div class="h3 m-2"> おつまみを宣言</div>
               <% end %>
-              <%= link_to snacks_path, class: "btn btn-danger rounded-pill" do %>
-                他のおつまみを見る
+              <%= link_to snacks_path, class: "btn btn-danger rounded-pill twitter" do %>
+                <div class="h3 m-2">他のおつまみ</div>
               <% end %>
             </div>
           </div>
         </div>
-       </div>
       </div>
     </div>
   </div>

@@ -1,24 +1,17 @@
-<div class="bg-warning">
+<%= image_pack_tag "media/images/header_awa.png", class: "headerimage" %>
+<div class="card-img-overlay">
   <div class="container">
-    <div class="row">
-      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-        <div class="card my-5">
-          <div class="card-body">
-            <div class='text-center'>
-              <h1 class="font-weight-bold m-5">おつまみ一覧</h1>
-            </div>
-              <%= render 'snacks/search_form_for', url: snacks_path %>
-              <div id="pageScroll" data-page="">
-                <div id="records_table" class="row">
-                  <%= render @snack %>
-                </div>
-              <div id="div_next_link">
-                <%= render 'snacks/next_link' %>
-              </div>
-              </div>
-          </div>
-        </div>
-      </div>
+    <h1 class="font-weight-bold"><%= t '.title' %></h1>
+  </div>
+</div>
+<div class="container w-75">
+  <%= render 'snacks/search_form_for', url: snacks_path %>
+  <div id="pageScroll" data-page="">
+    <div id="records_table" class="row">
+      <%= render @snack %>
+    </div>
+    <div id="div_next_link">
+      <%= render 'snacks/next_link' %>
     </div>
   </div>
 </div>
