@@ -1,0 +1,25 @@
+ja:
+  defaults:
+    login: 'ログイン'
+    register: '新規登録'
+    password_forget: 'パスワードを忘れた方'
+  static_pages:
+    home:
+      title: 'おつまみこ'
+  users:
+    new:
+      title: '新規登録'
+    show:
+      title: 'マイページ'
+  user_sessions:
+    new:
+      title: 'ログイン'
+  snacks:
+    index:
+      title: 'おつまみ一覧'
+  password_resets:
+    new:
+      title: 'パスワードをお忘れの方'
+    edit:
+      title: 'パスワードリセット'
+  

@@ -2,6 +2,9 @@ var card = document.getElementById('showModal');
 var modalClose = document.getElementById('modalClose');
 var mouseBookmarkRange = 100
 var touchBookmarkRange = 500
+var fadeout = 0;
+bookmarkFadeout = fadeout + 20;
+unbookmarkFadeout = fadeout + -20;
 var userPresence = card.dataset.user
 
 // PCmouseイベント
@@ -55,6 +58,7 @@ function switchToBookmark(snackId) {
         'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
       }
     }).done(function() {
+      card.style.transform = "rotate(" + bookmarkFadeout + "deg)";
       modalClose.click();
       toastr.success('登録しました！');
     }).fail(function() {
@@ -75,6 +79,7 @@ function switchToUnbookmark(snackId) {
         'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
       }
     }).done(function() {
+      card.style.transform = "rotate(" + unbookmarkFadeout + "deg)";
       modalClose.click();
       toastr.error('解除しました。');
     }).fail(function() {
@@ -106,6 +111,7 @@ function touchswitchToBookmark(snackId) {
         'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
       }
     }).done(function() {
+      card.style.transform = "rotate(" + bookmarkFadeout + "deg)";
       modalClose.click();
       toastr.success('登録しました！');
     }).fail(function() {
@@ -126,6 +132,7 @@ function touchswitchToUnbookmark(snackId) {
         'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
       }
     }).done(function() {
+      card.style.transform = "rotate(" + unbookmarkFadeout + "deg)";
       modalClose.click();
       toastr.error('解除しました。');
     }).fail(function() {

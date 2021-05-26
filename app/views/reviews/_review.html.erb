@@ -1,7 +1,7 @@
 <tr id="review-<%= review.id %>">
   <td class="card shadow p-3 mb-5 bg-white rounded">
     <div class="card-body">
-      <div class="review-user border-bottom border-danger h3 pb-3 text-left">
+      <div class="review-user border-bottom border-danger h3 pb-4 text-left">
         <%= review.user.name %>
         <ul class='crud-menu-btn list-inline float-right'>
         <% if current_user == review.user %>
