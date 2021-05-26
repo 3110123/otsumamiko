@@ -1,5 +1,6 @@
 var card = document.getElementById('showModal');
 var demo = document.getElementById('swipeDemo');
+var modalClose = document.getElementById('modalClose');
 var mouseBookmarkRange = 20
 var touchBookmarkRange = 300
 var userPresence = card.dataset.user
@@ -63,7 +64,7 @@ function switchToBookmark(snackId) {
         'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
       }
     }).done(function() {
-      document.elementFromPoint(100, 100).click();
+      modalClose.click();
       toastr.success('気になっているおつまみに登録しました！');
     });
   }
@@ -81,7 +82,7 @@ function switchToUnbookmark(snackId) {
         'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
       }
     }).done(function() {
-      document.elementFromPoint(100, 100).click();
+      modalClose.click();
       toastr.error('気になっているおつまみを解除しました。');
     });
 }
@@ -110,7 +111,7 @@ function touchswitchToBookmark(snackId) {
         'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
       }
     }).done(function() {
-      document.elementFromPoint(100, 100).click();
+      modalClose.click();
       toastr.success('気になっているおつまみに登録しました！');
     });
   }
@@ -128,7 +129,7 @@ function touchswitchToUnbookmark(snackId) {
         'X-CSRF-Token' : $('meta[name="csrf-token"]').attr('content')
       }
     }).done(function() {
-      document.elementFromPoint(100, 100).click();
+      modalClose.click();
       toastr.error('気になっているおつまみを解除しました。');
     });
 }

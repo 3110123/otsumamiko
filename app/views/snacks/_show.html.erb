@@ -1,8 +1,8 @@
 <div class="modal-dialog modal-lg" id="showModal" data-snack="<%= @snack.id %>" data-user="<%= logged_in? %>" draggable="true">
 <%= javascript_pack_tag 'pages/swipe_bookmark' %>
-  <div class="modal-content">
+  <div class="modal-content modal-close">
     <div class="text-align:right">
-      <button type="button" class="close m-3 pr-4" data-dismiss="modal" aria-label="Close">
+      <button type="button" class="close m-3 pr-4" data-dismiss="modal" aria-label="Close" id="modalClose">
       <span aria-hidden="true">&times;</span>
       </button>
     </div>
