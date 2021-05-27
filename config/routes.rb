@@ -23,7 +23,9 @@ Rails.application.routes.draw do
     get 'login', to: 'user_sessions#new'
     post 'login', to: 'user_sessions#create'
     post 'logout', to: 'user_sessions#destroy'
-    resources :snacks
+    resources :snacks do
+      resources :reviews, shallow: true, only: %i[destroy]
+    end
   end
 
   # mailer

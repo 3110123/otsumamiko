@@ -21,6 +21,7 @@ class Admin::SnacksController < Admin::BaseController
 
   def show
     @snack = Snack.find(params[:id])
+    @reviews = @snack.reviews
   end
 
   def edit
