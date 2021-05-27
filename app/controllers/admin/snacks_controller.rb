@@ -5,7 +5,7 @@ class Admin::SnacksController < Admin::BaseController
 
   def create
     @snack = Snack.new(snack_params)
-
+binding.pry
     if @snack.save
       flash[:success] = "投稿しました"
       redirect_to new_admin_snack_path
@@ -16,7 +16,7 @@ class Admin::SnacksController < Admin::BaseController
   end
   
   def index
-    @snacks = Snack.all
+    @snacks = Snack.all.includes(:tags, :reviews, :bookmarks)
   end
 
   def show
