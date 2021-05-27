@@ -1,11 +1,11 @@
 class Admin::SnacksController < Admin::BaseController
-  
+  include Pagy::Backend
   def new
   end
 
   def create
     @snack = Snack.new(snack_params)
-binding.pry
+
     if @snack.save
       flash[:success] = "投稿しました"
       redirect_to new_admin_snack_path
@@ -16,7 +16,8 @@ binding.pry
   end
   
   def index
-    @snacks = Snack.all.includes(:tags, :reviews, :bookmarks)
+    @q = Snack.ransack(params[:q])
+    @pagy, @snacks = pagy(@q.result(distinct: true).includes(:tags, :reviews, :bookmarks))
   end
 
   def show
