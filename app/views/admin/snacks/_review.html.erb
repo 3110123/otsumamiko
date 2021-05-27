@@ -1,0 +1,22 @@
+<tr class="text-center">
+  <td><%= review.id %></td>
+  <td><%= review.users.name %></td>
+  <td><%= review.comment %></td>
+  <td><%= review.rate %></td>
+  <td><%= review.salty %></td>
+  <td><%= review.acidity %></td>
+  <td><%= review.taste %></td>
+  <td><%= review.scent %></td>
+  <td><%= review.created_at %></td>
+  <td><%= review.updated_at %></td>
+  <td>
+    <ul>
+      <li class='list-inline-item'>
+        <%= button_to "編集", edit_admin_snack_path(snack), method: :get, class: "btn btn-danger" %>
+      </li>
+      <li class='list-inline-item'>
+        <%= button_to "削除", admin_snack_path(snack), method: :delete, class: "btn btn-secondary" %>
+      </li>
+    </ul>
+  </td>
+</tr>

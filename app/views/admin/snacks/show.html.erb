@@ -1,0 +1,53 @@
+<h1 class="text-center my-5">おつまみ詳細</h1>
+<div class="row justify-content-center text-center">
+  <div class="col-8">
+    <div class="card text-center">
+      <div class="card-body">
+        <h5 class="py-3 text-info">Image</h5>
+        <% if @snack.image.attached? %>
+          <%= image_tag @snack.image %>
+        <% end %>
+
+        <h5 class="text-info">Name</h5>
+          <%= @snack.name %>
+
+        <h5 class="text-info">Alcohol</h5>
+          <%= @snack.alcohol_i18n %>
+          
+        <h5 class="text-info">Tag</h5>
+          <%= @snack.tags.pluck(:name).join(', ') %>
+      </div>
+    </div>
+    <ul>
+      <li class='list-inline-item'>
+        <%= button_to "編集", edit_admin_snack_path(@snack), method: :get, class: "btn btn-danger" %>
+      </li>
+      <li class='list-inline-item'>
+        <%= button_to "削除", admin_snack_path(@snack), method: :delete, class: "btn btn-secondary" %>
+      </li>
+    </ul>
+  </div>
+</div>
+  <h5 class="text-info text-center">Review</h5>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center">id</th>
+      <th scope="col" class="text-center">name</th>
+      <th scope="col" class="text-center">comment</th>
+      <th scope="col" class="text-center">rate</th>
+      <th scope="col" class="text-center">sweetness</th>
+      <th scope="col" class="text-center">salty</th>
+      <th scope="col" class="text-center">acidity</th>
+      <th scope="col" class="text-center">taste</th>
+      <th scope="col" class="text-center">scent</th>
+      <th scope="col" class="text-center">created_at</th>
+      <th scope="col" class="text-center">updated_at</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @reviews %>
+  </tbody>
+</table>
+  
