@@ -42,6 +42,7 @@ class Admin::SnacksController < Admin::BaseController
 
   def destroy
     @snack = Snack.find(params[:id])
+    @snack.image.purge if @snack.image.attached?
     @snack.destroy!
   end
 

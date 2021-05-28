@@ -22,7 +22,7 @@ Rails.application.routes.draw do
     root 'dashboards#index'
     get 'login', to: 'user_sessions#new'
     post 'login', to: 'user_sessions#create'
-    post 'logout', to: 'user_sessions#destroy'
+    delete 'logout', to: 'user_sessions#destroy'
     resources :snacks do
       resources :reviews, shallow: true, only: %i[destroy]
     end
