@@ -1,4 +1,8 @@
 <h1 class="text-center my-1">おつまみ一覧</h1>
+<%= search_form_for @q, url: admin_snacks_path do |f| %>
+  
+  <%= f.submit "検索" %>
+<% end %>
 <div class="text-right">
   <%= link_to "新規作成", new_admin_snack_path %>
 </div>

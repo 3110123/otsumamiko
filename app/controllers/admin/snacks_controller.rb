@@ -1,16 +1,17 @@
 class Admin::SnacksController < Admin::BaseController
   include Pagy::Backend
   def new
+    @snack = Snack.new
   end
 
   def create
     @snack = Snack.new(snack_params)
 
     if @snack.save
-      flash[:success] = "投稿しました"
+      flash[:notice] = "投稿しました"
       redirect_to new_admin_snack_path
     else
-      flash[:error] = "投稿に失敗しました"
+      flash[:danger] = "投稿に失敗しました"
       render :new
     end
   end
@@ -33,10 +34,10 @@ class Admin::SnacksController < Admin::BaseController
     @snack = Snack.find(params[:id])
 
     if @snack.update(snack_params)
-      flash[:success] = "投稿しました"
+      flash[:notice] = "更新しました"
       redirect_to admin_snack_path(@snack)
     else
-      flash[:error] = "投稿に失敗しました"
+      flash[:danger] = "更新に失敗しました"
       render :edit
     end
   end

@@ -26,6 +26,7 @@ Rails.application.routes.draw do
     resources :snacks do
       resources :reviews, shallow: true, only: %i[destroy]
     end
+    resources :tags
   end
 
   # mailer

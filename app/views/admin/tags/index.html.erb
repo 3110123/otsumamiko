@@ -1,0 +1,22 @@
+<h1 class="text-center my-1">タグ一覧</h1>
+<%= search_form_for @q, url: admin_tags_path do |f| %>
+  
+  <%= f.submit "検索" %>
+<% end %>
+<div class="text-right">
+  <%= link_to "新規作成", new_admin_tag_path %>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th scope="col" class="text-center">id</th>
+      <th scope="col" class="text-center">name</th>
+      <th scope="col" class="text-center">おつまみ数</th>
+      <th scope="col"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <%= render @tags %>
+  </tbody>
+</table>
+<%== pagy_bootstrap_nav(@pagy) %>

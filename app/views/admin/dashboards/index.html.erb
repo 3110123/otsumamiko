@@ -1,2 +1,28 @@
-<h1>Admin::Dashboards#index</h1>
-<p>Find me in app/views/admin/dashboards/index.html.erb</p>
+<div class="card bg-primary">
+  <p>ユーザー数</p>
+  <%= User.all.length %>
+</div>
+<div class="card bg-secondary">
+  <p>おつまみ総数</p>
+  <%= Snack.all.length %>
+</div>
+<div class="card bg-secondary">
+  <p>ビール</p>
+  <%= Snack.all.beer.length %>
+</div>
+<div class="card bg-secondary">
+  <p>ワイン</p>
+  <%= Snack.all.wine.length %>
+</div>
+<div class="card bg-secondary">
+  <p>sake</p>
+  <%= Snack.all.sake.length %>
+</div>
+<div class="card bg-danger">
+  <p>レビュー</p>
+  <%= Review.all.length %>
+</div>
+<div class="card bg-warning">
+  <p>タグ数</p>
+  <%= Tag.all.length %>
+</div>
