@@ -236,8 +236,8 @@ html, body {
 //おつまみ一覧
 .bookmark-position {
   position: absolute;
-  right: 70px;
-  bottom: 350px;
+  right: 40px;
+  bottom: 180px;
 }
 
 .card-img-top {
@@ -270,4 +270,10 @@ html, body {
   position: sticky;
   opacity: 0.7;
   z-index: 1;
+}
+
+.show-bookmark {
+  position: absolute;
+  right: 100px;
+  bottom: -90px;
 }

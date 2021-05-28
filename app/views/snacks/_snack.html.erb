@@ -2,7 +2,11 @@
   <div class="card m-4 shadow-lg p-3 mb-5 bg-white rounded" style="height: 48rem;">
     <div data-toggle="modal" data-target="#exampleModal">
     <%= link_to snack_path(snack), class: "text-decoration-none text-dark", remote: true do %>
-    <%= image_tag '', size: '250x450', class: 'card-img-top' %>
+    <% if snack.image.attached? %>
+      <%= image_tag snack.image, size: '250x450', class: 'card-img-top' %>
+    <% else %>
+      <%= image_pack_tag "media/images/default.png", size: '250x450', class: 'card-img-top' %>
+    <% end %>
       <div class="card-body">
         <div class='text-center'>
           <h2 class="font-weight-bold m-0"><%= snack.alcohol_i18n %>
@@ -21,7 +25,7 @@
             </li>
           </ul>
         </div>
-        <div class="bookmark-<%= snack.id %>">
+        <div class="bookmark-<%= snack.id %> bookmark-position">
           <%= render 'bookmarks/bookmark_area', snack: snack %>
         </div>
       </div>
