@@ -2,7 +2,7 @@
   <td><%= snack.id %></td>
   <td><%= snack.image.attached? %></td>
   <td><%= link_to snack.name, admin_snack_path(snack), method: :get %></td>
-  <td><%= snack.alcohol %></td>
+  <td><%= snack.alcohol_i18n %></td>
   <td><%= snack.tags.pluck(:name).join(', ') %></td>
   <td><%= snack.bookmarks.length %></td>
   <td><%= snack.reviews.length %></td>

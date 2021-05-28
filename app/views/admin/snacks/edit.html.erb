@@ -16,7 +16,7 @@
         </div>
         <div class="form-group">
           <%= f.label :alcohol, class: "text-info" %><br>
-          <%= f.select :alcohol, options_for_select(Snack.alcohols.keys), class: "form-control" %>
+          <%= f.select :alcohol, Snack.alcohols.keys.map {|k| [I18n.t("enums.snack.alcohol.#{k}"), k]}, class: "form-control" %>
           <%= render 'shared/error_messages', model: f.object, attribute: :alcohol %>
         </div>
         <div class="check_box" >

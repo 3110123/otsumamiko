@@ -27,6 +27,7 @@ Rails.application.routes.draw do
       resources :reviews, shallow: true, only: %i[destroy]
     end
     resources :tags
+    resources :users, only:%i[index edit update destroy]
   end
 
   # mailer
