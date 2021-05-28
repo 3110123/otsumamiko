@@ -8,10 +8,10 @@ class Admin::SnacksController < Admin::BaseController
     @snack = Snack.new(snack_params)
 
     if @snack.save
-      flash[:notice] = "投稿しました"
+      flash.now[:success] = "投稿しました"
       redirect_to new_admin_snack_path
     else
-      flash[:danger] = "投稿に失敗しました"
+      flash.now[:danger] = "投稿に失敗しました"
       render :new
     end
   end
@@ -34,10 +34,10 @@ class Admin::SnacksController < Admin::BaseController
     @snack = Snack.find(params[:id])
 
     if @snack.update(snack_params)
-      flash[:notice] = "更新しました"
+      flash.now[:success] = "更新しました"
       redirect_to admin_snack_path(@snack)
     else
-      flash[:danger] = "更新に失敗しました"
+      flash.now[:danger] = "更新に失敗しました"
       render :edit
     end
   end
