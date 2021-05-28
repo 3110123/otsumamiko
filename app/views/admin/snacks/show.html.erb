@@ -5,7 +5,7 @@
       <div class="card-body">
         <h5 class="py-3 text-info">Image</h5>
         <% if @snack.image.attached? %>
-          <%= image_tag @snack.image %>
+          <%= image_tag @snack.image, size: "300x300" %>
         <% end %>
 
         <h5 class="text-info">Name</h5>

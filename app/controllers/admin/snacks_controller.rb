@@ -17,7 +17,7 @@ class Admin::SnacksController < Admin::BaseController
   
   def index
     @q = Snack.ransack(params[:q])
-    @pagy, @snacks = pagy(@q.result(distinct: true).includes(:tags, :reviews, :bookmarks))
+    @pagy, @snacks = pagy(@q.result(distinct: true).includes(:tags, :reviews, :bookmarks, {image_attachment: :blob}))
   end
 
   def show
