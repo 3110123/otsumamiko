@@ -1,7 +1,5 @@
 class SnacksController < ApplicationController
   include Pagy::Backend
-  def new; end
-
   def show
     @snack = Snack.find(params[:id])
     @review = Review.new
@@ -22,12 +20,6 @@ class SnacksController < ApplicationController
       @nextPage = @pagy.page
     end
   end
-
-  def beer; end
-
-  def sake; end
-
-  def wine; end
 
   def result
     tags = params[:tag]

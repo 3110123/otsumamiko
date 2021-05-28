@@ -8,8 +8,7 @@ class Admin::TagsController < Admin::BaseController
     @tag = Tag.new(tag_params)
 
     if @tag.save
-      flash.now[:success] = "タグを作成しました"
-      redirect_to new_admin_tag_path
+      redirect_to new_admin_tag_path, success: "タグを作成しました"
     else
       flash.now[:danger] = "タグを作成できませんでした"
       render :new
@@ -24,8 +23,7 @@ class Admin::TagsController < Admin::BaseController
     @tag = Tag.find(params[:id])
 
     if @tag.update(tag_params)
-      flash.now[:success] = "更新しました"
-      redirect_to admin_tags_path
+      redirect_to admin_tags_path, success: "更新しました"
     else
       flash.now[:danger] = "更新に失敗しました"
       render :edit
