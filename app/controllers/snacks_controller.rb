@@ -1,7 +1,5 @@
 class SnacksController < ApplicationController
   include Pagy::Backend
-  def new; end
-
   def show
     @snack = Snack.find(params[:id])
     @review = Review.new
@@ -15,19 +13,13 @@ class SnacksController < ApplicationController
 
   def index
     @q = Snack.ransack(params[:q])
-    @pagy, @snack = pagy_countless(@q.result(distinct: true), link_extra: 'data-remote="true"')
+    @pagy, @snack = pagy_countless(@q.result(distinct: true).includes(:reviews, :bookmarks, {image_attachment: :blob}), link_extra: 'data-remote="true"')
     if @pagy.page == @pagy.pages
       @nextPage = "last"
     else
       @nextPage = @pagy.page
     end
   end
-
-  def beer; end
-
-  def sake; end
-
-  def wine; end
 
   def result
     tags = params[:tag]

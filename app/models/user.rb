@@ -12,6 +12,8 @@ class User < ApplicationRecord
   validates :email, uniqueness: true, presence: true
   validates :reset_password_token, presence: true, uniqueness: true, allow_nil: true
 
+  enum role: { general: 0, admin: 1 }
+
   def bookmark(snack)
     bookmarks_snacks << snack
   end

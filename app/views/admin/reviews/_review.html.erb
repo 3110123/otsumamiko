@@ -1,0 +1,19 @@
+<tr class="text-center">
+  <td><%= review.id %></td>
+  <td><%= review.user.name %></td>
+  <td><%= review.comment %></td>
+  <td><%= review.rate %></td>
+  <td><%= review.salty %></td>
+  <td><%= review.acidity %></td>
+  <td><%= review.taste %></td>
+  <td><%= review.scent %></td>
+  <td><%= review.created_at.strftime('%Y/%m/%d') %></td>
+  <td><%= review.updated_at.strftime('%Y/%m/%d') %></td>
+  <td>
+    <ul>
+      <li class='list-inline-item'>
+        <%= button_to "削除", admin_review_path(review), method: :delete, data: { confirm: '本当に削除してもよろしいですか？'}, class: "btn btn-secondary" %>
+      </li>
+    </ul>
+  </td>
+</tr>

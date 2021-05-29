@@ -1,0 +1,36 @@
+<h1 class="text-center my-5">おつまみ編集</h1>
+<div class="row justify-content-center text-center">
+  <div class="col-8">
+    <div class="card text-center">
+      <div class="card-body">
+      <%= form_with model: @snack, url: admin_snack_path(@snack), method: :patch, local: true do |f| %>
+        <div class="form-group">
+          <%= f.label :image, class: "text-info" %>
+          <%= f.file_field :image, value: @snack.image, accept: 'image/*', class: "form-control" %>
+          <%= render 'shared/error_messages', model: f.object, attribute: :image %>
+        </div>
+        <div class="form-group">
+          <%= f.label :name, class: "text-info" %>
+          <%= f.text_field :name, value: @snack.name, class: "form-control" %>
+          <%= render 'shared/error_messages', model: f.object, attribute: :name %>
+        </div>
+        <div class="form-group">
+          <%= f.label :alcohol, class: "text-info" %><br>
+          <%= f.select :alcohol, Snack.alcohols.keys.map {|k| [I18n.t("enums.snack.alcohol.#{k}"), k]}, class: "form-control" %>
+          <%= render 'shared/error_messages', model: f.object, attribute: :alcohol %>
+        </div>
+        <div class="check_box" >
+          <%= f.label :tag, class: "text-info" %><br>
+          <%= collection_check_boxes(:snack, :tag_ids, Tag.all, :id, :name, include_hidden: false) do |tag| %>
+          <%= tag.label { tag.check_box + tag.text } %>
+          <% end %>
+          <%= render 'shared/error_messages', model: f.object, attribute: :tag %>
+        </div>
+        <div class="actions text-center">
+          <%= f.submit "送信", class: "btn btn-primary" %>
+        </div>
+      <% end %>
+      </div>
+    </div>
+  </div>
+</div>

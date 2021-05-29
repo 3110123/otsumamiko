@@ -17,6 +17,19 @@ Rails.application.routes.draw do
       get 'sake', to: 'snacks#sake'
     end
   end
+
+  namespace :admin do
+    root 'dashboards#index'
+    get 'login', to: 'user_sessions#new'
+    post 'login', to: 'user_sessions#create'
+    delete 'logout', to: 'user_sessions#destroy'
+    resources :snacks do
+      resources :reviews, shallow: true, only: %i[destroy]
+    end
+    resources :tags
+    resources :users, only:%i[index edit update destroy]
+  end
+
   # mailer
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
 end

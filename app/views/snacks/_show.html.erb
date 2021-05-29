@@ -10,13 +10,17 @@
       <div class="row">
         <div class="col-xl-6 col-md-12 mt-5">
           <div class="snack-image text-center">
-            <%= image_pack_tag "media/images/healthy.jpg", size: "400x400" %>
+          <% if @snack.image.attached? %>
+            <%= image_tag @snack.image, size: '600x600', class: 'card-img-top' %>
+          <% else %>
+            <%= image_pack_tag "media/images/default.png", size: '600x600' %>
+          <% end %>
           </div>
         </div>
-        <div class="col-xl-6 col-md-12 mt-5 pt-5">
-          <div class="container">
+        <div class="col-xl-6 col-md-12 mt-5 py-5">
+          <div class="container my-5 pt-5">
             <div class='text-center'>
-              <h2 class="font-weight-bold m-0"><%= @snack.alcohol %>
+              <h2 class="font-weight-bold m-0"><%= @snack.alcohol_i18n %>
               <br><div class="py-2">✖️</div>
               <%= @snack.name %></h2><br>
                 <div class="rate-number inline-block-rate">

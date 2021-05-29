@@ -1,0 +1,15 @@
+<tr class="text-center">
+  <td><%= tag.id %></td>
+  <td><%= tag.name %></td>
+  <td><%= tag.snacks.length %></td>
+  <td>
+    <ul>
+      <li class='list-inline-item'>
+        <%= button_to "編集", edit_admin_tag_path(tag), method: :get, class: "btn btn-danger" %>
+      </li>
+      <li class='list-inline-item'>
+        <%= button_to "削除", admin_tag_path(tag), method: :delete, data: { confirm: '本当に削除してもよろしいですか？'}, class: "btn btn-secondary" %>
+      </li>
+    </ul>
+  </td>
+</tr>

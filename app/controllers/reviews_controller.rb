@@ -1,7 +1,4 @@
 class ReviewsController < ApplicationController
-  def new
-  end
-
   def create
     @review = current_user.reviews.build(review_params)
     @review.save

@@ -5,3 +5,7 @@ ja:
         beer: 'ビール'
         wine: 'ワイン'
         sake: '日本酒'
+    user:
+      role:
+        general: '一般'
+        admin: '管理者'
