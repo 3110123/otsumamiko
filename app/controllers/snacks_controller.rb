@@ -1,5 +1,6 @@
 class SnacksController < ApplicationController
   include Pagy::Backend
+  
   def show
     @snack = Snack.find(params[:id])
     @review = Review.new
