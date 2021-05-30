@@ -1,17 +1,14 @@
 class Admin::UsersController < Admin::BaseController
   include Pagy::Backend
+  before_action :set_user, only: %i[edit update destroy]
   def index
     @q = User.ransack(params[:q])
     @pagy, @users = pagy(@q.result(distinct: true))
   end
 
-  def edit
-    @user = User.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @user = User.find(params[:id])
-
     if @user.update(user_params)
       redirect_to admin_users_path, success: "ユーザー情報を変更しました"
     else
@@ -21,7 +18,6 @@ class Admin::UsersController < Admin::BaseController
   end
 
   def destroy
-    @user = User.find(params[:id])
     @user.destroy!
   end
 
@@ -29,5 +25,9 @@ class Admin::UsersController < Admin::BaseController
 
   def user_params
     params.require(:user).permit(:name, :email, :password, :password_confirmation, :role)
+  end
+
+  def set_user
+    @user = User.find(params[:id])
   end
 end
