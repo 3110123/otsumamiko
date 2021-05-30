@@ -1,5 +1,6 @@
 class Admin::SnacksController < Admin::BaseController
   include Pagy::Backend
+  before_action :set_snack, only: %i[show edit update destroy]
   def new
     @snack = Snack.new
   end
@@ -21,17 +22,12 @@ class Admin::SnacksController < Admin::BaseController
   end
 
   def show
-    @snack = Snack.find(params[:id])
     @reviews = @snack.reviews
   end
 
-  def edit
-    @snack = Snack.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @snack = Snack.find(params[:id])
-
     if @snack.update(snack_params)
       redirect_to admin_snack_path(@snack), success: "更新に成功しました"
     else
@@ -41,7 +37,6 @@ class Admin::SnacksController < Admin::BaseController
   end
 
   def destroy
-    @snack = Snack.find(params[:id])
     @snack.image.purge if @snack.image.attached?
     @snack.destroy!
   end
@@ -50,5 +45,9 @@ class Admin::SnacksController < Admin::BaseController
 
   def snack_params
     params.require(:snack).permit(:name, :alcohol, :image, tag_ids: [])
+  end
+
+  def set_snack
+    @snack = Snack.find(params[:id])
   end
 end

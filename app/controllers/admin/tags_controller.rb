@@ -1,5 +1,6 @@
 class Admin::TagsController < Admin::BaseController
   include Pagy::Backend
+  before_action :set_tag, only: %i[edit update destroy]
   def new
     @tag = Tag.new
   end
@@ -15,13 +16,9 @@ class Admin::TagsController < Admin::BaseController
     end
   end
 
-  def edit
-    @tag = Tag.find(params[:id])
-  end
+  def edit; end
 
   def update
-    @tag = Tag.find(params[:id])
-
     if @tag.update(tag_params)
       redirect_to admin_tags_path, success: "更新しました"
     else
@@ -36,7 +33,6 @@ class Admin::TagsController < Admin::BaseController
   end
 
   def destroy
-    @tag = Tag.find(params[:id])
     @tag.destroy!
   end
 
@@ -44,5 +40,9 @@ class Admin::TagsController < Admin::BaseController
 
   def tag_params
     params.require(:tag).permit(:name)
+  end
+
+  def set_tag
+    @tag = Tag.find(params[:id])
   end
 end
