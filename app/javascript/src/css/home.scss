@@ -5,6 +5,7 @@ header {
   z-index: 10;
   a {
     color: black;
+    font-family: "Toppan Bunkyu Midashi Gothic";
   }
 }
 
@@ -51,7 +52,7 @@ html, body {
 }
 
 .card-img-overlay {
-  margin-top: 150px;
+  margin-top: 200px;
   text-align: center;
   .container {
     padding: 0;
@@ -59,13 +60,22 @@ html, body {
     text-align: center;
     h2 {
       font-size: 1.5rem;
+      font-family: "Toppan Bunkyu Midashi Gothic";
     }
     h1 {
-      font-size: 7rem;
       margin-bottom: 100px;
-      font-family: "Nico Moji";
     }
   }
+}
+
+.top-font {
+  font-size: 7rem;
+  font-family: "Nico Moji";
+}
+
+.title-font {
+  font-family: "Toppan Bunkyu Midashi Gothic";
+  font-size: 4rem;
 }
 
 .catchcopy {
