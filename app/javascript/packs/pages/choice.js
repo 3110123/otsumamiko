@@ -16,7 +16,6 @@ q_01.onclick = function(){
   qestion_01.style.display = "none";
   qestion_02.style.display = "block";
   tagId.push(4);
-  console.log(tagId);
   switchToQuestion1();
 }
 
@@ -25,7 +24,6 @@ q_02.onclick = function(){
   qestion_01.style.display = "none";
   qestion_03.style.display = "block";
   tagId.push(5);
-  console.log(tagId);
   switchToQuestion2();
 }
 
@@ -36,7 +34,6 @@ function switchToQuestion1() {
     qestion_02.style.display = "none";
     qestion_04.style.display = "block";
     tagId.push(13);
-    console.log(tagId);
     switchToQuestion3()
   }
   // 魚
@@ -44,7 +41,6 @@ function switchToQuestion1() {
     qestion_02.style.display = "none";
     qestion_04.style.display = "block";
     tagId.push(14);
-    console.log(tagId);
     switchToQuestion3()
   }
 }
@@ -56,7 +52,6 @@ function switchToQuestion2() {
     qestion_03.style.display = "none";
     qestion_04.style.display = "block";
     tagId.push(9);
-    console.log(tagId);
     switchToQuestion3()
   }
   // 低価格
@@ -64,7 +59,6 @@ function switchToQuestion2() {
     qestion_03.style.display = "none";
     qestion_04.style.display = "block";
     tagId.push(10);
-    console.log(tagId);
     switchToQuestion3()
   }
 }
@@ -75,7 +69,6 @@ function switchToQuestion3() {
   q_07.onclick = function(){
     qestion_04.style.display = "none";
     tagId.push(11);
-    console.log(tagId);
 
     $.ajax({
       type: 'get',
@@ -93,7 +86,6 @@ function switchToQuestion3() {
   q_08.onclick = function(){
     qestion_04.style.display = "none";
     tagId.push(12);
-    console.log(tagId);
 
     $.ajax({
       type: 'get',
