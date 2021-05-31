@@ -109,9 +109,9 @@ html, body {
 }
 
 .otsumamiko-yopparai {
-  position: fixed;
   right: 0px;
   bottom: 50px;
+  z-index: 3;
 }
 
 // おつまみ絞り込み結果

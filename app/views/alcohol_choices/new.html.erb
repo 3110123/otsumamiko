@@ -4,19 +4,25 @@
       <h1 class="font-weight-bold">のみたい<br>おさけは？</h1>
     </div>
   </div>
-    <div class="container text-center">
-        <div class='text-center'>
-          <%= link_to beer_snacks_path do %>
-            <%= image_pack_tag "media/images/beer_icon3.png", size: "250x250", class: 'rounded-circle m-5 shadow-lg p-1 mb-5 bg-warning rounded' %>
-          <% end %>
-          <%= link_to wine_snacks_path do %>
-            <%= image_pack_tag "media/images/wine_icon.png", size: "250x250", class: 'rounded-circle m-5 shadow-lg p-1 mb-5 bg-danger rounded' %>
-          <% end %>
-          <%= link_to sake_snacks_path do %>
-            <%= image_pack_tag "media/images/sake_icon.png", size: "250x250", class: 'rounded-circle m-5 shadow-lg p-1 mb-5 bg-info rounded' %>
-          <% end %>
+  <div class="container">
+    <div class="wrapper">
+      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+        <div class="justify-content-center"> 
+          <div class='text-center'>
+            <div class="alcohol_choice">
+              <%= link_to beer_snacks_path do %>
+                <%= image_pack_tag "media/images/beer_icon3.png", size: "250x250", class: 'rounded-circle m-5 shadow-lg p-1 mb-5 bg-warning rounded' %>
+              <% end %>
+              <%= link_to wine_snacks_path do %>
+                <%= image_pack_tag "media/images/wine_icon.png", size: "250x250", class: 'rounded-circle m-5 shadow-lg p-1 mb-5 bg-danger rounded' %>
+              <% end %>
+              <%= link_to sake_snacks_path do %>
+                <%= image_pack_tag "media/images/sake_icon.png", size: "250x250", class: 'rounded-circle m-5 shadow-lg p-1 mb-5 bg-info rounded' %>
+              <% end %>
+            </div>
+          </div>
         </div>
       </div>
     </div>
   </div>
-</div>
+
