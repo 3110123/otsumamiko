@@ -4,13 +4,12 @@
       <div class='text-center'>
         <h1 class="font-weight-bold mt-5 title-font">どっちがお好きですか？</h1>
       </div>
-      <div class="choose_box" id="beer">
         <div id="qestion_01" class="fit">
           <div class="row">
             <div class="col-xl-6 col-md-12 my-3">
               <div class='text-center'>
                 <h2>ご飯のおかず系</h2>
-                <%= link_to "#", class: "button", id: "q_01", "data-turbolinks": false do %>
+                <%= link_to "#", class: "button q1", id: "q_01", data: {id: Tag.find_by(name: "おかず").id}, "data-turbolinks": false do %>
                   <%= image_pack_tag("media/images/pizza.jpg", size: "450x450") %>
                 <% end %>
               </div>
@@ -18,7 +17,7 @@
             <div class="col-xl-6 col-md-12 my-3">
               <div class='text-center'>
                 <h2>つまむ系</h2>
-                <%= link_to "#", class: "button", id: "q_02", "data-turbolinks": false do %>
+                <%= link_to "#", class: "button", id: "q_02", data: {id: Tag.find_by(name: "軽食").id}, "data-turbolinks": false do %>
                   <%= image_pack_tag("media/images/snack.jpg", size: "450x450") %>
                 <% end %>
               </div>
@@ -30,7 +29,7 @@
             <div class="col-xl-6 col-md-12 my-3">
               <div class='text-center'>
                 <h2>肉系</h2>
-                  <%= link_to "#", class: "button", id: "q_03", "data-turbolinks": false do %>
+                  <%= link_to "#", class: "button", id: "q_03", data: {id: Tag.find_by(name: "肉類").id}, "data-turbolinks": false do %>
                     <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
                   <% end %>
               </div>
@@ -38,7 +37,7 @@
             <div class="col-xl-6 col-md-12 my-3">
               <div class='text-center'>
                 <h2>魚系</h2>
-                  <%= link_to "#", class: "button", id: "q_04", "data-turbolinks": false do %>
+                  <%= link_to "#", class: "button", id: "q_04", data: {id: Tag.find_by(name: "魚類").id}, "data-turbolinks": false do %>
                     <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
                   <% end %>
               </div>
@@ -50,7 +49,7 @@
             <div class="col-xl-6 col-md-12 my-3">
               <div class='text-center'>
                 <h2>ヘルシー系</h2>
-                  <%= link_to "#", class: "button", id: "q_05", "data-turbolinks": false do %>
+                  <%= link_to "#", class: "button", id: "q_05", data: {id: Tag.find_by(name: "150kcal以下").id}, "data-turbolinks": false do %>
                     <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
                   <% end %>
               </div>
@@ -58,7 +57,7 @@
             <div class="col-xl-6 col-md-12 my-3">
               <div class='text-center'>
                 <h2>低価格</h2>
-                  <%= link_to "#", class: "button", id: "q_06", "data-turbolinks": false do %>
+                  <%= link_to "#", class: "button", id: "q_06", data: {id: Tag.find_by(name: "500円以下").id}, "data-turbolinks": false do %>
                     <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
                   <% end %>
               </div>
@@ -70,7 +69,7 @@
             <div class="col-xl-6 col-md-12 my-3">
               <div class='text-center'>
                 <h2>おしゃれ</h2>
-                  <%= link_to "#", class: "button", id: "q_07", "data-turbolinks": false do %>
+                  <%= link_to "#", class: "button", id: "q_07", data: {id: Tag.find_by(name: "おしゃれ").id}, "data-turbolinks": false do %>
                     <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>    
                   <% end %>
               </div>
@@ -78,7 +77,7 @@
             <div class="col-xl-6 col-md-12 my-3">
               <div class='text-center'>
                 <h2>定番</h2>
-                  <%= link_to "#", class: "button", id: "q_08", "data-turbolinks": false do %>
+                  <%= link_to "#", class: "button", id: "q_08", data: {id: Tag.find_by(name: "定番").id}, "data-turbolinks": false do %>
                     <%= image_pack_tag("media/images/healthy.jpg", size: "450x450") %>
                   <% end %>
               </div>

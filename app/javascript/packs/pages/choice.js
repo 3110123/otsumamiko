@@ -7,15 +7,18 @@ var qestion_02 = document.getElementById('qestion_02');
 var qestion_03 = document.getElementById('qestion_03');
 var qestion_04 = document.getElementById('qestion_04');
 var result = document.getElementById('result');
-var alcohol = document.querySelector('.choose_box').getAttribute('id');
 
 var tagId = [];
+
+var alcoholUrl = location.href;
+var ary = alcoholUrl.split('/');
+var alcohol = ary[ary.length - 1];
 
 // おかず
 q_01.onclick = function(){
   qestion_01.style.display = "none";
   qestion_02.style.display = "block";
-  tagId.push(4);
+  tagId.push(q_01.dataset.id);
   switchToQuestion1();
 }
 
@@ -23,7 +26,7 @@ q_01.onclick = function(){
 q_02.onclick = function(){
   qestion_01.style.display = "none";
   qestion_03.style.display = "block";
-  tagId.push(5);
+  tagId.push(q_02.dataset.id);
   switchToQuestion2();
 }
 
@@ -33,14 +36,14 @@ function switchToQuestion1() {
   q_03.onclick = function(){
     qestion_02.style.display = "none";
     qestion_04.style.display = "block";
-    tagId.push(13);
+    tagId.push(q_03.dataset.id);
     switchToQuestion3()
   }
   // 魚
   q_04.onclick = function(){
     qestion_02.style.display = "none";
     qestion_04.style.display = "block";
-    tagId.push(14);
+    tagId.push(q_04.dataset.id);
     switchToQuestion3()
   }
 }
@@ -51,14 +54,14 @@ function switchToQuestion2() {
   q_05.onclick = function(){
     qestion_03.style.display = "none";
     qestion_04.style.display = "block";
-    tagId.push(9);
+    tagId.push(q_05.dataset.id);
     switchToQuestion3()
   }
   // 低価格
   q_06.onclick = function(){
     qestion_03.style.display = "none";
     qestion_04.style.display = "block";
-    tagId.push(10);
+    tagId.push(q_06.dataset.id);
     switchToQuestion3()
   }
 }
@@ -68,7 +71,7 @@ function switchToQuestion3() {
   // おしゃれ
   q_07.onclick = function(){
     qestion_04.style.display = "none";
-    tagId.push(11);
+    tagId.push(q_07.dataset.id);
 
     $.ajax({
       type: 'get',
@@ -85,7 +88,7 @@ function switchToQuestion3() {
   // 定番
   q_08.onclick = function(){
     qestion_04.style.display = "none";
-    tagId.push(12);
+    tagId.push(q_08.dataset.id);
 
     $.ajax({
       type: 'get',
@@ -99,6 +102,3 @@ function switchToQuestion3() {
     });
   }
 }
-
-
-
