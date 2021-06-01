@@ -6,3 +6,5 @@ ja:
         email: "メールアドレス"
         password: "パスワード"
         password_confirmation: "パスワード確認"
+        category: 'カテゴリー'
+        message: 'お問合せ内容'

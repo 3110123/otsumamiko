@@ -9,3 +9,8 @@ ja:
       role:
         general: '一般'
         admin: '管理者'
+    inquiry:
+      category:
+        bug: '不具合のご報告'
+        request: '追加して欲しいおつまみ・機能のお問合せ'
+        others: 'その他'

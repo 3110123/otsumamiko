@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'result', to: 'snacks#result'
   resources :users, only: %i[new create show]
   resources :password_resets, only: %i[new create edit update]
+  resource :inquiry, only: %i[new create]
   resources :snacks do
     resources :reviews, shallow: true
     resource :bookmarks, only: %i[create destroy]

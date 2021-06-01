@@ -22,4 +22,8 @@ ja:
       title: 'パスワードをお忘れの方'
     edit:
       title: 'パスワードリセット'
+  inquiries:
+    new:
+      title: 'お問合せ'
+
   
