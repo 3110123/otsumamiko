@@ -1,6 +1,8 @@
 Rails.application.routes.draw do
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   root 'static_pages#home'
+  get 'terms', to: 'static_pages#terms'
+  get 'privacy', to: 'static_pages#privacy'
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
@@ -8,6 +10,7 @@ Rails.application.routes.draw do
   get 'result', to: 'snacks#result'
   resources :users, only: %i[new create show]
   resources :password_resets, only: %i[new create edit update]
+  resource :inquiry, only: %i[new create]
   resources :snacks do
     resources :reviews, shallow: true
     resource :bookmarks, only: %i[create destroy]

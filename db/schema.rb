@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_26_114555) do
+ActiveRecord::Schema.define(version: 2021_06_01_121305) do
 
   create_table "active_storage_attachments", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
@@ -42,16 +42,25 @@ ActiveRecord::Schema.define(version: 2021_05_26_114555) do
     t.index ["user_id"], name: "index_bookmarks_on_user_id"
   end
 
+  create_table "inquiries", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+    t.text "message", null: false
+    t.integer "category", default: 0, null: false
+    t.string "name"
+    t.string "email"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "reviews", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.bigint "user_id", null: false
     t.bigint "snack_id", null: false
     t.text "comment", null: false
-    t.integer "rate"
-    t.integer "sweetness"
-    t.integer "salty"
-    t.integer "acidity"
-    t.integer "taste"
-    t.integer "scent"
+    t.integer "rate", null: false
+    t.integer "sweetness", null: false
+    t.integer "salty", null: false
+    t.integer "acidity", null: false
+    t.integer "taste", null: false
+    t.integer "scent", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["snack_id"], name: "index_reviews_on_snack_id"
@@ -60,7 +69,7 @@ ActiveRecord::Schema.define(version: 2021_05_26_114555) do
 
   create_table "snacks", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "name", null: false
-    t.integer "alcohol", default: 0
+    t.integer "alcohol", default: 0, null: false
     t.string "image"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
