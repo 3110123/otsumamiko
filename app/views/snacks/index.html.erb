@@ -16,8 +16,10 @@
   </div>
 </div>
 
-<div class="otsumamiko-yopparai">
-  <%= image_pack_tag "media/images/otsumamiko.png", size: "530x430" %>
+<div class="beer_icon_button position-fixed">
+  <%= image_pack_tag "media/images/beer_icon_button.png", class: "rounded-circle m-5 shadow-lg bg-light p-4", size: "200x200", id: "beer_icon_btn" %>
 </div>
+<div class='arrow_box position-fixed' style="display: none;" id="beer_icon_text">おつまみを選択して右にスワイプ！</div>
+
 
 <%= javascript_pack_tag 'pages/page_scroll' %>

@@ -1,5 +1,20 @@
+// アイコンclickでbookmarkの説明
+var beerIconText = document.getElementById('beer_icon_text');
+var beerIcon = document.getElementById('beer_icon_btn');
+
+beerIcon.onclick = function(){
+  beerIconText.style.display = "block";
+  setTimeout(callback, 3000)
+}
+
+function callback(){
+  beerIconText.style.display = "none";
+}
+
+
+// 無限スクロール
 var loadNextPage = function(){
-  if ($('#next_link').data("loading")){ return }  // prevent multiple loading
+  if ($('#next_link').data("loading")){ return }
   var wBottom  = $(window).scrollTop() + $(window).height();
   var elBottom = $('#records_table').offset().top + $('#records_table').height();
   // data属性をajaxで変更しlastページの場合には処理をreturnさせる。

@@ -246,10 +246,52 @@ html, body {
 }
 
 //おつまみ一覧
+.arrow_box{
+  opacity: 0.8;
+  width: 600px;
+  height: 100px;
+  background: #ffee00;
+  padding: 0px;
+  text-align: center;
+  color:#000000;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  right: 320px;
+  bottom: 120px;
+  z-index: 3;
+  line-height: 100px;
+}
+
+.arrow_box:after{
+  border: solid transparent;
+  content:'';
+  height: 0;
+  width: 0;
+  pointer-events: none;
+  position: absolute;
+  border-color: rgba(255, 161, 97, 0);
+  border-top-width: 10px;
+  border-bottom-width: 10px;
+  border-left-width: 10px;
+  border-right-width: 10px;
+  border-left-color: #ffee00;
+  left: 100%;
+  top: 50%;
+}
+
+.beer_icon_button {
+  right: 0px;
+  bottom: 20px;
+  z-index: 3;
+}
+
 .bookmark-position {
   position: absolute;
-  right: 40px;
-  bottom: 180px;
+  right: 70px;
+  bottom: 350px;
 }
 
 .card-img-top {
