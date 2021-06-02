@@ -73,7 +73,7 @@ Rails.application.configure do
     authentication: :plain,
     user_name: Rails.application.credentials.gmail[:user_name],
     password: Rails.application.credentials.gmail[:password],
-    domain: 'heroku.com',
+    domain: 'gmail.com',
     enable_starttls_auto: true
   }
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
