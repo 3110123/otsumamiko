@@ -68,17 +68,17 @@
         <div class="row">
           <div class="col-xl-6 col-md-12 my-3">
             <div class='text-center'>
-              <h2>いつもと違うおつまみ</h2>
-                <%= link_to "#", class: "button", id: "q_07", data: {id: Tag.find_by(name: "おしゃれ").id}, "data-turbolinks": false do %>
-                  <%= image_pack_tag("media/images/osyare.jpg", size: "450x450", class: "shadow-lg rounded") %>    
+              <h2>赤ワイン</h2>
+                <%= link_to "#", class: "button", id: "q_07", data: {id: Tag.find_by(name: "赤ワイン").id}, "data-turbolinks": false do %>
+                  <%= image_pack_tag("media/images/red_wine.jpg", size: "450x450", class: "shadow-lg rounded") %>    
                 <% end %>
             </div>
           </div>
           <div class="col-xl-6 col-md-12 my-3">
             <div class='text-center'>
-              <h2>定番のおつまみ</h2>
-                <%= link_to "#", class: "button", id: "q_08", data: {id: Tag.find_by(name: "定番").id}, "data-turbolinks": false do %>
-                  <%= image_pack_tag("media/images/teiban.jpg", size: "450x450", class: "shadow-lg rounded") %>
+              <h2>白ワイン</h2>
+                <%= link_to "#", class: "button", id: "q_08", data: {id: Tag.find_by(name: "白ワイン").id}, "data-turbolinks": false do %>
+                  <%= image_pack_tag("media/images/white_wine.jpg", size: "450x450", class: "shadow-lg rounded") %>
                 <% end %>
               </div>
             </div>
@@ -90,7 +90,7 @@
 </div>
 
 <div class="otsumamiko-yopparai position-fixed">
-  <%= image_pack_tag "media/images/otsumamiko.png", size: "530x430" %>
+  <%= image_pack_tag "media/images/otsumamiko_wine.png", size: "530x430" %>
 </div>
 
 <%= javascript_pack_tag 'pages/choice' %>
