@@ -10,9 +10,17 @@ var result = document.getElementById('result');
 
 var tagId = [];
 
+// アルコール識別
 var alcoholUrl = location.href;
 var ary = alcoholUrl.split('/');
-var alcohol = ary[ary.length - 1];
+var alcoholArr = ary[ary.length - 1];
+
+// #がついている場合削除
+if (alcoholArr.includes("#")) {
+  var alcohol = alcoholArr.slice(0, -1);
+} else {
+  var alcohol = alcoholArr
+}
 
 // おかず
 q_01.onclick = function(){
