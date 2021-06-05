@@ -22,12 +22,18 @@
   <div id="contents1" class="tab-pane active">
     <div class="container text-center">
       <div class="bookmark">
-        <div id="records_table" class="row">
-        <% if @user.bookmarks.present? %>
+        <div id="pageScroll" data-page="">
+          <div id="records_table" class="row">
+          <% if @user.bookmarks.present? %>
             <%= render @user_bookmarks %>
-        <% else %>
-          <p class="h5">まだ気になっているおつまみがありません。<br>一覧から探しましょう！</p>
-        <% end %>
+          <% else %>
+            <p class="h5">まだ気になっているおつまみがありません。<br>一覧から探しましょう！</p>
+          <% end %>
+          </div>
+          <div class="loader"></div>
+          <div id="div_next_link">
+            <%= render 'snacks/next_link' %>
+          </div>
         </div>
       </div>
     </div>
@@ -35,14 +41,22 @@
   <div id="contents2" class="tab-pane">
     <div class="container text-center">
       <div class="review">
-        <div id="records_table" class="row">
-        <% if @user.reviews.present? %>
+        <div id="pageScroll" data-page="">
+          <div id="records_table" class="row">
+          <% if @user.reviews.present? %>
             <%= render @user_reviews %>
-        <% else %>
-          <p class="h5">まだレビューしたおつまみがありません。<br>レビューしてみましょう！</p>
-        <% end %>
+          <% else %>
+            <p class="h5">まだレビューしたおつまみがありません。<br>レビューしてみましょう！</p>
+          <% end %>
+          </div>
+          <div class="loader"></div>
+          <div id="div_next_link">
+            <%= render 'snacks/next_link' %>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag 'pages/page_scroll' %>
