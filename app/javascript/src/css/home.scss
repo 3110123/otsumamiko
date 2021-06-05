@@ -254,7 +254,7 @@ html, body {
   opacity: 0.8;
   width: 600px;
   height: 100px;
-  background: #ffee00;
+  background: #aaaaaa;
   padding: 0px;
   text-align: center;
   color:#000000;
@@ -264,7 +264,7 @@ html, body {
   -webkit-border-radius: 7px;
   -moz-border-radius: 7px;
   right: 320px;
-  bottom: 120px;
+  top: 350px;
   z-index: 3;
   line-height: 100px;
 }
@@ -281,15 +281,9 @@ html, body {
   border-bottom-width: 10px;
   border-left-width: 10px;
   border-right-width: 10px;
-  border-left-color: #ffee00;
+  border-left-color: #aaaaaa;
   left: 100%;
   top: 50%;
-}
-
-.beer_icon_button {
-  right: 0px;
-  bottom: 20px;
-  z-index: 3;
 }
 
 .logout-bookmark-position {
@@ -320,6 +314,18 @@ html, body {
 
 .serch_field {
   height: 75px;
+}
+
+.index-otsumamiko {
+  right: -200px;
+  top: 230px;
+  z-index: 3;
+  animation: r2 4s;
+}
+
+@keyframes r2 {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(-40deg); }
 }
 
 //おつまみ詳細

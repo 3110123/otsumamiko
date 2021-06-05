@@ -1,16 +1,15 @@
-// アイコンclickでbookmarkの説明
-var beerIconText = document.getElementById('beer_icon_text');
-var beerIcon = document.getElementById('beer_icon_btn');
+// bookmarkの説明
+var ExplanationText = document.getElementById('explanation_text');
+var ExplanationOtsumamiko = document.getElementById('explanation_otsumamiko');
 
-beerIcon.onclick = function(){
-  beerIconText.style.display = "block";
-  setTimeout(callback, 3000)
-}
+ExplanationOtsumamiko.style.display = "block";
+ExplanationText.style.display = "block";
+setTimeout(callback, 5000)
 
 function callback(){
-  beerIconText.style.display = "none";
+  ExplanationOtsumamiko.style.display = "none";
+  ExplanationText.style.display = "none";
 }
-
 
 // 無限スクロール
 var loadNextPage = function(){
