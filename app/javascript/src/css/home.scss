@@ -92,7 +92,6 @@ html, body {
 
 // mypage
 .review {
-  margin-top: 200px;
   margin-bottom: 300px;
 }
 
@@ -101,6 +100,31 @@ html, body {
   border: dashed;
   border-color: #c7c7c7;
   border-width: 2px;
+}
+
+.nav-tabs {
+  height: 160px;
+  position: fixed;
+  bottom: 0px;
+  z-index: 3;
+  width: 100%;
+  padding-bottom: 20px;
+  background-color: #d9d9d8;
+}
+
+.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+  color: black;
+  background-color: #b1b1af;
+}
+
+.bookmark-tab {
+  padding: 60px;
+  color: #a9a9a9;
+}
+
+.review-tab {
+  padding: 60px;
+  color: #a9a9a9;
 }
 
 // login
