@@ -292,10 +292,18 @@ html, body {
   z-index: 3;
 }
 
+.logout-bookmark-position {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  pointer-events: none;
+}
+
 .bookmark-position {
   position: absolute;
   right: 70px;
   bottom: 350px;
+  pointer-events: none;
 }
 
 .card-img-top {
