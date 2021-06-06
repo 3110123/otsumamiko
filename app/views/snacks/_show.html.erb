@@ -7,7 +7,7 @@
       </button>
     </div>
     <div class="modal-body">
-      <div class="row">
+      <div class="row align-items-center">
         <div class="col-xl-6 col-md-12 mt-5">
           <div class="snack-image text-center">
           <% if @snack.image.attached? %>
@@ -17,8 +17,8 @@
           <% end %>
           </div>
         </div>
-        <div class="col-xl-6 col-md-12 mt-5 py-5">
-          <div class="container my-5 pt-5">
+        <div class="col-xl-6 col-md-12">
+          <div class="container snack-container">
             <div class='text-center'>
               <h2 class="font-weight-bold m-0"><%= @snack.alcohol_i18n %>
               <br><div class="py-2">✖️</div>
@@ -32,9 +32,9 @@
             </div>
           </div>
         </div>
-        <div class="col-12 mt-5 mb-5">
+        <div class="col-12">
           <div id="chart" data-snack-id="<%= @snack.id %>" data-sweetness-value="<%= @snack.reviews.average(:sweetness) %>" data-salty-value="<%= @snack.reviews.average(:salty) %>" data-acidity-value="<%= @snack.reviews.average(:acidity) %>" data-taste-value="<%= @snack.reviews.average(:taste) %>" data-scent-value="<%= @snack.reviews.average(:scent) %>">
-            <canvas id="myRaderChart-<%= @snack.id %>"></canvas>
+            <canvas id="myRaderChart-<%= @snack.id %>" class="rate-chart"></canvas>
           </div>
           <%= javascript_pack_tag 'pages/ratechart' %>
 
@@ -53,19 +53,15 @@
                 <%= render @reviews, review: @review %>
               </table>
           </div>
-          <div class="share-button fixed-bottom">
-            <div class="d-flex justify-content-center">
-              <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", class: "twitter btn btn-primary rounded-pill d-inline-flex align-middle mr-0" do %>
-                <i class="fab fa-twitter fa-3x d-inline-flex mt-1 ml-2"></i><div class="h3 m-2"> おつまみを宣言</div>
+          <div class="fixed-bottom">
+              <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", class: "twitter btn" do %>
+                <i class="fab fa-twitter share-button"></i>
               <% end %>
-              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
-</div>
 
 
 <%= javascript_pack_tag 'pages/swipe_bookmark' %>
