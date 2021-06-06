@@ -94,19 +94,21 @@
     <div class="text-center">
       <ul class="nav nav-tabs nav-pills">
         <li class="nav-item col p-0">
-          <%= link_to choice_path, class: "nav-link bookmark-tab active" do %>
-            <i class="fas fa-glass-cheers fa-3x"></i></i>
+          <%= link_to choice_path, class: "nav-link 
+          wine-tab active" do %>
+            <i class="fas fa-glass-cheers"></i></i>
           <% end %>
         </li>
         <li class="nav-item col p-0">
-          <%= link_to snacks_path, class: "nav-link bookmark-tab" do %>
-            <i class="fas fa-search fa-3x"></i></i></i>
+          <%= link_to snacks_path, class: "nav-link 
+          search-tab" do %>
+            <i class="fas fa-search"></i></i></i>
           <% end %>
         </li>
         <% if logged_in? %>
         <li class="nav-item col p-0">
-          <%= link_to user_path(current_user.id), class: "nav-link bookmark-tab" do %>
-            <i class="far fa-user-circle fa-3x"></i></i></i>
+          <%= link_to user_path(current_user.id), class: "nav-link nomal-tab" do %>
+            <i class="far fa-user-circle"></i></i></i>
           <% end %>
         </li>
         <% end %>

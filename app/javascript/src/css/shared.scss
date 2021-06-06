@@ -64,3 +64,68 @@ html, body {
 .static-text {
   margin-top: 150px;
 }
+
+// tab
+.nav-tabs {
+  height: 140px;
+  position: fixed;
+  bottom: 0px;
+  z-index: 3;
+  width: 100%;
+  padding-bottom: 20px;
+  background-color: white;
+  font-size: 2.5rem;
+}
+
+.nav-pills .wine-tab.active, .nav-pills .show > .nav-link {
+  color: #7b150a;
+  background-color: white;
+  font-size: 4rem;
+  line-height: 140px;
+}
+
+.nav-pills .search-tab.active, .nav-pills .show > .nav-link {
+  color: #009cc0;
+  background-color: white;
+  font-size: 4rem;
+  line-height: 140px;
+}
+
+.nav-pills .bookmark-tab.active, .nav-pills .show > .nav-link {
+  color: #f09400;
+  background-color: white;
+  font-size: 4rem;
+  line-height: 140px;
+}
+
+.nav-pills .review-tab.active, .nav-pills .show > .nav-link {
+  color: #9acd32;
+  background-color: white;
+  font-size: 4rem;
+  line-height: 140px;
+}
+
+.nomal-tab {
+  line-height: 140px;
+  color: #a9a9a9;
+}
+
+.wine-tab {
+  line-height: 140px;
+  color: #a9a9a9;
+}
+
+.search-tab {
+  line-height: 140px;
+  color: #a9a9a9;
+}
+
+.bookmark-tab {
+  line-height: 140px;
+  color: #a9a9a9;
+}
+
+.review-tab {
+  line-height: 140px;
+  color: #a9a9a9;
+}

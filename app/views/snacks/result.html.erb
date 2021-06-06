@@ -69,25 +69,25 @@
     <div class="text-center">
       <ul class="nav nav-tabs nav-pills">
         <li class="nav-item col p-0">
-          <%= link_to choice_path, class: "nav-link bookmark-tab active" do %>
-            <i class="fas fa-glass-cheers fa-3x"></i>
+          <%= link_to choice_path, class: "nav-link wine-tab active" do %>
+            <i class="fas fa-glass-cheers"></i>
           <% end %>
         </li>
         <li class="nav-item col p-0">
-          <%= link_to snacks_path, class: "nav-link bookmark-tab" do %>
-            <i class="fas fa-search fa-3x"></i>
+          <%= link_to snacks_path, class: "nav-link search-tab" do %>
+            <i class="fas fa-search"></i>
           <% end %>
         </li>
         <% if logged_in? %>
         <li class="nav-item col p-0">
-          <%= link_to user_path(current_user.id), class: "nav-link bookmark-tab" do %>
-            <i class="far fa-user-circle fa-3x"></i>
+          <%= link_to user_path(current_user.id), class: "nav-link nomal-tab" do %>
+            <i class="far fa-user-circle"></i>
           <% end %>
         </li>
         <% end %>
         <li class="nav-item col p-0">
-          <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", class: "nav-link bookmark-tab" do %>
-          <i class="fab fa-twitter fa-3x"></i>
+          <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", class: "nav-link nomal-tab" do %>
+          <i class="fab fa-twitter"></i>
           <% end %>
         </li>
       </ul>
