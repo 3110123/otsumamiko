@@ -58,18 +58,39 @@
               </div>
             </div>
           </div>
-          <div class="share-button fixed-bottom">
-            <div class="d-flex justify-content-center">
-              <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", class: "twitter btn btn-primary rounded-pill d-inline-flex" do %>
-                <i class="fab fa-twitter fa-3x d-inline-flex mt-1 ml-2"></i><div class="h3 m-2"> おつまみを宣言</div>
-              <% end %>
-              <%= link_to snacks_path, class: "btn btn-danger rounded-pill twitter" do %>
-                <div class="h3 m-2">他のおつまみ</div>
-              <% end %>
-            </div>
-          </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="text-center">
+      <ul class="nav nav-tabs nav-pills">
+        <li class="nav-item col p-0">
+          <%= link_to choice_path, class: "nav-link bookmark-tab active" do %>
+            <i class="fas fa-glass-cheers fa-3x"></i>
+          <% end %>
+        </li>
+        <li class="nav-item col p-0">
+          <%= link_to snacks_path, class: "nav-link bookmark-tab" do %>
+            <i class="fas fa-search fa-3x"></i>
+          <% end %>
+        </li>
+        <% if logged_in? %>
+        <li class="nav-item col p-0">
+          <%= link_to user_path(current_user.id), class: "nav-link bookmark-tab" do %>
+            <i class="far fa-user-circle fa-3x"></i>
+          <% end %>
+        </li>
+        <% end %>
+        <li class="nav-item col p-0">
+          <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", class: "nav-link bookmark-tab" do %>
+          <i class="fab fa-twitter fa-3x"></i>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+  </div>

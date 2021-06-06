@@ -22,4 +22,30 @@
   <%= image_pack_tag "media/images/otsumamiko.png", size: "530x430", id: "explanation_otsumamiko", style: "display: none;" %>
 </div>
 
+<div class="container-fluid">
+<div class="row">
+  <div class="text-center">
+    <ul class="nav nav-tabs nav-pills">
+      <li class="nav-item col p-0">
+        <%= link_to choice_path, class: "nav-link bookmark-tab" do %>
+          <i class="fas fa-glass-cheers fa-3x"></i></i>
+        <% end %>
+      </li>
+      <li class="nav-item col p-0">
+        <%= link_to snacks_path, class: "nav-link bookmark-tab active" do %>
+          <i class="fas fa-search fa-3x"></i></i></i>
+        <% end %>
+      </li>
+      <% if logged_in? %>
+      <li class="nav-item col p-0">
+        <%= link_to user_path(current_user.id), class: "nav-link bookmark-tab" do %>
+          <i class="far fa-user-circle fa-3x"></i></i></i>
+        <% end %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
+</div>
+
 <%= javascript_pack_tag 'pages/page_scroll' %>

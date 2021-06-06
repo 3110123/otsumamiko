@@ -1,51 +1,3 @@
-// header
-header {
-  position: fixed;
-  opacity: 0.9;
-  z-index: 10;
-  a {
-    color: black;
-    font-family: "Toppan Bunkyu Midashi Gothic";
-  }
-}
-
-// 全体
-html, body {
-  height: 100%;
-  background-color: #FFB62A;
-  -webkit-text-size-adjust: auto;
-}
-
-*{
-  margin: 0;
-  padding: 0;
-}
-
-.navbar-brand {
-  font-size: 3rem;
-  font-family: "Nico Moji";
-}
-
-.toast-message {
-  font-size: 1.8rem;
-  padding-left: 30px;
-  padding-right: 30px;
-}
-
-#toast-container {
-  margin-top: 100px;
-}
-
-// footer
-.footer-logo {
-  font-size: 1.5rem;
-  font-family: "Nico Moji";
-}
-
-.static-text {
-  margin-top: 150px;
-}
-
 // トップページ
 .pr-card {
   background-color: #FCF0C7;
@@ -103,7 +55,7 @@ html, body {
 }
 
 .nav-tabs {
-  height: 160px;
+  height: 140px;
   position: fixed;
   bottom: 0px;
   z-index: 3;
@@ -118,12 +70,12 @@ html, body {
 }
 
 .bookmark-tab {
-  padding: 60px;
+  padding: 50px;
   color: #a9a9a9;
 }
 
 .review-tab {
-  padding: 60px;
+  padding: 50px;
   color: #a9a9a9;
 }
 
