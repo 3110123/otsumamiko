@@ -10,19 +10,19 @@
     <ul class="nav nav-tabs nav-pills">
       <li class="nav-item col p-0">
         <%= link_to choice_path, class: "nav-link wine-tab" do %>
-          <i class="fas fa-glass-cheers"></i></i>
+          <i class="fas fa-glass-cheers"></i>
         <% end %>
       </li>
       <li class="nav-item col p-0">
         <%= link_to snacks_path, class: "nav-link search-tab" do %>
-          <i class="fas fa-search"></i></i></i>
+          <i class="fas fa-search"></i>
         <% end %>
       </li>
       <li class="nav-item col p-0">
-        <a href="#contents1" class="nav-link active bookmark-tab" data-toggle="tab"><i class="fas fa-thumbs-up"></i></a>
+        <a href="#contents1" class="nav-link active bookmark-tab" data-toggle="tab"><span class="fa-layers fa-fw"><i class="fas fa-thumbs-up"></i><span class="fa-layers-counter fa-layers-top-left user-count" style="background:Tomato"><%= @user_bookmarks.count %></span></a>
       </li>
       <li class="nav-item col p-0">
-        <a href="#contents2" class="nav-link review-tab" data-toggle="tab"><i class="fas fa-pen-nib"></i></a>
+        <a href="#contents2" class="nav-link review-tab" data-toggle="tab"><span class="fa-layers fa-fw"><i class="fas fa-pen-nib"></i><span class="fa-layers-counter fa-layers-top-left user-count" style="background:Tomato"><%= @user_reviews.count %></span></a>
       </li>
     </ul>
   </div>
