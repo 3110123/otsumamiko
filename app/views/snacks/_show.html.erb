@@ -10,11 +10,14 @@
       <div class="row align-items-center">
         <div class="col-xl-6 col-md-12 mt-5">
           <div class="snack-image text-center">
-          <% if @snack.image.attached? %>
-            <%= image_tag @snack.image, size: '600x600', class: 'card-img-top' %>
-          <% else %>
-            <%= image_pack_tag "media/images/default.png", size: '600x600', class: 'card-img-top' %>
-          <% end %>
+            <% if @snack.image.attached? %>
+              <%= image_tag @snack.image, size: '600x600', class: 'card-img-top' %>
+            <% else %>
+              <%= image_pack_tag "media/images/default.png", size: '600x600', class: 'card-img-top' %>
+            <% end %>
+            <div class="bookmark-<%= @snack.id %> bookmark-position show-bookmark-position">
+              <%= render 'bookmarks/bookmark_area', snack: @snack %>
+            </div>
           </div>
         </div>
         <div class="col-xl-6 col-md-12">
@@ -23,7 +26,7 @@
               <h2 class="font-weight-bold m-0"><%= @snack.alcohol_i18n %>
               <br><div class="py-2">✖️</div>
               <%= @snack.name %></h2><br>
-                <div class="rate-number inline-block-rate">
+                <div class="rate-number inline-block-rate pt-2">
                   <%= @snack_rate %>
                 </div>
                 <div class="rate-number inline-block-rate">
