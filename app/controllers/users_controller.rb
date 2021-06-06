@@ -20,11 +20,17 @@ class UsersController < ApplicationController
   def show
     @user = User.find(params[:id])
 
-    @q = current_user.reviews_snacks.ransack(params[:q])
-    @pagy, @user_reviews = pagy_countless(@q.result(distinct: true).includes(:reviews, :image_attachment), link_extra: 'data-remote="true"')
-    
     @q = current_user.bookmarks_snacks.ransack(params[:q])
-    @pagy, @user_bookmarks = pagy_countless(@q.result(distinct: true).includes(:reviews, :image_attachment), link_extra: 'data-remote="true"')
+    @pagy, @user_bookmarks = pagy_countless(@q.result(distinct: true).includes([:reviews, :image_attachment]), link_extra: 'data-remote="true"')
+
+    if @pagy.page == @pagy.pages
+      @nextPage = "last"
+    else
+      @nextPage = @pagy.page
+    end
+
+    @q = current_user.reviews_snacks.ransack(params[:q])
+    @user_reviews = @q.result(distinct: true).includes([:reviews, :image_attachment])
   end
 
   private
