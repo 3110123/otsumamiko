@@ -21,13 +21,18 @@
         <div class="col-xl-6 col-md-12">
           <div class="container snack-container">
             <div class='text-center'>
-              <h2 class="font-weight-bold m-0"><%= @snack.alcohol_i18n %>
-              <br><div class="py-2">✖️</div>
-              <%= @snack.name %></h2><br>
+              <h1 class="font-weight-bold snack-name"><%= @snack.alcohol_i18n %>
+              <br><div class="py-3">✖️</div>
+              <%= @snack.name %></h1>
+                <div class="d-flex flex-row bd-highlight justify-content-center">
+                  <% @snack_tags.each do |tag| %>
+                    #<%= tag.name %>
+                  <% end %>              
+                </div>
                 <div class="rate-number inline-block-rate pt-2">
                   <%= @snack_rate %>
                 </div>
-                <div class="rate-number inline-block-rate">
+                <div class="inline-block-rate">
                   <%= render 'snacks/snack_rate', snack_rate: @snack_rate %>
                 </div>
             </div>

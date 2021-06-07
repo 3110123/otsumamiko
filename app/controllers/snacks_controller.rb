@@ -10,11 +10,16 @@ class SnacksController < ApplicationController
     else
       @snack_rate = @snack.reviews.average(:rate).round(2)
     end
+
+    @snack_tags = @snack.tags
   end
 
   def index
     @q = Snack.ransack(params[:q])
     @pagy, @snack = pagy_countless(@q.result(distinct: true).includes([:reviews, :image_attachment]), link_extra: 'data-remote="true"')
+
+    @tags = Tag.all
+
     if @pagy.page == @pagy.pages
       @nextPage = "last"
     else
