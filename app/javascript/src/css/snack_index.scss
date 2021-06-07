@@ -35,17 +35,17 @@
   top: 50%;
 }
 
-.logout-bookmark-position {
+.bookmark-position {
   position: absolute;
-  right: 0px;
-  bottom: 0px;
+  right: 80px;
+  bottom: 350px;
   pointer-events: none;
 }
 
-.bookmark-position {
+.show-bookmark-position {
   position: absolute;
-  right: 70px;
-  bottom: 350px;
+  bottom: 50px;
+  right: 80px;
   pointer-events: none;
 }
 
@@ -113,8 +113,4 @@
 .snack-container {
   margin-top: 50px;
   margin-bottom: 20px;
-}
-
-.show-bookmark-position {
-  bottom: 50px;
 }

@@ -1,12 +1,17 @@
 <div class="col-md-12 col-xl-6">
   <div class="card m-4 shadow-lg p-3 mb-5 bg-white rounded" style="height: 48rem;">
     <div data-toggle="modal" data-target="#exampleModal">
-    <%= link_to snack_path(snack), class: "text-decoration-none text-dark", remote: true do %>
-    <% if snack.image.attached? %>
-      <%= image_tag snack.image, size: '250x450', class: 'card-img-top' %>
-    <% else %>
-      <%= image_pack_tag "media/images/default.png", size: '250x450', class: 'card-img-top' %>
-    <% end %>
+      <%= link_to snack_path(snack), class: "text-decoration-none text-dark", remote: true do %>
+        <div class="snack-image text-center">
+          <% if snack.image.attached? %>
+          <%= image_tag snack.image, size: '250x450', class: 'card-img-top' %>
+          <% else %>
+          <%= image_pack_tag "media/images/default.png", size: '250x450', class: 'card-img-top' %>
+          <% end %>
+          <div class="bookmark-<%= snack.id %> bookmark-position">
+          <%= render 'bookmarks/bookmark_area', snack: snack %>
+          </div>
+        </div>
       <div class="card-body">
         <div class='text-center'>
           <h2 class="font-weight-bold m-0"><%= snack.alcohol_i18n %>
@@ -24,9 +29,6 @@
               <%= render 'snacks/snack_rate', snack_rate: snack_rate %>
             </li>
           </ul>
-        </div>
-        <div class="bookmark-<%= snack.id %> bookmark-position">
-          <%= render 'bookmarks/bookmark_area', snack: snack %>
         </div>
       </div>
     <% end %>
