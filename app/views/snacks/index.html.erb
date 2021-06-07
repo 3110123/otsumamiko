@@ -10,16 +10,42 @@
     <div id="records_table" class="row">
       <%= render @snack %>
     </div>
+    <div class="loader" id="loader"></div>
     <div id="div_next_link">
       <%= render 'snacks/next_link' %>
     </div>
   </div>
 </div>
 
-<div class="beer_icon_button position-fixed">
-  <%= image_pack_tag "media/images/beer_icon_button.png", class: "rounded-circle m-5 shadow-lg bg-light p-4", size: "200x200", id: "beer_icon_btn" %>
+<div class='arrow_box position-fixed' style="display: none;" id="explanation_text">おつまみを選択して右にスワイプ！</div>
+<div class="index-otsumamiko position-fixed">
+  <%= image_pack_tag "media/images/otsumamiko.png", size: "530x430", id: "explanation_otsumamiko", style: "display: none;" %>
 </div>
-<div class='arrow_box position-fixed' style="display: none;" id="beer_icon_text">おつまみを選択して右にスワイプ！</div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="text-center">
+      <ul class="nav nav-tabs nav-pills">
+        <li class="nav-item col p-0">
+          <%= link_to choice_path, class: "nav-link wine-tab" do %>
+            <i class="fas fa-glass-cheers"></i>
+          <% end %>
+        </li>
+        <li class="nav-item col p-0">
+          <%= link_to snacks_path, class: "nav-link search-tab active" do %>
+            <i class="fas fa-search"></i>
+          <% end %>
+        </li>
+        <% if logged_in? %>
+          <li class="nav-item col p-0">
+            <%= link_to user_path(current_user.id), class: "nav-link nomal-tab" do %>
+              <i class="far fa-user-circle"></i>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</div>
 
 <%= javascript_pack_tag 'pages/page_scroll' %>

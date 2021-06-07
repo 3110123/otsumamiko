@@ -5,8 +5,8 @@
     <%= render 'bookmarks/bookmark', snack: snack %>
   <% end %>
 <% else %>
-<span class="fa-layers fa-fw">
+  <span class="fa-layers fa-fw">
   <i class="far fa-thumbs-up fa-3x bookmark-icon" id="js-bookmark-icon"></i>
   <span class="fa-layers-counter fa-layers-bottom-right bookmark-counter" style="background:Tomato"><%= snack.bookmarks.count %></span>
-</span>
+  </span>
 <% end %>

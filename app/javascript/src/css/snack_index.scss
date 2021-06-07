@@ -1,0 +1,116 @@
+//おつまみ一覧
+.arrow_box{
+  opacity: 0.8;
+  width: 600px;
+  height: 100px;
+  background: #aaaaaa;
+  padding: 0px;
+  text-align: center;
+  color:#000000;
+  font-size: 2rem;
+  font-weight: bold;
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  right: 320px;
+  top: 350px;
+  z-index: 3;
+  line-height: 100px;
+}
+
+.arrow_box:after{
+  border: solid transparent;
+  content:'';
+  height: 0;
+  width: 0;
+  pointer-events: none;
+  position: absolute;
+  border-color: rgba(255, 161, 97, 0);
+  border-top-width: 10px;
+  border-bottom-width: 10px;
+  border-left-width: 10px;
+  border-right-width: 10px;
+  border-left-color: #aaaaaa;
+  left: 100%;
+  top: 50%;
+}
+
+.bookmark-position {
+  position: absolute;
+  right: 80px;
+  bottom: 350px;
+  pointer-events: none;
+}
+
+.show-bookmark-position {
+  position: absolute;
+  bottom: 50px;
+  right: 80px;
+  pointer-events: none;
+}
+
+.card-img-top {
+  position: relative;
+}
+
+.bookmark-counter {
+  font-size: 8rem;
+}
+
+.bookmark-icon {
+  color: #848484;
+}
+
+.serch_field {
+  height: 75px;
+}
+
+.index-otsumamiko {
+  right: -200px;
+  top: 230px;
+  z-index: 3;
+  animation: r2 4s;
+}
+
+@keyframes r2 {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(-40deg); }
+}
+
+//おつまみ詳細
+.modal-dialog {
+  max-width: inherit;
+  width: 80%;
+}
+
+.close {
+  font-size: 5rem;
+}
+
+.share-button {
+  position: fixed;
+  opacity: 0.9;
+  right: 50px;
+  bottom: 50px;
+  border-radius: 50%;
+  padding: 35px;
+  background-color: #55ACEE;
+  font-size: 9rem;
+  color: white;
+}
+
+.show-bookmark {
+  position: absolute;
+  right: 100px;
+  bottom: -90px;
+}
+
+.rate-chart {
+  margin-top: 50px;
+  margin-bottom: 50px;
+}
+
+.snack-container {
+  margin-top: 50px;
+  margin-bottom: 20px;
+}

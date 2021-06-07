@@ -4,30 +4,63 @@
     <h1 class="font-weight-bold title-font"><%= t '.title' %></h1>
   </div>
 </div>
-<div class="container text-center">
-  <div class="wrapper">
-    <div class='text-center'>
+<div class="container-fluid">
+<div class="row">
+  <div class="text-center">
+    <ul class="nav nav-tabs nav-pills">
+      <li class="nav-item col p-0">
+        <%= link_to choice_path, class: "nav-link wine-tab" do %>
+          <i class="fas fa-glass-cheers"></i>
+        <% end %>
+      </li>
+      <li class="nav-item col p-0">
+        <%= link_to snacks_path, class: "nav-link search-tab" do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+      </li>
+      <li class="nav-item col p-0">
+        <a href="#contents1" class="nav-link active bookmark-tab" data-toggle="tab"><span class="fa-layers fa-fw"><i class="fas fa-thumbs-up"></i><span class="fa-layers-counter fa-layers-top-left user-count" style="background:Tomato"><%= @user_bookmarks.count %></span></a>
+      </li>
+      <li class="nav-item col p-0">
+        <a href="#contents2" class="nav-link review-tab" data-toggle="tab"><span class="fa-layers fa-fw"><i class="fas fa-pen-nib"></i><span class="fa-layers-counter fa-layers-top-left user-count" style="background:Tomato"><%= @user_reviews.count %></span></a>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+<div class="tab-content">
+  <div id="contents1" class="tab-pane active">
+    <div class="container text-center">
       <div class="bookmark">
-        <p class="h3 my-5 border border-danger rounded-pill shadow-lg p-3 mb-5 bg-danger text-light">気になるリスト</p>
         <% if @user.bookmarks.present? %>
-          <div class="row flex-row flex-nowrap overflow-auto p-5 mypage-area">
-            <%= render @user_bookmarks %>
+          <div id="pageScroll" data-page="">
+            <div id="records_table" class="row">
+              <%= render @user_bookmarks %>
+            </div>
+            <div class="loader" id="loader"></div>
+            <div id="div_next_link">
+              <%= render 'snacks/next_link' %>
+            </div>
           </div>
         <% else %>
-          <p class="h5">まだ気になっているおつまみがありません。<br>一覧から探しましょう！</p>
+            <p class="h5">まだ気になっているおつまみがありません。<br>一覧から探しましょう！</p>
         <% end %>
-        </div>
-        <div class="review">
-        <p class="h3 my-5 border border-danger rounded-pill shadow-lg p-3 mb-5 bg-danger text-light">レビューしたおつまみ</p>
-        <% if @user.reviews.present? %>
-          <div class="row flex-row flex-nowrap overflow-auto p-5 mypage-area">
-            <%= render @user_reviews %>
-          </div>
-        <% else %>
-          <p class="h5">まだレビューしたおつまみがありません。<br>レビューしてみましょう！</p>
-        <% end %>
-        </div>
+      </div>
+    </div>
+  </div>
+  <div id="contents2" class="tab-pane">
+    <div class="container text-center">
+      <div class="review">
+          <% if @user.reviews.present? %>
+              <div id="records_table" class="row">
+                <%= render @user_reviews %>
+              </div>
+          <% else %>
+            <p class="h5">まだレビューしたおつまみがありません。<br>レビューしてみましょう！</p>
+          <% end %>
       </div>
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag 'pages/mypage' %>

@@ -1,17 +1,3 @@
-// bookmarkの説明
-var ExplanationText = document.getElementById('explanation_text');
-var ExplanationOtsumamiko = document.getElementById('explanation_otsumamiko');
-
-ExplanationOtsumamiko.style.display = "block";
-ExplanationText.style.display = "block";
-setTimeout(callback, 5000)
-
-function callback(){
-  ExplanationOtsumamiko.style.display = "none";
-  ExplanationText.style.display = "none";
-}
-
-// 無限スクロール
 var loadNextPage = function(){
   if ($('#next_link').data("loading")){ return }
   var wBottom  = $(window).scrollTop() + $(window).height();

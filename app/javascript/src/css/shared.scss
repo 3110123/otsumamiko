@@ -1,0 +1,145 @@
+// header
+header {
+  position: fixed;
+  opacity: 0.9;
+  z-index: 10;
+  a {
+    color: black;
+    font-family: "Toppan Bunkyu Midashi Gothic";
+  }
+}
+
+.navbar-toggler {
+  background-color: white;
+  border-radius: 50%;
+  padding: 20px;
+  color: black;
+}
+
+.navbar-light .navbar-toggler {
+  border-color: rgba(0,0,0,0);
+}
+
+// 全体
+html, body {
+  height: 100%;
+  background-color: #FFB62A;
+  -webkit-text-size-adjust: auto;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-brand {
+  font-size: 3rem;
+  font-family: "Nico Moji";
+}
+
+.toast-message {
+  font-size: 1.8rem;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+
+#toast-container {
+  margin-top: 100px;
+}
+
+// footer
+.footer-logo {
+  font-size: 1.5rem;
+  color: white;
+  font-family: "Nico Moji";
+  line-height: 50px;
+}
+
+.footer-text {
+  font-size: 1rem;
+  color: white;
+  line-height: 50px;
+}
+
+.static-text {
+  margin-top: 150px;
+}
+
+// tab
+.nav-tabs {
+  position: fixed;
+  bottom: 0px;
+  z-index: 3;
+  width: 100%;
+  background-color: white;
+  font-size: 2.5rem;
+}
+
+.nav-pills .wine-tab.active, .nav-pills .show > .nav-link {
+  color: #7b150a;
+  background-color: white;
+  font-size: 4rem;
+  line-height: 140px;
+}
+
+.nav-pills .search-tab.active, .nav-pills .show > .nav-link {
+  color: #009cc0;
+  background-color: white;
+  font-size: 4rem;
+  line-height: 140px;
+}
+
+.nav-pills .bookmark-tab.active, .nav-pills .show > .nav-link {
+  color: #f09400;
+  background-color: white;
+  font-size: 4rem;
+  line-height: 140px;
+  .user-count {
+    font-size: 8rem;
+    display: block;
+  }
+}
+
+.nav-pills .review-tab.active, .nav-pills .show > .nav-link {
+  color: #9acd32;
+  background-color: white;
+  font-size: 4rem;
+  line-height: 140px;
+  .user-count {
+    font-size: 8rem;
+    display: block;
+  }
+}
+
+.nomal-tab {
+  line-height: 140px;
+  color: #a9a9a9;
+}
+
+.wine-tab {
+  line-height: 140px;
+  color: #a9a9a9;
+}
+
+.search-tab {
+  line-height: 140px;
+  color: #a9a9a9;
+}
+
+.bookmark-tab {
+  line-height: 140px;
+  color: #a9a9a9;
+}
+
+.review-tab {
+  line-height: 140px;
+  color: #a9a9a9;
+}
+
+.twitter-tab {
+  line-height: 140px;
+}
+
+.user-count {
+  display: none;
+}

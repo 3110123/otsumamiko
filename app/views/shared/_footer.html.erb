@@ -1,10 +1,20 @@
-<footer class="text-muted py-5 bg-dark w-100" id="footer">
+<footer class="text-muted py-3 bg-dark w-100" id="footer">
   <div class="container">
     <div class="text-center">
-      <%= link_to 'おつまみこ', root_path, class: "mx-5 footer-logo text-light text-decoration-none" %>
-      <%= link_to 'プライバシーポリシー', privacy_path, class: "mx-5 text-light text-decoration-none" %>
-      <%= link_to '利用規約', terms_path, class: "mx-5 text-light text-decoration-none" %>
-      <%= link_to 'お問い合わせ', new_inquiry_path, class: "mx-5 text-light text-decoration-none" %>
+      <div class="row">
+        <div class="col">
+          <%= link_to 'おつまみこ', root_path, class: "footer-logo text-decoration-none" %>
+        </div>
+        <div class="col">
+          <%= link_to 'プライバシー', privacy_path, class: "footer-text text-decoration-none" %>
+        </div>
+        <div class="col">
+          <%= link_to '利用規約', terms_path, class: "footer-text text-decoration-none" %>
+        </div>
+        <div class="col">
+          <%= link_to 'お問い合わせ', new_inquiry_path, class: "footer-text text-decoration-none" %>
+        </div>
+      </div>
     </div>
   </div>
 </footer>

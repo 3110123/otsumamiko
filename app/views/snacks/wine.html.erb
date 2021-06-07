@@ -89,8 +89,30 @@
   </div>
 </div>
 
-<div class="otsumamiko-yopparai position-fixed">
-  <%= image_pack_tag "media/images/otsumamiko_wine.png", size: "530x430" %>
-</div>
+<div class="container-fluid">
+  <div class="row">
+    <div class="text-center">
+      <ul class="nav nav-tabs nav-pills">
+        <li class="nav-item col p-0">
+          <%= link_to choice_path, class: "nav-link wine-tab active" do %>
+            <i class="fas fa-glass-cheers"></i></i>
+          <% end %>
+        </li>
+        <li class="nav-item col p-0">
+          <%= link_to snacks_path, class: "nav-link search-tab" do %>
+            <i class="fas fa-search"></i></i></i>
+          <% end %>
+        </li>
+        <% if logged_in? %>
+        <li class="nav-item col p-0">
+          <%= link_to user_path(current_user.id), class: "nav-link nomal-tab" do %>
+            <i class="far fa-user-circle"></i></i></i>
+          <% end %>
+        </li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+  </div>
 
 <%= javascript_pack_tag 'pages/choice' %>
