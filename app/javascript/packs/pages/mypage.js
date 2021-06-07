@@ -19,7 +19,6 @@ window.addEventListener('resize', loadNextPage);
 window.addEventListener('scroll', loadNextPage);
 window.addEventListener('load',   loadNextPage);
 
-setTimeout(callback, 3000)
-function callback(){
+setTimeout(function(){
   loader.classList.add('fadeout');
-}
+}, 3000)

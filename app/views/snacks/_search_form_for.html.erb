@@ -6,5 +6,8 @@
     <div class="col-2">
       <%= f.submit '検索', class: 'h4 text-light btn-danger rounded-pill py-4 px-5 shadow-lg' %>
     </div>
+    <div class="col-8">
+      <%= f.collection_radio_buttons :tags_id_matches_any, @tags, :id, :name %>
+    </div>
   </div>
 <% end %>
