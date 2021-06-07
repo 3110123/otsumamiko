@@ -32,3 +32,8 @@ var loadNextPage = function(){
 window.addEventListener('resize', loadNextPage);
 window.addEventListener('scroll', loadNextPage);
 window.addEventListener('load',   loadNextPage);
+
+setTimeout(callback, 3000)
+function callback(){
+  loader.classList.add('fadeout');
+}

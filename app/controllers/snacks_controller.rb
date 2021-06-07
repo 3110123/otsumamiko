@@ -10,8 +10,6 @@ class SnacksController < ApplicationController
     else
       @snack_rate = @snack.reviews.average(:rate).round(2)
     end
-
-    @snack_tags = @snack.tags
   end
 
   def index
