@@ -14,10 +14,10 @@
         </div>
       <div class="card-body">
         <div class='text-center'>
-          <h2 class="font-weight-bold m-0"><%= snack.alcohol_i18n %>
+          <h2 class="font-weight-bold m-0 pt-4"><%= snack.alcohol_i18n %>
           <br><div class="py-2">✖️</div>
-          <div class="snack-name"><%= snack.name %></div></h2><br>
-          <ul class="review-rate">
+          <div class="index-snack-name"><%= snack.name %></div></h2><br>
+          <ul>
             <li class="list-inline-item h2 mr-1 mb-0 align-middle">
               <% if snack.reviews.blank? %>
                 <%= snack_rate = 0.0 %>
