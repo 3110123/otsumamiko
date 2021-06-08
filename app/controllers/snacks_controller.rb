@@ -19,9 +19,9 @@ class SnacksController < ApplicationController
     @tags = Tag.all
 
     if @pagy.page == @pagy.pages
-      @nextPage = "last"
+      @next_page = "last"
     else
-      @nextPage = @pagy.page
+      @next_page = @pagy.page
     end
   end
 

@@ -21,16 +21,16 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
 
     @q_bookmarks = current_user.bookmarks_snacks.ransack(params[:q_bookmarks], search_key: :q_bookmarksh)
-    @pagy, @user_bookmarks = pagy_countless(@q_bookmarks.result(distinct: true).includes([:reviews, :image_attachment]), link_extra: 'data-remote="true"')
+    @pagy, @user_bookmarks = pagy_countless(@q_bookmarks.result(distinct: true).includes(:reviews, :image_attachment), link_extra: 'data-remote="true"')
 
     if @pagy.page == @pagy.pages
-      @nextPage = "last"
+      @next_page = "last"
     else
-      @nextPage = @pagy.page
+      @next_page = @pagy.page
     end
 
     @q_reviews = current_user.reviews_snacks.ransack(params[:q_reviews], search_key: :q_reviews)
-    @user_reviews = @q_reviews.result(distinct: true).includes([:reviews, :image_attachment])
+    @user_reviews = @q_reviews.result(distinct: true).includes(:reviews, :image_attachment)
   end
 
   private
