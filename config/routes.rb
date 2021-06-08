@@ -31,6 +31,7 @@ Rails.application.routes.draw do
     end
     resources :tags
     resources :users, only:%i[index edit update destroy]
+    resources :inquiries, only:%i[index destroy]
   end
 
   # mailer

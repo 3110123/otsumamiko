@@ -1,0 +1,15 @@
+<tr class="text-center">
+  <td><%= inquiry.id %></td>
+  <td><%= inquiry.name %></td>
+  <td><%= inquiry.email %></td>
+  <td><%= inquiry.category_i18n %></td>
+  <td><%= inquiry.message %></td>
+  <td><%= inquiry.created_at.strftime('%Y/%m/%d') %></td>
+  <td>
+    <ul>
+      <li class='list-inline-item'>
+        <%= button_to "削除", admin_inquiry_path(inquiry), method: :delete, data: { confirm: '本当に削除してもよろしいですか？'}, class: "btn btn-secondary" %>
+      </li>
+    </ul>
+  </td>
+</tr>
