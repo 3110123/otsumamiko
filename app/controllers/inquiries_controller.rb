@@ -7,8 +7,8 @@ class InquiriesController < ApplicationController
     @inquiry = Inquiry.new(inquiry_params)
     if @inquiry.save
       InquiryMailer.send_mail(@inquiry).deliver_later if @inquiry.email.present?
-      InquiryMailer.receive_mail(@inquiry).deliver_later
-      redirect_to root_path, success: "送信しました"
+      flash[:success] = '送信しました。'
+      redirect_to root_path
     else
       flash[:alert] = "送信に失敗しました"
       render :new
