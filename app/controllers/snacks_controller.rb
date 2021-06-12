@@ -14,7 +14,7 @@ class SnacksController < ApplicationController
 
   def index
     @q = Snack.ransack(params[:q])
-    @pagy, @snack = pagy_countless(@q.result(distinct: true), link_extra: 'data-remote="true"')
+    @pagy, @snack = pagy_countless(@q.result(distinct: true).includes(:reviews, {image_attachment: :blob}), link_extra: 'data-remote="true"')
 
     @tags = Tag.all
 

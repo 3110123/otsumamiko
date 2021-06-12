@@ -7,7 +7,7 @@
       <%= f.submit '検索', class: 'h4 text-light btn-danger rounded-pill py-4 px-5 shadow-lg search-btn' %>
     </div>
     <div class="col-12 tag-search mb-3">
-      <%= f.collection_check_boxes :has_tag_id_all, @tags, :id, :name, include_hidden: false %>
+      <%= f.collection_check_boxes :tags_id_in_any, @tags, :id, :name, include_hidden: false %>
     </div>
   </div>
 <% end %>
