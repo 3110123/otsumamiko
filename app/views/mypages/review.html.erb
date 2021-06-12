@@ -1,0 +1,51 @@
+<%= image_pack_tag "media/images/header_awa.png", class: "headerimage" %>
+<div class="card-img-overlay">
+  <div class="container">
+    <h1 class="font-weight-bold title-font"><%= t '.title' %></h1>
+  </div>
+</div>
+
+
+    <div class="container text-center">
+      <div class="review">
+          <% if current_user.reviews.present? %>
+              <div id="records_table" class="row">
+                <%= render @user_reviews %>
+              </div>
+          <% else %>
+            <p class="h5">まだレビューしたおつまみがありません。<br>レビューしてみましょう！</p>
+          <% end %>
+      </div>
+    </div>
+
+
+<div class="container-fluid">
+<div class="row">
+  <div class="text-center">
+    <ul class="nav nav-tabs nav-pills">
+      <li class="nav-item col p-0">
+        <%= link_to choice_path, class: "nav-link wine-tab" do %>
+          <i class="fas fa-glass-cheers"></i>
+        <% end %>
+      </li>
+      <li class="nav-item col p-0">
+        <%= link_to snacks_path, class: "nav-link search-tab" do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+      </li>
+      <li class="nav-item col p-0">
+        <%= link_to bookmarks_mypage_path, class: "nav-link bookmark-tab" do %>
+          <span class="fa-layers fa-fw"><i class="fas fa-thumbs-up"></i><span class="fa-layers-counter fa-layers-top-left user-count" style="background:Tomato"><%= current_user.bookmarks.count %></span>
+        <% end %>
+      </li>
+      <li class="nav-item col p-0">
+        <%= link_to reviews_mypage_path, class: "nav-link review-tab active" do %>
+          <span class="fa-layers fa-fw"><i class="fas fa-pen-nib"></i><span class="fa-layers-counter fa-layers-top-left user-count" style="background:Tomato"><%= current_user.reviews.count %></span>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+</div>
+</div>
+
+<%= javascript_pack_tag 'pages/mypage' %>

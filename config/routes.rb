@@ -8,7 +8,13 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
   get 'choice', to: 'alcohol_choices#new'
   get 'result', to: 'snacks#result'
-  resources :users, only: %i[new create show]
+  resources :users, only: %i[new create]
+  resource :mypage, only: %i[show] do
+    collection do
+      get 'bookmarks', to: 'mypages#bookmark'
+      get 'reviews', to: 'mypages#review'
+    end
+  end
   resources :password_resets, only: %i[new create edit update]
   resource :inquiry, only: %i[new create]
   resources :snacks do

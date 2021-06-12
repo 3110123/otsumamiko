@@ -25,5 +25,8 @@ ja:
   inquiries:
     new:
       title: 'お問合せ'
-
-  
+  mypages:
+    bookmark:
+      title: '気になるおつまみ一覧'
+    review:
+      title: 'レビュー一覧'
