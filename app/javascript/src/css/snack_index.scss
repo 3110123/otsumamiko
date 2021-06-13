@@ -61,8 +61,17 @@
   color: #848484;
 }
 
-.serch_field {
+.search-field {
   height: 75px;
+  font-size: 1.5rem;
+  margin-bottom: 30px;
+  &::placeholder {
+    font-size: 1.5rem; 
+  } 
+}
+
+.search-btn {
+  margin-bottom: 30px;
 }
 
 .index-otsumamiko {
@@ -113,4 +122,16 @@
 .snack-container {
   margin-top: 50px;
   margin-bottom: 20px;
+}
+
+.rate-number {
+  margin-top: 50px;
+}
+
+.snack-name {
+  margin-bottom: 50px;
+}
+
+.index-snack-name {
+  margin-bottom: 10px;
 }

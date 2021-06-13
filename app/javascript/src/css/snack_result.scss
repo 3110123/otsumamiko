@@ -1,6 +1,11 @@
+// お酒選択画面
+.alcohol-container {
+  margin-bottom: 200px;
+}
+
 // おつまみ絞り込み
 .food-choice {
-  padding-top: 200px;
+  padding-top: 100px;
   margin-bottom: 200px;
   h1 {
     font-size: 3rem;
@@ -24,6 +29,11 @@
 .result-chart {
   padding-top: 100px;
   padding-bottom: 100px;
+}
+
+.result-tag {
+  font-size: 0.8rem;
+  margin-top: 50px;
 }
 
 .comment-table {
@@ -125,4 +135,29 @@
 
 .review-time {
   color: #aaaaaa;
+}
+
+input[type=checkbox] {
+  opacity: 0;
+  &:checked + label {
+    padding: 0.5em 1em;
+    color: black;
+    background: rgb(143, 143, 143);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+    border-radius: 9px;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+}
+
+.tag-search label {
+  padding: 0.5em 1em;
+  color: #696969;
+  background: white;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.25);
+  border-radius: 9px;
+  font-size: 1rem;
+  &:before {
+    content: "+ ";
+  }
 }

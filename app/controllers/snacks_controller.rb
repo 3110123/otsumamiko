@@ -14,11 +14,14 @@ class SnacksController < ApplicationController
 
   def index
     @q = Snack.ransack(params[:q])
-    @pagy, @snack = pagy_countless(@q.result(distinct: true).includes([:reviews, :image_attachment]), link_extra: 'data-remote="true"')
+    @pagy, @snack = pagy_countless(@q.result(distinct: true).includes(:reviews, {image_attachment: :blob}), link_extra: 'data-remote="true"')
+
+    @tags = Tag.all
+
     if @pagy.page == @pagy.pages
-      @nextPage = "last"
+      @next_page = "last"
     else
-      @nextPage = @pagy.page
+      @next_page = @pagy.page
     end
   end
 

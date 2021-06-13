@@ -107,7 +107,7 @@
         </li>
         <% if logged_in? %>
         <li class="nav-item col p-0">
-          <%= link_to user_path(current_user.id), class: "nav-link nomal-tab" do %>
+          <%= link_to bookmarks_mypage_path, class: "nav-link nomal-tab" do %>
             <i class="far fa-user-circle"></i></i></i>
           <% end %>
         </li>
