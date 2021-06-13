@@ -22,42 +22,53 @@
               <h2 class="font-weight-bold m-0"><%= @snack.alcohol_i18n %>
               <br><div class="py-2">✖️</div>
               <%= @query.name %></h2><br>
-                <div class="rate-number inline-block-rate">
-                  <%= @snack_rate %>
-                </div>
-                <div class="inline-block-rate">
-                  <%= render 'snacks/snack_rate', snack_rate: @snack_rate %>
-                </div>
+              <div class="rate-number inline-block-rate">
+                <%= @snack_rate %>
+              </div>
+              <div class="inline-block-rate">
+                <%= render 'snacks/snack_rate', snack_rate: @snack_rate %>
+              </div>
             </div>
           </div>
         </div>
+      </div>
+      <div class="row justify-content-center">
+        <div class="col-10 text-center">
+          <div class="bd-highlight result-tag">
+            <% @snack.tags.each do |tag| %>
+              #<%= tag.name %>
+            <% end %>              
+          </div>
+        </div>
+      </div>
+      <div class="row">
         <div class="col-12">
           <div class='result-chart'>
             <div id="chart" data-snack-id="<%= @snack.id %>" data-sweetness-value="<%= @snack.reviews.average(:sweetness) %>" data-salty-value="<%= @snack.reviews.average(:salty) %>" data-acidity-value="<%= @snack.reviews.average(:acidity) %>" data-taste-value="<%= @snack.reviews.average(:taste) %>" data-scent-value="<%= @snack.reviews.average(:scent) %>">
             <canvas id="myRaderChart-<%= @snack.id %>"></canvas>
             </div>
           </div>
-          <%= javascript_pack_tag 'pages/ratechart' %>
+        </div>
+      </div>
+      <%= javascript_pack_tag 'pages/ratechart' %>
 
-          <div class='text-center'>
-            <div class="row justify-content-center">
-              <div class="col-xl-8 col-md-12">
-                <% if logged_in? %>
-                  <a data-toggle="collapse" href="#collapseExample" aria-controls="collapseExample" class="text-decoration-none"><h3 class="comment-table text-white rounded-pill shadow-lg p-3 my-5">コメント</h3></a>
-                  <%= render 'snacks/review_area' %>
-                <% else %>
-                  <h3 class="comment-table text-white rounded-pill shadow-lg p-3 my-5 text-decoration-none">コメント</h3>
-                <% end %>
-              </div>
-            </div>
-            <div class="row">
-              <div class="col-12">  
-                <table id="js-table-comment" class="table text-left">
-                  <%= render @reviews, review: @review %>
-                </table>
-              </div>
-            </div>
+      <div class='text-center'>
+        <div class="row justify-content-center">
+          <div class="col-xl-8 col-md-12">
+            <% if logged_in? %>
+              <a data-toggle="collapse" href="#collapseExample" aria-controls="collapseExample" class="text-decoration-none"><h3 class="comment-table text-white rounded-pill shadow-lg p-3 my-5">コメント</h3></a>
+              <%= render 'snacks/review_area' %>
+            <% else %>
+              <h3 class="comment-table text-white rounded-pill shadow-lg p-3 my-5 text-decoration-none">コメント</h3>
+            <% end %>
           </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-12">  
+          <table id="js-table-comment" class="table text-left">
+            <%= render @reviews, review: @review %>
+          </table>
         </div>
       </div>
     </div>
@@ -93,4 +104,4 @@
       </ul>
     </div>
   </div>
-  </div>
+</div>
