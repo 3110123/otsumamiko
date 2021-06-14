@@ -66,6 +66,12 @@ html, body {
 }
 
 // tab
+@media screen and (min-width: 1200px){
+  .nav-tabs {
+    display: none;
+  }
+}
+
 .nav-tabs {
   position: fixed;
   bottom: 0px;
