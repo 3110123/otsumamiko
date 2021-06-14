@@ -133,26 +133,46 @@ html, body {
 .nomal-tab {
   line-height: 140px;
   color: #a9a9a9;
+  &:hover {
+    color: white;
+    background-color: #f09400;
+  }
 }
 
 .wine-tab {
   line-height: 140px;
   color: #a9a9a9;
+  &:hover {
+    color: white;
+    background-color: #7b150a;
+  }
 }
 
 .search-tab {
   line-height: 140px;
   color: #a9a9a9;
+  &:hover {
+    color: white;
+    background-color: #009cc0;
+  }
 }
 
 .bookmark-tab {
   line-height: 140px;
   color: #a9a9a9;
+  &:hover {
+    color: white;
+    background-color: #f09400;
+  }
 }
 
 .review-tab {
   line-height: 140px;
   color: #a9a9a9;
+  &:hover {
+    color: white;
+    background-color: #9acd32;
+  }
 }
 
 .twitter-tab {

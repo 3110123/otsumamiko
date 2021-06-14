@@ -47,11 +47,49 @@
   margin-bottom: 300px;
 }
 
+.mypage-card {
+  margin-bottom: 100px;
+  padding: 50px 0;
+  border-radius: 5%;
+}
+
+.mypage-name {
+  font-size: 2rem;
+}
+
+.mypage-email {
+  margin-top: 50px;
+  font-size: 2rem;
+}
+
+.btn-bookmark {
+  color: #f09400;
+  margin-left: 50px;
+  padding: 50px 120px;
+  background-color: white;
+  font-size: 4rem;
+  border-radius: 10%;
+  &:hover {
+    color: white;
+    background-color: #f09400;
+  }
+}
+
+.btn-review {
+  color: #9acd32;
+  margin-right: 50px;
+  padding: 50px 120px;
+  background-color: white;
+  font-size: 4rem;
+  border-radius: 10%;
+  &:hover {
+    color: white;
+    background-color: #9acd32;
+  }
+}
+
 .mypage-area {
-  background-color: #ffe4b5;
-  border: dashed;
-  border-color: #c7c7c7;
-  border-width: 2px;
+  margin-bottom: 100px;
 }
 
 // login

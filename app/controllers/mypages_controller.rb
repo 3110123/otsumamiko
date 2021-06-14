@@ -2,6 +2,7 @@ class MypagesController < ApplicationController
   include Pagy::Backend
 
   def show
+    @user = User.find(current_user.id)
   end
   
   def bookmark

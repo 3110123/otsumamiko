@@ -30,3 +30,5 @@ ja:
       title: '%{name}さんのお気に入り'
     review:
       title: '%{name}さんのレビュー'
+    show:
+      title: 'ユーザー情報'
