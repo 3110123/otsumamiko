@@ -12,6 +12,22 @@ header {
   color: black;
 }
 
+.navbar {
+  padding: 0;
+}
+
+.navbar-collapse.show {
+  background-color: white;
+  .nav-link {
+    color: black;
+  }
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
+}
+
 .navbar-light .navbar-toggler {
   border-color: rgba(0,0,0,0);
 }
