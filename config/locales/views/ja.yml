@@ -27,6 +27,6 @@ ja:
       title: 'お問合せ'
   mypages:
     bookmark:
-      title: '気になるおつまみ一覧'
+      title: '%{name}さんのお気に入り'
     review:
-      title: 'レビュー一覧'
+      title: '%{name}さんのレビュー'
