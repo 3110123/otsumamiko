@@ -130,12 +130,23 @@ html, body {
   }
 }
 
+.nav-pills .nomal-tab.active, .nav-pills .show > .nav-link {
+  color: brown;
+  background-color: white;
+  font-size: 4rem;
+  line-height: 140px;
+  .user-count {
+    font-size: 8rem;
+    display: block;
+  }
+}
+
 .nomal-tab {
   line-height: 140px;
   color: #a9a9a9;
   &:hover {
     color: white;
-    background-color: #f09400;
+    background-color: brown;
   }
 }
 

@@ -34,13 +34,8 @@
         <% end %>
       </li>
       <li class="nav-item col p-0">
-        <%= link_to bookmarks_mypages_path, class: "nav-link bookmark-tab" do %>
-          <span class="fa-layers fa-fw"><i class="fas fa-thumbs-up"></i><span class="fa-layers-counter fa-layers-top-left user-count" style="background:Tomato"><%= current_user.bookmarks.count %></span>
-        <% end %>
-      </li>
-      <li class="nav-item col p-0">
-        <%= link_to reviews_mypages_path, class: "nav-link review-tab active" do %>
-          <span class="fa-layers fa-fw"><i class="fas fa-pen-nib"></i><span class="fa-layers-counter fa-layers-top-left user-count" style="background:Tomato"><%= current_user.reviews.count %></span>
+        <%= link_to mypage_path, class: "nav-link nomal-tab active" do %>
+          <i class="far fa-user-circle"></i>
         <% end %>
       </li>
     </ul>

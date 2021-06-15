@@ -31,4 +31,4 @@ ja:
     review:
       title: '%{name}さんのレビュー'
     show:
-      title: 'ユーザー情報'
+      title: 'マイページ'
