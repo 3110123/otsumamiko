@@ -16,10 +16,16 @@ header {
   padding: 0;
 }
 
+.nav-link {
+  color: black;
+  font-size: 1.5rem;
+}
+
 .navbar-collapse.show {
   background-color: white;
   .nav-link {
     color: black;
+    font-size: 1.5rem;
   }
 }
 
