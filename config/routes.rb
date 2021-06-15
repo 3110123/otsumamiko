@@ -8,8 +8,9 @@ Rails.application.routes.draw do
   delete 'logout', to: 'user_sessions#destroy'
   get 'choice', to: 'alcohol_choices#new'
   get 'result', to: 'snacks#result'
+  get 'mypage', to: 'mypages#show'
   resources :users, only: %i[new create]
-  resource :mypage, only: %i[show] do
+  resources :mypages do
     collection do
       get 'bookmarks', to: 'mypages#bookmark'
       get 'reviews', to: 'mypages#review'

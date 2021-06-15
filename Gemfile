@@ -29,6 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'aws-sdk-s3', require: false
 gem 'bootsnap', '>= 1.4.2', require: false
 gem 'enum_help'
+gem 'meta-tags'
 gem 'seed-fu'
 gem 'sorcery'
 gem 'ransack'

@@ -1,7 +1,8 @@
+<% content_for(:title, "マイページ") %>
 <%= image_pack_tag "media/images/header_awa.png", class: "headerimage" %>
 <div class="card-img-overlay">
   <div class="container">
-    <h1 class="font-weight-bold title-font"><%= t '.title' %></h1>
+    <h1 class="font-weight-bold title-font"><%= t '.title', name: current_user.name %></h1>
   </div>
 </div>
 
@@ -34,13 +35,8 @@
         <% end %>
       </li>
       <li class="nav-item col p-0">
-        <%= link_to bookmarks_mypage_path, class: "nav-link bookmark-tab" do %>
-          <span class="fa-layers fa-fw"><i class="fas fa-thumbs-up"></i><span class="fa-layers-counter fa-layers-top-left user-count" style="background:Tomato"><%= current_user.bookmarks.count %></span>
-        <% end %>
-      </li>
-      <li class="nav-item col p-0">
-        <%= link_to reviews_mypage_path, class: "nav-link review-tab active" do %>
-          <span class="fa-layers fa-fw"><i class="fas fa-pen-nib"></i><span class="fa-layers-counter fa-layers-top-left user-count" style="background:Tomato"><%= current_user.reviews.count %></span>
+        <%= link_to mypage_path, class: "nav-link nomal-tab active" do %>
+          <i class="far fa-user-circle"></i>
         <% end %>
       </li>
     </ul>

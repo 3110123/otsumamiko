@@ -1,3 +1,4 @@
+<% content_for(:title, "パスワードを忘れた方") %>
 <%= image_pack_tag "media/images/header_awa.png", class: "headerimage" %>
   <div class="card-img-overlay">
     <div class="container">
@@ -9,17 +10,17 @@
       <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
         <%= form_with model: @user, url: password_reset_path(@token), local: true do |f| %>
           <div class="form-group h4 py-3">
-            <%= f.label :email, User.human_attribute_name(:email) %><br>
+            <%= f.label :email, User.human_attribute_name(:email), class: "required" %><br>
             <%= f.text_field :email, class: "form-control comment-area serch_field shadow-lg rounded-pill pl-5", type: "text", placeholder: "メールアドレス" %>
             <%= render 'shared/error_messages', model: f.object, attribute: :email %>
           </div><br>
           <div class="form-group h4 py-3">
-            <%= f.label :password, User.human_attribute_name(:password) %><br>
+            <%= f.label :password, User.human_attribute_name(:password), class: "required" %><br>
             <%= f.password_field :password, class: "form-control comment-area serch_field shadow-lg rounded-pill pl-5", type: "password", placeholder: "パスワード" %>
             <%= render 'shared/error_messages', model: f.object, attribute: :password %>
           </div><br>
           <div class="form-group h4 py-3">
-            <%= f.label :password_confirmation, User.human_attribute_name(:password_confirmation) %><br>
+            <%= f.label :password_confirmation, User.human_attribute_name(:password_confirmation), class: "required" %><br>
             <%= f.password_field :password_confirmation, class: "form-control comment-area serch_field shadow-lg rounded-pill pl-5", type: "password", placeholder: "パスワード" %>
             <%= render 'shared/error_messages', model: f.object, attribute: :password %>
           </div><br>

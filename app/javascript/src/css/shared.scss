@@ -3,10 +3,6 @@ header {
   position: fixed;
   opacity: 0.9;
   z-index: 10;
-  a {
-    color: black;
-    font-family: "Toppan Bunkyu Midashi Gothic";
-  }
 }
 
 .navbar-toggler {
@@ -14,6 +10,28 @@ header {
   border-radius: 50%;
   padding: 20px;
   color: black;
+}
+
+.navbar {
+  padding: 0;
+}
+
+.header-nav-link {
+  color: black;
+  font-size: 1.5rem;
+}
+
+.navbar-collapse.show {
+  background-color: white;
+  .nav-link {
+    color: black;
+    font-size: 1.5rem;
+  }
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0}
+  100% {opacity: 1}
 }
 
 .navbar-light .navbar-toggler {
@@ -66,6 +84,13 @@ html, body {
 }
 
 // tab
+// PCで非表示
+@media screen and (min-width: 1200px){
+  .nav-tabs {
+    display: none;
+  }
+}
+
 .nav-tabs {
   position: fixed;
   bottom: 0px;
@@ -111,29 +136,60 @@ html, body {
   }
 }
 
+.nav-pills .nomal-tab.active, .nav-pills .show > .nav-link {
+  color: brown;
+  background-color: white;
+  font-size: 4rem;
+  line-height: 140px;
+  .user-count {
+    font-size: 8rem;
+    display: block;
+  }
+}
+
 .nomal-tab {
   line-height: 140px;
   color: #a9a9a9;
+  &:hover {
+    color: white;
+    background-color: brown;
+  }
 }
 
 .wine-tab {
   line-height: 140px;
   color: #a9a9a9;
+  &:hover {
+    color: white;
+    background-color: #7b150a;
+  }
 }
 
 .search-tab {
   line-height: 140px;
   color: #a9a9a9;
+  &:hover {
+    color: white;
+    background-color: #009cc0;
+  }
 }
 
 .bookmark-tab {
   line-height: 140px;
   color: #a9a9a9;
+  &:hover {
+    color: white;
+    background-color: #f09400;
+  }
 }
 
 .review-tab {
   line-height: 140px;
   color: #a9a9a9;
+  &:hover {
+    color: white;
+    background-color: #9acd32;
+  }
 }
 
 .twitter-tab {

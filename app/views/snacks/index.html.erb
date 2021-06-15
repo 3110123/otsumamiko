@@ -1,3 +1,4 @@
+<% content_for(:title, "おつまみ一覧") %>
 <%= image_pack_tag "media/images/header_awa.png", class: "headerimage" %>
 <div class="card-img-overlay">
   <div class="container">
@@ -38,7 +39,7 @@
         </li>
         <% if logged_in? %>
           <li class="nav-item col p-0">
-            <%= link_to bookmarks_mypage_path, class: "nav-link nomal-tab" do %>
+            <%= link_to mypage_path, class: "nav-link nomal-tab" do %>
               <i class="far fa-user-circle"></i>
             <% end %>
           </li>

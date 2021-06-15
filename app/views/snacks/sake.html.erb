@@ -1,3 +1,4 @@
+<% content_for(:title, "ぴったりのおつまみを探す") %>
 <div class="container food-choice w-75">
   <div class="card my-5 shadow-lg p-3 mb-5 bg-white rounded food-choice-card">
     <div class="card-body">
@@ -107,7 +108,7 @@
         </li>
         <% if logged_in? %>
         <li class="nav-item col p-0">
-          <%= link_to bookmarks_mypage_path, class: "nav-link nomal-tab" do %>
+          <%= link_to mypage_path, class: "nav-link nomal-tab" do %>
             <i class="far fa-user-circle"></i></i></i>
           <% end %>
         </li>

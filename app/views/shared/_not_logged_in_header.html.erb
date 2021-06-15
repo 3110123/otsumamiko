@@ -5,9 +5,15 @@
         <span class="navbar-toggler-icon fa-1x"></span>
       </button>
         <div class="collapse navbar-collapse justify-content-end" id="navbarNav3">
-          <ul class="navbar-nav float-right h5">
+          <ul class="navbar-nav text-center">
             <li class="nav-item mx-3 py-3">
-              <%= link_to 'ログイン', login_path, class: "nav-link h3" %>
+              <%= link_to '▶︎ ぴったりのおつまみを探す', choice_path, class: "nav-link pc-only header-nav-link" %>
+            </li>
+            <li class="nav-item mx-3 py-3">
+              <%= link_to '▶︎ おつまみ一覧', snacks_path, class: "nav-link pc-only header-nav-link" %>
+            </li>
+            <li class="nav-item mx-3 py-3">
+              <%= link_to '▶︎ ログイン', login_path, class: "nav-link header-nav-link" %>
             </li>
           </ul>
         </div>

@@ -1,3 +1,4 @@
+<% content_for(:title, "お問合せ") %>
 <%= image_pack_tag "media/images/header_awa.png", class: "headerimage" %>
   <div class="card-img-overlay">
     <div class="container">
@@ -10,19 +11,19 @@
           <%= form_with model: @inquiry, url: inquiry_path, local: true do |f| %>
             <div class="form-group h4 py-3">
               <%= f.label :name, User.human_attribute_name(:name) %><br>
-              <%= f.text_field :name, class: "form-control comment-area serch_field shadow-lg rounded-pill pl-5", type: "text", placeholder: "おなまえ" %>
+              <%= f.text_field :name, class: "form-control comment-area serch_field shadow-lg rounded-pill pl-5", type: "text", placeholder: "ユーザー名" %>
             </div>
             <div class="form-group h4 py-3">
               <%= f.label :email, User.human_attribute_name(:email) %><br>
               <%= f.text_field :email, class: "form-control comment-area serch_field shadow-lg rounded-pill pl-5", type: "text", placeholder: "メールアドレス" %>
             </div>
             <div class="form-group h4 py-3">
-              <%= f.label :category, Inquiry.human_attribute_name(:category) %><br>
+              <%= f.label :category, Inquiry.human_attribute_name(:category), class: "required" %><br>
               <%= f.select :category, Inquiry.categories.keys.map {|k| [I18n.t("enums.inquiry.category.#{k}"), k]}, class: "form-control comment-area serch_field shadow-lg" %>
               <%= render 'shared/error_messages', model: f.object, attribute: :category %>
             </div>
             <div class="form-group h4 py-3">
-              <%= f.label :message, Inquiry.human_attribute_name(:message) %><br>
+              <%= f.label :message, Inquiry.human_attribute_name(:message), class: "required" %><br>
               <%= f.text_area :message, size: "20x10", class: "form-control comment-area serch_field shadow-lg rounded", type: "text", placeholder: "お問合せ内容" %>
               <%= render 'shared/error_messages', model: f.object, attribute: :message %>
             </div>

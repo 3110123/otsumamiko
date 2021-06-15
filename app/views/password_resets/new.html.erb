@@ -1,3 +1,4 @@
+<% content_for(:title, "パスワードを忘れた方") %>
 <%= image_pack_tag "media/images/header_awa.png", class: "headerimage" %>
   <div class="card-img-overlay">
     <div class="container">
@@ -9,7 +10,7 @@
       <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
         <%= form_with model: @user, url: password_resets_path, local: true, method: :post do |f| %>
           <div class="form-group h4 py-3">
-            <%= f.label :email, User.human_attribute_name(:email) %><br>
+            <%= f.label :email, User.human_attribute_name(:email), class: "required" %><br>
             <%= f.text_field :email, class: "form-control comment-area serch_field shadow-lg rounded-pill pl-5", type: "text", placeholder: "メールアドレス" %>
           </div><br>
           <div class="actions text-center">

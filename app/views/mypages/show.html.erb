@@ -1,0 +1,76 @@
+<% content_for(:title, "マイページ") %>
+<%= image_pack_tag "media/images/header_awa.png", class: "headerimage" %>
+<div class="card-img-overlay">
+  <div class="container">
+    <h1 class="font-weight-bold title-font"><%= t '.title' %></h1>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row justify-content-center">
+    <div class="col-12">
+      <div class="card mypage-card shadow-lg p-3 mb-5 bg-white rounded">
+        <div class="card-body">
+          <div class="text-right">
+            <%= button_to edit_mypage_path(current_user.id), class: "btn js-edit-user-button shadow-sm rounded", data: { user_id: current_user.id }, remote: true do %>
+              <i class="fas fa-user-edit fa-2x "></i>
+            <% end %>
+            <div id="js-textarea-user-box-<%= current_user.id %>" style="display: none;">
+              <button class="btn js-button-edit-user-cancel my-4 mr-3" data-user-id="<%= current_user.id %>"><h2 class="px-2 mb-0">キャンセル</h2></button>
+              <button class="btn js-button-user-update my-4" data-user-id="<%= current_user.id %>"><h2 class="px-2 mb-0">更新</h2></button>
+            </div>
+          </div>
+          <div class="mypage-user-name" id="js-name-<%= current_user.id %>">
+            <%= current_user.name %>
+          </div>
+            <textarea id="js-textarea-name-<%= current_user.id %>" class="textarea form-control mb-5" style="display: none;" placeholder="ユーザー名"><%= current_user.name %></textarea>
+          <div class="mypage-user-email mb-5" id="js-email-<%= current_user.id %>">
+            <%= current_user.email %>
+          </div>
+            <textarea id="js-textarea-email-<%= current_user.id %>" class="textarea form-control mb-5" style="display: none;" placeholder="メールアドレス"><%= current_user.email %></textarea>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row justify-content-center mypage-area">
+  <div class="col-5 text-center">
+    <%= button_to bookmarks_mypages_path, class: "btn btn-bookmark shadow-lg", method: :get do %>
+      <i class="fas fa-thumbs-up"></i><br>
+      <%= current_user.bookmarks.count %>
+    <% end %>
+  </div>
+  <div class="col-5 text-center">
+    <%= button_to reviews_mypages_path, class: "btn btn-review shadow-lg", method: :get do %>
+      <i class="fas fa-pen-nib"></i><br>
+      <%= current_user.reviews.count %>
+    <% end %>
+  </div>
+</div>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="text-center">
+      <ul class="nav nav-tabs nav-pills">
+        <li class="nav-item col p-0">
+          <%= link_to choice_path, class: "nav-link wine-tab" do %>
+            <i class="fas fa-glass-cheers"></i>
+          <% end %>
+        </li>
+        <li class="nav-item col p-0">
+          <%= link_to snacks_path, class: "nav-link search-tab" do %>
+            <i class="fas fa-search"></i>
+          <% end %>
+        </li>
+        <li class="nav-item col p-0">
+          <%= link_to mypage_path, class: "nav-link nomal-tab active" do %>
+            <i class="far fa-user-circle"></i>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+<%= javascript_pack_tag 'pages/user_edit' %>
