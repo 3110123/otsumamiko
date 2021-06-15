@@ -1,9 +1,7 @@
-console.log("user_edit.jsだよ");
 $(function() {
   $(document).on("click", '.js-edit-user-button', function(e){
       e.preventDefault();
       const userId = $(this).data("user-id")
-      console.log(userId);
       switchToEdit(userId)
   })
 
@@ -30,7 +28,6 @@ $(function() {
   })
 
   function switchToLabel(userId) {
-    console.log("名前表示だよ〜" + userId);
       $("#js-textarea-name-" + userId).hide()
       $("#js-textarea-email-" + userId).hide()
       $("#js-textarea-user-box-" + userId).hide()
@@ -40,7 +37,6 @@ $(function() {
   }
 
   function switchToEdit(userId) {
-    console.log("名前隠すよ〜" + userId);
       $("#js-name-" + userId).hide()
       $("#js-email-" + userId).hide()
       $(".js-edit-user-button").hide()
@@ -50,14 +46,11 @@ $(function() {
   }
 
   function showErrorMessages(userId, messages) {
-      $('<p class="error_messages text-danger">' + messages.join('<br>') + '</p>').insertBefore($("#js-textarea-user-" + userId))
+      $('<p class="error_messages text-danger">' + messages.join('<br>') + '</p>').insertBefore($("#js-textarea-name-" + userId))
   }
 
   function submitUser(name, email, userId) {
       return new Promise(function(resolve, reject) {
-        console.log("userId:" + userId);
-        console.log("name:" + name);
-        console.log("email:" + email);
           $.ajax({
               type: 'PATCH',
               url: '/mypages/' + userId,

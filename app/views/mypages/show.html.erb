@@ -15,18 +15,18 @@
               <i class="fas fa-user-edit fa-2x "></i>
             <% end %>
             <div id="js-textarea-user-box-<%= current_user.id %>" style="display: none;">
-              <button class="btn js-button-edit-user-cancel mt-2 mr-3" data-user-id="<%= current_user.id %>"><h2 class="px-2 mb-0">キャンセル</h2></button>
-              <button class="btn js-button-user-update mt-2" data-user-id="<%= current_user.id %>"><h2 class="px-2 mb-0">更新</h2></button>
+              <button class="btn js-button-edit-user-cancel my-4 mr-3" data-user-id="<%= current_user.id %>"><h2 class="px-2 mb-0">キャンセル</h2></button>
+              <button class="btn js-button-user-update my-4" data-user-id="<%= current_user.id %>"><h2 class="px-2 mb-0">更新</h2></button>
             </div>
           </div>
           <div class="mypage-user-name" id="js-name-<%= current_user.id %>">
             <%= current_user.name %>
           </div>
-            <textarea id="js-textarea-name-<%= current_user.id %>" class="textarea form-control mb-5" style="display: none;"><%= current_user.name %></textarea>
+            <textarea id="js-textarea-name-<%= current_user.id %>" class="textarea form-control mb-5" style="display: none;" placeholder="ユーザー名"><%= current_user.name %></textarea>
           <div class="mypage-user-email mb-5" id="js-email-<%= current_user.id %>">
             <%= current_user.email %>
           </div>
-            <textarea id="js-textarea-email-<%= current_user.id %>" class="textarea form-control mb-5" style="display: none;"><%= current_user.email %></textarea>
+            <textarea id="js-textarea-email-<%= current_user.id %>" class="textarea form-control mb-5" style="display: none;" placeholder="メールアドレス"><%= current_user.email %></textarea>
         </div>
       </div>
     </div>
