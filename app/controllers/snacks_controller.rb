@@ -16,7 +16,6 @@ class SnacksController < ApplicationController
 
   def index
     @search_snacks_form = SearchSnacksForm.new(search_params)
-    binding.pry
     @pagy, @snack = pagy_countless(@search_snacks_form.search.includes(:reviews, {image_attachment: :blob}), link_extra: 'data-remote="true"')
 
     @tags = Tag.all

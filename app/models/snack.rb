@@ -7,6 +7,7 @@ class Snack < ApplicationRecord
   validates :name, uniqueness: true, presence: true
   enum alcohol: { beer: 0, wine: 1, sake: 2 }
 
-  scope :by_tag, -> (tag_ids) { includes(:tag_relationships).where(tag_relationships: {tag_id: tag_ids}) }
-  scope :name_contain, -> (name) { where('name LIKE ?', "%#{name}%") }
+  # scope :by_tag, -> { where(tag_id: tag_id) }
+  # scope :group_by_tag, -> { group('tag_relationships.snack_id') }
+  scope :name_contain, -> (name) { where('snacks.name LIKE ?', "%#{name}%") }
 end
