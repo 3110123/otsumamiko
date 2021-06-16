@@ -1,6 +1,10 @@
 <% content_for(:title, "ぴったりのおつまみ") %>
+<div id="loading">
+  <div class="spinner"></div>
+</div>
+
 <div class="container food-choice w-75">
-  <div class="card my-5 shadow-lg p-3 mb-5 bg-white rounded food-choice-card">
+  <div class="card my-5 shadow-lg p-3 mb-5 bg-white rounded">
     <div class="card-body">
       <div class='text-center'>
         <h3 class="font-weight-bold mt-5">あなたにぴったりの</h3>
@@ -8,21 +12,21 @@
         <h2 class="font-weight-bold recomend-comment mt-5">今日のおつまみは<br>これを試してみましょう！</h2>
       </div>
       <div class="row">
-        <div class="col-6">
+        <div class="col-7">
           <div class="result-image">
           <% if @snack.image.attached? %>
-            <%= image_tag @snack.image, size: '300x450', class: 'card-img-top' %>
+            <%= image_tag @snack.image, size: '300x400', class: 'card-img-top' %>
           <% else %>
             <%= image_pack_tag "media/images/default.png", size: '300x450', class: 'card-img-top' %>
           <% end %>
           </div>
         </div>
-        <div class="col-6">
-          <div class="container my-5 pt-5">
+        <div class="col-5">
+          <div class="container my-2 pt-5">
             <div class='text-center'>
               <h2 class="font-weight-bold m-0"><%= @snack.alcohol_i18n %>
               <br><div class="py-2">✖️</div>
-              <%= @query.name %></h2><br>
+              <%= @query.name %></h2>
               <div class="rate-number inline-block-rate">
                 <%= @snack_rate %>
               </div>
@@ -106,3 +110,5 @@
     </div>
   </div>
 </div>
+
+<%= javascript_pack_tag 'pages/result_loading' %>
