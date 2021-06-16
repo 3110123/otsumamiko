@@ -109,7 +109,7 @@ html, body {
 }
 
 .nav-pills .wine-tab.active, .nav-pills .show > .nav-link {
-  color: #7b150a;
+  color: #ad000c;
   background-color: white;
   font-size: 4rem;
   line-height: 140px;
@@ -145,7 +145,7 @@ html, body {
 }
 
 .nav-pills .nomal-tab.active, .nav-pills .show > .nav-link {
-  color: brown;
+  color: #ff6f00;
   background-color: white;
   font-size: 4rem;
   line-height: 140px;
@@ -160,7 +160,7 @@ html, body {
   color: #a9a9a9;
   &:hover {
     color: white;
-    background-color: brown;
+    background-color: #ff6f00;
   }
 }
 
@@ -169,7 +169,7 @@ html, body {
   color: #a9a9a9;
   &:hover {
     color: white;
-    background-color: #7b150a;
+    background-color: #ad000c;
   }
 }
 

@@ -71,7 +71,7 @@
 
 .js-edit-user-button {
   font-size: 1.5rem;
-  color: brown;
+  color: #ff6f00;
   padding: 10px;
 }
 
@@ -125,6 +125,27 @@
 }
 
 // login
+.form-group {
+  input {
+    width: 100%;
+    background: transparent;
+    border-bottom: solid 1px red;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 2rem;
+    padding: 0.5em 0.4em;
+    transition: all 0.4s;
+    color: black;
+    margin: 0.7rem 0;
+  }
+
+  input:focus {
+    background: white;
+    transform: scale3d(1.2,1.2,1.2);
+  }
+}
+
 .submit-btn {
   margin-top: 100px;
   margin-bottom: 100px;
