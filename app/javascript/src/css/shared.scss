@@ -19,6 +19,14 @@ header {
 .header-nav-link {
   color: black;
   font-size: 1.5rem;
+  &:before{
+    content: "▶︎ ";
+  }
+  &:hover{
+    &:before{
+      content: "▼ ";
+    }
+  }
 }
 
 .navbar-collapse.show {
