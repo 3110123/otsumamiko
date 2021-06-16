@@ -31,9 +31,9 @@ class SnacksController < ApplicationController
     tags = params[:tag]
     tag = tags.length
     alcohol = params[:alcohol]
-    matchAllTags = TagRelationship.where(tag_id: tags).group(:snack_id).select(:snack_id).having('count(snack_id) = ?', tag)
-    snackIds = matchAllTags.map(&:snack_id)
-    @query = Snack.where(id: snackIds, alcohol: alcohol).sample
+    match_tags = TagRelationship.where(tag_id: tags).group(:snack_id).select(:snack_id).having('count(snack_id) = ?', tag)
+    snack_ids = match_tags.map(&:snack_id)
+    @query = Snack.where(id: snack_ids, alcohol: alcohol).sample
     @snack = Snack.find(@query.id)
     @review = Review.new
     @reviews = @snack.reviews.includes(:user).order(created_at: :desc)
