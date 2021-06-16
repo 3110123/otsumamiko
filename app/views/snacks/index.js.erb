@@ -1,4 +1,7 @@
+<% if @search_snacks_form.nil? %>
 $('#records_table').append("<%= j(render @snack, snack: @snack)%>");
+<% else %>
+$('#records_table').html("<%= j(render @snack, snack: @snack)%>");
+<% end %>
 $('#div_next_link').html("<%= j(render 'next_link') %>");
 $("#pageScroll").attr('data-page', "<%=@next_page%>");
-

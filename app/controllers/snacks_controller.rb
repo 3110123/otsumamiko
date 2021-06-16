@@ -1,4 +1,6 @@
 class SnacksController < ApplicationController
+  include ActiveModel::Model
+  include ActiveModel::Attributes
   include Pagy::Backend
   
   def show
@@ -13,8 +15,9 @@ class SnacksController < ApplicationController
   end
 
   def index
-    @q = Snack.ransack(params[:q])
-    @pagy, @snack = pagy_countless(@q.result(distinct: true).includes(:reviews, {image_attachment: :blob}), link_extra: 'data-remote="true"')
+    @search_snacks_form = SearchSnacksForm.new(search_params)
+    binding.pry
+    @pagy, @snack = pagy_countless(@search_snacks_form.search.includes(:reviews, {image_attachment: :blob}), link_extra: 'data-remote="true"')
 
     @tags = Tag.all
 
@@ -46,5 +49,10 @@ class SnacksController < ApplicationController
   
   def snack_params
     params.require(:snack).permit(:name, :alcohol, :image)
+  end
+
+  def search_params
+    # ボッチ演算子でnilが来てもエラーにならずnilを返す
+    params[:q]&.permit(:name, :alcohol, tag_ids:[])
   end
 end
