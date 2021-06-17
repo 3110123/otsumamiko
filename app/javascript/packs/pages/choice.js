@@ -78,7 +78,6 @@ function switchToQuestion2() {
 function switchToQuestion3() {
   // おしゃれ
   q_07.onclick = function(){
-    qestion_04.style.display = "none";
     tagId.push(q_07.dataset.id);
 
     $.ajax({
@@ -95,7 +94,6 @@ function switchToQuestion3() {
 
   // 定番
   q_08.onclick = function(){
-    qestion_04.style.display = "none";
     tagId.push(q_08.dataset.id);
 
     $.ajax({
