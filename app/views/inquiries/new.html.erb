@@ -27,8 +27,8 @@
               <%= f.text_area :message, class: "form-control comment-area shadow-lg rounded", type: "text", placeholder: "お問合せ内容", rows: "5" %>
               <%= render 'shared/error_messages', model: f.object, attribute: :message %>
             </div>
-            <div class="actions text-center">
-              <%= f.submit '送信', class: "btn h3 text-light btn-danger btn-block rounded-pill px-5 shadow-lg p-3 submit-btn" %>
+            <div class="actions text-center topbtn">
+              <%= f.submit '送信', class: "btn btn-malformation shadow" %>
             </div>
           <% end %>
       </div>

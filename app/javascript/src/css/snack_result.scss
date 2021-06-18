@@ -50,6 +50,51 @@
   }
 }
 
+@media screen and (max-width: 1200px){
+  .bubble01:before {
+    display: none;
+    opacity: 0.8;
+    content: '';
+    position: absolute;
+    display: block;
+    z-index: 1;
+    border-style: solid;
+    border-color: #aaaaaa transparent;
+    border-width: 10px 10px 0 10px;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -10px;
+  }
+  .bubble02:before {
+    display: none;
+    opacity: 0.8;
+    content: '';
+    position: absolute;
+    display: block;
+    z-index: 1;
+    border-style: solid;
+    border-color: #00bbff transparent;
+    border-width: 10px 10px 0 10px;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -10px;
+  }
+  .bubble03:before {
+    display: none;
+    opacity: 0.8;
+    content: '';
+    position: absolute;
+    display: block;
+    z-index: 1;
+    border-style: solid;
+    border-color: #b22222 transparent;
+    border-width: 10px 10px 0 10px;
+    bottom: -10px;
+    left: 50%;
+    margin-left: -10px;
+  }
+}
+
 .alcohol {
   position: fixed;
   z-index: 1000;
@@ -84,20 +129,6 @@
   font-size: 1.5rem;
 }
 
-.bubble01:before {
-  opacity: 0.8;
-  content: '';
-  position: absolute;
-  display: block;
-  z-index: 1;
-  border-style: solid;
-  border-color: #aaaaaa transparent;
-  border-width: 10px 10px 0 10px;
-  bottom: -10px;
-  left: 50%;
-  margin-left: -10px;
-}
-
 // 日本酒
 .bubble02 {
   opacity: 0.8;
@@ -110,20 +141,6 @@
   background-color: #00bbff;
   border-radius: 5px;
   font-size: 1.5rem;
-}
-
-.bubble02:before {
-  opacity: 0.8;
-  content: '';
-  position: absolute;
-  display: block;
-  z-index: 1;
-  border-style: solid;
-  border-color: #00bbff transparent;
-  border-width: 10px 10px 0 10px;
-  bottom: -10px;
-  left: 50%;
-  margin-left: -10px;
 }
 
 // ワイン
@@ -139,21 +156,6 @@
   border-radius: 5px;
   font-size: 1.5rem;
 }
-
-.bubble03:before {
-  opacity: 0.8;
-  content: '';
-  position: absolute;
-  display: block;
-  z-index: 1;
-  border-style: solid;
-  border-color: #b22222 transparent;
-  border-width: 10px 10px 0 10px;
-  bottom: -10px;
-  left: 50%;
-  margin-left: -10px;
-}
-
 
 // おつまみ絞り込み結果
 .recomend-comment {

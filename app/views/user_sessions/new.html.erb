@@ -9,16 +9,16 @@
     <div class="row">
       <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
           <%= form_with model: @user, url: login_path, local: true do |f| %>
-            <div class="form-group h4 py-3">
+            <div class="form-group h1 py-3">
               <%= f.label :email, User.human_attribute_name(:email), class: "required" %><br>
               <%= f.text_field :email, type: "text", placeholder: "otsumamiko@eample.com" %>
             </div><br>
-            <div class="form-group h4 py-3">
+            <div class="form-group h1 py-3">
               <%= f.label :password, User.human_attribute_name(:password), class: "required" %><br>
               <%= f.password_field :password, type: "password", placeholder: "password" %>
             </div>
-            <div class="actions text-center">
-              <%= f.submit '送信', class: "btn text-light btn-danger btn-block rounded-pill px-5 shadow-lg p-3 submit-btn" %>
+            <div class="actions text-center topbtn">
+              <%= f.submit 'ログイン', class: "btn btn-malformation shadow" %>
             </div>
           <% end %>
           <div class="text-center password-forget">
