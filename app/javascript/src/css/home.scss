@@ -41,6 +41,38 @@
   margin-bottom: 150px;
 }
 
+.toppage-button {
+  margin-bottom: 100px;
+}
+
+.toppage-pr01 {
+  margin-top: 220px;
+  font-size: 1.5rem;
+}
+
+.pr-point {
+  font-size: 2.2rem;
+  font-weight: bold;
+  border-bottom: 10px solid;
+  border-image: linear-gradient(to right, red 0%, #FFB62A 100%);
+  border-image-slice: 1;
+}
+
+.toppage-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pr {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
+.pr02 {
+  float: right;
+}
 
 // mypage
 .js-button-user-update {

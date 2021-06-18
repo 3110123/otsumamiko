@@ -11,39 +11,48 @@
       <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
         <div class="d-flex align-items-center justify-content-center"> 
           <div class='text-center'>
-          <%= button_to 'まずはお酒から選ぶ', choice_path, method: :get, class: "h4 text-light btn-danger rounded-pill py-4 px-5 shadow-lg p-3" %>
+            <%= button_to 'まずはお酒から選ぶ', choice_path, method: :get, class: "h4 text-light btn-danger rounded-pill py-4 px-5 shadow-lg p-3" %>
             <div class="catchcopy">
               <p class="my-5 h2">いつものお酒におつまみこ<br><br>新しい体験をあなたに</p>
             </div>
-            <div class="row">
-              <div class="col-sm-12">
-                <div class="card my-5 shadow-lg">
-                  <div class="card-body pr-card">
-                  <p class="card-title border-bottom border-danger h3">おつまみに迷ったら<span style="font-size:1.5em;" class="font-weight-bold"> 簡単 </span>に絞り込み</p>
-                  <p class="card-text"><%= image_pack_tag "media/images/narrow_down.png", size: "600x400", class: "rounded m-4" %></p>
-                  </div>
-                </div>
-              </div>
-            <div class="col-sm-12">
-              <div class="card my-5 shadow-lg">
-                <div class="card-body pr-card">
-                  <p class="card-title border-bottom border-danger h3">あなたに<span style="font-size:1.5em;" class="font-weight-bold"> ぴったり </span>のおつまみを紹介</p>
-                  <p class="card-text"><%= image_pack_tag "media/images/recomend_otsumami.png", size: "600x650", class: "rounded m-4" %></p>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-12">
-              <div class="card my-5 shadow-lg">
-                <div class="card-body pr-card">
-                <p class="card-title border-bottom border-danger h3">気になるおつまみを<span style="font-size:1.5em;" class="font-weight-bold"> 簡単登録 </span></p>
-                <p class="card-text"><%= image_pack_tag "media/images/swipe_bookmark.png", size: "600x450", class: "rounded m-4" %></p>
-                </div>
-              </div>
-            </div>
           </div>
-          <%= button_to 'まずはお酒から選ぶ', choice_path, method: :get, class: "h4 text-light btn-danger rounded-pill py-4 px-5 shadow-lg p-3 my-5" %>
         </div>
       </div>
     </div>
   </div>
-</div>
+  <div class="toppage-container">
+    <div class="row">
+      <div class="col-6 pr">
+        <%= image_pack_tag "media/images/toppage_01.png", size: "500x500" %>
+      </div>
+      <div class="col-6 pr">
+        <div class="toppage-pr01 text-center mr-3">
+          <p>3つの質問に答えて<br>今日のおつまみを決めましょう</p>
+          <p class="pr-point">おつまみライフをサポート</p>
+        </div>
+      </div>
+      <div class="col-6 pr p-0">
+        <div class="toppage-pr01 text-center ml-4">
+          <p>試してみたいおつまみをすぐに登録<br>マイページであなただけの</p>
+          <p class="pr-point">おつまみリスト</p>
+        </div>
+      </div>
+      <div class="col-6 pr">
+        <%= image_pack_tag "media/images/toppage_02.png", size: "500x500", class: "pr02" %>
+      </div>
+      <div class="col-6 pr">
+        <%= image_pack_tag "media/images/toppage_03.png", size: "500x500" %>
+      </div>
+      <div class="col-6 pr">
+        <div class="toppage-pr01 text-center mr-3">
+          <p>気になるおつまみを見つけたらコンビニへ<br>今いるコンビニからも絞り込める</p>
+          <p class="pr-point">タグ検索機能</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-12 text-center">
+      <div class="toppage-button">
+        <%= button_to 'まずはお酒から選ぶ', choice_path, method: :get, class: "h4 text-light btn-danger rounded-pill py-4 px-5 shadow-lg p-3 my-5" %>
+      </div>
+    </div>
+  </div>
