@@ -32,7 +32,7 @@ gem 'enum_help'
 gem 'meta-tags'
 gem 'seed-fu'
 gem 'sorcery'
-gem 'ransack'
+
 gem 'rails-i18n'
 gem 'pagy'
 

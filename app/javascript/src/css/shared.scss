@@ -19,6 +19,14 @@ header {
 .header-nav-link {
   color: black;
   font-size: 1.5rem;
+  &:before{
+    content: "▶︎ ";
+  }
+  &:hover{
+    &:before{
+      content: "▼ ";
+    }
+  }
 }
 
 .navbar-collapse.show {
@@ -101,7 +109,7 @@ html, body {
 }
 
 .nav-pills .wine-tab.active, .nav-pills .show > .nav-link {
-  color: #7b150a;
+  color: #ad000c;
   background-color: white;
   font-size: 4rem;
   line-height: 140px;
@@ -137,7 +145,7 @@ html, body {
 }
 
 .nav-pills .nomal-tab.active, .nav-pills .show > .nav-link {
-  color: brown;
+  color: #ff6f00;
   background-color: white;
   font-size: 4rem;
   line-height: 140px;
@@ -152,7 +160,7 @@ html, body {
   color: #a9a9a9;
   &:hover {
     color: white;
-    background-color: brown;
+    background-color: #ff6f00;
   }
 }
 
@@ -161,7 +169,7 @@ html, body {
   color: #a9a9a9;
   &:hover {
     color: white;
-    background-color: #7b150a;
+    background-color: #ad000c;
   }
 }
 
@@ -198,4 +206,39 @@ html, body {
 
 .user-count {
   display: none;
+}
+
+// 絞り込み結果
+
+#loading {
+  width: 100vw;
+  height: 100vh;
+  transition: all 1s;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+}
+.spinner {
+  width: 300px;
+  height: 300px;
+  margin: 200px auto;
+  background-color: #fff899;
+  border-radius: 100%;
+  animation: sk-scaleout 2.0s infinite ease-in-out;
+}
+/* ローディングアニメーション */
+@keyframes sk-scaleout {
+  0% {
+    transform: scale(0);
+  } 100% {
+    transform: scale(1.0);
+    opacity: 0;
+  }
+}
+ 
+.loaded {
+  opacity: 0;
+  visibility: hidden;
 }

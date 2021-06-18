@@ -16,7 +16,7 @@ var loadNextPage = function(){
   if ($('#next_link').data("loading")){ return }
   var wBottom  = $(window).scrollTop() + $(window).height();
   var elBottom = $('#records_table').offset().top + $('#records_table').height();
-  // data属性をajaxで変更しlastページの場合には処理をreturnさせる。
+
   var page = $('#pageScroll').attr('data-page');
   var loader = document.getElementById('loader');
   if (page == "last"){

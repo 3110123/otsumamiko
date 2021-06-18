@@ -1,6 +1,14 @@
 // トップページ
-.pr-card {
-  background-color: #FCF0C7;
+.toppage-img-overlay {
+  .card-img-overlay {
+    margin-top: 0px;
+    text-align: center;
+    .container {
+      padding: 0;
+      top: calc(50% - 0.5rem);
+      text-align: center;
+    }
+  }
 }
 
 .headerimage {
@@ -37,10 +45,85 @@
 }
 
 .catchcopy {
-  margin-top: 150px;
-  margin-bottom: 150px;
+  margin-top: 200px;
+  margin-bottom: 50px;
+  font-size: 3rem;
 }
 
+.topbtn {
+  margin-top: 100px;
+  margin-bottom: 150px;
+  .btn,
+  input.btn,
+  button.btn {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #212529;
+    border-radius: 0.5rem;
+  }
+
+  input.btn-malformation {
+    font-size: 2rem;
+    padding: 3rem 4rem;
+    color: #fff;
+    border-radius: 100% 80px / 80px 100%;
+    background-color: #db3924;
+  }
+
+  input.btn-malformation:hover {
+    color: #fff;
+    border-radius: 60% 80% / 100% 80%;
+  }
+}
+
+.toppage-pr01 {
+  margin-top: 300px;
+  font-size: 1.5rem;
+}
+
+.pr-point {
+  font-size: 2.3rem;
+  font-weight: bold;
+  border-bottom: 10px solid;
+  border-image: linear-gradient(to right, red 0%, #FFB62A 100%);
+  border-image-slice: 1;
+}
+
+.toppage-container {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.pr {
+  margin-top: 100px;
+  margin-bottom: 100px
+}
+
+.pr02 {
+  float: right;
+}
+
+.otsumamiko-kanpai {
+  float: right;
+  margin-bottom: 20px;
+}
 
 // mypage
 .js-button-user-update {
@@ -71,7 +154,7 @@
 
 .js-edit-user-button {
   font-size: 1.5rem;
-  color: brown;
+  color: #ff6f00;
   padding: 10px;
 }
 
@@ -125,6 +208,27 @@
 }
 
 // login
+.form-group {
+  input {
+    width: 100%;
+    background: transparent;
+    border-bottom: solid 1px red;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    font-size: 2rem;
+    padding: 0.5em 0.4em;
+    transition: all 0.4s;
+    color: black;
+    margin: 0.7rem 0;
+  }
+
+  input:focus {
+    background: white;
+    transform: scale3d(1.2,1.2,1.2);
+  }
+}
+
 .submit-btn {
   margin-top: 100px;
   margin-bottom: 100px;

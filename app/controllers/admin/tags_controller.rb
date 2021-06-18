@@ -29,8 +29,7 @@ class Admin::TagsController < Admin::BaseController
   end
 
   def index
-    @q = Tag.ransack(params[:q])
-    @pagy, @tags = pagy(@q.result(distinct: true).includes(:snacks))
+    @pagy, @tags = pagy(Tag.all.result(distinct: true).includes(:snacks))
   end
 
   def destroy

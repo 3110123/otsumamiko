@@ -1,4 +1,6 @@
 class SnacksController < ApplicationController
+  include ActiveModel::Model
+  include ActiveModel::Attributes
   include Pagy::Backend
   
   def show
@@ -13,8 +15,8 @@ class SnacksController < ApplicationController
   end
 
   def index
-    @q = Snack.ransack(params[:q])
-    @pagy, @snack = pagy_countless(@q.result(distinct: true).includes(:reviews, {image_attachment: :blob}), link_extra: 'data-remote="true"')
+    @search_snacks_form = SearchSnacksForm.new(search_params)
+    @pagy, @snack = pagy_countless(@search_snacks_form.search.includes(:reviews, {image_attachment: :blob}), link_extra: 'data-remote="true"')
 
     @tags = Tag.all
 
@@ -26,12 +28,11 @@ class SnacksController < ApplicationController
   end
 
   def result
-    tags = params[:tag]
-    tag = tags.length
+    tag_ids = params[:tag]
     alcohol = params[:alcohol]
-    matchAllTags = TagRelationship.where(tag_id: tags).group(:snack_id).select(:snack_id).having('count(snack_id) = ?', tag)
-    snackIds = matchAllTags.map(&:snack_id)
-    @query = Snack.where(id: snackIds, alcohol: alcohol).sample
+    match_tags = TagRelationship.by_tag(tag_ids).group_snack_id.having_count(tag_ids)
+    snack_ids = match_tags.map(&:snack_id)
+    @query = Snack.where(id: snack_ids, alcohol: alcohol).sample
     @snack = Snack.find(@query.id)
     @review = Review.new
     @reviews = @snack.reviews.includes(:user).order(created_at: :desc)
@@ -46,5 +47,10 @@ class SnacksController < ApplicationController
   
   def snack_params
     params.require(:snack).permit(:name, :alcohol, :image)
+  end
+
+  def search_params
+    # ボッチ演算子でnilが来てもエラーにならずnilを返す
+    params[:q]&.permit(:name, :alcohol, tag_ids:[])
   end
 end

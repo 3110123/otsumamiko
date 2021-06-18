@@ -2,8 +2,7 @@ class Admin::UsersController < Admin::BaseController
   include Pagy::Backend
   before_action :set_user, only: %i[edit update destroy]
   def index
-    @q = User.ransack(params[:q])
-    @pagy, @users = pagy(@q.result(distinct: true))
+    @pagy, @users = pagy(User.all.result(distinct: true))
   end
 
   def edit; end

@@ -9,12 +9,12 @@
     <div class="row">
       <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
         <%= form_with model: @user, url: password_resets_path, local: true, method: :post do |f| %>
-          <div class="form-group h4 py-3">
+          <div class="form-group h1 py-3">
             <%= f.label :email, User.human_attribute_name(:email), class: "required" %><br>
-            <%= f.text_field :email, class: "form-control comment-area serch_field shadow-lg rounded-pill pl-5", type: "text", placeholder: "メールアドレス" %>
+            <%= f.text_field :email, type: "text", placeholder: "otsumamiko@example.com" %>
           </div><br>
-          <div class="actions text-center">
-            <%= f.submit 'メールを送信する', class: "btn h3 text-light btn-danger btn-block rounded-pill px-5 shadow-lg p-3 submit-btn" %>
+          <div class="actions text-center topbtn">
+            <%= f.submit '送信', class: "btn btn-malformation shadow" %>
           </div>
         <% end %>
         <div class="text-center password-forget">
