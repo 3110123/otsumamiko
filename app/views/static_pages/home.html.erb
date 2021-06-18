@@ -1,11 +1,12 @@
 <% content_for(:title) %>
 <%= image_pack_tag "media/images/header_awa.png", class: "headerimage" %>
+<div class="toppage-img-overlay">
   <div class="card-img-overlay">
     <div class="container">
-      <h2 class="font-weight-bold">コンビニにある食べ物でペアリング</h2>
-      <h1 class="font-weight-bold top-font"><%= t '.title' %></h1>
+      <%= image_pack_tag "media/images/title.png", size: "500x500", class: "toppage-title" %>
     </div>
   </div>
+</div>
   <div class="container">
     <div class="wrapper">
       <div class="col-12">
