@@ -8,12 +8,12 @@
   </div>
   <div class="container">
     <div class="wrapper">
-      <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
+      <div class="col-12">
         <div class="d-flex align-items-center justify-content-center"> 
-          <div class='text-center'>
-            <%= button_to 'まずはお酒から選ぶ', choice_path, method: :get, class: "h4 text-light btn-danger rounded-pill py-4 px-5 shadow-lg p-3" %>
+          <div class='text-center topbtn'>
+            <%= button_to 'まずはお酒から選ぶ', choice_path, method: :get, class: "btn btn-malformation shadow" %>
             <div class="catchcopy">
-              <p class="my-5 h2">いつものお酒におつまみこ<br><br>新しい体験をあなたに</p>
+              <%= image_pack_tag "media/images/catchcopy.png", size: "600x600", class: "otsumamiko-kanpai" %>
             </div>
           </div>
         </div>
@@ -23,36 +23,36 @@
   <div class="toppage-container">
     <div class="row">
       <div class="col-6 pr">
-        <%= image_pack_tag "media/images/toppage_01.png", size: "500x500" %>
+        <%= image_pack_tag "media/images/toppage_01.png", size: "600x600" %>
       </div>
       <div class="col-6 pr">
-        <div class="toppage-pr01 text-center mr-3">
-          <p>3つの質問に答えて<br>今日のおつまみを決めましょう</p>
+        <div class="toppage-pr01 text-center">
+          <p>3つの質問に答えて<br>あなたにぴったりな<br>おつまみを表示</p>
           <p class="pr-point">おつまみライフをサポート</p>
         </div>
       </div>
       <div class="col-6 pr p-0">
-        <div class="toppage-pr01 text-center ml-4">
-          <p>試してみたいおつまみをすぐに登録<br>マイページであなただけの</p>
+        <div class="toppage-pr01 text-center">
+          <p>試してみたいおつまみを<br>すぐに登録<br>マイページであなただけの</p>
           <p class="pr-point">おつまみリスト</p>
         </div>
       </div>
       <div class="col-6 pr">
-        <%= image_pack_tag "media/images/toppage_02.png", size: "500x500", class: "pr02" %>
+        <%= image_pack_tag "media/images/toppage_02.png", size: "550x550", class: "pr02" %>
       </div>
       <div class="col-6 pr">
-        <%= image_pack_tag "media/images/toppage_03.png", size: "500x500" %>
+        <%= image_pack_tag "media/images/toppage_03.png", size: "600x600" %>
       </div>
       <div class="col-6 pr">
-        <div class="toppage-pr01 text-center mr-3">
-          <p>気になるおつまみを見つけたらコンビニへ<br>今いるコンビニからも絞り込める</p>
+        <div class="toppage-pr01 text-center">
+          <p>気になるおつまみを見つけたら<br>コンビニへ<br>今いるコンビニからも<br>絞り込める</p>
           <p class="pr-point">タグ検索機能</p>
         </div>
       </div>
     </div>
     <div class="col-12 text-center">
-      <div class="toppage-button">
-        <%= button_to 'まずはお酒から選ぶ', choice_path, method: :get, class: "h4 text-light btn-danger rounded-pill py-4 px-5 shadow-lg p-3 my-5" %>
+      <div class='text-center topbtn'>
+        <%= button_to 'まずはお酒から選ぶ', choice_path, method: :get, class: "btn btn-malformation shadow" %>
       </div>
     </div>
   </div>
