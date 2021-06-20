@@ -218,9 +218,9 @@
     width: 100%;
     background: transparent;
     border-bottom: solid 1px red;
-    border-top: 0;
-    border-left: 0;
-    border-right: 0;
+    border-top: solid 1px #FFB62A;
+    border-left: solid 1px #FFB62A;
+    border-right: solid 1px #FFB62A;
     font-size: 2rem;
     padding: 0.5em 0.4em;
     transition: all 0.4s;
