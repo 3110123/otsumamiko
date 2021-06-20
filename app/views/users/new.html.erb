@@ -9,22 +9,22 @@
     <div class="row">
       <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
           <%= form_with model: @user, local: true do |f| %>
-            <div class="form-group h1 py-3">
+            <div class="input-form h1 py-3">
               <%= f.label :name, User.human_attribute_name(:name), class: "required" %><br>
               <%= f.text_field :name, type: "text", placeholder: "おつまみこ" %>
               <%= render 'shared/error_messages', model: f.object, attribute: :name %>
             </div>
-            <div class="form-group h1 py-3">
+            <div class="input-form h1 py-3">
               <%= f.label :email, User.human_attribute_name(:email), class: "required" %><br>
               <%= f.text_field :email, type: "text", placeholder: "otsumamiko@example.com" %>
               <%= render 'shared/error_messages', model: f.object, attribute: :email %>
             </div>
-            <div class="form-group h1 py-3">
+            <div class="input-form h1 py-3">
               <%= f.label :password, User.human_attribute_name(:password), class: "required" %><br>
               <%= f.text_field :password, type: "password", placeholder: "password" %>
               <%= render 'shared/error_messages', model: f.object, attribute: :password %>
             </div>
-            <div class="form-group h1 py-3">
+            <div class="input-form h1 py-3">
               <%= f.label :password_confirmation, User.human_attribute_name(:password_confirmation), class: "required" %><br>
               <%= f.text_field :password_confirmation, type: "password", placeholder: "password" %>
               <%= render 'shared/error_messages', model: f.object, attribute: :password %>

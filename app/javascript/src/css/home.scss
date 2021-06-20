@@ -213,9 +213,10 @@
 }
 
 // login
-.form-group {
+.input-form {
   input {
     width: 100%;
+    border-radius: 0%;
     background: transparent;
     border-bottom: solid 1px red;
     border-top: solid 1px #FFB62A;
