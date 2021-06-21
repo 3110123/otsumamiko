@@ -43,7 +43,7 @@
   opacity: 0.8;
   width: 600px;
   height: 100px;
-  background: #aaaaaa;
+  background: #cccccc;
   padding: 0px;
   text-align: center;
   color:#000000;
@@ -70,7 +70,7 @@
   border-bottom-width: 10px;
   border-left-width: 10px;
   border-right-width: 10px;
-  border-left-color: #aaaaaa;
+  border-left-color: #cccccc;
   left: 100%;
   top: 50%;
 }
@@ -115,15 +115,15 @@
 }
 
 .index-otsumamiko {
-  right: -200px;
+  right: 0px;
   top: 230px;
   z-index: 3;
   animation: r2 4s;
 }
 
 @keyframes r2 {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(-40deg); }
+  0%   { transform: rotate(20deg); }
+  100% { transform: rotate(-20deg); }
 }
 
 //おつまみ詳細
