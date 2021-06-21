@@ -9,10 +9,11 @@ module ApplicationHelper
       site: 'おつまみこ',
       title: 'コンビニにある食べ物でペアリング',
       reverse: true,
+      charset: 'utf-8',
       separator: '|',
       description: 'おつまみこはコンビニにある食べ物でおつまみを探せるアプリです。いつもと違うおつまみを見つけてみましょう！',
       keywords: 'おつまみこ, つまみ, コンビニ つまみ, ペアリング',
-      canonical: request.original_url,
+      canonical: 'https://otsumamiko.herokuapp.com/',
       icon: [
         { href: asset_pack_url('media/images/favicon.ico') },
         { href: asset_pack_url('media/images/ogp_apple_touch_icon.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
