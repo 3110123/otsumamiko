@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-md-10 offset-md-1 col-lg-8 offset-lg-2">
         <%= form_with model: @user, url: password_resets_path, local: true, method: :post do |f| %>
-          <div class="input-form h1 py-3">
+          <div class="input-form h1 py-3 shadow-none">
             <%= f.label :email, User.human_attribute_name(:email), class: "required" %><br>
             <%= f.text_field :email, type: "text", placeholder: "otsumamiko@example.com" %>
           </div><br>
