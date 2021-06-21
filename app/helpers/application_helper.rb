@@ -14,8 +14,8 @@ module ApplicationHelper
       keywords: 'おつまみこ, つまみ, コンビニ つまみ, ペアリング',
       canonical: request.original_url,
       icon: [
-        #{ href: asset_pack_url('media/images/favicon.ico') },
-        #{ href: asset_pack_url('media/images/ogp_apple_touch_icon.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
+        { href: asset_pack_url('media/images/favicon.ico') },
+        { href: asset_pack_url('media/images/ogp_apple_touch_icon.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
       ],
       og: {
         site_name: :site,
