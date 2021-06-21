@@ -23,12 +23,12 @@ module ApplicationHelper
         description: :description, 
         type: 'website',
         url: request.original_url,
-        #image: asset_pack_url('media/images/ogp_twitter_card.png'),
+        image: asset_pack_url('media/images/ogp_twitter_card.png'),
         locale: 'ja_JP',
       },
       twitter: {
         card: 'summary_large_image',
-        #image: asset_pack_url('media/images/ogp_twitter_card.png'),
+        image: asset_pack_url('media/images/ogp_twitter_card.png'),
       }
     }
   end
