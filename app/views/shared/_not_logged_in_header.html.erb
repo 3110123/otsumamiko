@@ -1,23 +1,22 @@
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light mt-3 mb-3 fixed-top">
-    <%= link_to root_path, class: "nav-link navbar-brand pl-5" do %>
-      <%= image_pack_tag "media/images/logo.png", size: "150x150" %>
-    <% end %>
-      <button class="navbar-toggler shadow-lg mr-4" type="button" data-toggle="collapse" data-target="#navbarNav3" aria-controls="navbarNav3" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon fa-1x"></span>
-      </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav3">
-          <ul class="navbar-nav text-center">
-            <li class="nav-item mx-3 py-3">
-              <%= link_to 'おつまみを提案', choice_path, class: "nav-link pc-only header-nav-link" %>
-            </li>
-            <li class="nav-item mx-3 py-3">
-              <%= link_to 'おつまみ一覧', snacks_path, class: "nav-link pc-only header-nav-link" %>
-            </li>
-            <li class="nav-item mx-3 py-3">
-              <%= link_to 'ログイン', login_path, class: "nav-link header-nav-link" %>
-            </li>
-          </ul>
-        </div>
+<%= link_to root_path do %>
+  <%= image_pack_tag "media/images/logo.png", size: "150x150", class: "header-logo" %>
+<% end %>
+<div id="nav-toggle">
+  <div>
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+
+<div id="gloval-nav">
+  <nav>
+    <ul>
+      <li><%= link_to 'おつまみを提案', choice_path, class: "header-nav-link" %></li>
+      <li><%= link_to 'おつまみ一覧', snacks_path, class: "header-nav-link" %></li>
+      <li><%= link_to 'ログイン', login_path, class: "header-nav-link" %></li>
+    </ul>
   </nav>
+</div>
 </header>
