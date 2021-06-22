@@ -83,6 +83,7 @@
   <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", target: :_blank, rel: 'noopener noreferrer', class: "twitter btn" do %>
     <i class="fab fa-twitter share-button"></i>
   <% end %>
+  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
 </div>
 
 <%= javascript_pack_tag 'pages/result_loading' %>
