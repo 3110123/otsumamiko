@@ -10,6 +10,7 @@ require("channels")
 require("jquery")
 require("toastr")
 require("chart.js")
+require("../packs/header")
 
 
 

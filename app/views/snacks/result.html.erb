@@ -1,4 +1,4 @@
-<% content_for(:title, "ぴったりのおつまみ") %>
+<% content_for(:title, "おすすめのおつまみ") %>
 <div id="loading">
   <div class="spinner"></div>
 </div>
@@ -79,36 +79,10 @@
     </div>
   </div>
 </div>
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="text-center">
-      <ul class="nav nav-tabs nav-pills">
-        <li class="nav-item col p-0">
-          <%= link_to choice_path, class: "nav-link wine-tab active" do %>
-            <i class="fas fa-glass-cheers"></i>
-          <% end %>
-        </li>
-        <li class="nav-item col p-0">
-          <%= link_to snacks_path, class: "nav-link search-tab" do %>
-            <i class="fas fa-search"></i>
-          <% end %>
-        </li>
-        <% if logged_in? %>
-        <li class="nav-item col p-0">
-          <%= link_to mypage_path, class: "nav-link nomal-tab" do %>
-            <i class="far fa-user-circle"></i>
-          <% end %>
-        </li>
-        <% end %>
-        <li class="nav-item col p-0">
-          <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", class: "nav-link twitter-tab active" do %>
-          <i class="fab fa-twitter"></i>
-          <% end %>
-        </li>
-      </ul>
-    </div>
-  </div>
+<div class="fixed-bottom">
+  <%= link_to "https://twitter.com/share?&url=https://otsumamiko.herokuapp.com/&text=今日のおつまみは#{@snack.name}を試します！&hashtags=おつまみこ,今日のおつまみ&lang=ja", title: 'Twitter', target: :_blank, rel: 'noopener noreferrer', class: "twitter btn" do %>
+    <i class="fab fa-twitter share-button"></i>
+  <% end %>
 </div>
 
 <%= javascript_pack_tag 'pages/result_loading' %>

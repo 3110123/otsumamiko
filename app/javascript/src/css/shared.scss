@@ -1,24 +1,163 @@
 // header
-header {
+#nav-toggle {
   position: fixed;
-  opacity: 0.9;
+  top: 50px;
+  right: 55px;
+  height: 50px;
+  cursor: pointer;
+  padding: 30px;
+  padding-bottom: 55px;
+  border-radius: 50%;
+  color: black;
+  background-color: white;
+  filter: drop-shadow(10px 10px 10px rgba(146, 145, 145, 0.6));
+  
+  > div {
+    position: relative;
+    width: 36px;
+  }
+  span {
+    width: 100%;
+    height: 1px;
+    left: 0;
+    display: block;
+    background: #333;
+    position: absolute;
+    transition: transform .6s ease-in-out, top .5s ease;
+    
+    &:nth-child(1) {
+      top: 0;
+    }
+    &:nth-child(2) {
+      top: 14px;
+    }
+    &:nth-child(3) {
+      top: 28px;
+    }
+  }
+
+  &:hover span:nth-child(1) {
+    top: 4px;
+  }
+  &:hover span:nth-child(3) {
+    top: 23px;
+  }
+}
+
+.open {
+  #nav-toggle span {
+    background: black;
+    
+    &:nth-child(1) {
+      top: 15px;
+      transform: rotate(45deg);
+    }
+    &:nth-child(2) {
+      top: 15px;
+      width: 0;
+      left: 50%;
+    }
+    &:nth-child(3) {
+      top: 15px;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+#nav-toggle {
+  z-index: 20000;
+}
+#container {
+  z-index: 900;
+}
+
+#gloval-nav {
+  background: #FFB62A;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 10000;
+  text-align: center;
+  display: flex;
+  visibility: hidden;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity .6s ease, visibility .6s ease;
+}
+
+
+#gloval-nav {
+  a {
+    display: block;
+    color: rgb(48, 47, 47);
+    text-decoration: none;
+    padding: 10px 0;
+    transition: color .6s ease;
+    
+    &:hover {
+      color: #666;
+    }
+  }
+  
+  ul {
+    list-style: none;
+    
+    li {
+      opacity: 0;
+      transform: translateX(200px);
+      transition:  transform .6s ease, opacity .2s ease;
+
+      &:nth-child(2) {
+        transition-delay: .15s;
+      }
+      &:nth-child(3) {
+        transition-delay: .3s;
+      }
+      &:nth-child(4) {
+        transition-delay: .45s;
+      }
+      &:nth-child(5) {
+        transition-delay: .6s;
+      }
+      &:nth-child(6) {
+        transition-delay: .75s;
+      }
+      &:nth-child(7) {
+        transition-delay: .9s;
+      }
+    }
+  }
+} 
+
+.open {
+  overflow: hidden;
+  
+  #gloval-nav {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  #gloval-nav li {
+    opacity: 1;
+    transform: translateX(0);
+    transition:  transform 1s ease, opacity .9s ease;
+  }
+}
+
+.header-logo {
+  position: fixed;
+  top: 20px;
+  left: 55px;
   z-index: 10;
 }
 
-.navbar-toggler {
-  background-color: white;
-  border-radius: 50%;
-  padding: 20px;
-  color: black;
-}
-
-.navbar {
-  padding: 0;
-}
-
 .header-nav-link {
-  color: black;
-  font-size: 1.5rem;
+  font-size: 3rem;
+  line-height: 100px;
   &:before{
     content: "▶︎ ";
   }
@@ -27,23 +166,6 @@ header {
       content: "▼ ";
     }
   }
-}
-
-.navbar-collapse.show {
-  background-color: white;
-  .nav-link {
-    color: black;
-    font-size: 1.5rem;
-  }
-}
-
-@keyframes fadeIn {
-  0% {opacity: 0}
-  100% {opacity: 1}
-}
-
-.navbar-light .navbar-toggler {
-  border-color: rgba(0,0,0,0);
 }
 
 // 全体
@@ -56,11 +178,6 @@ html, body {
 *{
   margin: 0;
   padding: 0;
-}
-
-.navbar-brand {
-  font-size: 3rem;
-  font-family: "Nico Moji";
 }
 
 .toast-message {
@@ -91,119 +208,6 @@ html, body {
   margin-top: 150px;
 }
 
-// tab
-// PCで非表示
-@media screen and (min-width: 1200px){
-  .nav-tabs {
-    display: none;
-  }
-}
-
-.nav-tabs {
-  position: fixed;
-  bottom: 0px;
-  z-index: 3;
-  width: 100%;
-  background-color: white;
-  font-size: 2.5rem;
-}
-
-.nav-pills .wine-tab.active, .nav-pills .show > .nav-link {
-  color: #ad000c;
-  background-color: white;
-  font-size: 4rem;
-  line-height: 140px;
-}
-
-.nav-pills .search-tab.active, .nav-pills .show > .nav-link {
-  color: #009cc0;
-  background-color: white;
-  font-size: 4rem;
-  line-height: 140px;
-}
-
-.nav-pills .bookmark-tab.active, .nav-pills .show > .nav-link {
-  color: #f09400;
-  background-color: white;
-  font-size: 4rem;
-  line-height: 140px;
-  .user-count {
-    font-size: 8rem;
-    display: block;
-  }
-}
-
-.nav-pills .review-tab.active, .nav-pills .show > .nav-link {
-  color: #9acd32;
-  background-color: white;
-  font-size: 4rem;
-  line-height: 140px;
-  .user-count {
-    font-size: 8rem;
-    display: block;
-  }
-}
-
-.nav-pills .nomal-tab.active, .nav-pills .show > .nav-link {
-  color: #ff6f00;
-  background-color: white;
-  font-size: 4rem;
-  line-height: 140px;
-  .user-count {
-    font-size: 8rem;
-    display: block;
-  }
-}
-
-.nomal-tab {
-  line-height: 140px;
-  color: #a9a9a9;
-  &:hover {
-    color: white;
-    background-color: #ff6f00;
-  }
-}
-
-.wine-tab {
-  line-height: 140px;
-  color: #a9a9a9;
-  &:hover {
-    color: white;
-    background-color: #ad000c;
-  }
-}
-
-.search-tab {
-  line-height: 140px;
-  color: #a9a9a9;
-  &:hover {
-    color: white;
-    background-color: #009cc0;
-  }
-}
-
-.bookmark-tab {
-  line-height: 140px;
-  color: #a9a9a9;
-  &:hover {
-    color: white;
-    background-color: #f09400;
-  }
-}
-
-.review-tab {
-  line-height: 140px;
-  color: #a9a9a9;
-  &:hover {
-    color: white;
-    background-color: #9acd32;
-  }
-}
-
-.twitter-tab {
-  line-height: 140px;
-}
-
 .user-count {
   display: none;
 }
@@ -218,13 +222,13 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 30000;
 }
 .spinner {
   width: 300px;
   height: 300px;
   margin: 200px auto;
-  background-color: #fff899;
+  background-color: #ffd7a9;
   border-radius: 100%;
   animation: sk-scaleout 2.0s infinite ease-in-out;
 }

@@ -87,21 +87,29 @@
 
   input.btn-malformation:hover {
     color: #fff;
-    border-radius: 60% 80% / 100% 80%;
+    background-color: #8b0000;
   }
 }
 
 .toppage-pr01 {
-  margin-top: 300px;
-  font-size: 1.5rem;
+  margin-top: 180px;
+  font-size: 1.8rem;
+  padding-left: 40px;
+}
+
+.toppage-pr02 {
+  margin-top: 180px;
+  font-size: 1.8rem;
+  margin-right: 30px;
+  padding-right: 20px;
+  float: right;
+  text-align: right;
 }
 
 .pr-point {
   font-size: 2.3rem;
   font-weight: bold;
-  border-bottom: 10px solid;
-  border-image: linear-gradient(to right, red 0%, #FFB62A 100%);
-  border-image-slice: 1;
+  text-decoration: #db3924 wavy underline;
 }
 
 .toppage-container {
@@ -112,8 +120,8 @@
 }
 
 .pr {
-  margin-top: 100px;
-  margin-bottom: 100px
+  margin-top: 60px;
+  margin-bottom: 100px;
 }
 
 .pr02 {
@@ -122,10 +130,15 @@
 
 .otsumamiko-kanpai {
   float: right;
-  margin-bottom: 20px;
 }
 
 // mypage
+.mypage-text {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 150px;
+}
+
 .js-button-user-update {
   background-color: #f08c7c;
   color: white;
@@ -208,14 +221,17 @@
 }
 
 // login
-.form-group {
+.input-form {
+  box-shadow: 0;
   input {
+    box-shadow: 0;
     width: 100%;
+    border-radius: 0%;
     background: transparent;
     border-bottom: solid 1px red;
-    border-top: none;
-    border-left: none;
-    border-right: none;
+    border-top: solid 1px transparent;
+    border-left: solid 1px #FFB62A;
+    border-right: solid 1px #FFB62A;
     font-size: 2rem;
     padding: 0.5em 0.4em;
     transition: all 0.4s;
