@@ -48,28 +48,12 @@
     <% end %>
   </div>
 </div>
-
-<div class="container-fluid">
-  <div class="row">
-    <div class="text-center">
-      <ul class="nav nav-tabs nav-pills">
-        <li class="nav-item col p-0">
-          <%= link_to choice_path, class: "nav-link wine-tab" do %>
-            <i class="fas fa-glass-cheers"></i>
-          <% end %>
-        </li>
-        <li class="nav-item col p-0">
-          <%= link_to snacks_path, class: "nav-link search-tab" do %>
-            <i class="fas fa-search"></i>
-          <% end %>
-        </li>
-        <li class="nav-item col p-0">
-          <%= link_to mypage_path, class: "nav-link nomal-tab active" do %>
-            <i class="far fa-user-circle"></i>
-          <% end %>
-        </li>
-      </ul>
-    </div>
+<div class="row justify-content-end">
+  <div class="col-5 mypage-text">
+    <p><%= current_user.name %> さんに<br>乾杯 ♪</p>
+  </div>
+  <div class="col-6">
+    <%= image_pack_tag "media/images/yopparai-otsumamiko.png", size: "450x450" %>
   </div>
 </div>
 

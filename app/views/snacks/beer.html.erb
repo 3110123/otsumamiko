@@ -106,32 +106,14 @@
   </div>
 </div>
 
-<div class="alcohol">
-  <div class="bubble01" >ビールを選択中</div>
-</div>
-<div class="container-fluid">
-  <div class="row">
-    <div class="text-center">
-      <ul class="nav nav-tabs nav-pills">
-        <li class="nav-item col p-0">
-          <%= link_to choice_path, class: "nav-link wine-tab active" do %>
-            <i class="fas fa-glass-cheers"></i>
-          <% end %>
-        </li>
-        <li class="nav-item col p-0">
-          <%= link_to snacks_path, class: "nav-link search-tab" do %>
-            <i class="fas fa-search"></i>
-          <% end %>
-        </li>
-        <% if logged_in? %>
-        <li class="nav-item col p-0">
-          <%= link_to mypage_path, class: "nav-link nomal-tab" do %>
-            <i class="far fa-user-circle"></i>
-          <% end %>
-        </li>
-        <% end %>
-      </ul>
+<div class="row justify-content-end">
+  <div class="col-6">
+    <div class="alcohol">
+      <div class="bubble01" >ビールを選択中</div>
     </div>
+  </div>
+  <div class="col-6 choice-otsumamiko">
+    <%= image_pack_tag "media/images/yopparai-otsumamiko.png", size: "450x450" %>
   </div>
 </div>
 
