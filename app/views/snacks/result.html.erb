@@ -80,17 +80,9 @@
   </div>
 </div>
 <div class="fixed-bottom">
-<%= link_to "https://twitter.com/share?&url=#{request.url}&text=今日のおつまみは#{@snack.name}を試します！&hashtags=おつまみこ,今日のおつまみ", title: 'Twitter', target: :_blank, rel: 'noopener noreferrer', class: "twitter btn" do %>
-<i class="fab fa-twitter share-button"></i>
-<% end %>
+  <%= link_to "https://twitter.com/share?&url=https://otsumamiko.herokuapp.com/&text=今日のおつまみは#{@snack.name}を試します！&hashtags=おつまみこ,今日のおつまみ&lang=ja", title: 'Twitter', target: :_blank, rel: 'noopener noreferrer', class: "twitter btn" do %>
+    <i class="fab fa-twitter share-button"></i>
+  <% end %>
 </div>
-
-<%= link_to "https://twitter.com/share?url=#{ request.url }&text=Twitterでみんなに広めよう！", class: 'btn btn-default', target: '_blank' do %>
-あ
-<% end %>
-
-<a href="https://twitter.com/share?url=<%= request.url %>" rel="nofollow" target="_blank">い</a>
-
-<a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="shareList__link icon-twitter" data-show-count="false"　target="_blank"　title="Twitter">Twitter</a>
 
 <%= javascript_pack_tag 'pages/result_loading' %>
