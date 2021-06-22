@@ -80,11 +80,12 @@
   </div>
 </div>
 <div class="fixed-bottom">
-  <%= link_to "https://twitter.com/intent/tweet?text=今日のおつまみは#{@snack.name}を試します！&url=#{request.url}&hashtags=おつまみこ,今日のおつまみ", target: :_blank, rel: 'noopener noreferrer', class: "twitter btn" do %>
-    <i class="fab fa-twitter share-button"></i>
-  <% end %>
-  <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+<%= link_to "https://twitter.com/share?&url=#{request.url}&text=今日のおつまみは#{@snack.name}を試します！&hashtags=おつまみこ,今日のおつまみ", title: 'Twitter', target: :_blank, rel: 'noopener noreferrer', class: "twitter btn" do %>
+<i class="fab fa-twitter share-button"></i>
+<% end %>
 </div>
+
+
 
 <a href="https://twitter.com/share?ref_src=twsrc%5Etfw" class="shareList__link icon-twitter" data-show-count="false"　target="_blank"　title="Twitter">Twitter</a>
 
