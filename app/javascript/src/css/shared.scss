@@ -65,7 +65,7 @@
 }
 
 #nav-toggle {
-  z-index: 1000;
+  z-index: 20000;
 }
 #container {
   z-index: 900;
@@ -78,7 +78,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  z-index: 990;
+  z-index: 10000;
   text-align: center;
   display: flex;
   visibility: hidden;
@@ -180,11 +180,6 @@ html, body {
   padding: 0;
 }
 
-.navbar-brand {
-  font-size: 3rem;
-  font-family: "Nico Moji";
-}
-
 .toast-message {
   font-size: 1.8rem;
   padding-left: 30px;
@@ -213,119 +208,6 @@ html, body {
   margin-top: 150px;
 }
 
-// tab
-// PCで非表示
-@media screen and (min-width: 1200px){
-  .nav-tabs {
-    display: none;
-  }
-}
-
-.nav-tabs {
-  position: fixed;
-  bottom: 0px;
-  z-index: 3;
-  width: 100%;
-  background-color: white;
-  font-size: 2.5rem;
-}
-
-.nav-pills .wine-tab.active, .nav-pills .show > .nav-link {
-  color: #ad000c;
-  background-color: white;
-  font-size: 4rem;
-  line-height: 140px;
-}
-
-.nav-pills .search-tab.active, .nav-pills .show > .nav-link {
-  color: #009cc0;
-  background-color: white;
-  font-size: 4rem;
-  line-height: 140px;
-}
-
-.nav-pills .bookmark-tab.active, .nav-pills .show > .nav-link {
-  color: #f09400;
-  background-color: white;
-  font-size: 4rem;
-  line-height: 140px;
-  .user-count {
-    font-size: 8rem;
-    display: block;
-  }
-}
-
-.nav-pills .review-tab.active, .nav-pills .show > .nav-link {
-  color: #9acd32;
-  background-color: white;
-  font-size: 4rem;
-  line-height: 140px;
-  .user-count {
-    font-size: 8rem;
-    display: block;
-  }
-}
-
-.nav-pills .nomal-tab.active, .nav-pills .show > .nav-link {
-  color: #ff6f00;
-  background-color: white;
-  font-size: 4rem;
-  line-height: 140px;
-  .user-count {
-    font-size: 8rem;
-    display: block;
-  }
-}
-
-.nomal-tab {
-  line-height: 140px;
-  color: #a9a9a9;
-  &:hover {
-    color: white;
-    background-color: #ff6f00;
-  }
-}
-
-.wine-tab {
-  line-height: 140px;
-  color: #a9a9a9;
-  &:hover {
-    color: white;
-    background-color: #ad000c;
-  }
-}
-
-.search-tab {
-  line-height: 140px;
-  color: #a9a9a9;
-  &:hover {
-    color: white;
-    background-color: #009cc0;
-  }
-}
-
-.bookmark-tab {
-  line-height: 140px;
-  color: #a9a9a9;
-  &:hover {
-    color: white;
-    background-color: #f09400;
-  }
-}
-
-.review-tab {
-  line-height: 140px;
-  color: #a9a9a9;
-  &:hover {
-    color: white;
-    background-color: #9acd32;
-  }
-}
-
-.twitter-tab {
-  line-height: 140px;
-}
-
 .user-count {
   display: none;
 }
@@ -340,13 +222,13 @@ html, body {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 9999;
+  z-index: 30000;
 }
 .spinner {
   width: 300px;
   height: 300px;
   margin: 200px auto;
-  background-color: #fff899;
+  background-color: #ffd7a9;
   border-radius: 100%;
   animation: sk-scaleout 2.0s infinite ease-in-out;
 }
