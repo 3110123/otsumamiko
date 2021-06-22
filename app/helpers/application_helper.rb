@@ -13,7 +13,7 @@ module ApplicationHelper
       separator: '|',
       description: 'おつまみこはコンビニにある食べ物でおつまみを探せるアプリです。いつもと違うおつまみを見つけてみましょう！',
       keywords: 'おつまみこ, つまみ, コンビニ つまみ, ペアリング',
-      canonical: 'request.original_url',
+      canonical: request.original_url,
       icon: [
         { href: asset_pack_url('media/images/favicon.ico') },
         { href: asset_pack_url('media/images/ogp_apple_touch_icon.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
@@ -23,7 +23,7 @@ module ApplicationHelper
         title: :title,
         description: :description, 
         type: 'website',
-        url: 'request.original_url',
+        url: request.original_url,
         image: asset_pack_url('media/images/ogp_twitter_card.png'),
         locale: 'ja_JP',
       },
