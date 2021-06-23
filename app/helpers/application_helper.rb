@@ -42,6 +42,6 @@ module ApplicationHelper
     else
       options[:class] = "lozad #{options[:class]}"
     end
-    image_tag('star-on.png', options)
+    image_tag('lozad.png', options)
   end
 end
