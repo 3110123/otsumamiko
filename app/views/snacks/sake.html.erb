@@ -12,7 +12,7 @@
               <%= link_to "#", class: "button q1", id: "q_01", data: {id: Tag.find_by(name: "おかず").id}, "data-turbolinks": false do %>
               <div class="is-layer-dot">
                 <h2>がっつりご飯</h2>
-                <%= image_pack_tag("media/images/pizza.jpg", size: "450x450", class: "shadow-lg rounded") %>
+                <%= image_tag("pizza.jpg", size: "450x450", class: "shadow-lg rounded") %>
               </div>
               <% end %>
             </div>
@@ -22,7 +22,7 @@
               <%= link_to "#", class: "button", id: "q_02", data: {id: Tag.find_by(name: "軽食").id}, "data-turbolinks": false do %>
               <div class="is-layer-dot">
                 <h2>軽くおつまみ</h2>
-                <%= image_pack_tag("media/images/snack.jpg", size: "450x450", class: "shadow-lg rounded") %>
+                <%= image_tag("snack.jpg", size: "450x450", class: "shadow-lg rounded") %>
               </div>
               <% end %>
             </div>
@@ -36,7 +36,7 @@
                 <%= link_to "#", class: "button", id: "q_03", data: {id: Tag.find_by(name: "肉類").id}, "data-turbolinks": false do %>
                 <div class="is-layer-dot">
                   <h2>お肉系</h2>
-                  <%= image_pack_tag("media/images/meat.jpg", size: "450x450", class: "shadow-lg rounded") %>
+                  <%= lazy_image_tag("meat.jpg", size: "450x450", class: "shadow-lg rounded") %>
                 </div>
                 <% end %>
             </div>
@@ -46,7 +46,7 @@
                 <%= link_to "#", class: "button", id: "q_04", data: {id: Tag.find_by(name: "魚類").id}, "data-turbolinks": false do %>
                 <div class="is-layer-dot">
                   <h2>お魚系</h2>
-                  <%= image_pack_tag("media/images/seafood.jpg", size: "450x450", class: "shadow-lg rounded") %>
+                  <%= lazy_image_tag("seafood.jpg", size: "450x450", class: "shadow-lg rounded") %>
                 </div>
                 <% end %>
             </div>
@@ -60,7 +60,7 @@
                 <%= link_to "#", class: "button", id: "q_05", data: {id: Tag.find_by(name: "150kcal以下").id}, "data-turbolinks": false do %>
                 <div class="is-layer-dot">
                   <h2>体重が気になる</h2>
-                  <%= image_pack_tag("media/images/fat.jpg", size: "450x450", class: "shadow-lg rounded") %>
+                  <%= lazy_image_tag("fat.jpg", size: "450x450", class: "shadow-lg rounded") %>
                 </div>
                 <% end %>
             </div>
@@ -70,7 +70,7 @@
                 <%= link_to "#", class: "button", id: "q_06", data: {id: Tag.find_by(name: "500円以下").id}, "data-turbolinks": false do %>
                 <div class="is-layer-dot">
                   <h2>価格は安めに抑えたい</h2>
-                  <%= image_pack_tag("media/images/money.jpg", size: "450x450", class: "shadow-lg rounded") %>
+                  <%= lazy_image_tag("money.jpg", size: "450x450", class: "shadow-lg rounded") %>
                 </div>
                 <% end %>
             </div>
@@ -84,7 +84,7 @@
                 <%= link_to "#", class: "button", id: "q_07", data: {id: Tag.find_by(name: "おしゃれ").id}, "data-turbolinks": false do %>
                 <div class="is-layer-dot">
                   <h2>いつもと違うおつまみ</h2>
-                  <%= image_pack_tag("media/images/osyare.jpg", size: "450x450", class: "shadow-lg rounded") %>
+                  <%= lazy_image_tag("osyare.jpg", size: "450x450", class: "shadow-lg rounded") %>
                 </div>
                 <% end %>
             </div>
@@ -94,7 +94,7 @@
                 <%= link_to "#", class: "button", id: "q_08", data: {id: Tag.find_by(name: "定番").id}, "data-turbolinks": false do %>
                 <div class="is-layer-dot">
                   <h2>定番のおつまみ</h2>
-                  <%= image_pack_tag("media/images/teiban.jpg", size: "450x450", class: "shadow-lg rounded") %>
+                  <%= lazy_image_tag("teiban.jpg", size: "450x450", class: "shadow-lg rounded") %>
                 </div>
                 <% end %>
               </div>
@@ -116,5 +116,10 @@
     <%= image_tag "yopparai-otsumamiko.png", size: "450x450" %>
   </div>
 </div>
+
+<script>
+  const observer = lozad();
+  observer.observe();
+</script>
 
 <%= javascript_pack_tag 'pages/choice' %>
