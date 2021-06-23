@@ -15,8 +15,8 @@ module ApplicationHelper
       keywords: 'おつまみこ, つまみ, コンビニ つまみ, ペアリング',
       canonical: request.original_url,
       icon: [
-        { href: asset_pack_url('media/images/favicon.ico') },
-        { href: asset_pack_url('media/images/ogp_apple_touch_icon.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
+        { href: image_url('favicon.ico') },
+        { href: image_url('ogp_apple_touch_icon.png'), rel: 'apple-touch-icon', sizes: '180x180', type: 'image/jpg' },
       ],
       og: {
         site_name: :site,
@@ -24,13 +24,13 @@ module ApplicationHelper
         description: :description, 
         type: 'website',
         url: request.original_url,
-        image: asset_pack_url('media/images/ogp_twitter_card.png'),
+        image: image_url('ogp_twitter_card.png'),
         locale: 'ja_JP',
       },
       twitter: {
         site: '@st3110123',
         card: 'summary_large_image',
-        image: asset_pack_url('media/images/ogp_twitter_card.png'),
+        image: image_url('ogp_twitter_card.png'),
       }
     }
   end

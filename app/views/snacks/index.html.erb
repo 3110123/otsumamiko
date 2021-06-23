@@ -1,5 +1,5 @@
 <% content_for(:title, "おつまみ一覧") %>
-<%= image_pack_tag "media/images/header_awa.png", class: "headerimage" %>
+<%= image_tag "header_awa.png", class: "headerimage" %>
 <div class="card-img-overlay">
   <div class="container">
     <h1 class="font-weight-bold title-font"><%= t '.title' %></h1>
@@ -20,7 +20,7 @@
 
 <div class='arrow_box position-fixed' style="display: none;" id="explanation_text">おつまみを選択して右にスワイプ！</div>
 <div class="index-otsumamiko position-fixed">
-  <%= image_pack_tag "media/images/ogp_apple_touch_icon.png", size: "300x300", id: "explanation_otsumamiko", style: "display: none;" %>
+  <%= image_tag "ogp_apple_touch_icon.png", size: "300x300", id: "explanation_otsumamiko", style: "display: none;" %>
 </div>
 
 <%= javascript_pack_tag 'pages/page_scroll' %>
