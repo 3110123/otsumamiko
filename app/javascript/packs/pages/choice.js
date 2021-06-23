@@ -10,19 +10,17 @@ var result = document.getElementById('result');
 
 var tagId = [];
 
-// アルコール識別
 var alcoholUrl = location.href;
 var ary = alcoholUrl.split('/');
 var alcoholArr = ary[ary.length - 1];
 
-// #がついている場合削除
 if (alcoholArr.includes("#")) {
   var alcohol = alcoholArr.slice(0, -1);
 } else {
   var alcohol = alcoholArr
 }
 
-// おかず
+// がっつりご飯
 q_01.onclick = function(){
   qestion_01.style.display = "none";
   qestion_02.style.display = "block";
@@ -30,7 +28,7 @@ q_01.onclick = function(){
   switchToQuestion1();
 }
 
-// つまむ
+// 軽くおつまみ
 q_02.onclick = function(){
   qestion_01.style.display = "none";
   qestion_03.style.display = "block";
@@ -38,16 +36,16 @@ q_02.onclick = function(){
   switchToQuestion2();
 }
 
-// 質問2 おかず
+// 質問2 がっつりご飯
 function switchToQuestion1() {
-  // 肉
+  // お肉系
   q_03.onclick = function(){
     qestion_02.style.display = "none";
     qestion_04.style.display = "block";
     tagId.push(q_03.dataset.id);
     switchToQuestion3()
   }
-  // 魚
+  // お魚系
   q_04.onclick = function(){
     qestion_02.style.display = "none";
     qestion_04.style.display = "block";
@@ -56,16 +54,16 @@ function switchToQuestion1() {
   }
 }
 
-// 質問2 つまむ
+// 質問2 軽くおつまみ
 function switchToQuestion2() {
-  // ヘルシー
+  // 体重が気になる
   q_05.onclick = function(){
     qestion_03.style.display = "none";
     qestion_04.style.display = "block";
     tagId.push(q_05.dataset.id);
     switchToQuestion3()
   }
-  // 低価格
+  // 価格は低めに抑えたい
   q_06.onclick = function(){
     qestion_03.style.display = "none";
     qestion_04.style.display = "block";
@@ -76,7 +74,7 @@ function switchToQuestion2() {
 
 // 質問3
 function switchToQuestion3() {
-  // おしゃれ
+  // いつもと違うおつまみ
   q_07.onclick = function(){
     tagId.push(q_07.dataset.id);
 
@@ -92,7 +90,7 @@ function switchToQuestion3() {
     });
   }
 
-  // 定番
+  // 定番のおつまみ
   q_08.onclick = function(){
     tagId.push(q_08.dataset.id);
 

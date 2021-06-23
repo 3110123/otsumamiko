@@ -1,6 +1,4 @@
-//id chartからsnackを定義
 var snack = document.getElementById('chart');
-//data属性から値を取得
 var snackIdChart = snack.dataset.snackId
 var sweetness = snack.dataset.sweetnessValue
 var salty = snack.dataset.saltyValue
