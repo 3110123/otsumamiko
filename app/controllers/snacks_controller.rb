@@ -50,7 +50,6 @@ class SnacksController < ApplicationController
   end
 
   def search_params
-    # ボッチ演算子でnilが来てもエラーにならずnilを返す
     params[:q]&.permit(:name, :alcohol, tag_ids:[])
   end
 end
