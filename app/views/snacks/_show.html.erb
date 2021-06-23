@@ -12,7 +12,7 @@
             <% if @snack.image.attached? %>
               <%= image_tag @snack.image, size: '600x600', class: 'card-img-top' %>
             <% else %>
-              <%= image_pack_tag "media/images/default.png", size: '600x600', class: 'card-img-top' %>
+              <%= image_tag "default.png", size: '600x600', class: 'card-img-top' %>
             <% end %>
             <div class="bookmark-<%= @snack.id %> show-bookmark-position">
               <%= render 'bookmarks/bookmark_area', snack: @snack %>
