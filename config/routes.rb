@@ -10,7 +10,7 @@ Rails.application.routes.draw do
   get 'result', to: 'snacks#result'
   get 'mypage', to: 'mypages#show'
   resources :users, only: %i[new create]
-  resources :mypages do
+  resources :mypages, only: %i[show edit update] do
     collection do
       get 'bookmarks', to: 'mypages#bookmark'
       get 'reviews', to: 'mypages#review'
@@ -18,8 +18,8 @@ Rails.application.routes.draw do
   end
   resources :password_resets, only: %i[new create edit update]
   resource :inquiry, only: %i[new create]
-  resources :snacks do
-    resources :reviews, shallow: true
+  resources :snacks, only: %i[show index] do
+    resources :reviews, only: %i[create edit update destroy], shallow: true
     resource :bookmarks, only: %i[create destroy]
     collection do
       get 'wine', to: 'snacks#wine'
