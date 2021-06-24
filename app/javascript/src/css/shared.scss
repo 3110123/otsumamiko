@@ -180,6 +180,10 @@ html, body {
   padding: 0;
 }
 
+.toast-error {
+  z-index: 200000000;
+}
+
 .toast-message {
   font-size: 1.8rem;
   padding-left: 30px;
