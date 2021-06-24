@@ -1,6 +1,4 @@
 var loadNextPage = function(){
-  const observer = lozad();
-  observer.observe();
 
   if ($('#next_link').data("loading")){ return }
   var wBottom  = $(window).scrollTop() + $(window).height();

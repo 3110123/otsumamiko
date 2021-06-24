@@ -20,9 +20,6 @@ if (alcoholArr.includes("#")) {
   var alcohol = alcoholArr
 }
 
-const observer = lozad();
-observer.observe();
-
 // がっつりご飯
 q_01.onclick = function(){
   qestion_01.style.display = "none";
