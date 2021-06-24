@@ -15,3 +15,6 @@ import '@fortawesome/fontawesome-free/js/all';
 
 import toastr from 'toastr'
 window.toastr = toastr
+
+import lozad from 'lozad'
+window.lozad = lozad

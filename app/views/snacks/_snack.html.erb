@@ -4,9 +4,9 @@
       <%= link_to snack_path(snack), class: "text-decoration-none text-dark", remote: true do %>
         <div class="snack-image text-center">
           <% if snack.image.attached? %>
-          <%= image_tag snack.image, size: '250x450', class: 'card-img-top', decoding: "async" %>
+          <%= image_tag snack.image, size: '250x450', class: 'card-img-top' %>
           <% else %>
-          <%= image_tag "default.png", size: '250x450', class: 'card-img-top', decoding: "async" %>
+          <%= lazy_image_tag "default.png", size: '250x450', class: 'card-img-top' %>
           <% end %>
           <div class="bookmark-<%= snack.id %> bookmark-position">
             <%= render 'bookmarks/bookmark_area', snack: snack %>
