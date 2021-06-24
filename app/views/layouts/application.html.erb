@@ -9,8 +9,10 @@
     <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
 
-    <script src="https://cdn.lr-ingest.io/LogRocket.min.js" crossorigin="anonymous"></script>
-    <script>window.LogRocket && window.LogRocket.init('6vstpk/otsumamiko');</script>
+    <% if Rails.env.production? %>
+      <script src="https://cdn.lr-ingest.io/LogRocket.min.js" crossorigin="anonymous"></script>
+      <script>window.LogRocket && window.LogRocket.init('6vstpk/otsumamiko');</script>
+    <% end %>
   </head>
 
   <body>
