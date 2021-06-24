@@ -29,7 +29,7 @@ class Admin::TagsController < Admin::BaseController
   end
 
   def index
-    @pagy, @tags = pagy(Tag.all.result(distinct: true).includes(:snacks))
+    @pagy, @tags = pagy(Tag.all.includes(:snacks))
   end
 
   def destroy

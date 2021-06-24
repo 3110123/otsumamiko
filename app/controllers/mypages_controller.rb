@@ -1,16 +1,12 @@
 class MypagesController < ApplicationController
   include Pagy::Backend
+  before_action :set_mypage, only: %i[show edit update]
 
-  def show
-    @user = User.find(current_user.id)
-  end
+  def show; end
 
-  def edit
-    @user = User.find(current_user.id)
-  end
+  def edit; end
 
   def update
-    @user = User.find(current_user.id)
     if @user.update(user_update_params)
       render json: { user: @user }
     else
@@ -44,5 +40,9 @@ class MypagesController < ApplicationController
 
   def user_update_params
     params.require(:user).permit(:name, :email)
+  end
+
+  def set_mypage
+    @user = User.find(current_user.id)
   end
 end

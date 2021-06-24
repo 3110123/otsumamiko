@@ -1,4 +1,5 @@
 class PasswordResetsController < ApplicationController
+  before_action :set_password_reset, only: %i[edit update]
   def new; end 
 
   def create
@@ -7,18 +8,9 @@ class PasswordResetsController < ApplicationController
     redirect_to login_path, success: "メールを送信しました"
   end
 
-  def edit
-    @token = params[:id]
-    @user = User.load_from_reset_password_token(params[:id])
-    return not_authenticated if @user.blank?
-  end
+  def edit; end
 
   def update
-    @token = params[:id]
-    @user = User.load_from_reset_password_token(params[:id])
-
-    return not_authenticated if @user.blank?
-
     @user.password_confirmation = params[:user][:password_confirmation]
     if @user.change_password(params[:user][:password])
       redirect_to login_path, success: "パスワードを変更しました"
@@ -26,5 +18,13 @@ class PasswordResetsController < ApplicationController
       flash[:danger] = "パスワードを変更できませんでした"
       render :edit
     end
+  end
+
+  private
+
+  def set_password_reset
+    @token = params[:id]
+    @user = User.load_from_reset_password_token(params[:id])
+    return not_authenticated if @user.blank?
   end
 end

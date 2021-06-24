@@ -180,6 +180,10 @@ html, body {
   padding: 0;
 }
 
+.toast-error {
+  z-index: 200000000;
+}
+
 .toast-message {
   font-size: 1.8rem;
   padding-left: 30px;
@@ -194,7 +198,6 @@ html, body {
 .footer-logo {
   font-size: 1.5rem;
   color: white;
-  font-family: "Nico Moji";
   line-height: 50px;
 }
 
@@ -206,10 +209,6 @@ html, body {
 
 .static-text {
   margin-top: 150px;
-}
-
-.user-count {
-  display: none;
 }
 
 // 絞り込み結果

@@ -1,4 +1,4 @@
-<% content_for(:title, "おすすめのおつまみ") %>
+<% content_for(:title, "おつまみでお困りの方") %>
 <div id="loading">
   <div class="spinner"></div>
 </div>
@@ -17,7 +17,7 @@
           <% if @snack.image.attached? %>
             <%= image_tag @snack.image, size: '300x400', class: 'card-img-top' %>
           <% else %>
-            <%= image_pack_tag "media/images/default.png", size: '300x450', class: 'card-img-top' %>
+            <%= image_tag "default.png", size: '300x450', class: 'card-img-top' %>
           <% end %>
           </div>
         </div>
@@ -55,7 +55,7 @@
           </div>
         </div>
       </div>
-      <%= javascript_pack_tag 'pages/ratechart' %>
+      <%= javascript_pack_tag 'pages/ratechart', defer: true %>
 
       <div class='text-center'>
         <div class="row justify-content-center">

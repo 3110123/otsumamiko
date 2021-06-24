@@ -13,6 +13,9 @@ function callback(){
 
 // 無限スクロール
 var loadNextPage = function(){
+  const observer = lozad();
+  observer.observe();
+
   if ($('#next_link').data("loading")){ return }
   var wBottom  = $(window).scrollTop() + $(window).height();
   var elBottom = $('#records_table').offset().top + $('#records_table').height();

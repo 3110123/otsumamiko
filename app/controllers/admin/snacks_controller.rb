@@ -17,7 +17,7 @@ class Admin::SnacksController < Admin::BaseController
   end
   
   def index
-    @pagy, @snacks = pagy(Snack.all.result(distinct: true).includes(:tags, :reviews, :bookmarks, {image_attachment: :blob}))
+    @pagy, @snacks = pagy(Snack.all.includes(:tags, :reviews, :bookmarks, {image_attachment: :blob}))
   end
 
   def show

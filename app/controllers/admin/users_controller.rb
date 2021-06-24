@@ -2,7 +2,7 @@ class Admin::UsersController < Admin::BaseController
   include Pagy::Backend
   before_action :set_user, only: %i[edit update destroy]
   def index
-    @pagy, @users = pagy(User.all.result(distinct: true))
+    @pagy, @users = pagy(User.all)
   end
 
   def edit; end

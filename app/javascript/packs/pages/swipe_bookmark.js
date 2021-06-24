@@ -7,7 +7,6 @@ bookmarkFadeout = fadeout + 20;
 unbookmarkFadeout = fadeout + -20;
 var userPresence = card.dataset.user
 
-// PCmouseイベント
 card.onmousedown = function(e) {
   window.offsetX1 = e.pageX
 }
@@ -17,18 +16,13 @@ card.ondragend = function(e) {
   switchToAction(offsetX2);
 }
 
-// スマホtouchイベント
 card.ontouchstart = function(e) {
-	// タッチの情報を含むオブジェクト
 	var touchObject = e.changedTouches[0];
-	// 位置座標を取得する
 	window.touchX1 = touchObject.pageX;
 }
 
 card.ontouchend = function(e) {
-	// タッチの情報を含むオブジェクト
 	var touchObject = e.changedTouches[0];
-	// 位置座標を取得する
 	touchX2 = touchObject.pageX;
   touchswitchToAction(touchX2);
 }
@@ -44,13 +38,11 @@ function switchToAction(offsetX2) {
   }
 }
 
-// マウス
 function switchToBookmark(snackId) {
   if (userPresence === 'false') {
     toastr.error('ログインが必要です。');
     return false;
   }
-  // 右ドラッグbookmark
     $.ajax({
       type: 'POST',
       url: '/snacks/' + snackId + '/bookmarks',
@@ -71,7 +63,6 @@ function switchToUnbookmark(snackId) {
     toastr.error('ログインが必要です。');
     return false;
   }
-    // 左ドラッグbookmark解除
     $.ajax({
       type: 'DELETE',
       url: '/snacks/' + snackId + '/bookmarks',
@@ -103,7 +94,6 @@ function touchswitchToBookmark(snackId) {
     toastr.error('ログインが必要です。');
     return false;
   }
-  // 右ドラッグbookmark
     $.ajax({
       type: 'POST',
       url: '/snacks/' + snackId + '/bookmarks',
@@ -124,7 +114,6 @@ function touchswitchToUnbookmark(snackId) {
     toastr.error('ログインが必要です。');
     return false;
   }
-    // 左ドラッグbookmark解除
     $.ajax({
       type: 'DELETE',
       url: '/snacks/' + snackId + '/bookmarks',
