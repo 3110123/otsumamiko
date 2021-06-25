@@ -1,7 +1,13 @@
 <% if @search_snacks_form.attributes.values == [nil] %>
   $('#records_table').append("<%= j(render @snack, snack: @snack)%>");
 <% else %>
-  $('#records_table').html("<%= j(render @snack, snack: @snack)%>");
+  <% if @pagy.page == 1 %>
+    $('#records_table').html("<%= j(render @snack, snack: @snack)%>");
+  <% elsif @pagy.page > 2 %>
+    $('#records_table').append("<%= j(render @snack, snack: @snack)%>");
+  <% else %>
+    $('#records_table').append("<%= j(render @snack, snack: @snack)%>");
+  <% end %>
 <% end %>
 $('#div_next_link').html("<%= j(render 'next_link') %>");
 $("#pageScroll").attr('data-page', "<%=@next_page%>");
