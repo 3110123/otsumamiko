@@ -33,6 +33,11 @@ group :development, :test do
   gem 'pry-byebug'
 end
 
+group :test do
+  gem 'capybara'
+  gem 'webdrivers'
+end
+
 group :development do
   gem 'letter_opener_web'
   gem 'web-console', '>= 3.3.0'
