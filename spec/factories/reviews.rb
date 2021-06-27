@@ -1,6 +1,6 @@
 FactoryBot.define do
   factory :review do
-    association :user, factory: :user
+    association :user
     association :snack
     comment { "test" }
     rate { "1" }
