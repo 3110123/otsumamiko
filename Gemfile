@@ -22,6 +22,7 @@ gem 'pagy'
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'faker'
+  gem 'factory_bot_rails'
   gem 'rspec-rails'
   gem 'simplecov', require: false
   gem 'brakeman', require: false
@@ -30,6 +31,11 @@ group :development, :test do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'pry-byebug'
+end
+
+group :test do
+  gem 'capybara'
+  gem 'webdrivers'
 end
 
 group :development do
