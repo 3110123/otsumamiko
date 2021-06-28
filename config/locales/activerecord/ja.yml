@@ -9,3 +9,5 @@ ja:
       inquiry:
         category: 'カテゴリー'
         message: 'お問合せ内容'
+      review:
+        comment: 'コメント'
