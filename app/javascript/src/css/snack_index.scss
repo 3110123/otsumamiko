@@ -126,6 +126,16 @@
   100% { transform: rotate(-20deg); }
 }
 
+// トップへ
+.fa-chevron-circle-up {
+  position: fixed;
+  opacity: 0.9;
+  right: 50px;
+  bottom: 50px;
+  font-size: 9rem;
+  color: white;
+}
+
 //おつまみ詳細
 .modal-dialog {
   max-width: inherit;
