@@ -401,6 +401,7 @@ DEPENDENCIES
   rails (~> 6.0.3, >= 6.0.3.4)
   rails-i18n
   rails_best_practices
+  redis
   redis-rails
   rspec-rails
   rubocop

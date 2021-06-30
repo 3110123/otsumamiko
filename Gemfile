@@ -20,6 +20,7 @@ gem 'rails-i18n'
 gem 'pagy'
 
 gem 'newrelic_rpm'
+gem 'redis'
 gem 'redis-rails'
 
 group :development, :test do
