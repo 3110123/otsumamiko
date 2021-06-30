@@ -15,7 +15,9 @@
             <%= render @user_bookmarks %>
           <% end %>
         </div>
-        <div class="loader" id="loader"></div>
+        <% unless @pagy.pages == 1 %>
+          <div class="loader" id="loader"></div>
+        <% end %>
         <div id="div_next_link">
           <%= render 'shared/next_link' %>
         </div>

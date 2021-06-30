@@ -20,7 +20,8 @@ var loadNextPage = function(){
 
   if ($('#next_link').data("loading")){ return }
   var records_table = document.getElementById('records_table');
-    if (records_table == null){ return }
+
+  if (records_table == null){ return }
   var wBottom  = $(window).scrollTop() + $(window).height();
   var elBottom = $('#records_table').offset().top + $('#records_table').height();
 
@@ -42,6 +43,6 @@ window.addEventListener('resize', loadNextPage);
 window.addEventListener('scroll', loadNextPage);
 window.addEventListener('load',   loadNextPage);
 
-setTimeout(function(){
-  loader.classList.add('fadeout');
-}, 3000)
+// setTimeout(function(){
+//   loader.classList.add('fadeout');
+// }, 3000)
