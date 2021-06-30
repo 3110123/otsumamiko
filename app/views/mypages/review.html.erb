@@ -8,14 +8,20 @@
 
 <div class="container text-center">
   <div class="review">
-      <% if current_user.reviews.present? %>
-          <div id="records_table" class="row">
-            <%= render @user_reviews %>
-          </div>
-      <% else %>
-        <p class="h5">まだレビューしたおつまみがありません。<br>レビューしてみましょう！</p>
-      <% end %>
+    <% if current_user.reviews.present? %>
+      <div id="pageScroll" data-page="">
+        <div id="records_table" class="row">
+          <%= render @user_reviews %>
+        </div>
+        <div class="loader" id="loader"></div>
+        <div id="div_next_link">
+          <%= render 'shared/next_link' %>
+        </div>
+      </div>
+    <% else %>
+      <p class="h5">まだレビューしたおつまみがありません。<br>レビューしてみましょう！</p>
+    <% end %>
   </div>
 </div>
 
-<%= javascript_pack_tag 'pages/mypage', defer: true %>
+<%= javascript_pack_tag 'pages/page_scroll', defer: true %>
