@@ -175,6 +175,7 @@ GEM
       net-protocol
       time
     net-protocol (0.1.0)
+    newrelic_rpm (7.1.0)
     nio4r (2.5.7)
     nokogiri (1.11.6)
       mini_portile2 (~> 2.5.0)
@@ -376,6 +377,7 @@ DEPENDENCIES
   listen (~> 3.2)
   meta-tags
   mysql2 (>= 0.4.4)
+  newrelic_rpm
   pagy
   pry-byebug
   puma (~> 4.1)
