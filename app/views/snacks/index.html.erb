@@ -9,7 +9,9 @@
   <%= render 'snacks/search_form_for', url: snacks_path %>
   <div id="pageScroll" data-page="">
     <div id="records_table" class="row">
-      <%= render @snack %>
+      <% cache @snack do %>
+        <%= render @snack %>
+      <% end %>
     </div>
     <div class="loader" id="loader"></div>
     <div id="div_next_link">

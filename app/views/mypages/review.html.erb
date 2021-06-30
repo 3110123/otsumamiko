@@ -11,7 +11,9 @@
     <% if current_user.reviews.present? %>
       <div id="pageScroll" data-page="">
         <div id="records_table" class="row">
-          <%= render @user_reviews %>
+          <% cache @user_reviews do %>
+            <%= render @user_reviews %>
+          <% end %>
         </div>
         <div class="loader" id="loader"></div>
         <div id="div_next_link">

@@ -11,7 +11,9 @@
     <% if current_user.bookmarks.present? %>
       <div id="pageScroll" data-page="">
         <div id="records_table" class="row">
-          <%= render @user_bookmarks %>
+          <% cache @user_bookmarks do %>
+            <%= render @user_bookmarks %>
+          <% end %>
         </div>
         <div class="loader" id="loader"></div>
         <div id="div_next_link">

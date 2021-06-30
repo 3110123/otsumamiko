@@ -1,7 +1,11 @@
 <% if @pagy.page == 1 %>
-  $('#records_table').html("<%= j(render @snack, snack: @snack)%>");
+  <% cache @snack do %>
+    $('#records_table').html("<%= j(render @snack, snack: @snack)%>");
+  <% end %>
 <% else %>
-  $('#records_table').append("<%= j(render @snack, snack: @snack)%>");
+  <% cache @snack do %>
+    $('#records_table').append("<%= j(render @snack, snack: @snack)%>");
+  <% end %>
 <% end %>
 $('#div_next_link').html("<%= j(render 'shared/next_link') %>");
 $("#pageScroll").attr('data-page', "<%=@next_page%>");

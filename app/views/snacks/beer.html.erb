@@ -1,4 +1,5 @@
 <% content_for(:title, "おつまみでお困りの方") %>
+<% cache do %>
 <div class="container food-choice w-75 food-select">
   <div class="card my-5 shadow-lg p-3 mb-5 bg-white rounded">
     <div class="card-body">
@@ -116,5 +117,6 @@
     <%= lazy_image_tag "yopparai-otsumamiko.png", size: "450x450" %>
   </div>
 </div>
+<% end %>
 
 <%= javascript_pack_tag 'pages/choice', defer: true %>

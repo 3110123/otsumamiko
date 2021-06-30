@@ -1,7 +1,5 @@
-<% if @pagy.page == 1 %>
-  $('#records_table').html("<%= j(render @snack, snack: @snack)%>");
-<% else %>
-  $('#records_table').append("<%= j(render @user_reviews)%>");
+<% cache @user_reviews do %>
+$('#records_table').append("<%= j(render @user_reviews)%>");
 <% end %>
 $('#div_next_link').html("<%= j(render 'shared/next_link') %>");
 $("#pageScroll").attr('data-page', "<%=@next_page%>");
