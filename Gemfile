@@ -23,6 +23,9 @@ gem 'newrelic_rpm'
 gem 'redis'
 gem 'redis-rails'
 
+gem "sentry-ruby"
+gem "sentry-rails"
+
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   gem 'faker'
