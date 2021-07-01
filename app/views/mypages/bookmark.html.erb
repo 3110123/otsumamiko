@@ -11,11 +11,15 @@
     <% if current_user.bookmarks.present? %>
       <div id="pageScroll" data-page="">
         <div id="records_table" class="row">
-          <%= render @user_bookmarks %>
+          <% cache @user_bookmarks do %>
+            <%= render @user_bookmarks %>
+          <% end %>
         </div>
-        <div class="loader" id="loader"></div>
+        <% unless @pagy.pages == 1 %>
+          <div class="loader" id="loader"></div>
+        <% end %>
         <div id="div_next_link">
-          <%= render 'snacks/next_link' %>
+          <%= render 'shared/next_link' %>
         </div>
       </div>
     <% else %>
@@ -24,4 +28,4 @@
   </div>
 </div>
 
-<%= javascript_pack_tag 'pages/mypage', defer: true %>
+<%= javascript_pack_tag 'pages/page_scroll', defer: true %>

@@ -1,4 +1,5 @@
 <% content_for(:title, "ぴったりのおつまみを探す") %>
+<% cache do %>
 <%= image_tag "header_awa.png", class: "headerimage" %>
   <div class="card-img-overlay">
     <div class="container">
@@ -26,3 +27,4 @@
       </div>
     </div>
   </div>
+<% end %>

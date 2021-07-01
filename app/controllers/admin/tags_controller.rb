@@ -1,7 +1,6 @@
 class Admin::TagsController < Admin::BaseController
   include Pagy::Backend
   before_action :set_tag, only: %i[edit update destroy]
-
   def new
     @tag = Tag.new
   end

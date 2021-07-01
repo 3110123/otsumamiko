@@ -1,0 +1,5 @@
+<% cache @user_bookmarks do %>
+$('#records_table').append("<%= j(render @user_bookmarks)%>");
+<% end %>
+$('#div_next_link').html("<%= j(render 'shared/next_link') %>");
+$("#pageScroll").attr('data-page', "<%=@next_page%>");

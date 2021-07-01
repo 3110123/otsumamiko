@@ -16,7 +16,7 @@ class SnacksController < ApplicationController
 
   def index
     @search_snacks_form = SearchSnacksForm.new(search_params)
-    @pagy, @snack = pagy_countless(@search_snacks_form.search.includes(:reviews, {image_attachment: :blob}), link_extra: 'data-remote="true"')
+    @pagy, @snack = pagy_countless(@search_snacks_form.search.includes(:reviews, { image_attachment: :blob }), link_extra: 'data-remote="true"')
 
     @tags = Tag.all
 
@@ -50,6 +50,6 @@ class SnacksController < ApplicationController
   end
 
   def search_params
-    params[:q]&.permit(:name, :alcohol, tag_ids:[])
+    params[:q]&.permit(:name, :alcohol, tag_ids: [])
   end
 end

@@ -24,7 +24,7 @@
   <div class="toppage-container">
     <div class="row">
       <div class="col-5 pr">
-        <%= lazy_image_tag "toppage_01.png", size: "450x450" %>
+        <%= image_tag "toppage_01.png", size: "450x450" %>
       </div>
       <div class="col-7 pr">
         <div class="toppage-pr01">
@@ -37,10 +37,10 @@
         </div>
       </div>
       <div class="col-5 pr">
-        <%= lazy_image_tag "toppage_02.png", size: "450x450", class: "pr02" %>
+        <%= image_tag "toppage_02.png", size: "450x450", class: "pr02" %>
       </div>
       <div class="col-5 pr">
-        <%= lazy_image_tag "toppage_03.png", size: "450x450" %>
+        <%= image_tag "toppage_03.png", size: "450x450" %>
       </div>
       <div class="col-7 pr">
         <div class="toppage-pr01">
@@ -54,8 +54,3 @@
       </div>
     </div>
   </div>
-
-<script>
-  const observer = lozad();
-  observer.observe();
-</script> 

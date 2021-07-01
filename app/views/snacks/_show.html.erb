@@ -39,7 +39,6 @@
           <div id="chart" data-snack-id="<%= @snack.id %>" data-sweetness-value="<%= @snack.reviews.average(:sweetness) %>" data-salty-value="<%= @snack.reviews.average(:salty) %>" data-acidity-value="<%= @snack.reviews.average(:acidity) %>" data-taste-value="<%= @snack.reviews.average(:taste) %>" data-scent-value="<%= @snack.reviews.average(:scent) %>">
             <canvas id="myRaderChart-<%= @snack.id %>" class="rate-chart"></canvas>
           </div>
-          <%= javascript_pack_tag 'pages/ratechart', defer: true %>
 
           <div class='text-center'>
             <div class="row justify-content-center">
