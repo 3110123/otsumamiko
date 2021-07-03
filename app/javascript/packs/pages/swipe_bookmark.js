@@ -50,7 +50,14 @@ var myRadarChart = new Chart(ctx, {
         },
     });
 
+// review
+var alertReview = document.getElementById('alert-review');
+alertReview.onclick = function(){
+  toastr.error('ログインが必要です。');
+  console.log("aaaaa");
+};
 
+// bookmark
 var card = document.getElementById('showModal');
 var modalClose = document.getElementById('modalClose');
 var mouseBookmarkRange = 100
