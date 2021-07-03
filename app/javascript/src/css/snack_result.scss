@@ -309,3 +309,13 @@ input[type=checkbox] {
     content: "# ";
   }
 }
+
+.result-bookmark-position {
+  position: absolute;
+  right: 50px;
+  opacity: 0.9;
+  bottom: 250px;
+  border-radius: 50%;
+  padding: 62px;
+  background-color: #dddddd
+}

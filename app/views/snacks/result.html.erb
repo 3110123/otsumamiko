@@ -79,6 +79,18 @@
   </div>
 </div>
 <div class="fixed-bottom">
+  <% if logged_in? %>
+    <div class="bookmark-<%= @snack.id %> result-bookmark-position">
+      <%= render 'bookmarks/bookmark_area', snack: @snack %>
+    </div>
+  <% else %>
+    <div class="bookmark-<%= @snack.id %> result-bookmark-position" id="result-bookmark">
+      <%= render 'bookmarks/bookmark_area', snack: @snack %>
+    </div>
+  <% end %>
+</div>
+
+<div class="fixed-bottom">
   <%= link_to "https://twitter.com/share?&url=https://otsumamiko.app/&text=今日のおつまみは#{@snack.alcohol_i18n}と#{@snack.name}の組み合わせを試します！&hashtags=おつまみこ,今日のおつまみ&lang=ja", title: 'Twitter', target: :_blank, rel: 'noopener noreferrer', class: "twitter btn" do %>
     <i class="fab fa-twitter share-button"></i>
   <% end %>
