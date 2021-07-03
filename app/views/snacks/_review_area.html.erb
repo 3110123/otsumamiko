@@ -99,7 +99,6 @@
       </div>
       <div class="actions text-center">
         <%= f.submit '投稿する', class: "h4 text-light btn-danger rounded-pill py-4 px-5 shadow p-3 my-5" %>
-        <div id="data" type="hidden" data-rate-value="<%= @snack.reviews.sum(:rate) %>"></div>
       </div>
     <% end %>
 </div>
