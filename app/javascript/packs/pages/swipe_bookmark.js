@@ -52,7 +52,7 @@ var myRadarChart = new Chart(ctx, {
 
 // review
 var alertReview = document.getElementById('alert-review');
-if (typeof alertReview == "undefined") {
+if (typeof alertReview !== undefined) {
   alertReview.onclick = function(){
     toastr.error('ログインが必要です。');
   }
@@ -69,7 +69,6 @@ unbookmarkFadeout = fadeout + -20;
 var userPresence = card.dataset.user
 
 card.onmousedown = function(e) {
-  console.log("aaaaaaa");
   window.offsetX1 = e.pageX
 }
 
