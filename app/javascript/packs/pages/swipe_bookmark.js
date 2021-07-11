@@ -52,10 +52,11 @@ var myRadarChart = new Chart(ctx, {
 
 // review
 var alertReview = document.getElementById('alert-review');
-alertReview.onclick = function(){
-  toastr.error('ログインが必要です。');
-  console.log("aaaaa");
-};
+if (typeof alertReview !== undefined) {
+  alertReview.onclick = function(){
+    toastr.error('ログインが必要です。');
+  }
+}
 
 // bookmark
 var card = document.getElementById('showModal');
