@@ -13,17 +13,17 @@ https://otsumamiko.app
 
 ### バックエンド
 
-・Ruby 2.7.3
-・Rails 6.0.3
-・Rubocop
-・RSpec
+- Ruby 2.7.3
+- Rails 6.0.3
+- Rubocop
+- RSpec
 
 ### フロントエンド
 
-・HTML
-・CSS(SCSS)
-・JavaScript(jQuery)
-・bootstrap4
+- HTML
+- CSS(SCSS)
+- JavaScript(jQuery)
+- bootstrap4
 
 ## ER図
 
