@@ -1,5 +1,3 @@
-# __おつまみこ__
-
 ![ogp_twitter_card](https://user-images.githubusercontent.com/76991496/125198781-4711ef80-e29e-11eb-8986-97ce6bf8f35a.png)
 
 ## アプリURL
@@ -32,6 +30,4 @@ https://otsumamiko.app
 ![otsumamikoER](https://user-images.githubusercontent.com/76991496/125198923-e8994100-e29e-11eb-8693-6af35b00b494.png)
 
 https://drive.google.com/file/d/1I38NpRh9pHQ3-AwPsZoOtp-92K0mYD4I/view?usp=sharing
-
-## インフラ構成図
 
