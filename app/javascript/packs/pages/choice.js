@@ -1,23 +1,23 @@
-var q_01 = document.getElementById('q_01');
-var q_02 = document.getElementById('q_02');
-var q_03 = document.getElementById('q_03');
-var q_04 = document.getElementById('q_04');
-var qestion_01 = document.getElementById('qestion_01');
-var qestion_02 = document.getElementById('qestion_02');
-var qestion_03 = document.getElementById('qestion_03');
-var qestion_04 = document.getElementById('qestion_04');
-var result = document.getElementById('result');
+const q_01 = document.getElementById('q_01');
+const q_02 = document.getElementById('q_02');
+const q_03 = document.getElementById('q_03');
+const q_04 = document.getElementById('q_04');
+const qestion_01 = document.getElementById('qestion_01');
+const qestion_02 = document.getElementById('qestion_02');
+const qestion_03 = document.getElementById('qestion_03');
+const qestion_04 = document.getElementById('qestion_04');
+const result = document.getElementById('result');
 
-var tagId = [];
+const tagId = [];
 
-var alcoholUrl = location.href;
-var ary = alcoholUrl.split('/');
-var alcoholArr = ary[ary.length - 1];
+const alcoholUrl = location.href;
+const ary = alcoholUrl.split('/');
+const alcoholArr = ary[ary.length - 1];
 
 if (alcoholArr.includes("#")) {
-  var alcohol = alcoholArr.slice(0, -1);
+  alcohol = alcoholArr.slice(0, -1);
 } else {
-  var alcohol = alcoholArr
+  alcohol = alcoholArr
 }
 
 const observer = lozad();

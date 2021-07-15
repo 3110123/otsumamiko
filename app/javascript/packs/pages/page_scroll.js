@@ -1,6 +1,6 @@
 // bookmarkの説明
-var ExplanationText = document.getElementById('explanation_text');
-var ExplanationOtsumamiko = document.getElementById('explanation_otsumamiko');
+const ExplanationText = document.getElementById('explanation_text');
+const ExplanationOtsumamiko = document.getElementById('explanation_otsumamiko');
 
 if (ExplanationText !== null){
   ExplanationOtsumamiko.style.display = "block";
@@ -14,25 +14,25 @@ function callback(){
 }
 
 // 無限スクロール
-var loadNextPage = function(){
+const loadNextPage = function(){
   const observer = lozad();
   observer.observe();
 
   if ($('#next_link').data("loading")){ return }
-  var records_table = document.getElementById('records_table');
+  const records_table = document.getElementById('records_table');
 
   if (records_table == null){ return }
-  var wBottom  = $(window).scrollTop() + $(window).height();
-  var elBottom = $('#records_table').offset().top + $('#records_table').height();
+  const wBottom  = $(window).scrollTop() + $(window).height();
+  const elBottom = $('#records_table').offset().top + $('#records_table').height();
 
-  var page = $('#pageScroll').attr('data-page');
-  var loader = document.getElementById('loader');
+  const page = $('#pageScroll').attr('data-page');
+  const loader = document.getElementById('loader');
   if (page == "last"){
     loader.classList.add('fadeout');
     return
   }
   if (wBottom > elBottom){
-    var nextLink = document.getElementById('next_link');
+    const nextLink = document.getElementById('next_link');
     if (nextLink == null){ return }
     $('#next_link')[0].click();
     $('#next_link').data("loading", true);
@@ -42,7 +42,3 @@ var loadNextPage = function(){
 window.addEventListener('resize', loadNextPage);
 window.addEventListener('scroll', loadNextPage);
 window.addEventListener('load',   loadNextPage);
-
-// setTimeout(function(){
-//   loader.classList.add('fadeout');
-// }, 3000)
