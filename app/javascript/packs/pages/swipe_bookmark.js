@@ -1,13 +1,13 @@
-var snack = document.getElementById('chart');
-var snackIdChart = snack.dataset.snackId
-var sweetness = snack.dataset.sweetnessValue
-var salty = snack.dataset.saltyValue
-var acidity = snack.dataset.acidityValue
-var taste = snack.dataset.tasteValue
-var scent = snack.dataset.scentValue
+const snack = document.getElementById('chart');
+const snackIdChart = snack.dataset.snackId
+const sweetness = snack.dataset.sweetnessValue
+const salty = snack.dataset.saltyValue
+const acidity = snack.dataset.acidityValue
+const taste = snack.dataset.tasteValue
+const scent = snack.dataset.scentValue
 
-var ctx = document.getElementById("myRaderChart" + - + snackIdChart).getContext('2d');
-var myRadarChart = new Chart(ctx, {
+const ctx = document.getElementById("myRaderChart" + - + snackIdChart).getContext('2d');
+const myRadarChart = new Chart(ctx, {
         type: 'radar', 
         data: { 
             labels: ["甘味", "塩味", "酸味", "旨味", "香り"],
@@ -50,23 +50,16 @@ var myRadarChart = new Chart(ctx, {
         },
     });
 
-// review
-var alertReview = document.getElementById('alert-review');
-if (typeof alertReview !== undefined) {
-  alertReview.onclick = function(){
-    toastr.error('ログインが必要です。');
-  }
-}
-
 // bookmark
-var card = document.getElementById('showModal');
-var modalClose = document.getElementById('modalClose');
-var mouseBookmarkRange = 100
-var touchBookmarkRange = 500
-var fadeout = 0;
+const card = document.getElementById('showModal');
+const modalClose = document.getElementById('modalClose');
+const mouseBookmarkRange = 100
+const touchBookmarkRange = 500
+const fadeout = 0;
 bookmarkFadeout = fadeout + 20;
 unbookmarkFadeout = fadeout + -20;
-var userPresence = card.dataset.user
+const userPresence = card.dataset.user
+const alertReview = document.getElementById('alert-review');
 
 card.onmousedown = function(e) {
   window.offsetX1 = e.pageX
@@ -78,18 +71,18 @@ card.ondragend = function(e) {
 }
 
 card.ontouchstart = function(e) {
-	var touchObject = e.changedTouches[0];
+	const touchObject = e.changedTouches[0];
 	window.touchX1 = touchObject.pageX;
 }
 
 card.ontouchend = function(e) {
-	var touchObject = e.changedTouches[0];
+	const touchObject = e.changedTouches[0];
 	touchX2 = touchObject.pageX;
   touchswitchToAction(touchX2);
 }
 
 function switchToAction(offsetX2) {
-  var snackId = card.dataset.snack
+  const snackId = card.dataset.snack
   if ( offsetX2 > window.offsetX1 + mouseBookmarkRange ){
     switchToBookmark(snackId)
   }else if ( offsetX2 < window.offsetX1 - mouseBookmarkRange ){
@@ -140,7 +133,7 @@ function switchToUnbookmark(snackId) {
 }
 
 function touchswitchToAction(touchX2) {
-  var snackId = card.dataset.snack
+  const snackId = card.dataset.snack
   if ( touchX2 > window.touchX1 + touchBookmarkRange ){
     touchswitchToBookmark(snackId)
   }else if ( touchX2 < window.touchX1 - touchBookmarkRange ){
@@ -188,4 +181,11 @@ function touchswitchToUnbookmark(snackId) {
     }).fail(function() {
       toastr.error('すでに解除されています！');
     });
+}
+
+// review
+if(alertReview){
+  alertReview.addEventListener('click', function(){
+      toastr.error('ログインが必要です。');
+  }, false);
 }

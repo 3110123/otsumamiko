@@ -3,16 +3,16 @@ window.onload = function() {
   spinner.classList.add('loaded');
 }
 
-var snack = document.getElementById('chart');
-var snackIdChart = snack.dataset.snackId
-var sweetness = snack.dataset.sweetnessValue
-var salty = snack.dataset.saltyValue
-var acidity = snack.dataset.acidityValue
-var taste = snack.dataset.tasteValue
-var scent = snack.dataset.scentValue
+const snack = document.getElementById('chart');
+const snackIdChart = snack.dataset.snackId
+const sweetness = snack.dataset.sweetnessValue
+const salty = snack.dataset.saltyValue
+const acidity = snack.dataset.acidityValue
+const taste = snack.dataset.tasteValue
+const scent = snack.dataset.scentValue
 
-var ctx = document.getElementById("myRaderChart" + - + snackIdChart).getContext('2d');
-var myRadarChart = new Chart(ctx, {
+const ctx = document.getElementById("myRaderChart" + - + snackIdChart).getContext('2d');
+const myRadarChart = new Chart(ctx, {
         type: 'radar', 
         data: { 
             labels: ["甘味", "塩味", "酸味", "旨味", "香り"],
@@ -57,8 +57,8 @@ var myRadarChart = new Chart(ctx, {
 
 
 // review
-var alertReview = document.getElementById('alert-review');
-var resultBookmark = document.getElementById('result-bookmark');
+const alertReview = document.getElementById('alert-review');
+const resultBookmark = document.getElementById('result-bookmark');
 if(alertReview){
     alertReview.addEventListener('click', function(){
         toastr.error('ログインが必要です。');

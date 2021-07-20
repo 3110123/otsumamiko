@@ -7,7 +7,9 @@ https://otsumamiko.app
 ## サービス概要
 
 ペアリングを試してみたいけどいい感じの組み合わせが分からない人が コンビニにある食べ物で手軽に試せるアプリです。
-サービスを作成した背景はこちら。
+
+:four_leaf_clover:Qiita
+https://qiita.com/3110123/items/545f26f626eccb9af835
 
 ## 使用技術
 
