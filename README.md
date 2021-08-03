@@ -22,12 +22,12 @@ https://qiita.com/3110123/items/545f26f626eccb9af835
 
 | <div align="center">結果ページ</div> | <div align="center">一覧ページ</div> | <div align="center">詳細ページ</div> |
 | :--- | :--- | :--- |
-|  <img src="https://i.gyazo.com/bb3a826228bbdc5d48eee926f4730ff2.png" width="100%"> | <img src="https://i.gyazo.com/f90579f7174d8e12395c35bc375babf0.png" width="100%"> | <div align="center"><img src="https://i.gyazo.com/507b530101c99155c1d0067438ffc5bb.png" width="75%"></div> |
+|  <img src="https://i.gyazo.com/bb3a826228bbdc5d48eee926f4730ff2.png" width="100%"> | <img src="https://i.gyazo.com/f90579f7174d8e12395c35bc375babf0.png" width="100%"> | <div align="center"><img src="https://i.gyazo.com/507b530101c99155c1d0067438ffc5bb.png" width="70%"></div> |
 | 質問に答えるとぴったりのおつまみを提案する。 | おつまみを一覧表示する。タグ検索でコンビニやお酒の種類等から絞り込める。 | 一覧からおつまみを選択すると詳細が見れる。レビューの評価によって変化するレーダーチャートで味を想像できる。 |
 
 | <div align="center">お気に入り</div> | <div align="center">レビューページ</div> | <div align="center">マイページ</div> |
 | :--- | :--- | :--- |
-| <img src="https://i.gyazo.com/00742d4f880d39ee2d4acf8891f2ddd7.gif" width="100%"> | <img src="https://i.gyazo.com/18ff18cfb0203e21f2445f0b44a7ffcf.png" width="100%"> | <div align="center"><img src="https://i.gyazo.com/ae3e55d16c7d12647e1ee9cf2428a1f8.png" width="88%"></div> |
+| <img src="https://i.gyazo.com/00742d4f880d39ee2d4acf8891f2ddd7.gif" width="90%"> | <img src="https://i.gyazo.com/18ff18cfb0203e21f2445f0b44a7ffcf.png" width="100%"> | <div align="center"><img src="https://i.gyazo.com/ae3e55d16c7d12647e1ee9cf2428a1f8.png" width="78%"></div> |
 | 右にスワイプしてお気に入りに登録、左にスワイプしてお気に入りを解除できる。| 味や香りを5段階で評価、コメントできる。 | 登録内容の確認ができる。自分のレビューしたおつまみ、お気に入りのおつまみを確認できる。 |
 
 
